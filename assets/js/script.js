@@ -78,3 +78,9 @@ document.addEventListener('click', (event) => {
         if (boxSearchHeader) { boxSearchHeader.classList.remove('active'); boxTrendElem?.classList?.remove('active'); }
     }
 })
+const menuMore = document.querySelector('.menu-more');
+const nav = document.querySelector('.nav-full.bg-wrap');
+menuMore.addEventListener('click', function () {
+  nav.classList.toggle('show');
+  menuMore.classList.toggle('show');
+});
