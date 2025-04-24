@@ -12,11 +12,16 @@
   font-size: 0.875rem;
   line-height: 1.25rem;
 }
-
+.navbar{
+  display: none;
+}
 .weather-box svg {
   margin: 0;
 }
 
+a {
+  text-decoration: underline;
+}
 
 .weather-divider {
   margin: 0 0.75rem;
@@ -19208,17 +19213,7 @@ div[data-module="user-onboarding"] {
 .healthContainerSpecialCate .main .healthData > div:first-child .slides:hover {
   background: none;
 }
-@media (max-width: 768px) {
-  body {
-    background-color: lightblue;
-  }
 
-  
-
-  .mobile-menu {
-    display: block;
-  }
-}
 
 .healthContainerSpecialCate
   .main
