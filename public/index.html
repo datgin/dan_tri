@@ -17,21 +17,68 @@
     <link href="https://vjs.zencdn.net/8.22.0/video-js.css" rel="stylesheet" />
   </head>
   <body>
-    <nav class="navbar">
-      <!-- Menu icon (hamburger) -->
-      <button class="navbar-toggler " type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-    
-      <!-- Logo ở giữa -->
-      <a class="navbar-brand " href="#" >
-        <img src="https://cdnweb.dantri.com.vn/dist/static-logo-v2.1-0-1.9bf6dbdd64e0736085bc.png" alt="Dân Trí" height="30">
-      </a>
-      
-      
-    </nav>
-    
-    <header class="header container bg-wrap">
+    <header
+      class="header-mobile dt-relative dt-container dt-h-20 dt-flex dt-items-center dt-justify-between background before:dt-bg-white before:dt-border-b before:dt-border-ce6e6e6"
+    >
+      <div class="dt-flex dt-items-center">
+        <div data-button="menu" class="dt-flex dt-relative">
+          <button
+            id="menuShow"
+            class="dt-relative -dt-left-1 dt-w-8 dt-h-8 dt-flex dt-items-center dt-justify-center"
+            type="button"
+            aria-label="Menu"
+          >
+            <svg
+              aria-hidden="true"
+              width="30"
+              height="30"
+              viewBox="0 0 32 32"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M6 23H26"
+                stroke="#4D4D4D"
+                stroke-width="1.5"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              ></path>
+              <path
+                d="M6 16H26"
+                stroke="#4D4D4D"
+                stroke-width="1.5"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              ></path>
+              <path
+                d="M6 9H26"
+                stroke="#4D4D4D"
+                stroke-width="1.5"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              ></path>
+            </svg>
+          </button>
+        </div>
+      </div>
+      <div
+        class="dt-flex dt-items-center dt-absolute dt-top-[calc(50%)] dt-left-1/2 -dt-translate-x-1/2 dt-gap-4 dt-min-w-max"
+      >
+        <a href="#"
+          ><img
+            alt="Báo điện tử Dân trí - Tin tức cập nhật liên tục 24/7"
+            class="dt-w-auto dt-h-9.5"
+            src="https://cdnmobile.dantri.com.vn/dist/static-logo.1-0-1.b9d5a600244b413d9d4a.svg"
+        /></a>
+      </div>
+      <div class="dt-flex dt-items-center">
+        <div data-module="authen-header">
+          <i class="fa-solid fa-user"></i>
+        </div>
+        <div data-module="account-notification"></div>
+      </div>
+    </header>
+    <header class="header-pc container bg-wrap">
       <div class="header-top flex-jcb have-users-onboarding dt-relative">
         <div class="dt-flex dt-gap-7 dt-items-center">
           <h1 class="header-logo flex-jcc">
@@ -213,8 +260,7 @@
         </div>
       </div>
     </header>
-
-    <nav role="navigation" aria-label="menu" class="menu container bg-wrap">
+    <nav role="navigation" aria-label="menu" class="nav-pc container bg-wrap">
       <ol class="menu-wrap bg-wrap">
         <li class="home">
           <a
@@ -1342,6 +1388,67 @@
                     data-loaded="loaded"
                   ></span>
                 </div>
+                <div
+                  class="social dt-mt-2 dt-flex dt-justify-between dt-items-center"
+                >
+                  <div class="socials-share dt-flex dt-gap-3">
+                    <button
+                      type="button"
+                      class="dt-relative dt-rounded-full dt-size-6 dt-flex dt-justify-center dt-items-center dt-bg-cF4F6FA"
+                    >
+                      <svg
+                        width="14"
+                        height="13"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          d="m5.984 9.207-1.4 1.4a1.485 1.485 0 1 1-2.102-2.1l2.801-2.802c.58-.58 1.521-.58 2.101 0a.495.495 0 1 0 .7-.7 2.476 2.476 0 0 0-3.5 0L1.78 7.806a2.476 2.476 0 1 0 3.503 3.502l1.4-1.4a.495.495 0 0 0-.7-.701Z"
+                          fill="#565656"
+                          stroke="#565656"
+                          stroke-width="0.225"
+                        ></path>
+                        <path
+                          d="M12.219.87a2.476 2.476 0 0 0-3.502 0l-1.68 1.68a.495.495 0 0 0 .7.7l1.68-1.68a1.486 1.486 0 0 1 2.101 2.101L8.437 6.753c-.58.58-1.52.58-2.101 0a.495.495 0 0 0-.7.7 2.476 2.476 0 0 0 3.501 0L12.22 4.37a2.476 2.476 0 0 0 0-3.501Z"
+                          fill="#565656"
+                          stroke="#565656"
+                          stroke-width="0.225"
+                        ></path>
+                      </svg></button
+                    ><button
+                      type="button"
+                      class="dt-rounded-full dt-size-6 dt-flex dt-justify-center dt-items-center dt-bg-cF4F6FA"
+                    >
+                      <svg
+                        width="16"
+                        height="17"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          d="M8.842 4.57v2.17h2.19c.168 0 .252.15.252.3l-.337 1.422c0 .075-.168.15-.252.15H8.842v5.464H6.316v-5.39H4.884c-.168 0-.252-.074-.252-.224V7.04c0-.15.084-.225.252-.225h1.432v-2.47c0-1.272 1.095-2.245 2.526-2.245h2.274c.168 0 .252.074.252.224v1.797c0 .15-.084.224-.252.224H9.095c-.169 0-.253.075-.253.225Z"
+                          fill="#565656"
+                        ></path>
+                      </svg></button
+                    ><button
+                      type="button"
+                      class="dt-rounded-full dt-size-6 dt-flex dt-justify-center dt-items-center dt-bg-cF4F6FA"
+                    >
+                      <svg
+                        width="12"
+                        height="12"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          d="M2.948 11.588H.663V4.255h2.285v7.333Zm.228-9.67c0-.734-.599-1.33-1.337-1.33C1.098.588.5 1.184.5 1.918c0 .735.598 1.33 1.339 1.33.738 0 1.337-.595 1.337-1.33ZM11.5 7.553c0-1.968-.418-3.428-2.732-3.428-1.111 0-1.857.552-2.162 1.127h-.002v-.997h-2.22v7.333h2.22V7.947c0-.954.244-1.877 1.433-1.877 1.173 0 1.21 1.09 1.21 1.937v3.58H11.5V7.554Z"
+                          fill="#565656"
+                        ></path>
+                      </svg>
+                    </button>
+                  </div>
+                  <div class="dt-flex dt-gap-3"></div>
+                </div>
               </div>
             </article>
             <article
@@ -1360,21 +1467,91 @@
                     width="252"
                 /></a>
               </div>
-              <h3 class="article-title">
-                <a class="dt-text-black-mine" href="#"
-                  >Hà Nội: Nghi vấn khách uống sữa chua phát hiện chân gián, chủ
-                  quán nói gì?</a
+              <div class="article-content">
+                <h3 class="article-title">
+                  <a class="dt-text-black-mine" href="#"
+                    >Tự ý chặt cây 500 năm tuổi không xin phép, nhà hàng đối mặt
+                    khoản phạt nặng</a
+                  >
+                </h3>
+                <div class="article-excerpt-none">
+                  <a href="#"
+                    >Lo ngại fkask các cành cây có thể gây nguy hiểm cho khách
+                    và nhân viên, chủ nhà hàng ở London (Anh) đã thuê người chặt
+                    cây sồi 500 năm tuổi.</a
+                  >
+                  <span
+                    class="article-total-comment dt-text-xs dt-leading-[140%] dt-items-center dt-gap-1 dt-align-middle dt-font-normal dt-hidden hover:dt-text-c0f6c32 dt-ml-1"
+                    data-id="20250420064457019"
+                    data-type="1"
+                    data-limit-show="10"
+                    data-color=""
+                    data-redirect="/du-lich/tu-y-chat-cay-500-nam-tuoi-khong-xin-phep-nha-hang-doi-mat-khoan-phat-nang-20250420064457019.htm#comment"
+                    data-loaded="loaded"
+                  ></span>
+                </div>
+                <div
+                  class="social dt-mt-2 dt-flex dt-justify-between dt-items-center"
                 >
-                <span
-                  class="article-total-comment dt-text-xs dt-leading-[140%] dt-items-center dt-gap-1 dt-align-middle dt-font-normal dt-hidden hover:dt-text-c0f6c32 dt-ml-1"
-                  data-id="20250421222141269"
-                  data-type="1"
-                  data-limit-show="10"
-                  data-color=""
-                  data-redirect="#"
-                  data-loaded="loaded"
-                ></span>
-              </h3>
+                  <div class="socials-share dt-flex dt-gap-3">
+                    <button
+                      type="button"
+                      class="dt-relative dt-rounded-full dt-size-6 dt-flex dt-justify-center dt-items-center dt-bg-cF4F6FA"
+                    >
+                      <svg
+                        width="14"
+                        height="13"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          d="m5.984 9.207-1.4 1.4a1.485 1.485 0 1 1-2.102-2.1l2.801-2.802c.58-.58 1.521-.58 2.101 0a.495.495 0 1 0 .7-.7 2.476 2.476 0 0 0-3.5 0L1.78 7.806a2.476 2.476 0 1 0 3.503 3.502l1.4-1.4a.495.495 0 0 0-.7-.701Z"
+                          fill="#565656"
+                          stroke="#565656"
+                          stroke-width="0.225"
+                        ></path>
+                        <path
+                          d="M12.219.87a2.476 2.476 0 0 0-3.502 0l-1.68 1.68a.495.495 0 0 0 .7.7l1.68-1.68a1.486 1.486 0 0 1 2.101 2.101L8.437 6.753c-.58.58-1.52.58-2.101 0a.495.495 0 0 0-.7.7 2.476 2.476 0 0 0 3.501 0L12.22 4.37a2.476 2.476 0 0 0 0-3.501Z"
+                          fill="#565656"
+                          stroke="#565656"
+                          stroke-width="0.225"
+                        ></path>
+                      </svg></button
+                    ><button
+                      type="button"
+                      class="dt-rounded-full dt-size-6 dt-flex dt-justify-center dt-items-center dt-bg-cF4F6FA"
+                    >
+                      <svg
+                        width="16"
+                        height="17"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          d="M8.842 4.57v2.17h2.19c.168 0 .252.15.252.3l-.337 1.422c0 .075-.168.15-.252.15H8.842v5.464H6.316v-5.39H4.884c-.168 0-.252-.074-.252-.224V7.04c0-.15.084-.225.252-.225h1.432v-2.47c0-1.272 1.095-2.245 2.526-2.245h2.274c.168 0 .252.074.252.224v1.797c0 .15-.084.224-.252.224H9.095c-.169 0-.253.075-.253.225Z"
+                          fill="#565656"
+                        ></path>
+                      </svg></button
+                    ><button
+                      type="button"
+                      class="dt-rounded-full dt-size-6 dt-flex dt-justify-center dt-items-center dt-bg-cF4F6FA"
+                    >
+                      <svg
+                        width="12"
+                        height="12"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          d="M2.948 11.588H.663V4.255h2.285v7.333Zm.228-9.67c0-.734-.599-1.33-1.337-1.33C1.098.588.5 1.184.5 1.918c0 .735.598 1.33 1.339 1.33.738 0 1.337-.595 1.337-1.33ZM11.5 7.553c0-1.968-.418-3.428-2.732-3.428-1.111 0-1.857.552-2.162 1.127h-.002v-.997h-2.22v7.333h2.22V7.947c0-.954.244-1.877 1.433-1.877 1.173 0 1.21 1.09 1.21 1.937v3.58H11.5V7.554Z"
+                          fill="#565656"
+                        ></path>
+                      </svg>
+                    </button>
+                  </div>
+                  <div class="dt-flex dt-gap-3"></div>
+                </div>
+              </div>
             </article>
             <article
               class="article-item"
@@ -1392,50 +1569,91 @@
                     width="252"
                 /></a>
               </div>
-              <h3 class="article-title">
-                <a class="dt-text-black-mine" href="#"
-                  >Khám phá địa đạo đầu tiên giữa lòng TPHCM, dài 10km xuyên qua
-                  mộ cổ</a
-                >
-                <button
-                  class="article-total-comment dt-text-xs dt-leading-[140%] dt-items-center dt-gap-1 dt-align-middle dt-font-normal hover:dt-text-c0f6c32 dt-ml-1 dt-inline-flex"
-                  onclick="location.href=`/du-lich/kham-pha-dia-dao-dau-tien-giua-long-tphcm-dai-10km-xuyen-qua-mo-co-20250421204330397.htm#comment`"
-                  data-loaded="loaded"
-                >
-                  <svg
-                    width="16"
-                    height="16"
-                    viewBox="0 0 17 17"
-                    fill="none"
-                    xmlns="http://www.w3.org/2000/svg"
+              <div class="article-content">
+                <h3 class="article-title">
+                  <a class="dt-text-black-mine" href="#"
+                    >Tự ý chặt cây 500 năm tuổi không xin phép, nhà hàng đối mặt
+                    khoản phạt nặng</a
                   >
-                    <path
-                      d="M6.00695 13.7922H6.3674C6.96813 13.7922 7.44872 13.7922 8.16961 14.513C8.64539 15.1474 9.42395 15.1474 9.89973 14.513C10.4188 13.648 11.0532 13.7922 11.774 13.7922C14.6576 13.7922 16.0993 12.3504 16.0993 9.46685V5.86242C16.0993 2.97888 14.6576 1.53711 11.774 1.53711H6.00695C3.12341 1.53711 1.68164 2.97888 1.68164 5.86242V9.46685C1.68164 13.0713 3.12341 13.7922 6.00695 13.7922Z"
-                      fill="#EAF9F1"
-                      stroke="#0F6C32"
-                      stroke-miterlimit="10"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                    ></path>
-                    <path
-                      d="M5.28613 5.86133H12.495"
-                      stroke="#0F6C32"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                    ></path>
-                    <path
-                      d="M5.28613 9.4668H9.61144"
-                      stroke="#0F6C32"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                    ></path>
-                  </svg>
+                </h3>
+                <div class="article-excerpt-none">
+                  <a href="#"
+                    >Lo ngại fkask các cành cây có thể gây nguy hiểm cho khách
+                    và nhân viên, chủ nhà hàng ở London (Anh) đã thuê người chặt
+                    cây sồi 500 năm tuổi.</a
+                  >
                   <span
-                    class="comment-count dt-font-roboto dt-text-c0f6c32 dt-text-sm"
-                    >14</span
-                  >
-                </button>
-              </h3>
+                    class="article-total-comment dt-text-xs dt-leading-[140%] dt-items-center dt-gap-1 dt-align-middle dt-font-normal dt-hidden hover:dt-text-c0f6c32 dt-ml-1"
+                    data-id="20250420064457019"
+                    data-type="1"
+                    data-limit-show="10"
+                    data-color=""
+                    data-redirect="/du-lich/tu-y-chat-cay-500-nam-tuoi-khong-xin-phep-nha-hang-doi-mat-khoan-phat-nang-20250420064457019.htm#comment"
+                    data-loaded="loaded"
+                  ></span>
+                </div>
+                <div
+                  class="social dt-mt-2 dt-flex dt-justify-between dt-items-center"
+                >
+                  <div class="socials-share dt-flex dt-gap-3">
+                    <button
+                      type="button"
+                      class="dt-relative dt-rounded-full dt-size-6 dt-flex dt-justify-center dt-items-center dt-bg-cF4F6FA"
+                    >
+                      <svg
+                        width="14"
+                        height="13"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          d="m5.984 9.207-1.4 1.4a1.485 1.485 0 1 1-2.102-2.1l2.801-2.802c.58-.58 1.521-.58 2.101 0a.495.495 0 1 0 .7-.7 2.476 2.476 0 0 0-3.5 0L1.78 7.806a2.476 2.476 0 1 0 3.503 3.502l1.4-1.4a.495.495 0 0 0-.7-.701Z"
+                          fill="#565656"
+                          stroke="#565656"
+                          stroke-width="0.225"
+                        ></path>
+                        <path
+                          d="M12.219.87a2.476 2.476 0 0 0-3.502 0l-1.68 1.68a.495.495 0 0 0 .7.7l1.68-1.68a1.486 1.486 0 0 1 2.101 2.101L8.437 6.753c-.58.58-1.52.58-2.101 0a.495.495 0 0 0-.7.7 2.476 2.476 0 0 0 3.501 0L12.22 4.37a2.476 2.476 0 0 0 0-3.501Z"
+                          fill="#565656"
+                          stroke="#565656"
+                          stroke-width="0.225"
+                        ></path>
+                      </svg></button
+                    ><button
+                      type="button"
+                      class="dt-rounded-full dt-size-6 dt-flex dt-justify-center dt-items-center dt-bg-cF4F6FA"
+                    >
+                      <svg
+                        width="16"
+                        height="17"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          d="M8.842 4.57v2.17h2.19c.168 0 .252.15.252.3l-.337 1.422c0 .075-.168.15-.252.15H8.842v5.464H6.316v-5.39H4.884c-.168 0-.252-.074-.252-.224V7.04c0-.15.084-.225.252-.225h1.432v-2.47c0-1.272 1.095-2.245 2.526-2.245h2.274c.168 0 .252.074.252.224v1.797c0 .15-.084.224-.252.224H9.095c-.169 0-.253.075-.253.225Z"
+                          fill="#565656"
+                        ></path>
+                      </svg></button
+                    ><button
+                      type="button"
+                      class="dt-rounded-full dt-size-6 dt-flex dt-justify-center dt-items-center dt-bg-cF4F6FA"
+                    >
+                      <svg
+                        width="12"
+                        height="12"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          d="M2.948 11.588H.663V4.255h2.285v7.333Zm.228-9.67c0-.734-.599-1.33-1.337-1.33C1.098.588.5 1.184.5 1.918c0 .735.598 1.33 1.339 1.33.738 0 1.337-.595 1.337-1.33ZM11.5 7.553c0-1.968-.418-3.428-2.732-3.428-1.111 0-1.857.552-2.162 1.127h-.002v-.997h-2.22v7.333h2.22V7.947c0-.954.244-1.877 1.433-1.877 1.173 0 1.21 1.09 1.21 1.937v3.58H11.5V7.554Z"
+                          fill="#565656"
+                        ></path>
+                      </svg>
+                    </button>
+                  </div>
+                  <div class="dt-flex dt-gap-3"></div>
+                </div>
+              </div>
             </article>
           </article>
           <article class="article column">
@@ -2205,23 +2423,6 @@
           </div>
         </div>
         <div class="sidebar">
-          <div
-            class="dantri-widget dantri-widget--vote entered loaded"
-            data-id="973"
-            data-title="Việc vi phạm Luật Trật tự, an toàn giao thông đường bộ không chỉ xảy ra đối với người điều khiển xe cộ, mà còn với cả khách bộ hành. Để chấm dứt tình trạng người đi bộ băng qua đường không đúng nơi quy định, theo bạn cần làm gì?"
-            data-ll-status="entered"
-          >
-            <iframe
-              frameborder="0"
-              src="https://gadgets.dantri.com.vn/polls/973?embed=true"
-              id="dantri-widget-poll-973-1745310843631"
-              allowfullscreen="true"
-              webkitallowfullscreen="true"
-              mozallowfullscreen="true"
-              scrolling="no"
-              style="width: 100%; height: 438px; overflow: hidden"
-            ></iframe>
-          </div>
           <article class="article sidebar dt-mt-6">
             <div class="title">Tiêu điểm</div>
             <article
@@ -2993,196 +3194,6 @@
           </article>
         </div>
       </div>
-      <div class="video-container">
-        <div class="video-head flex-jcb">
-          <h2 class="title">
-            <a href="#">Media</a>
-          </h2>
-          <a
-            ref="nofollow, noopener"
-            target="_blank"
-            class="video-youtube flex-jcc"
-            href="https://www.youtube.com/@VinhHoaDJ"
-          >
-            Theo dõi NST On Soundcloud trên
-          </a>
-        </div>
-        <div class="video-row">
-          <div class="video-col main">
-            <div class="video-item">
-              <div data-module="video-player" data-video-id="180198">
-                <div class="lazyload-wrapper" style="min-height: 421px">
-                  <div id="video-wrap-video-player-1" class="vplayer-container">
-                    <video
-                      id="video-player-1"
-                      class="video-js vjs-default-skin vjs-big-play-centered"
-                      controls
-                      preload="auto"
-                      width="100%"
-                      height="100%"
-                      data-setup='{"fluid": true}'
-                    >
-                      <source
-                        src="/assets/img/90_ NGƯỜI XEM SẼ KHÔNG NHỊN ĐƯỢC CƯỜI KHI XEM VIDEO NÀY - THỬ THÁCH CẤM CƯỜI.mp4"
-                        type="video/mp4"
-                      />
-                      <p class="vjs-no-js">
-                        To view this video please enable JavaScript, and
-                        consider upgrading to a web browser that
-                        <a href="https://www.google.com/chrome/"
-                          >supports HTML5</a
-                        >
-                      </p>
-                    </video>
-                    <div
-                      class="vjs-poster"
-                      tabindex="-1"
-                      aria-disabled="false"
-                      style="background-image: url('/assets/img/nyan-cat.avif')"
-                    ></div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <ul class="video-col list">
-            <li
-              class="video-item"
-              data-content-name="category-media"
-              data-content-piece="category-media-position_2"
-              data-content-target="/video/lop-may-bay-boc-chay-luc-ha-canh-khach-hoang-loan-tuong-cuoc-doi-ket-thuc-180180.htm"
-              data-track-content=""
-            >
-              <div class="video-thumb">
-                <a href="#"
-                  ><img
-                    alt="Lốp máy bay bốc cháy lúc hạ cánh, khách hoảng loạn tưởng cuộc đời kết thúc"
-                    src="/assets/img/images.jpg"
-                    height="63"
-                    width="112"
-                  />
-                  <div class="video-ico"><span> 00:58 </span></div></a
-                >
-              </div>
-              <div class="video-content">
-                <h3 class="video-title">
-                  <a href="#"
-                    >Lốp máy bay bốc cháy lúc hạ cánh, khách hoảng loạn tưởng
-                    cuộc đời kết thúc</a
-                  >
-                </h3>
-              </div>
-            </li>
-            <li
-              class="video-item"
-              data-content-name="category-media"
-              data-content-piece="category-media-position_3"
-              data-content-target="/video/ga-tau-dien-ngam-bi-che-giong-quan-tai-don-vi-van-hanh-noi-gi-180150.htm"
-              data-track-content=""
-            >
-              <div class="video-thumb">
-                <a href="#"
-                  ><img
-                    alt="Ga tàu điện ngầm bị chê giống quan tài, đơn vị vận hành nói gì?"
-                    src="/assets/img/images.jpg"
-                    height="63"
-                    width="112"
-                  />
-                  <div class="video-ico"><span> 01:27 </span></div></a
-                >
-              </div>
-              <div class="video-content">
-                <h3 class="video-title">
-                  <a href="#"
-                    >Ga tàu điện ngầm bị chê giống quan tài, đơn vị vận hành nói
-                    gì?</a
-                  >
-                </h3>
-              </div>
-            </li>
-            <li
-              class="video-item"
-              data-content-name="category-media"
-              data-content-piece="category-media-position_4"
-              data-content-target="/video/bien-nguoi-tham-gia-le-hoi-te-nuoc-o-thai-lan-180131.htm"
-              data-track-content=""
-            >
-              <div class="video-thumb">
-                <a href="#"
-                  ><img
-                    alt="Biển người tham gia lễ hội té nước ở Thái Lan"
-                    src="/assets/img/images.jpg"
-                    height="63"
-                    width="112"
-                  />
-                  <div class="video-ico"><span> 00:18 </span></div></a
-                >
-              </div>
-              <div class="video-content">
-                <h3 class="video-title">
-                  <a
-                    href="https://dantri.com.vn/video/bien-nguoi-tham-gia-le-hoi-te-nuoc-o-thai-lan-180131.htm"
-                    >Biển người tham gia lễ hội té nước ở Thái Lan</a
-                  >
-                </h3>
-              </div>
-            </li>
-            <li
-              class="video-item"
-              data-content-name="category-media"
-              data-content-piece="category-media-position_5"
-              data-content-target="/video/cau-cao-nhat-the-gioi-o-trung-quoc-thoi-gian-qua-nui-tu-2-tieng-con-1-phut-180108.htm"
-              data-track-content=""
-            >
-              <div class="video-thumb">
-                <a href="#"
-                  ><img
-                    alt="Cầu cao nhất thế giới ở Trung Quốc: Thời gian qua núi từ 2 tiếng còn 1 phút"
-                    src="/assets/img/images.jpg"
-                    width="112"
-                  />
-                  <div class="video-ico"><span> 00:15 </span></div></a
-                >
-              </div>
-              <div class="video-content">
-                <h3 class="video-title">
-                  <a href="#"
-                    >Cầu cao nhất thế giới ở Trung Quốc: Thời gian qua núi từ 2
-                    tiếng còn 1 phút</a
-                  >
-                </h3>
-              </div>
-            </li>
-            <li
-              class="video-item"
-              data-content-name="category-media"
-              data-content-piece="category-media-position_6"
-              data-content-target="/video/chi-hon-1-ty-dong-sua-xe-thanh-nha-di-dong-dua-ca-gia-dinh-vi-vu-moi-tuan-180088.htm"
-              data-track-content=""
-            >
-              <div class="video-thumb">
-                <a href="#"
-                  ><img
-                    alt="Chi hơn 1 tỷ đồng sửa xe thành nhà di động đưa cả gia đình vi vu mỗi tuần"
-                    src="/assets/img/images.jpg"
-                    height="63"
-                    width="112"
-                  />
-                  <div class="video-ico"><span> 02:19 </span></div></a
-                >
-              </div>
-              <div class="video-content">
-                <h3 class="video-title">
-                  <a href="/assets/img/images.jpg"
-                    >Chi hơn 1 tỷ đồng sửa xe thành nhà di động đưa cả gia đình
-                    vi vu mỗi tuần</a
-                  >
-                </h3>
-              </div>
-            </li>
-          </ul>
-        </div>
-      </div>
     </main>
     <div id="desktop-bottom-sticky-right" class="mdbl"></div>
     <footer class="footer container bg-wrap">
@@ -3282,2081 +3293,8 @@
         mọi hình thức nếu không có sự chấp thuận bằng văn bản.
       </div>
     </footer>
-    <nav
-      id="menuWrap"
-      class="dt-fixed dt-top-0 -dt-left-full dt-w-screen dt-h-screen dt-p-4 dt-flex dt-flex-col dt-gap-4 dt-text-c222 dt-bg-white dt-overflow-y-auto dt-z-[100] dt-invisible dt-transition-all"
-    >
-      <button
-        id="menuClose"
-        class="dt-absolute dt-left-3 dt-top-3"
-        aria-label="Menu"
-        type="button"
-      >
-        <svg
-          aria-hidden="true"
-          width="30"
-          height="30"
-          viewBox="0 0 32 32"
-          fill="none"
-          xmlns="http://www.w3.org/2000/svg"
-        >
-          <path
-            d="M26 6L6 26"
-            stroke="#4D4D4D"
-            stroke-width="1.5"
-            stroke-linecap="round"
-            stroke-linejoin="round"
-          />
-          <path
-            d="M6 6L26 26"
-            stroke="#4D4D4D"
-            stroke-width="1.5"
-            stroke-linecap="round"
-            stroke-linejoin="round"
-          />
-        </svg>
-      </button>
-      <div class="dt-flex dt-items-center dt-gap-4 dt-justify-end">
-        <div
-          data-module="weather-header-v-2"
-          data-date_time_today="Thứ 5, 24/04/2025"
-          data-is-in-menu="true"
-        ></div>
-        <div class="dt-flex dt-items-center">
-          <div class="auth-placeholder" data-module="authen-header"></div>
-          <div data-module="account-notification"></div>
-        </div>
-      </div>
-      <form
-        class="dt-relative"
-        method="GET"
-        target="_top"
-        action="/tim-kiem.htm"
-      >
-        <input
-          class="dt-w-full dt-h-10 dt-pl-4 dt-pr-11 dt-outline dt-outline-none dt-rounded-full dt-bg-cf1f5f9"
-          type="text"
-          id="s"
-          name="s"
-          value=""
-          placeholder="Tìm kiếm tin tức"
-          required
-        />
-        <button
-          class="dt-absolute dt-top-1/2 dt-right-4 -dt-translate-y-1/2"
-          type="button"
-          aria-label="Tìm kiếm"
-          name="search"
-        >
-          <svg
-            aria-hidden="true"
-            width="22"
-            height="22"
-            viewBox="0 0 24 24"
-            fill="none"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path
-              d="M11 19C15.4183 19 19 15.4183 19 11C19 6.58172 15.4183 3 11 3C6.58172 3 3 6.58172 3 11C3 15.4183 6.58172 19 11 19Z"
-              stroke="#4D4D4D"
-              stroke-width="1.5"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-            />
-            <path
-              d="M21 20.9999L16.65 16.6499"
-              stroke="#4D4D4D"
-              stroke-width="1.5"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-            />
-          </svg>
-        </button>
-      </form>
-      <div data-link="contact" class="dt-mt-2 dt-flex">
-        <a
-          class="dt-flex dt-items-center dt-gap-1 dt-w-full dt-h-6 dt-font-inter dt-text-sm dt-text-c565656"
-          href="https://dantri.com.vn/lien-he.htm"
-        >
-          <svg
-            width="20"
-            height="20"
-            viewBox="0 0 20 20"
-            fill="none"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path
-              d="M17.418 3.5H2.58203C1.70794 3.5 1 4.23168 1 5.125V14.875C1 15.7736 1.71314 16.5 2.58203 16.5H17.418C18.2847 16.5 19 15.7767 19 14.875V5.125C19 4.23327 18.2949 3.5 17.418 3.5ZM17.1964 4.58333C16.8732 4.91357 11.3107 10.597 11.1187 10.7933C10.8198 11.1002 10.4226 11.2692 10 11.2692C9.57742 11.2692 9.18016 11.1002 8.88034 10.7922C8.75118 10.6603 3.25011 5.03956 2.80359 4.58333H17.1964ZM2.05469 14.6545V5.34618L6.61227 10.0029L2.05469 14.6545ZM2.80425 15.4167L7.36005 10.7669L8.13556 11.5593C8.63358 12.0708 9.29571 12.3525 10 12.3525C10.7043 12.3525 11.3664 12.0708 11.8635 11.5603L12.64 10.7669L17.1957 15.4167H2.80425ZM17.9453 14.6545L13.3877 10.0029L17.9453 5.34618V14.6545Z"
-              fill="#565656"
-              stroke="#565656"
-              stroke-width="0.3"
-            />
-          </svg>
-          <span class="dt-uppercase dt-font-semibold">Liên hệ toà soạn</span>
-          <svg
-            class="dt-ml-auto"
-            width="24"
-            height="24"
-            viewBox="0 0 24 24"
-            fill="none"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path
-              d="M10 8L13.6745 11.2929C14.1085 11.6818 14.1085 12.3182 13.6745 12.7071L10 16"
-              stroke="#565656"
-              stroke-width="1.5"
-              stroke-miterlimit="10"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-            />
-          </svg>
-        </a>
-      </div>
-      <div data-module="list-cate-favourite"></div>
-      <div
-        class="dt-grid dt-grid-cols-2 dt-gap-x-4 dt-font-inter dt-font-semibold"
-      >
-        <ol class="dt-space-y-0">
-          <li class="dt-border-b dt-border-ceee">
-            <a
-              class="dt-inline-block dt-pt-3.5 dt-pb-2.5 dt-text-MineShaft"
-              href="https://dantri.com.vn/su-kien.htm"
-              >Sự kiện nổi bật</a
-            >
-          </li>
-          <li class="dt-border-b dt-border-ceee">
-            <a
-              class="dt-inline-block dt-pt-3.5 dt-pb-2.5 dt-text-MineShaft"
-              rel="nofollow noopener"
-              href="https://dantri.com.vn/video-page.htm"
-              >Video</a
-            >
-          </li>
-          <li class="dt-border-b dt-border-ceee">
-            <a
-              class="dt-inline-block dt-pt-3.5 dt-pb-2.5 dt-text-MineShaft"
-              rel="nofollow noopener"
-              href="https://fica.dantri.com.vn/"
-              >Fica</a
-            >
-          </li>
-          <li class="dt-border-b dt-border-ceee">
-            <a
-              class="dt-inline-block dt-pt-3.5 dt-pb-2.5 dt-text-MineShaft"
-              rel="nofollow noopener"
-              href="https://dtinews.dantri.com.vn/"
-              >DTiNews</a
-            >
-          </li>
-          <li class="dt-border-b dt-border-ceee">
-            <a
-              class="dt-inline-block dt-pt-3.5 dt-pb-2.5 dt-text-MineShaft"
-              href="https://dantri.com.vn/dmagazine.htm"
-              >Dmagazine</a
-            >
-          </li>
-          <li class="dt-border-b dt-border-ceee">
-            <a
-              class="dt-inline-block dt-pt-3.5 dt-pb-2.5 dt-text-MineShaft"
-              href="https://dantri.com.vn/dnews.htm"
-              >DNews</a
-            >
-          </li>
-        </ol>
-        <ol class="dt-space-y-0">
-          <li class="dt-border-b dt-border-ceee">
-            <a
-              class="dt-inline-block dt-pt-3.5 dt-pb-2.5 dt-text-MineShaft"
-              href="https://dantri.com.vn/d-buzz.htm"
-              >D-Buzz</a
-            >
-          </li>
-          <li class="dt-border-b dt-border-ceee">
-            <a
-              class="dt-inline-block dt-pt-3.5 dt-pb-2.5 dt-text-MineShaft"
-              href="https://dantri.com.vn/photo-news.htm"
-              >Photo News</a
-            >
-          </li>
-          <li class="dt-border-b dt-border-ceee">
-            <a
-              class="dt-inline-block dt-pt-3.5 dt-pb-2.5 dt-text-MineShaft"
-              href="https://dantri.com.vn/photo-story.htm"
-              >Photo Story</a
-            >
-          </li>
-          <li class="dt-border-b dt-border-ceee">
-            <a
-              class="dt-inline-block dt-pt-3.5 dt-pb-2.5 dt-text-MineShaft"
-              href="https://dantri.com.vn/infographic.htm"
-              >Infographic</a
-            >
-          </li>
-          <li class="dt-border-b dt-border-ceee">
-            <a
-              class="dt-inline-block dt-pt-3.5 dt-pb-2.5 dt-text-MineShaft"
-              href="https://dantri.com.vn/interactive.htm"
-              >Interactive</a
-            >
-          </li>
-          <li class="dt-border-b dt-border-ceee">
-            <a
-              class="dt-inline-block dt-pt-3.5 dt-pb-2.5 dt-text-MineShaft"
-              href="https://dantri.com.vn/toa-dam-truc-tuyen.htm"
-              >Tọa đàm trực tuyến</a
-            >
-          </li>
-        </ol>
-      </div>
-      <div class="dt-mt-1 dt-flex dt-flex-col dt-gap-4">
-        <label
-          class="dt-text-c808080 dt-uppercase dt-text-xl dt-font-bold dt-font-inter"
-          >Danh mục</label
-        >
-        <ol class="dt-flex dt-flex-col dt-font-inter dt-font-semibold">
-          <li class="dt-border-b dt-border-ceee cate-container_hasSubCate">
-            <div class="dt-w-full dt-flex dt-justify-between">
-              <a
-                class="dt-inline-block dt-pt-3.5 dt-pb-2.5 dt-text-MineShaft label"
-                data-utm="|Main_Menu|1"
-                href="https://dantri.com.vn/xa-hoi.htm"
-                >Xã hội</a
-              >
-              <button
-                class="btnControlSubCate dt-w-[30%] dt-flex dt-justify-end dt-items-center"
-              >
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="10"
-                  height="12"
-                  viewBox="0 0 10 12"
-                  fill="none"
-                  class="close"
-                >
-                  <path
-                    d="M8.12377 4.05025L5.00002 7.60275L1.87627 4.05025C1.82046 3.98665 1.74553 3.95105 1.66752 3.95105C1.5895 3.95105 1.51458 3.98665 1.45877 4.05025C1.43174 4.08114 1.41027 4.11801 1.39562 4.15871C1.38096 4.1994 1.37341 4.24309 1.37341 4.28723C1.37341 4.33137 1.38096 4.37506 1.39562 4.41576C1.41027 4.45645 1.43174 4.49332 1.45877 4.52421L4.78189 8.30421C4.84025 8.37057 4.91852 8.40772 5.00002 8.40772C5.08151 8.40772 5.15978 8.37057 5.21814 8.30421L8.54127 4.52494C8.56848 4.49403 8.59011 4.45706 8.60488 4.41624C8.61965 4.37541 8.62726 4.33155 8.62726 4.28723C8.62726 4.24292 8.61965 4.19905 8.60488 4.15822C8.59011 4.1174 8.56848 4.08044 8.54127 4.04952C8.48546 3.98592 8.41053 3.95032 8.33252 3.95032C8.2545 3.95032 8.17958 3.98592 8.12377 4.04952V4.05025Z"
-                    fill="black"
-                  />
-                </svg>
-                <svg
-                  width="10"
-                  height="10"
-                  viewBox="0 0 10 10"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg"
-                  class="open dt-hidden"
-                >
-                  <path
-                    d="M1.87623 6.67124L4.99998 3.62624L8.12373 6.67124C8.17954 6.72575 8.25447 6.75627 8.33248 6.75627C8.4105 6.75627 8.48542 6.72575 8.54123 6.67124C8.56826 6.64476 8.58973 6.61316 8.60438 6.57828C8.61904 6.5434 8.62659 6.50595 8.62659 6.46811C8.62659 6.43028 8.61904 6.39283 8.60438 6.35795C8.58973 6.32307 8.56826 6.29147 8.54123 6.26499L5.21811 3.02499C5.15975 2.96811 5.08148 2.93627 4.99998 2.93627C4.91849 2.93627 4.84022 2.96811 4.78186 3.02499L1.45873 6.26436C1.43152 6.29086 1.40989 6.32254 1.39512 6.35754C1.38035 6.39253 1.37274 6.43013 1.37274 6.46811C1.37274 6.5061 1.38035 6.5437 1.39512 6.57869C1.40989 6.61369 1.43152 6.64537 1.45873 6.67186C1.51454 6.72638 1.58947 6.7569 1.66748 6.7569C1.7455 6.7569 1.82042 6.72638 1.87623 6.67186V6.67124Z"
-                    fill="black"
-                  />
-                </svg>
-              </button>
-            </div>
-            <ol class="dt-flex dt-flex-col dt-ml-2 dt-hidden">
-              <li
-                class="dt-min-h-[51px] dt-flex dt-items-center dt-border-b dt-border-[#E6E6E6]"
-              >
-                <a
-                  class="dt-font-Inter dt-text-15px dt-font-medium dt-leading-22px dt-text-c565656 dt-py-[15px]"
-                  href="https://dantri.com.vn/xa-hoi/chinh-tri.htm"
-                  >Chính trị</a
-                >
-              </li>
-              <li
-                class="dt-min-h-[51px] dt-flex dt-items-center dt-border-b dt-border-[#E6E6E6]"
-              >
-                <a
-                  class="dt-font-Inter dt-text-15px dt-font-medium dt-leading-22px dt-text-c565656 dt-py-[15px]"
-                  href="https://dantri.com.vn/xa-hoi/hoc-tap-bac.htm"
-                  >Học tập Bác</a
-                >
-              </li>
-              <li
-                class="dt-min-h-[51px] dt-flex dt-items-center dt-border-b dt-border-[#E6E6E6]"
-              >
-                <a
-                  class="dt-font-Inter dt-text-15px dt-font-medium dt-leading-22px dt-text-c565656 dt-py-[15px]"
-                  href="https://dantri.com.vn/xa-hoi/ky-nguyen-moi.htm"
-                  >Kỷ nguyên mới</a
-                >
-              </li>
-              <li
-                class="dt-min-h-[51px] dt-flex dt-items-center dt-border-b dt-border-[#E6E6E6]"
-              >
-                <a
-                  class="dt-font-Inter dt-text-15px dt-font-medium dt-leading-22px dt-text-c565656 dt-py-[15px]"
-                  href="https://dantri.com.vn/xa-hoi/moi-truong.htm"
-                  >Môi trường</a
-                >
-              </li>
-              <li
-                class="dt-min-h-[51px] dt-flex dt-items-center dt-border-b dt-border-[#E6E6E6]"
-              >
-                <a
-                  class="dt-font-Inter dt-text-15px dt-font-medium dt-leading-22px dt-text-c565656 dt-py-[15px]"
-                  href="https://dantri.com.vn/xa-hoi/giao-thong.htm"
-                  >Giao thông</a
-                >
-              </li>
-              <li
-                class="dt-min-h-[51px] dt-flex dt-items-center dt-border-b dt-border-[#E6E6E6]"
-              >
-                <a
-                  class="dt-font-Inter dt-text-15px dt-font-medium dt-leading-22px dt-text-c565656 dt-py-[15px]"
-                  href="https://dantri.com.vn/xa-hoi/nong-tren-mang.htm"
-                  >Nóng trên mạng</a
-                >
-              </li>
-              <li
-                class="dt-min-h-[51px] dt-flex dt-items-center dt-border-b dt-border-[#E6E6E6]"
-              >
-                <a
-                  class="dt-font-Inter dt-text-15px dt-font-medium dt-leading-22px dt-text-c565656 dt-py-[15px]"
-                  href="https://dantri.com.vn/xa-hoi/50-nam-thong-nhat-dat-nuoc.htm"
-                  >50 năm thống nhất đất nước</a
-                >
-              </li>
-            </ol>
-          </li>
-          <li class="dt-border-b dt-border-ceee cate-container_hasSubCate">
-            <div class="dt-w-full dt-flex dt-justify-between">
-              <a
-                class="dt-inline-block dt-pt-3.5 dt-pb-2.5 dt-text-MineShaft label"
-                data-utm="|Main_Menu|2"
-                href="https://dantri.com.vn/the-gioi.htm"
-                >Thế giới</a
-              >
-              <button
-                class="btnControlSubCate dt-w-[30%] dt-flex dt-justify-end dt-items-center"
-              >
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="10"
-                  height="12"
-                  viewBox="0 0 10 12"
-                  fill="none"
-                  class="close"
-                >
-                  <path
-                    d="M8.12377 4.05025L5.00002 7.60275L1.87627 4.05025C1.82046 3.98665 1.74553 3.95105 1.66752 3.95105C1.5895 3.95105 1.51458 3.98665 1.45877 4.05025C1.43174 4.08114 1.41027 4.11801 1.39562 4.15871C1.38096 4.1994 1.37341 4.24309 1.37341 4.28723C1.37341 4.33137 1.38096 4.37506 1.39562 4.41576C1.41027 4.45645 1.43174 4.49332 1.45877 4.52421L4.78189 8.30421C4.84025 8.37057 4.91852 8.40772 5.00002 8.40772C5.08151 8.40772 5.15978 8.37057 5.21814 8.30421L8.54127 4.52494C8.56848 4.49403 8.59011 4.45706 8.60488 4.41624C8.61965 4.37541 8.62726 4.33155 8.62726 4.28723C8.62726 4.24292 8.61965 4.19905 8.60488 4.15822C8.59011 4.1174 8.56848 4.08044 8.54127 4.04952C8.48546 3.98592 8.41053 3.95032 8.33252 3.95032C8.2545 3.95032 8.17958 3.98592 8.12377 4.04952V4.05025Z"
-                    fill="black"
-                  />
-                </svg>
-                <svg
-                  width="10"
-                  height="10"
-                  viewBox="0 0 10 10"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg"
-                  class="open dt-hidden"
-                >
-                  <path
-                    d="M1.87623 6.67124L4.99998 3.62624L8.12373 6.67124C8.17954 6.72575 8.25447 6.75627 8.33248 6.75627C8.4105 6.75627 8.48542 6.72575 8.54123 6.67124C8.56826 6.64476 8.58973 6.61316 8.60438 6.57828C8.61904 6.5434 8.62659 6.50595 8.62659 6.46811C8.62659 6.43028 8.61904 6.39283 8.60438 6.35795C8.58973 6.32307 8.56826 6.29147 8.54123 6.26499L5.21811 3.02499C5.15975 2.96811 5.08148 2.93627 4.99998 2.93627C4.91849 2.93627 4.84022 2.96811 4.78186 3.02499L1.45873 6.26436C1.43152 6.29086 1.40989 6.32254 1.39512 6.35754C1.38035 6.39253 1.37274 6.43013 1.37274 6.46811C1.37274 6.5061 1.38035 6.5437 1.39512 6.57869C1.40989 6.61369 1.43152 6.64537 1.45873 6.67186C1.51454 6.72638 1.58947 6.7569 1.66748 6.7569C1.7455 6.7569 1.82042 6.72638 1.87623 6.67186V6.67124Z"
-                    fill="black"
-                  />
-                </svg>
-              </button>
-            </div>
-            <ol class="dt-flex dt-flex-col dt-ml-2 dt-hidden">
-              <li
-                class="dt-min-h-[51px] dt-flex dt-items-center dt-border-b dt-border-[#E6E6E6]"
-              >
-                <a
-                  class="dt-font-Inter dt-text-15px dt-font-medium dt-leading-22px dt-text-c565656 dt-py-[15px]"
-                  href="https://dantri.com.vn/the-gioi/quan-su.htm"
-                  >Quân sự</a
-                >
-              </li>
-              <li
-                class="dt-min-h-[51px] dt-flex dt-items-center dt-border-b dt-border-[#E6E6E6]"
-              >
-                <a
-                  class="dt-font-Inter dt-text-15px dt-font-medium dt-leading-22px dt-text-c565656 dt-py-[15px]"
-                  href="https://dantri.com.vn/the-gioi/phan-tich-binh-luan.htm"
-                  >Phân tích - Bình luận</a
-                >
-              </li>
-              <li
-                class="dt-min-h-[51px] dt-flex dt-items-center dt-border-b dt-border-[#E6E6E6]"
-              >
-                <a
-                  class="dt-font-Inter dt-text-15px dt-font-medium dt-leading-22px dt-text-c565656 dt-py-[15px]"
-                  href="https://dantri.com.vn/the-gioi/the-gioi-do-day.htm"
-                  >Thế giới đó đây</a
-                >
-              </li>
-              <li
-                class="dt-min-h-[51px] dt-flex dt-items-center dt-border-b dt-border-[#E6E6E6]"
-              >
-                <a
-                  class="dt-font-Inter dt-text-15px dt-font-medium dt-leading-22px dt-text-c565656 dt-py-[15px]"
-                  href="https://dantri.com.vn/the-gioi/kieu-bao.htm"
-                  >Kiều bào</a
-                >
-              </li>
-            </ol>
-          </li>
-          <li class="dt-border-b dt-border-ceee cate-container_hasSubCate">
-            <div class="dt-w-full dt-flex dt-justify-between">
-              <a
-                class="dt-inline-block dt-pt-3.5 dt-pb-2.5 dt-text-MineShaft label"
-                data-utm="|Main_Menu|3"
-                href="https://dantri.com.vn/kinh-doanh.htm"
-                >Kinh doanh</a
-              >
-              <button
-                class="btnControlSubCate dt-w-[30%] dt-flex dt-justify-end dt-items-center"
-              >
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="10"
-                  height="12"
-                  viewBox="0 0 10 12"
-                  fill="none"
-                  class="close"
-                >
-                  <path
-                    d="M8.12377 4.05025L5.00002 7.60275L1.87627 4.05025C1.82046 3.98665 1.74553 3.95105 1.66752 3.95105C1.5895 3.95105 1.51458 3.98665 1.45877 4.05025C1.43174 4.08114 1.41027 4.11801 1.39562 4.15871C1.38096 4.1994 1.37341 4.24309 1.37341 4.28723C1.37341 4.33137 1.38096 4.37506 1.39562 4.41576C1.41027 4.45645 1.43174 4.49332 1.45877 4.52421L4.78189 8.30421C4.84025 8.37057 4.91852 8.40772 5.00002 8.40772C5.08151 8.40772 5.15978 8.37057 5.21814 8.30421L8.54127 4.52494C8.56848 4.49403 8.59011 4.45706 8.60488 4.41624C8.61965 4.37541 8.62726 4.33155 8.62726 4.28723C8.62726 4.24292 8.61965 4.19905 8.60488 4.15822C8.59011 4.1174 8.56848 4.08044 8.54127 4.04952C8.48546 3.98592 8.41053 3.95032 8.33252 3.95032C8.2545 3.95032 8.17958 3.98592 8.12377 4.04952V4.05025Z"
-                    fill="black"
-                  />
-                </svg>
-                <svg
-                  width="10"
-                  height="10"
-                  viewBox="0 0 10 10"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg"
-                  class="open dt-hidden"
-                >
-                  <path
-                    d="M1.87623 6.67124L4.99998 3.62624L8.12373 6.67124C8.17954 6.72575 8.25447 6.75627 8.33248 6.75627C8.4105 6.75627 8.48542 6.72575 8.54123 6.67124C8.56826 6.64476 8.58973 6.61316 8.60438 6.57828C8.61904 6.5434 8.62659 6.50595 8.62659 6.46811C8.62659 6.43028 8.61904 6.39283 8.60438 6.35795C8.58973 6.32307 8.56826 6.29147 8.54123 6.26499L5.21811 3.02499C5.15975 2.96811 5.08148 2.93627 4.99998 2.93627C4.91849 2.93627 4.84022 2.96811 4.78186 3.02499L1.45873 6.26436C1.43152 6.29086 1.40989 6.32254 1.39512 6.35754C1.38035 6.39253 1.37274 6.43013 1.37274 6.46811C1.37274 6.5061 1.38035 6.5437 1.39512 6.57869C1.40989 6.61369 1.43152 6.64537 1.45873 6.67186C1.51454 6.72638 1.58947 6.7569 1.66748 6.7569C1.7455 6.7569 1.82042 6.72638 1.87623 6.67186V6.67124Z"
-                    fill="black"
-                  />
-                </svg>
-              </button>
-            </div>
-            <ol class="dt-flex dt-flex-col dt-ml-2 dt-hidden">
-              <li
-                class="dt-min-h-[51px] dt-flex dt-items-center dt-border-b dt-border-[#E6E6E6]"
-              >
-                <a
-                  class="dt-font-Inter dt-text-15px dt-font-medium dt-leading-22px dt-text-c565656 dt-py-[15px]"
-                  href="https://dantri.com.vn/kinh-doanh/tai-chinh.htm"
-                  >Tài chính</a
-                >
-              </li>
-              <li
-                class="dt-min-h-[51px] dt-flex dt-items-center dt-border-b dt-border-[#E6E6E6]"
-              >
-                <a
-                  class="dt-font-Inter dt-text-15px dt-font-medium dt-leading-22px dt-text-c565656 dt-py-[15px]"
-                  href="https://dantri.com.vn/kinh-doanh/chung-khoan.htm"
-                  >Chứng khoán</a
-                >
-              </li>
-              <li
-                class="dt-min-h-[51px] dt-flex dt-items-center dt-border-b dt-border-[#E6E6E6]"
-              >
-                <a
-                  class="dt-font-Inter dt-text-15px dt-font-medium dt-leading-22px dt-text-c565656 dt-py-[15px]"
-                  href="https://dantri.com.vn/kinh-doanh/doanh-nghiep.htm"
-                  >Doanh nghiệp</a
-                >
-              </li>
-              <li
-                class="dt-min-h-[51px] dt-flex dt-items-center dt-border-b dt-border-[#E6E6E6]"
-              >
-                <a
-                  class="dt-font-Inter dt-text-15px dt-font-medium dt-leading-22px dt-text-c565656 dt-py-[15px]"
-                  href="https://dantri.com.vn/kinh-doanh/khoi-nghiep.htm"
-                  >Khởi nghiệp</a
-                >
-              </li>
-              <li
-                class="dt-min-h-[51px] dt-flex dt-items-center dt-border-b dt-border-[#E6E6E6]"
-              >
-                <a
-                  class="dt-font-Inter dt-text-15px dt-font-medium dt-leading-22px dt-text-c565656 dt-py-[15px]"
-                  href="https://dantri.com.vn/kinh-doanh/tieu-dung.htm"
-                  >Tiêu dùng</a
-                >
-              </li>
-              <li
-                class="dt-min-h-[51px] dt-flex dt-items-center dt-border-b dt-border-[#E6E6E6]"
-              >
-                <a
-                  class="dt-font-Inter dt-text-15px dt-font-medium dt-leading-22px dt-text-c565656 dt-py-[15px]"
-                  href="https://dantri.com.vn/kinh-doanh/esg-phat-trien-ben-vung.htm"
-                  >ESG - Phát triển bền vững</a
-                >
-              </li>
-            </ol>
-          </li>
-          <li class="dt-border-b dt-border-ceee cate-container_hasSubCate">
-            <div class="dt-w-full dt-flex dt-justify-between">
-              <a
-                class="dt-inline-block dt-pt-3.5 dt-pb-2.5 dt-text-MineShaft label"
-                data-utm="|Main_Menu|4"
-                href="https://dantri.com.vn/bat-dong-san.htm"
-                >Bất động sản</a
-              >
-              <button
-                class="btnControlSubCate dt-w-[30%] dt-flex dt-justify-end dt-items-center"
-              >
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="10"
-                  height="12"
-                  viewBox="0 0 10 12"
-                  fill="none"
-                  class="close"
-                >
-                  <path
-                    d="M8.12377 4.05025L5.00002 7.60275L1.87627 4.05025C1.82046 3.98665 1.74553 3.95105 1.66752 3.95105C1.5895 3.95105 1.51458 3.98665 1.45877 4.05025C1.43174 4.08114 1.41027 4.11801 1.39562 4.15871C1.38096 4.1994 1.37341 4.24309 1.37341 4.28723C1.37341 4.33137 1.38096 4.37506 1.39562 4.41576C1.41027 4.45645 1.43174 4.49332 1.45877 4.52421L4.78189 8.30421C4.84025 8.37057 4.91852 8.40772 5.00002 8.40772C5.08151 8.40772 5.15978 8.37057 5.21814 8.30421L8.54127 4.52494C8.56848 4.49403 8.59011 4.45706 8.60488 4.41624C8.61965 4.37541 8.62726 4.33155 8.62726 4.28723C8.62726 4.24292 8.61965 4.19905 8.60488 4.15822C8.59011 4.1174 8.56848 4.08044 8.54127 4.04952C8.48546 3.98592 8.41053 3.95032 8.33252 3.95032C8.2545 3.95032 8.17958 3.98592 8.12377 4.04952V4.05025Z"
-                    fill="black"
-                  />
-                </svg>
-                <svg
-                  width="10"
-                  height="10"
-                  viewBox="0 0 10 10"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg"
-                  class="open dt-hidden"
-                >
-                  <path
-                    d="M1.87623 6.67124L4.99998 3.62624L8.12373 6.67124C8.17954 6.72575 8.25447 6.75627 8.33248 6.75627C8.4105 6.75627 8.48542 6.72575 8.54123 6.67124C8.56826 6.64476 8.58973 6.61316 8.60438 6.57828C8.61904 6.5434 8.62659 6.50595 8.62659 6.46811C8.62659 6.43028 8.61904 6.39283 8.60438 6.35795C8.58973 6.32307 8.56826 6.29147 8.54123 6.26499L5.21811 3.02499C5.15975 2.96811 5.08148 2.93627 4.99998 2.93627C4.91849 2.93627 4.84022 2.96811 4.78186 3.02499L1.45873 6.26436C1.43152 6.29086 1.40989 6.32254 1.39512 6.35754C1.38035 6.39253 1.37274 6.43013 1.37274 6.46811C1.37274 6.5061 1.38035 6.5437 1.39512 6.57869C1.40989 6.61369 1.43152 6.64537 1.45873 6.67186C1.51454 6.72638 1.58947 6.7569 1.66748 6.7569C1.7455 6.7569 1.82042 6.72638 1.87623 6.67186V6.67124Z"
-                    fill="black"
-                  />
-                </svg>
-              </button>
-            </div>
-            <ol class="dt-flex dt-flex-col dt-ml-2 dt-hidden">
-              <li
-                class="dt-min-h-[51px] dt-flex dt-items-center dt-border-b dt-border-[#E6E6E6]"
-              >
-                <a
-                  class="dt-font-Inter dt-text-15px dt-font-medium dt-leading-22px dt-text-c565656 dt-py-[15px]"
-                  href="https://dantri.com.vn/bat-dong-san/du-an.htm"
-                  >Dự án</a
-                >
-              </li>
-              <li
-                class="dt-min-h-[51px] dt-flex dt-items-center dt-border-b dt-border-[#E6E6E6]"
-              >
-                <a
-                  class="dt-font-Inter dt-text-15px dt-font-medium dt-leading-22px dt-text-c565656 dt-py-[15px]"
-                  href="https://dantri.com.vn/bat-dong-san/thi-truong.htm"
-                  >Thị trường</a
-                >
-              </li>
-              <li
-                class="dt-min-h-[51px] dt-flex dt-items-center dt-border-b dt-border-[#E6E6E6]"
-              >
-                <a
-                  class="dt-font-Inter dt-text-15px dt-font-medium dt-leading-22px dt-text-c565656 dt-py-[15px]"
-                  href="https://dantri.com.vn/bat-dong-san/nha-dat.htm"
-                  >Nhà đất</a
-                >
-              </li>
-              <li
-                class="dt-min-h-[51px] dt-flex dt-items-center dt-border-b dt-border-[#E6E6E6]"
-              >
-                <a
-                  class="dt-font-Inter dt-text-15px dt-font-medium dt-leading-22px dt-text-c565656 dt-py-[15px]"
-                  href="https://dantri.com.vn/bat-dong-san/nhip-song-do-thi.htm"
-                  >Nhịp sống đô thị</a
-                >
-              </li>
-              <li
-                class="dt-min-h-[51px] dt-flex dt-items-center dt-border-b dt-border-[#E6E6E6]"
-              >
-                <a
-                  class="dt-font-Inter dt-text-15px dt-font-medium dt-leading-22px dt-text-c565656 dt-py-[15px]"
-                  href="https://dantri.com.vn/bat-dong-san/song-xanh.htm"
-                  >Sống xanh</a
-                >
-              </li>
-              <li
-                class="dt-min-h-[51px] dt-flex dt-items-center dt-border-b dt-border-[#E6E6E6]"
-              >
-                <a
-                  class="dt-font-Inter dt-text-15px dt-font-medium dt-leading-22px dt-text-c565656 dt-py-[15px]"
-                  href="https://dantri.com.vn/bat-dong-san/noi-that.htm"
-                  >Nội thất</a
-                >
-              </li>
-            </ol>
-          </li>
-          <li class="dt-border-b dt-border-ceee cate-container_hasSubCate">
-            <div class="dt-w-full dt-flex dt-justify-between">
-              <a
-                class="dt-inline-block dt-pt-3.5 dt-pb-2.5 dt-text-MineShaft label"
-                data-utm="|Main_Menu|5"
-                href="https://dantri.com.vn/the-thao.htm"
-                >Thể thao</a
-              >
-              <button
-                class="btnControlSubCate dt-w-[30%] dt-flex dt-justify-end dt-items-center"
-              >
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="10"
-                  height="12"
-                  viewBox="0 0 10 12"
-                  fill="none"
-                  class="close"
-                >
-                  <path
-                    d="M8.12377 4.05025L5.00002 7.60275L1.87627 4.05025C1.82046 3.98665 1.74553 3.95105 1.66752 3.95105C1.5895 3.95105 1.51458 3.98665 1.45877 4.05025C1.43174 4.08114 1.41027 4.11801 1.39562 4.15871C1.38096 4.1994 1.37341 4.24309 1.37341 4.28723C1.37341 4.33137 1.38096 4.37506 1.39562 4.41576C1.41027 4.45645 1.43174 4.49332 1.45877 4.52421L4.78189 8.30421C4.84025 8.37057 4.91852 8.40772 5.00002 8.40772C5.08151 8.40772 5.15978 8.37057 5.21814 8.30421L8.54127 4.52494C8.56848 4.49403 8.59011 4.45706 8.60488 4.41624C8.61965 4.37541 8.62726 4.33155 8.62726 4.28723C8.62726 4.24292 8.61965 4.19905 8.60488 4.15822C8.59011 4.1174 8.56848 4.08044 8.54127 4.04952C8.48546 3.98592 8.41053 3.95032 8.33252 3.95032C8.2545 3.95032 8.17958 3.98592 8.12377 4.04952V4.05025Z"
-                    fill="black"
-                  />
-                </svg>
-                <svg
-                  width="10"
-                  height="10"
-                  viewBox="0 0 10 10"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg"
-                  class="open dt-hidden"
-                >
-                  <path
-                    d="M1.87623 6.67124L4.99998 3.62624L8.12373 6.67124C8.17954 6.72575 8.25447 6.75627 8.33248 6.75627C8.4105 6.75627 8.48542 6.72575 8.54123 6.67124C8.56826 6.64476 8.58973 6.61316 8.60438 6.57828C8.61904 6.5434 8.62659 6.50595 8.62659 6.46811C8.62659 6.43028 8.61904 6.39283 8.60438 6.35795C8.58973 6.32307 8.56826 6.29147 8.54123 6.26499L5.21811 3.02499C5.15975 2.96811 5.08148 2.93627 4.99998 2.93627C4.91849 2.93627 4.84022 2.96811 4.78186 3.02499L1.45873 6.26436C1.43152 6.29086 1.40989 6.32254 1.39512 6.35754C1.38035 6.39253 1.37274 6.43013 1.37274 6.46811C1.37274 6.5061 1.38035 6.5437 1.39512 6.57869C1.40989 6.61369 1.43152 6.64537 1.45873 6.67186C1.51454 6.72638 1.58947 6.7569 1.66748 6.7569C1.7455 6.7569 1.82042 6.72638 1.87623 6.67186V6.67124Z"
-                    fill="black"
-                  />
-                </svg>
-              </button>
-            </div>
-            <ol class="dt-flex dt-flex-col dt-ml-2 dt-hidden">
-              <li
-                class="dt-min-h-[51px] dt-flex dt-items-center dt-border-b dt-border-[#E6E6E6]"
-              >
-                <a
-                  class="dt-font-Inter dt-text-15px dt-font-medium dt-leading-22px dt-text-c565656 dt-py-[15px]"
-                  href="https://dantri.com.vn/the-thao/bong-da.htm"
-                  >Bóng đá</a
-                >
-              </li>
-              <li
-                class="dt-min-h-[51px] dt-flex dt-items-center dt-border-b dt-border-[#E6E6E6]"
-              >
-                <a
-                  class="dt-font-Inter dt-text-15px dt-font-medium dt-leading-22px dt-text-c565656 dt-py-[15px]"
-                  href="https://dantri.com.vn/the-thao/pickleball.htm"
-                  >Pickleball</a
-                >
-              </li>
-              <li
-                class="dt-min-h-[51px] dt-flex dt-items-center dt-border-b dt-border-[#E6E6E6]"
-              >
-                <a
-                  class="dt-font-Inter dt-text-15px dt-font-medium dt-leading-22px dt-text-c565656 dt-py-[15px]"
-                  href="https://dantri.com.vn/the-thao/tennis.htm"
-                  >Tennis</a
-                >
-              </li>
-             
-              <li
-                class="dt-min-h-[51px] dt-flex dt-items-center dt-border-b dt-border-[#E6E6E6]"
-              >
-                <a
-                  class="dt-font-Inter dt-text-15px dt-font-medium dt-leading-22px dt-text-c565656 dt-py-[15px]"
-                  href="https://dantri.com.vn/the-thao/golf.htm"
-                  >Golf</a
-                >
-              </li>
-              <li
-                class="dt-min-h-[51px] dt-flex dt-items-center dt-border-b dt-border-[#E6E6E6]"
-              >
-                <a
-                  class="dt-font-Inter dt-text-15px dt-font-medium dt-leading-22px dt-text-c565656 dt-py-[15px]"
-                  href="https://dantri.com.vn/the-thao/vo-thuat-cac-mon-khac.htm"
-                  >Võ thuật - Các môn khác</a
-                >
-              </li>
-              <li
-                class="dt-min-h-[51px] dt-flex dt-items-center dt-border-b dt-border-[#E6E6E6]"
-              >
-                <a
-                  class="dt-font-Inter dt-text-15px dt-font-medium dt-leading-22px dt-text-c565656 dt-py-[15px]"
-                  href="https://dantri.com.vn/the-thao/bong-da/champions-league.htm"
-                  >Champions League</a
-                >
-              </li>
-              <li
-                class="dt-min-h-[51px] dt-flex dt-items-center dt-border-b dt-border-[#E6E6E6]"
-              >
-                <a
-                  class="dt-font-Inter dt-text-15px dt-font-medium dt-leading-22px dt-text-c565656 dt-py-[15px]"
-                  href="https://dantri.com.vn/the-thao/hau-truong.htm"
-                  >Hậu trường</a
-                >
-              </li>
-              <li
-                class="dt-min-h-[51px] dt-flex dt-items-center dt-border-b dt-border-[#E6E6E6]"
-              >
-                <a
-                  class="dt-font-Inter dt-text-15px dt-font-medium dt-leading-22px dt-text-c565656 dt-py-[15px]"
-                  href="https://dantri.com.vn/the-thao/the-thao-suc-ben/aqua-warriors-ha-long-bay-2025.htm"
-                  >Thể thao sức bền</a
-                >
-              </li>
-              <li
-                class="dt-min-h-[51px] dt-flex dt-items-center dt-border-b dt-border-[#E6E6E6]"
-              >
-                <a
-                  class="dt-font-Inter dt-text-15px dt-font-medium dt-leading-22px dt-text-c565656 dt-py-[15px]"
-                  href="https://dantri.com.vn/the-thao/lich-thi-dau.htm"
-                  >Lịch thi đấu</a
-                >
-              </li>
-            </ol>
-          </li>
-          <li class="dt-border-b dt-border-ceee cate-container_hasSubCate">
-            <div class="dt-w-full dt-flex dt-justify-between">
-              <a
-                class="dt-inline-block dt-pt-3.5 dt-pb-2.5 dt-text-MineShaft label"
-                data-utm="|Main_Menu|6"
-                href="https://dantri.com.vn/tam-long-nhan-ai.htm"
-                >Tấm lòng nhân ái</a
-              >
-              <button
-                class="btnControlSubCate dt-w-[30%] dt-flex dt-justify-end dt-items-center"
-              >
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="10"
-                  height="12"
-                  viewBox="0 0 10 12"
-                  fill="none"
-                  class="close"
-                >
-                  <path
-                    d="M8.12377 4.05025L5.00002 7.60275L1.87627 4.05025C1.82046 3.98665 1.74553 3.95105 1.66752 3.95105C1.5895 3.95105 1.51458 3.98665 1.45877 4.05025C1.43174 4.08114 1.41027 4.11801 1.39562 4.15871C1.38096 4.1994 1.37341 4.24309 1.37341 4.28723C1.37341 4.33137 1.38096 4.37506 1.39562 4.41576C1.41027 4.45645 1.43174 4.49332 1.45877 4.52421L4.78189 8.30421C4.84025 8.37057 4.91852 8.40772 5.00002 8.40772C5.08151 8.40772 5.15978 8.37057 5.21814 8.30421L8.54127 4.52494C8.56848 4.49403 8.59011 4.45706 8.60488 4.41624C8.61965 4.37541 8.62726 4.33155 8.62726 4.28723C8.62726 4.24292 8.61965 4.19905 8.60488 4.15822C8.59011 4.1174 8.56848 4.08044 8.54127 4.04952C8.48546 3.98592 8.41053 3.95032 8.33252 3.95032C8.2545 3.95032 8.17958 3.98592 8.12377 4.04952V4.05025Z"
-                    fill="black"
-                  />
-                </svg>
-                <svg
-                  width="10"
-                  height="10"
-                  viewBox="0 0 10 10"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg"
-                  class="open dt-hidden"
-                >
-                  <path
-                    d="M1.87623 6.67124L4.99998 3.62624L8.12373 6.67124C8.17954 6.72575 8.25447 6.75627 8.33248 6.75627C8.4105 6.75627 8.48542 6.72575 8.54123 6.67124C8.56826 6.64476 8.58973 6.61316 8.60438 6.57828C8.61904 6.5434 8.62659 6.50595 8.62659 6.46811C8.62659 6.43028 8.61904 6.39283 8.60438 6.35795C8.58973 6.32307 8.56826 6.29147 8.54123 6.26499L5.21811 3.02499C5.15975 2.96811 5.08148 2.93627 4.99998 2.93627C4.91849 2.93627 4.84022 2.96811 4.78186 3.02499L1.45873 6.26436C1.43152 6.29086 1.40989 6.32254 1.39512 6.35754C1.38035 6.39253 1.37274 6.43013 1.37274 6.46811C1.37274 6.5061 1.38035 6.5437 1.39512 6.57869C1.40989 6.61369 1.43152 6.64537 1.45873 6.67186C1.51454 6.72638 1.58947 6.7569 1.66748 6.7569C1.7455 6.7569 1.82042 6.72638 1.87623 6.67186V6.67124Z"
-                    fill="black"
-                  />
-                </svg>
-              </button>
-            </div>
-            <ol class="dt-flex dt-flex-col dt-ml-2 dt-hidden">
-              <li
-                class="dt-min-h-[51px] dt-flex dt-items-center dt-border-b dt-border-[#E6E6E6]"
-              >
-                <a
-                  class="dt-font-Inter dt-text-15px dt-font-medium dt-leading-22px dt-text-c565656 dt-py-[15px]"
-                  href="https://dantri.com.vn/tam-long-nhan-ai/hoan-canh.htm"
-                  >Hoàn cảnh</a
-                >
-              </li>
-              <li
-                class="dt-min-h-[51px] dt-flex dt-items-center dt-border-b dt-border-[#E6E6E6]"
-              >
-                <a
-                  class="dt-font-Inter dt-text-15px dt-font-medium dt-leading-22px dt-text-c565656 dt-py-[15px]"
-                  href="https://dantri.com.vn/tam-long-nhan-ai/du-an-cong-dong.htm"
-                  >Dự án cộng đồng</a
-                >
-              </li>
-              <li
-                class="dt-min-h-[51px] dt-flex dt-items-center dt-border-b dt-border-[#E6E6E6]"
-              >
-                <a
-                  class="dt-font-Inter dt-text-15px dt-font-medium dt-leading-22px dt-text-c565656 dt-py-[15px]"
-                  href="https://dantri.com.vn/tam-long-nhan-ai/nhip-cau-nhan-ai.htm"
-                  >Nhịp cầu nhân ái</a
-                >
-              </li>
-              <li
-                class="dt-min-h-[51px] dt-flex dt-items-center dt-border-b dt-border-[#E6E6E6]"
-              >
-                <a
-                  class="dt-font-Inter dt-text-15px dt-font-medium dt-leading-22px dt-text-c565656 dt-py-[15px]"
-                  href="https://dantri.com.vn/tam-long-nhan-ai/vuot-len-so-phan.htm"
-                  >Vượt lên số phận</a
-                >
-              </li>
-            </ol>
-          </li>
-          <li class="dt-border-b dt-border-ceee cate-container_hasSubCate">
-            <div class="dt-w-full dt-flex dt-justify-between">
-              <a
-                class="dt-inline-block dt-pt-3.5 dt-pb-2.5 dt-text-MineShaft label"
-                data-utm="|Main_Menu|7"
-                href="https://dantri.com.vn/suc-khoe.htm"
-                >Sức khỏe</a
-              >
-              <button
-                class="btnControlSubCate dt-w-[30%] dt-flex dt-justify-end dt-items-center"
-              >
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="10"
-                  height="12"
-                  viewBox="0 0 10 12"
-                  fill="none"
-                  class="close"
-                >
-                  <path
-                    d="M8.12377 4.05025L5.00002 7.60275L1.87627 4.05025C1.82046 3.98665 1.74553 3.95105 1.66752 3.95105C1.5895 3.95105 1.51458 3.98665 1.45877 4.05025C1.43174 4.08114 1.41027 4.11801 1.39562 4.15871C1.38096 4.1994 1.37341 4.24309 1.37341 4.28723C1.37341 4.33137 1.38096 4.37506 1.39562 4.41576C1.41027 4.45645 1.43174 4.49332 1.45877 4.52421L4.78189 8.30421C4.84025 8.37057 4.91852 8.40772 5.00002 8.40772C5.08151 8.40772 5.15978 8.37057 5.21814 8.30421L8.54127 4.52494C8.56848 4.49403 8.59011 4.45706 8.60488 4.41624C8.61965 4.37541 8.62726 4.33155 8.62726 4.28723C8.62726 4.24292 8.61965 4.19905 8.60488 4.15822C8.59011 4.1174 8.56848 4.08044 8.54127 4.04952C8.48546 3.98592 8.41053 3.95032 8.33252 3.95032C8.2545 3.95032 8.17958 3.98592 8.12377 4.04952V4.05025Z"
-                    fill="black"
-                  />
-                </svg>
-                <svg
-                  width="10"
-                  height="10"
-                  viewBox="0 0 10 10"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg"
-                  class="open dt-hidden"
-                >
-                  <path
-                    d="M1.87623 6.67124L4.99998 3.62624L8.12373 6.67124C8.17954 6.72575 8.25447 6.75627 8.33248 6.75627C8.4105 6.75627 8.48542 6.72575 8.54123 6.67124C8.56826 6.64476 8.58973 6.61316 8.60438 6.57828C8.61904 6.5434 8.62659 6.50595 8.62659 6.46811C8.62659 6.43028 8.61904 6.39283 8.60438 6.35795C8.58973 6.32307 8.56826 6.29147 8.54123 6.26499L5.21811 3.02499C5.15975 2.96811 5.08148 2.93627 4.99998 2.93627C4.91849 2.93627 4.84022 2.96811 4.78186 3.02499L1.45873 6.26436C1.43152 6.29086 1.40989 6.32254 1.39512 6.35754C1.38035 6.39253 1.37274 6.43013 1.37274 6.46811C1.37274 6.5061 1.38035 6.5437 1.39512 6.57869C1.40989 6.61369 1.43152 6.64537 1.45873 6.67186C1.51454 6.72638 1.58947 6.7569 1.66748 6.7569C1.7455 6.7569 1.82042 6.72638 1.87623 6.67186V6.67124Z"
-                    fill="black"
-                  />
-                </svg>
-              </button>
-            </div>
-            <ol class="dt-flex dt-flex-col dt-ml-2 dt-hidden">
-              <li
-                class="dt-min-h-[51px] dt-flex dt-items-center dt-border-b dt-border-[#E6E6E6]"
-              >
-                <a
-                  class="dt-font-Inter dt-text-15px dt-font-medium dt-leading-22px dt-text-c565656 dt-py-[15px]"
-                  href="https://dantri.com.vn/suc-khoe/ung-thu.htm"
-                  >Ung thư</a
-                >
-              </li>
-              <li
-                class="dt-min-h-[51px] dt-flex dt-items-center dt-border-b dt-border-[#E6E6E6]"
-              >
-                <a
-                  class="dt-font-Inter dt-text-15px dt-font-medium dt-leading-22px dt-text-c565656 dt-py-[15px]"
-                  href="https://dantri.com.vn/suc-khoe/song-khoe.htm"
-                  >Sống khỏe</a
-                >
-              </li>
-              <li
-                class="dt-min-h-[51px] dt-flex dt-items-center dt-border-b dt-border-[#E6E6E6]"
-              >
-                <a
-                  class="dt-font-Inter dt-text-15px dt-font-medium dt-leading-22px dt-text-c565656 dt-py-[15px]"
-                  href="https://dantri.com.vn/suc-khoe/ngoai-than-kinh-cot-song.htm"
-                  >Ngoại thần kinh - Cột sống</a
-                >
-              </li>
-              <li
-                class="dt-min-h-[51px] dt-flex dt-items-center dt-border-b dt-border-[#E6E6E6]"
-              >
-                <a
-                  class="dt-font-Inter dt-text-15px dt-font-medium dt-leading-22px dt-text-c565656 dt-py-[15px]"
-                  href="https://dantri.com.vn/suc-khoe/kien-thuc-gioi-tinh.htm"
-                  >Kiến thức giới tính</a
-                >
-              </li>
-              <li
-                class="dt-min-h-[51px] dt-flex dt-items-center dt-border-b dt-border-[#E6E6E6]"
-              >
-                <a
-                  class="dt-font-Inter dt-text-15px dt-font-medium dt-leading-22px dt-text-c565656 dt-py-[15px]"
-                  href="https://dantri.com.vn/suc-khoe/tu-van.htm"
-                  >Tư vấn</a
-                >
-              </li>
-              <li
-                class="dt-min-h-[51px] dt-flex dt-items-center dt-border-b dt-border-[#E6E6E6]"
-              >
-                <a
-                  class="dt-font-Inter dt-text-15px dt-font-medium dt-leading-22px dt-text-c565656 dt-py-[15px]"
-                  href="https://dantri.com.vn/suc-khoe/khoe-dep.htm"
-                  >Khỏe đẹp</a
-                >
-              </li>
-            </ol>
-          </li>
-          <li class="dt-border-b dt-border-ceee cate-container_hasSubCate">
-            <div class="dt-w-full dt-flex dt-justify-between">
-              <a
-                class="dt-inline-block dt-pt-3.5 dt-pb-2.5 dt-text-MineShaft label"
-                data-utm="|Main_Menu|8"
-                href="https://dantri.com.vn/noi-vu.htm"
-                >Nội vụ</a
-              >
-              <button
-                class="btnControlSubCate dt-w-[30%] dt-flex dt-justify-end dt-items-center"
-              >
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="10"
-                  height="12"
-                  viewBox="0 0 10 12"
-                  fill="none"
-                  class="close"
-                >
-                  <path
-                    d="M8.12377 4.05025L5.00002 7.60275L1.87627 4.05025C1.82046 3.98665 1.74553 3.95105 1.66752 3.95105C1.5895 3.95105 1.51458 3.98665 1.45877 4.05025C1.43174 4.08114 1.41027 4.11801 1.39562 4.15871C1.38096 4.1994 1.37341 4.24309 1.37341 4.28723C1.37341 4.33137 1.38096 4.37506 1.39562 4.41576C1.41027 4.45645 1.43174 4.49332 1.45877 4.52421L4.78189 8.30421C4.84025 8.37057 4.91852 8.40772 5.00002 8.40772C5.08151 8.40772 5.15978 8.37057 5.21814 8.30421L8.54127 4.52494C8.56848 4.49403 8.59011 4.45706 8.60488 4.41624C8.61965 4.37541 8.62726 4.33155 8.62726 4.28723C8.62726 4.24292 8.61965 4.19905 8.60488 4.15822C8.59011 4.1174 8.56848 4.08044 8.54127 4.04952C8.48546 3.98592 8.41053 3.95032 8.33252 3.95032C8.2545 3.95032 8.17958 3.98592 8.12377 4.04952V4.05025Z"
-                    fill="black"
-                  />
-                </svg>
-                <svg
-                  width="10"
-                  height="10"
-                  viewBox="0 0 10 10"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg"
-                  class="open dt-hidden"
-                >
-                  <path
-                    d="M1.87623 6.67124L4.99998 3.62624L8.12373 6.67124C8.17954 6.72575 8.25447 6.75627 8.33248 6.75627C8.4105 6.75627 8.48542 6.72575 8.54123 6.67124C8.56826 6.64476 8.58973 6.61316 8.60438 6.57828C8.61904 6.5434 8.62659 6.50595 8.62659 6.46811C8.62659 6.43028 8.61904 6.39283 8.60438 6.35795C8.58973 6.32307 8.56826 6.29147 8.54123 6.26499L5.21811 3.02499C5.15975 2.96811 5.08148 2.93627 4.99998 2.93627C4.91849 2.93627 4.84022 2.96811 4.78186 3.02499L1.45873 6.26436C1.43152 6.29086 1.40989 6.32254 1.39512 6.35754C1.38035 6.39253 1.37274 6.43013 1.37274 6.46811C1.37274 6.5061 1.38035 6.5437 1.39512 6.57869C1.40989 6.61369 1.43152 6.64537 1.45873 6.67186C1.51454 6.72638 1.58947 6.7569 1.66748 6.7569C1.7455 6.7569 1.82042 6.72638 1.87623 6.67186V6.67124Z"
-                    fill="black"
-                  />
-                </svg>
-              </button>
-            </div>
-            <ol class="dt-flex dt-flex-col dt-ml-2 dt-hidden">
-              <li
-                class="dt-min-h-[51px] dt-flex dt-items-center dt-border-b dt-border-[#E6E6E6]"
-              >
-                <a
-                  class="dt-font-Inter dt-text-15px dt-font-medium dt-leading-22px dt-text-c565656 dt-py-[15px]"
-                  href="https://dantri.com.vn/noi-vu/chinh-sach.htm"
-                  >Chính sách</a
-                >
-              </li>
-              <li
-                class="dt-min-h-[51px] dt-flex dt-items-center dt-border-b dt-border-[#E6E6E6]"
-              >
-                <a
-                  class="dt-font-Inter dt-text-15px dt-font-medium dt-leading-22px dt-text-c565656 dt-py-[15px]"
-                  href="https://dantri.com.vn/noi-vu/to-chuc-bo-may.htm"
-                  >Tổ chức bộ máy</a
-                >
-              </li>
-              <li
-                class="dt-min-h-[51px] dt-flex dt-items-center dt-border-b dt-border-[#E6E6E6]"
-              >
-                <a
-                  class="dt-font-Inter dt-text-15px dt-font-medium dt-leading-22px dt-text-c565656 dt-py-[15px]"
-                  href="https://dantri.com.vn/noi-vu/tien-luong.htm"
-                  >Tiền lương</a
-                >
-              </li>
-              <li
-                class="dt-min-h-[51px] dt-flex dt-items-center dt-border-b dt-border-[#E6E6E6]"
-              >
-                <a
-                  class="dt-font-Inter dt-text-15px dt-font-medium dt-leading-22px dt-text-c565656 dt-py-[15px]"
-                  href="https://dantri.com.vn/noi-vu/cong-so.htm"
-                  >Công sở</a
-                >
-              </li>
-              <li
-                class="dt-min-h-[51px] dt-flex dt-items-center dt-border-b dt-border-[#E6E6E6]"
-              >
-                <a
-                  class="dt-font-Inter dt-text-15px dt-font-medium dt-leading-22px dt-text-c565656 dt-py-[15px]"
-                  href="https://dantri.com.vn/noi-vu/sap-xep-cac-don-vi-hanh-chinh.htm"
-                  >Sắp xếp các đơn vị hành chính</a
-                >
-              </li>
-            </ol>
-          </li>
-          <li class="dt-border-b dt-border-ceee cate-container_hasSubCate">
-            <div class="dt-w-full dt-flex dt-justify-between">
-              <a
-                class="dt-inline-block dt-pt-3.5 dt-pb-2.5 dt-text-MineShaft label"
-                data-utm="|Main_Menu|9"
-                href="https://dantri.com.vn/giai-tri.htm"
-                >Giải trí</a
-              >
-              <button
-                class="btnControlSubCate dt-w-[30%] dt-flex dt-justify-end dt-items-center"
-              >
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="10"
-                  height="12"
-                  viewBox="0 0 10 12"
-                  fill="none"
-                  class="close"
-                >
-                  <path
-                    d="M8.12377 4.05025L5.00002 7.60275L1.87627 4.05025C1.82046 3.98665 1.74553 3.95105 1.66752 3.95105C1.5895 3.95105 1.51458 3.98665 1.45877 4.05025C1.43174 4.08114 1.41027 4.11801 1.39562 4.15871C1.38096 4.1994 1.37341 4.24309 1.37341 4.28723C1.37341 4.33137 1.38096 4.37506 1.39562 4.41576C1.41027 4.45645 1.43174 4.49332 1.45877 4.52421L4.78189 8.30421C4.84025 8.37057 4.91852 8.40772 5.00002 8.40772C5.08151 8.40772 5.15978 8.37057 5.21814 8.30421L8.54127 4.52494C8.56848 4.49403 8.59011 4.45706 8.60488 4.41624C8.61965 4.37541 8.62726 4.33155 8.62726 4.28723C8.62726 4.24292 8.61965 4.19905 8.60488 4.15822C8.59011 4.1174 8.56848 4.08044 8.54127 4.04952C8.48546 3.98592 8.41053 3.95032 8.33252 3.95032C8.2545 3.95032 8.17958 3.98592 8.12377 4.04952V4.05025Z"
-                    fill="black"
-                  />
-                </svg>
-                <svg
-                  width="10"
-                  height="10"
-                  viewBox="0 0 10 10"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg"
-                  class="open dt-hidden"
-                >
-                  <path
-                    d="M1.87623 6.67124L4.99998 3.62624L8.12373 6.67124C8.17954 6.72575 8.25447 6.75627 8.33248 6.75627C8.4105 6.75627 8.48542 6.72575 8.54123 6.67124C8.56826 6.64476 8.58973 6.61316 8.60438 6.57828C8.61904 6.5434 8.62659 6.50595 8.62659 6.46811C8.62659 6.43028 8.61904 6.39283 8.60438 6.35795C8.58973 6.32307 8.56826 6.29147 8.54123 6.26499L5.21811 3.02499C5.15975 2.96811 5.08148 2.93627 4.99998 2.93627C4.91849 2.93627 4.84022 2.96811 4.78186 3.02499L1.45873 6.26436C1.43152 6.29086 1.40989 6.32254 1.39512 6.35754C1.38035 6.39253 1.37274 6.43013 1.37274 6.46811C1.37274 6.5061 1.38035 6.5437 1.39512 6.57869C1.40989 6.61369 1.43152 6.64537 1.45873 6.67186C1.51454 6.72638 1.58947 6.7569 1.66748 6.7569C1.7455 6.7569 1.82042 6.72638 1.87623 6.67186V6.67124Z"
-                    fill="black"
-                  />
-                </svg>
-              </button>
-            </div>
-            <ol class="dt-flex dt-flex-col dt-ml-2 dt-hidden">
-              <li
-                class="dt-min-h-[51px] dt-flex dt-items-center dt-border-b dt-border-[#E6E6E6]"
-              >
-                <a
-                  class="dt-font-Inter dt-text-15px dt-font-medium dt-leading-22px dt-text-c565656 dt-py-[15px]"
-                  href="https://dantri.com.vn/giai-tri/hau-truong.htm"
-                  >Hậu trường</a
-                >
-              </li>
-              <li
-                class="dt-min-h-[51px] dt-flex dt-items-center dt-border-b dt-border-[#E6E6E6]"
-              >
-                <a
-                  class="dt-font-Inter dt-text-15px dt-font-medium dt-leading-22px dt-text-c565656 dt-py-[15px]"
-                  href="https://dantri.com.vn/giai-tri/sach-hay.htm"
-                  >Sách hay</a
-                >
-              </li>
-              <li
-                class="dt-min-h-[51px] dt-flex dt-items-center dt-border-b dt-border-[#E6E6E6]"
-              >
-                <a
-                  class="dt-font-Inter dt-text-15px dt-font-medium dt-leading-22px dt-text-c565656 dt-py-[15px]"
-                  href="https://dantri.com.vn/giai-tri/dien-anh.htm"
-                  >Điện ảnh</a
-                >
-              </li>
-              <li
-                class="dt-min-h-[51px] dt-flex dt-items-center dt-border-b dt-border-[#E6E6E6]"
-              >
-                <a
-                  class="dt-font-Inter dt-text-15px dt-font-medium dt-leading-22px dt-text-c565656 dt-py-[15px]"
-                  href="https://dantri.com.vn/giai-tri/am-nhac.htm"
-                  >Âm nhạc</a
-                >
-              </li>
-              <li
-                class="dt-min-h-[51px] dt-flex dt-items-center dt-border-b dt-border-[#E6E6E6]"
-              >
-                <a
-                  class="dt-font-Inter dt-text-15px dt-font-medium dt-leading-22px dt-text-c565656 dt-py-[15px]"
-                  href="https://dantri.com.vn/giai-tri/thoi-trang.htm"
-                  >Thời trang</a
-                >
-              </li>
-              <li
-                class="dt-min-h-[51px] dt-flex dt-items-center dt-border-b dt-border-[#E6E6E6]"
-              >
-                <a
-                  class="dt-font-Inter dt-text-15px dt-font-medium dt-leading-22px dt-text-c565656 dt-py-[15px]"
-                  href="https://dantri.com.vn/giai-tri/my-thuat-san-khau.htm"
-                  >Mỹ thuật - Sân khấu</a
-                >
-              </li>
-            </ol>
-          </li>
-          <li class="dt-border-b dt-border-ceee cate-container_hasSubCate">
-            <div class="dt-w-full dt-flex dt-justify-between">
-              <a
-                class="dt-inline-block dt-pt-3.5 dt-pb-2.5 dt-text-MineShaft label"
-                data-utm="|Main_Menu|10"
-                href="https://dantri.com.vn/o-to-xe-may.htm"
-                >Ô tô - Xe máy</a
-              >
-              <button
-                class="btnControlSubCate dt-w-[30%] dt-flex dt-justify-end dt-items-center"
-              >
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="10"
-                  height="12"
-                  viewBox="0 0 10 12"
-                  fill="none"
-                  class="close"
-                >
-                  <path
-                    d="M8.12377 4.05025L5.00002 7.60275L1.87627 4.05025C1.82046 3.98665 1.74553 3.95105 1.66752 3.95105C1.5895 3.95105 1.51458 3.98665 1.45877 4.05025C1.43174 4.08114 1.41027 4.11801 1.39562 4.15871C1.38096 4.1994 1.37341 4.24309 1.37341 4.28723C1.37341 4.33137 1.38096 4.37506 1.39562 4.41576C1.41027 4.45645 1.43174 4.49332 1.45877 4.52421L4.78189 8.30421C4.84025 8.37057 4.91852 8.40772 5.00002 8.40772C5.08151 8.40772 5.15978 8.37057 5.21814 8.30421L8.54127 4.52494C8.56848 4.49403 8.59011 4.45706 8.60488 4.41624C8.61965 4.37541 8.62726 4.33155 8.62726 4.28723C8.62726 4.24292 8.61965 4.19905 8.60488 4.15822C8.59011 4.1174 8.56848 4.08044 8.54127 4.04952C8.48546 3.98592 8.41053 3.95032 8.33252 3.95032C8.2545 3.95032 8.17958 3.98592 8.12377 4.04952V4.05025Z"
-                    fill="black"
-                  />
-                </svg>
-                <svg
-                  width="10"
-                  height="10"
-                  viewBox="0 0 10 10"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg"
-                  class="open dt-hidden"
-                >
-                  <path
-                    d="M1.87623 6.67124L4.99998 3.62624L8.12373 6.67124C8.17954 6.72575 8.25447 6.75627 8.33248 6.75627C8.4105 6.75627 8.48542 6.72575 8.54123 6.67124C8.56826 6.64476 8.58973 6.61316 8.60438 6.57828C8.61904 6.5434 8.62659 6.50595 8.62659 6.46811C8.62659 6.43028 8.61904 6.39283 8.60438 6.35795C8.58973 6.32307 8.56826 6.29147 8.54123 6.26499L5.21811 3.02499C5.15975 2.96811 5.08148 2.93627 4.99998 2.93627C4.91849 2.93627 4.84022 2.96811 4.78186 3.02499L1.45873 6.26436C1.43152 6.29086 1.40989 6.32254 1.39512 6.35754C1.38035 6.39253 1.37274 6.43013 1.37274 6.46811C1.37274 6.5061 1.38035 6.5437 1.39512 6.57869C1.40989 6.61369 1.43152 6.64537 1.45873 6.67186C1.51454 6.72638 1.58947 6.7569 1.66748 6.7569C1.7455 6.7569 1.82042 6.72638 1.87623 6.67186V6.67124Z"
-                    fill="black"
-                  />
-                </svg>
-              </button>
-            </div>
-            <ol class="dt-flex dt-flex-col dt-ml-2 dt-hidden">
-              <li
-                class="dt-min-h-[51px] dt-flex dt-items-center dt-border-b dt-border-[#E6E6E6]"
-              >
-                <a
-                  class="dt-font-Inter dt-text-15px dt-font-medium dt-leading-22px dt-text-c565656 dt-py-[15px]"
-                  href="https://dantri.com.vn/o-to-xe-may/thi-truong-xe.htm"
-                  >Thị trường xe</a
-                >
-              </li>
-              <li
-                class="dt-min-h-[51px] dt-flex dt-items-center dt-border-b dt-border-[#E6E6E6]"
-              >
-                <a
-                  class="dt-font-Inter dt-text-15px dt-font-medium dt-leading-22px dt-text-c565656 dt-py-[15px]"
-                  href="https://dantri.com.vn/o-to-xe-may/xe-dien.htm"
-                  >Xe điện</a
-                >
-              </li>
-              <li
-                class="dt-min-h-[51px] dt-flex dt-items-center dt-border-b dt-border-[#E6E6E6]"
-              >
-                <a
-                  class="dt-font-Inter dt-text-15px dt-font-medium dt-leading-22px dt-text-c565656 dt-py-[15px]"
-                  href="https://dantri.com.vn/o-to-xe-may/danh-gia.htm"
-                  >Đánh giá</a
-                >
-              </li>
-              <li
-                class="dt-min-h-[51px] dt-flex dt-items-center dt-border-b dt-border-[#E6E6E6]"
-              >
-                <a
-                  class="dt-font-Inter dt-text-15px dt-font-medium dt-leading-22px dt-text-c565656 dt-py-[15px]"
-                  href="https://dantri.com.vn/o-to-xe-may/cong-dong-xe.htm"
-                  >Cộng đồng xe</a
-                >
-              </li>
-              <li
-                class="dt-min-h-[51px] dt-flex dt-items-center dt-border-b dt-border-[#E6E6E6]"
-              >
-                <a
-                  class="dt-font-Inter dt-text-15px dt-font-medium dt-leading-22px dt-text-c565656 dt-py-[15px]"
-                  href="https://dantri.com.vn/o-to-xe-may/kinh-nghiem-tu-van.htm"
-                  >Kinh nghiệm - Tư vấn</a
-                >
-              </li>
-              <li
-                class="dt-min-h-[51px] dt-flex dt-items-center dt-border-b dt-border-[#E6E6E6]"
-              >
-                <a
-                  class="dt-font-Inter dt-text-15px dt-font-medium dt-leading-22px dt-text-c565656 dt-py-[15px]"
-                  href="https://dantri.com.vn/o-to-xe-may/bang-gia-o-to.htm"
-                  >Bảng giá ô tô</a
-                >
-              </li>
-            </ol>
-          </li>
-          <li class="dt-border-b dt-border-ceee cate-container_hasSubCate">
-            <div class="dt-w-full dt-flex dt-justify-between">
-              <a
-                class="dt-inline-block dt-pt-3.5 dt-pb-2.5 dt-text-MineShaft label"
-                data-utm="|Main_Menu|11"
-                href="https://dantri.com.vn/cong-nghe.htm"
-                >Công nghệ</a
-              >
-              <button
-                class="btnControlSubCate dt-w-[30%] dt-flex dt-justify-end dt-items-center"
-              >
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="10"
-                  height="12"
-                  viewBox="0 0 10 12"
-                  fill="none"
-                  class="close"
-                >
-                  <path
-                    d="M8.12377 4.05025L5.00002 7.60275L1.87627 4.05025C1.82046 3.98665 1.74553 3.95105 1.66752 3.95105C1.5895 3.95105 1.51458 3.98665 1.45877 4.05025C1.43174 4.08114 1.41027 4.11801 1.39562 4.15871C1.38096 4.1994 1.37341 4.24309 1.37341 4.28723C1.37341 4.33137 1.38096 4.37506 1.39562 4.41576C1.41027 4.45645 1.43174 4.49332 1.45877 4.52421L4.78189 8.30421C4.84025 8.37057 4.91852 8.40772 5.00002 8.40772C5.08151 8.40772 5.15978 8.37057 5.21814 8.30421L8.54127 4.52494C8.56848 4.49403 8.59011 4.45706 8.60488 4.41624C8.61965 4.37541 8.62726 4.33155 8.62726 4.28723C8.62726 4.24292 8.61965 4.19905 8.60488 4.15822C8.59011 4.1174 8.56848 4.08044 8.54127 4.04952C8.48546 3.98592 8.41053 3.95032 8.33252 3.95032C8.2545 3.95032 8.17958 3.98592 8.12377 4.04952V4.05025Z"
-                    fill="black"
-                  />
-                </svg>
-                <svg
-                  width="10"
-                  height="10"
-                  viewBox="0 0 10 10"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg"
-                  class="open dt-hidden"
-                >
-                  <path
-                    d="M1.87623 6.67124L4.99998 3.62624L8.12373 6.67124C8.17954 6.72575 8.25447 6.75627 8.33248 6.75627C8.4105 6.75627 8.48542 6.72575 8.54123 6.67124C8.56826 6.64476 8.58973 6.61316 8.60438 6.57828C8.61904 6.5434 8.62659 6.50595 8.62659 6.46811C8.62659 6.43028 8.61904 6.39283 8.60438 6.35795C8.58973 6.32307 8.56826 6.29147 8.54123 6.26499L5.21811 3.02499C5.15975 2.96811 5.08148 2.93627 4.99998 2.93627C4.91849 2.93627 4.84022 2.96811 4.78186 3.02499L1.45873 6.26436C1.43152 6.29086 1.40989 6.32254 1.39512 6.35754C1.38035 6.39253 1.37274 6.43013 1.37274 6.46811C1.37274 6.5061 1.38035 6.5437 1.39512 6.57869C1.40989 6.61369 1.43152 6.64537 1.45873 6.67186C1.51454 6.72638 1.58947 6.7569 1.66748 6.7569C1.7455 6.7569 1.82042 6.72638 1.87623 6.67186V6.67124Z"
-                    fill="black"
-                  />
-                </svg>
-              </button>
-            </div>
-            <ol class="dt-flex dt-flex-col dt-ml-2 dt-hidden">
-              <li
-                class="dt-min-h-[51px] dt-flex dt-items-center dt-border-b dt-border-[#E6E6E6]"
-              >
-                <a
-                  class="dt-font-Inter dt-text-15px dt-font-medium dt-leading-22px dt-text-c565656 dt-py-[15px]"
-                  href="https://dantri.com.vn/cong-nghe/ai-internet.htm"
-                  >AI &amp;Internet</a
-                >
-              </li>
-              <li
-                class="dt-min-h-[51px] dt-flex dt-items-center dt-border-b dt-border-[#E6E6E6]"
-              >
-                <a
-                  class="dt-font-Inter dt-text-15px dt-font-medium dt-leading-22px dt-text-c565656 dt-py-[15px]"
-                  href="https://dantri.com.vn/cong-nghe/an-ninh-mang.htm"
-                  >An ninh mạng</a
-                >
-              </li>
-              <li
-                class="dt-min-h-[51px] dt-flex dt-items-center dt-border-b dt-border-[#E6E6E6]"
-              >
-                <a
-                  class="dt-font-Inter dt-text-15px dt-font-medium dt-leading-22px dt-text-c565656 dt-py-[15px]"
-                  href="https://dantri.com.vn/cong-nghe/gia-dung-thong-minh.htm"
-                  >Gia dụng thông minh</a
-                >
-              </li>
-              <li
-                class="dt-min-h-[51px] dt-flex dt-items-center dt-border-b dt-border-[#E6E6E6]"
-              >
-                <a
-                  class="dt-font-Inter dt-text-15px dt-font-medium dt-leading-22px dt-text-c565656 dt-py-[15px]"
-                  href="https://dantri.com.vn/cong-nghe/san-pham-cong-dong.htm"
-                  >Sản phẩm &amp;Cộng đồng</a
-                >
-              </li>
-            </ol>
-          </li>
-          <li class="dt-border-b dt-border-ceee cate-container_hasSubCate">
-            <div class="dt-w-full dt-flex dt-justify-between">
-              <a
-                class="dt-inline-block dt-pt-3.5 dt-pb-2.5 dt-text-MineShaft label"
-                data-utm="|Main_Menu|12"
-                href="https://dantri.com.vn/giao-duc.htm"
-                >Giáo dục</a
-              >
-              <button
-                class="btnControlSubCate dt-w-[30%] dt-flex dt-justify-end dt-items-center"
-              >
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="10"
-                  height="12"
-                  viewBox="0 0 10 12"
-                  fill="none"
-                  class="close"
-                >
-                  <path
-                    d="M8.12377 4.05025L5.00002 7.60275L1.87627 4.05025C1.82046 3.98665 1.74553 3.95105 1.66752 3.95105C1.5895 3.95105 1.51458 3.98665 1.45877 4.05025C1.43174 4.08114 1.41027 4.11801 1.39562 4.15871C1.38096 4.1994 1.37341 4.24309 1.37341 4.28723C1.37341 4.33137 1.38096 4.37506 1.39562 4.41576C1.41027 4.45645 1.43174 4.49332 1.45877 4.52421L4.78189 8.30421C4.84025 8.37057 4.91852 8.40772 5.00002 8.40772C5.08151 8.40772 5.15978 8.37057 5.21814 8.30421L8.54127 4.52494C8.56848 4.49403 8.59011 4.45706 8.60488 4.41624C8.61965 4.37541 8.62726 4.33155 8.62726 4.28723C8.62726 4.24292 8.61965 4.19905 8.60488 4.15822C8.59011 4.1174 8.56848 4.08044 8.54127 4.04952C8.48546 3.98592 8.41053 3.95032 8.33252 3.95032C8.2545 3.95032 8.17958 3.98592 8.12377 4.04952V4.05025Z"
-                    fill="black"
-                  />
-                </svg>
-                <svg
-                  width="10"
-                  height="10"
-                  viewBox="0 0 10 10"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg"
-                  class="open dt-hidden"
-                >
-                  <path
-                    d="M1.87623 6.67124L4.99998 3.62624L8.12373 6.67124C8.17954 6.72575 8.25447 6.75627 8.33248 6.75627C8.4105 6.75627 8.48542 6.72575 8.54123 6.67124C8.56826 6.64476 8.58973 6.61316 8.60438 6.57828C8.61904 6.5434 8.62659 6.50595 8.62659 6.46811C8.62659 6.43028 8.61904 6.39283 8.60438 6.35795C8.58973 6.32307 8.56826 6.29147 8.54123 6.26499L5.21811 3.02499C5.15975 2.96811 5.08148 2.93627 4.99998 2.93627C4.91849 2.93627 4.84022 2.96811 4.78186 3.02499L1.45873 6.26436C1.43152 6.29086 1.40989 6.32254 1.39512 6.35754C1.38035 6.39253 1.37274 6.43013 1.37274 6.46811C1.37274 6.5061 1.38035 6.5437 1.39512 6.57869C1.40989 6.61369 1.43152 6.64537 1.45873 6.67186C1.51454 6.72638 1.58947 6.7569 1.66748 6.7569C1.7455 6.7569 1.82042 6.72638 1.87623 6.67186V6.67124Z"
-                    fill="black"
-                  />
-                </svg>
-              </button>
-            </div>
-            <ol class="dt-flex dt-flex-col dt-ml-2 dt-hidden">
-              <li
-                class="dt-min-h-[51px] dt-flex dt-items-center dt-border-b dt-border-[#E6E6E6]"
-              >
-                <a
-                  class="dt-font-Inter dt-text-15px dt-font-medium dt-leading-22px dt-text-c565656 dt-py-[15px]"
-                  href="https://dantri.com.vn/giao-duc/goc-phu-huynh.htm"
-                  >Góc phụ huynh</a
-                >
-              </li>
-              <li
-                class="dt-min-h-[51px] dt-flex dt-items-center dt-border-b dt-border-[#E6E6E6]"
-              >
-                <a
-                  class="dt-font-Inter dt-text-15px dt-font-medium dt-leading-22px dt-text-c565656 dt-py-[15px]"
-                  href="https://dantri.com.vn/giao-duc/khuyen-hoc.htm"
-                  >Khuyến học</a
-                >
-              </li>
-              <li
-                class="dt-min-h-[51px] dt-flex dt-items-center dt-border-b dt-border-[#E6E6E6]"
-              >
-                <a
-                  class="dt-font-Inter dt-text-15px dt-font-medium dt-leading-22px dt-text-c565656 dt-py-[15px]"
-                  href="https://dantri.com.vn/giao-duc/guong-sang.htm"
-                  >Gương sáng</a
-                >
-              </li>
-              <li
-                class="dt-min-h-[51px] dt-flex dt-items-center dt-border-b dt-border-[#E6E6E6]"
-              >
-                <a
-                  class="dt-font-Inter dt-text-15px dt-font-medium dt-leading-22px dt-text-c565656 dt-py-[15px]"
-                  href="https://dantri.com.vn/giao-duc/giao-duc-nghe-nghiep.htm"
-                  >Giáo dục - Nghề nghiệp</a
-                >
-              </li>
-              <li
-                class="dt-min-h-[51px] dt-flex dt-items-center dt-border-b dt-border-[#E6E6E6]"
-              >
-                <a
-                  class="dt-font-Inter dt-text-15px dt-font-medium dt-leading-22px dt-text-c565656 dt-py-[15px]"
-                  href="https://dantri.com.vn/giao-duc/du-hoc.htm"
-                  >Du học</a
-                >
-              </li>
-              <li
-                class="dt-min-h-[51px] dt-flex dt-items-center dt-border-b dt-border-[#E6E6E6]"
-              >
-                <a
-                  class="dt-font-Inter dt-text-15px dt-font-medium dt-leading-22px dt-text-c565656 dt-py-[15px]"
-                  href="https://dantri.com.vn/giao-duc/tuyen-sinh.htm"
-                  >Tuyển sinh</a
-                >
-              </li>
-            </ol>
-          </li>
-          <li class="dt-border-b dt-border-ceee cate-container_hasSubCate">
-            <div class="dt-w-full dt-flex dt-justify-between">
-              <a
-                class="dt-inline-block dt-pt-3.5 dt-pb-2.5 dt-text-MineShaft label"
-                data-utm="|Main_Menu|13"
-                href="https://dantri.com.vn/lao-dong-viec-lam.htm"
-                >Lao động - Việc làm</a
-              >
-              <button
-                class="btnControlSubCate dt-w-[30%] dt-flex dt-justify-end dt-items-center"
-              >
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="10"
-                  height="12"
-                  viewBox="0 0 10 12"
-                  fill="none"
-                  class="close"
-                >
-                  <path
-                    d="M8.12377 4.05025L5.00002 7.60275L1.87627 4.05025C1.82046 3.98665 1.74553 3.95105 1.66752 3.95105C1.5895 3.95105 1.51458 3.98665 1.45877 4.05025C1.43174 4.08114 1.41027 4.11801 1.39562 4.15871C1.38096 4.1994 1.37341 4.24309 1.37341 4.28723C1.37341 4.33137 1.38096 4.37506 1.39562 4.41576C1.41027 4.45645 1.43174 4.49332 1.45877 4.52421L4.78189 8.30421C4.84025 8.37057 4.91852 8.40772 5.00002 8.40772C5.08151 8.40772 5.15978 8.37057 5.21814 8.30421L8.54127 4.52494C8.56848 4.49403 8.59011 4.45706 8.60488 4.41624C8.61965 4.37541 8.62726 4.33155 8.62726 4.28723C8.62726 4.24292 8.61965 4.19905 8.60488 4.15822C8.59011 4.1174 8.56848 4.08044 8.54127 4.04952C8.48546 3.98592 8.41053 3.95032 8.33252 3.95032C8.2545 3.95032 8.17958 3.98592 8.12377 4.04952V4.05025Z"
-                    fill="black"
-                  />
-                </svg>
-                <svg
-                  width="10"
-                  height="10"
-                  viewBox="0 0 10 10"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg"
-                  class="open dt-hidden"
-                >
-                  <path
-                    d="M1.87623 6.67124L4.99998 3.62624L8.12373 6.67124C8.17954 6.72575 8.25447 6.75627 8.33248 6.75627C8.4105 6.75627 8.48542 6.72575 8.54123 6.67124C8.56826 6.64476 8.58973 6.61316 8.60438 6.57828C8.61904 6.5434 8.62659 6.50595 8.62659 6.46811C8.62659 6.43028 8.61904 6.39283 8.60438 6.35795C8.58973 6.32307 8.56826 6.29147 8.54123 6.26499L5.21811 3.02499C5.15975 2.96811 5.08148 2.93627 4.99998 2.93627C4.91849 2.93627 4.84022 2.96811 4.78186 3.02499L1.45873 6.26436C1.43152 6.29086 1.40989 6.32254 1.39512 6.35754C1.38035 6.39253 1.37274 6.43013 1.37274 6.46811C1.37274 6.5061 1.38035 6.5437 1.39512 6.57869C1.40989 6.61369 1.43152 6.64537 1.45873 6.67186C1.51454 6.72638 1.58947 6.7569 1.66748 6.7569C1.7455 6.7569 1.82042 6.72638 1.87623 6.67186V6.67124Z"
-                    fill="black"
-                  />
-                </svg>
-              </button>
-            </div>
-            <ol class="dt-flex dt-flex-col dt-ml-2 dt-hidden">
-              <li
-                class="dt-min-h-[51px] dt-flex dt-items-center dt-border-b dt-border-[#E6E6E6]"
-              >
-                <a
-                  class="dt-font-Inter dt-text-15px dt-font-medium dt-leading-22px dt-text-c565656 dt-py-[15px]"
-                  href="https://dantri.com.vn/lao-dong-viec-lam/nhan-luc-moi.htm"
-                  >Nhân lực mới</a
-                >
-              </li>
-              <li
-                class="dt-min-h-[51px] dt-flex dt-items-center dt-border-b dt-border-[#E6E6E6]"
-              >
-                <a
-                  class="dt-font-Inter dt-text-15px dt-font-medium dt-leading-22px dt-text-c565656 dt-py-[15px]"
-                  href="https://dantri.com.vn/lao-dong-viec-lam/lam-giau.htm"
-                  >Làm giàu</a
-                >
-              </li>
-              <li
-                class="dt-min-h-[51px] dt-flex dt-items-center dt-border-b dt-border-[#E6E6E6]"
-              >
-                <a
-                  class="dt-font-Inter dt-text-15px dt-font-medium dt-leading-22px dt-text-c565656 dt-py-[15px]"
-                  href="https://dantri.com.vn/lao-dong-viec-lam/an-sinh.htm"
-                  >An sinh</a
-                >
-              </li>
-              <li
-                class="dt-min-h-[51px] dt-flex dt-items-center dt-border-b dt-border-[#E6E6E6]"
-              >
-                <a
-                  class="dt-font-Inter dt-text-15px dt-font-medium dt-leading-22px dt-text-c565656 dt-py-[15px]"
-                  href="https://dantri.com.vn/lao-dong-viec-lam/chuyen-nghe.htm"
-                  >Chuyện nghề</a
-                >
-              </li>
-            </ol>
-          </li>
-          <li class="dt-border-b dt-border-ceee cate-container_hasSubCate">
-            <div class="dt-w-full dt-flex dt-justify-between">
-              <a
-                class="dt-inline-block dt-pt-3.5 dt-pb-2.5 dt-text-MineShaft label"
-                data-utm="|Main_Menu|14"
-                href="https://dantri.com.vn/phap-luat.htm"
-                >Pháp luật</a
-              >
-              <button
-                class="btnControlSubCate dt-w-[30%] dt-flex dt-justify-end dt-items-center"
-              >
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="10"
-                  height="12"
-                  viewBox="0 0 10 12"
-                  fill="none"
-                  class="close"
-                >
-                  <path
-                    d="M8.12377 4.05025L5.00002 7.60275L1.87627 4.05025C1.82046 3.98665 1.74553 3.95105 1.66752 3.95105C1.5895 3.95105 1.51458 3.98665 1.45877 4.05025C1.43174 4.08114 1.41027 4.11801 1.39562 4.15871C1.38096 4.1994 1.37341 4.24309 1.37341 4.28723C1.37341 4.33137 1.38096 4.37506 1.39562 4.41576C1.41027 4.45645 1.43174 4.49332 1.45877 4.52421L4.78189 8.30421C4.84025 8.37057 4.91852 8.40772 5.00002 8.40772C5.08151 8.40772 5.15978 8.37057 5.21814 8.30421L8.54127 4.52494C8.56848 4.49403 8.59011 4.45706 8.60488 4.41624C8.61965 4.37541 8.62726 4.33155 8.62726 4.28723C8.62726 4.24292 8.61965 4.19905 8.60488 4.15822C8.59011 4.1174 8.56848 4.08044 8.54127 4.04952C8.48546 3.98592 8.41053 3.95032 8.33252 3.95032C8.2545 3.95032 8.17958 3.98592 8.12377 4.04952V4.05025Z"
-                    fill="black"
-                  />
-                </svg>
-                <svg
-                  width="10"
-                  height="10"
-                  viewBox="0 0 10 10"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg"
-                  class="open dt-hidden"
-                >
-                  <path
-                    d="M1.87623 6.67124L4.99998 3.62624L8.12373 6.67124C8.17954 6.72575 8.25447 6.75627 8.33248 6.75627C8.4105 6.75627 8.48542 6.72575 8.54123 6.67124C8.56826 6.64476 8.58973 6.61316 8.60438 6.57828C8.61904 6.5434 8.62659 6.50595 8.62659 6.46811C8.62659 6.43028 8.61904 6.39283 8.60438 6.35795C8.58973 6.32307 8.56826 6.29147 8.54123 6.26499L5.21811 3.02499C5.15975 2.96811 5.08148 2.93627 4.99998 2.93627C4.91849 2.93627 4.84022 2.96811 4.78186 3.02499L1.45873 6.26436C1.43152 6.29086 1.40989 6.32254 1.39512 6.35754C1.38035 6.39253 1.37274 6.43013 1.37274 6.46811C1.37274 6.5061 1.38035 6.5437 1.39512 6.57869C1.40989 6.61369 1.43152 6.64537 1.45873 6.67186C1.51454 6.72638 1.58947 6.7569 1.66748 6.7569C1.7455 6.7569 1.82042 6.72638 1.87623 6.67186V6.67124Z"
-                    fill="black"
-                  />
-                </svg>
-              </button>
-            </div>
-            <ol class="dt-flex dt-flex-col dt-ml-2 dt-hidden">
-              <li
-                class="dt-min-h-[51px] dt-flex dt-items-center dt-border-b dt-border-[#E6E6E6]"
-              >
-                <a
-                  class="dt-font-Inter dt-text-15px dt-font-medium dt-leading-22px dt-text-c565656 dt-py-[15px]"
-                  href="https://dantri.com.vn/phap-luat/ho-so-vu-an.htm"
-                  >Hồ sơ vụ án</a
-                >
-              </li>
-              <li
-                class="dt-min-h-[51px] dt-flex dt-items-center dt-border-b dt-border-[#E6E6E6]"
-              >
-                <a
-                  class="dt-font-Inter dt-text-15px dt-font-medium dt-leading-22px dt-text-c565656 dt-py-[15px]"
-                  href="https://dantri.com.vn/phap-luat/phap-dinh.htm"
-                  >Pháp đình</a
-                >
-              </li>
-            </ol>
-          </li>
-          <li class="dt-border-b dt-border-ceee cate-container_hasSubCate">
-            <div class="dt-w-full dt-flex dt-justify-between">
-              <a
-                class="dt-inline-block dt-pt-3.5 dt-pb-2.5 dt-text-MineShaft label"
-                data-utm="|Main_Menu|15"
-                href="https://dantri.com.vn/du-lich.htm"
-                >Du lịch</a
-              >
-              <button
-                class="btnControlSubCate dt-w-[30%] dt-flex dt-justify-end dt-items-center"
-              >
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="10"
-                  height="12"
-                  viewBox="0 0 10 12"
-                  fill="none"
-                  class="close"
-                >
-                  <path
-                    d="M8.12377 4.05025L5.00002 7.60275L1.87627 4.05025C1.82046 3.98665 1.74553 3.95105 1.66752 3.95105C1.5895 3.95105 1.51458 3.98665 1.45877 4.05025C1.43174 4.08114 1.41027 4.11801 1.39562 4.15871C1.38096 4.1994 1.37341 4.24309 1.37341 4.28723C1.37341 4.33137 1.38096 4.37506 1.39562 4.41576C1.41027 4.45645 1.43174 4.49332 1.45877 4.52421L4.78189 8.30421C4.84025 8.37057 4.91852 8.40772 5.00002 8.40772C5.08151 8.40772 5.15978 8.37057 5.21814 8.30421L8.54127 4.52494C8.56848 4.49403 8.59011 4.45706 8.60488 4.41624C8.61965 4.37541 8.62726 4.33155 8.62726 4.28723C8.62726 4.24292 8.61965 4.19905 8.60488 4.15822C8.59011 4.1174 8.56848 4.08044 8.54127 4.04952C8.48546 3.98592 8.41053 3.95032 8.33252 3.95032C8.2545 3.95032 8.17958 3.98592 8.12377 4.04952V4.05025Z"
-                    fill="black"
-                  />
-                </svg>
-                <svg
-                  width="10"
-                  height="10"
-                  viewBox="0 0 10 10"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg"
-                  class="open dt-hidden"
-                >
-                  <path
-                    d="M1.87623 6.67124L4.99998 3.62624L8.12373 6.67124C8.17954 6.72575 8.25447 6.75627 8.33248 6.75627C8.4105 6.75627 8.48542 6.72575 8.54123 6.67124C8.56826 6.64476 8.58973 6.61316 8.60438 6.57828C8.61904 6.5434 8.62659 6.50595 8.62659 6.46811C8.62659 6.43028 8.61904 6.39283 8.60438 6.35795C8.58973 6.32307 8.56826 6.29147 8.54123 6.26499L5.21811 3.02499C5.15975 2.96811 5.08148 2.93627 4.99998 2.93627C4.91849 2.93627 4.84022 2.96811 4.78186 3.02499L1.45873 6.26436C1.43152 6.29086 1.40989 6.32254 1.39512 6.35754C1.38035 6.39253 1.37274 6.43013 1.37274 6.46811C1.37274 6.5061 1.38035 6.5437 1.39512 6.57869C1.40989 6.61369 1.43152 6.64537 1.45873 6.67186C1.51454 6.72638 1.58947 6.7569 1.66748 6.7569C1.7455 6.7569 1.82042 6.72638 1.87623 6.67186V6.67124Z"
-                    fill="black"
-                  />
-                </svg>
-              </button>
-            </div>
-            <ol class="dt-flex dt-flex-col dt-ml-2 dt-hidden">
-              <li
-                class="dt-min-h-[51px] dt-flex dt-items-center dt-border-b dt-border-[#E6E6E6]"
-              >
-                <a
-                  class="dt-font-Inter dt-text-15px dt-font-medium dt-leading-22px dt-text-c565656 dt-py-[15px]"
-                  href="https://dantri.com.vn/du-lich/tin-tuc.htm"
-                  >Tin tức</a
-                >
-              </li>
-              <li
-                class="dt-min-h-[51px] dt-flex dt-items-center dt-border-b dt-border-[#E6E6E6]"
-              >
-                <a
-                  class="dt-font-Inter dt-text-15px dt-font-medium dt-leading-22px dt-text-c565656 dt-py-[15px]"
-                  href="https://dantri.com.vn/du-lich/kham-pha.htm"
-                  >Khám phá</a
-                >
-              </li>
-              <li
-                class="dt-min-h-[51px] dt-flex dt-items-center dt-border-b dt-border-[#E6E6E6]"
-              >
-                <a
-                  class="dt-font-Inter dt-text-15px dt-font-medium dt-leading-22px dt-text-c565656 dt-py-[15px]"
-                  href="https://dantri.com.vn/du-lich/mon-ngon-diem-dep.htm"
-                  >Món ngon - Điểm đẹp</a
-                >
-              </li>
-              <li
-                class="dt-min-h-[51px] dt-flex dt-items-center dt-border-b dt-border-[#E6E6E6]"
-              >
-                <a
-                  class="dt-font-Inter dt-text-15px dt-font-medium dt-leading-22px dt-text-c565656 dt-py-[15px]"
-                  href="https://dantri.com.vn/du-lich/tour-hay-khuyen-mai.htm"
-                  >Tour hay - Khuyến mại</a
-                >
-              </li>
-              <li
-                class="dt-min-h-[51px] dt-flex dt-items-center dt-border-b dt-border-[#E6E6E6]"
-              >
-                <a
-                  class="dt-font-Inter dt-text-15px dt-font-medium dt-leading-22px dt-text-c565656 dt-py-[15px]"
-                  href="https://dantri.com.vn/du-lich/video-anh.htm"
-                  >Video - Ảnh</a
-                >
-              </li>
-            </ol>
-          </li>
-          <li class="dt-border-b dt-border-ceee cate-container_hasSubCate">
-            <div class="dt-w-full dt-flex dt-justify-between">
-              <a
-                class="dt-inline-block dt-pt-3.5 dt-pb-2.5 dt-text-MineShaft label"
-                data-utm="|Main_Menu|16"
-                href="https://dantri.com.vn/doi-song.htm"
-                >Đời sống</a
-              >
-              <button
-                class="btnControlSubCate dt-w-[30%] dt-flex dt-justify-end dt-items-center"
-              >
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="10"
-                  height="12"
-                  viewBox="0 0 10 12"
-                  fill="none"
-                  class="close"
-                >
-                  <path
-                    d="M8.12377 4.05025L5.00002 7.60275L1.87627 4.05025C1.82046 3.98665 1.74553 3.95105 1.66752 3.95105C1.5895 3.95105 1.51458 3.98665 1.45877 4.05025C1.43174 4.08114 1.41027 4.11801 1.39562 4.15871C1.38096 4.1994 1.37341 4.24309 1.37341 4.28723C1.37341 4.33137 1.38096 4.37506 1.39562 4.41576C1.41027 4.45645 1.43174 4.49332 1.45877 4.52421L4.78189 8.30421C4.84025 8.37057 4.91852 8.40772 5.00002 8.40772C5.08151 8.40772 5.15978 8.37057 5.21814 8.30421L8.54127 4.52494C8.56848 4.49403 8.59011 4.45706 8.60488 4.41624C8.61965 4.37541 8.62726 4.33155 8.62726 4.28723C8.62726 4.24292 8.61965 4.19905 8.60488 4.15822C8.59011 4.1174 8.56848 4.08044 8.54127 4.04952C8.48546 3.98592 8.41053 3.95032 8.33252 3.95032C8.2545 3.95032 8.17958 3.98592 8.12377 4.04952V4.05025Z"
-                    fill="black"
-                  />
-                </svg>
-                <svg
-                  width="10"
-                  height="10"
-                  viewBox="0 0 10 10"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg"
-                  class="open dt-hidden"
-                >
-                  <path
-                    d="M1.87623 6.67124L4.99998 3.62624L8.12373 6.67124C8.17954 6.72575 8.25447 6.75627 8.33248 6.75627C8.4105 6.75627 8.48542 6.72575 8.54123 6.67124C8.56826 6.64476 8.58973 6.61316 8.60438 6.57828C8.61904 6.5434 8.62659 6.50595 8.62659 6.46811C8.62659 6.43028 8.61904 6.39283 8.60438 6.35795C8.58973 6.32307 8.56826 6.29147 8.54123 6.26499L5.21811 3.02499C5.15975 2.96811 5.08148 2.93627 4.99998 2.93627C4.91849 2.93627 4.84022 2.96811 4.78186 3.02499L1.45873 6.26436C1.43152 6.29086 1.40989 6.32254 1.39512 6.35754C1.38035 6.39253 1.37274 6.43013 1.37274 6.46811C1.37274 6.5061 1.38035 6.5437 1.39512 6.57869C1.40989 6.61369 1.43152 6.64537 1.45873 6.67186C1.51454 6.72638 1.58947 6.7569 1.66748 6.7569C1.7455 6.7569 1.82042 6.72638 1.87623 6.67186V6.67124Z"
-                    fill="black"
-                  />
-                </svg>
-              </button>
-            </div>
-            <ol class="dt-flex dt-flex-col dt-ml-2 dt-hidden">
-              <li
-                class="dt-min-h-[51px] dt-flex dt-items-center dt-border-b dt-border-[#E6E6E6]"
-              >
-                <a
-                  class="dt-font-Inter dt-text-15px dt-font-medium dt-leading-22px dt-text-c565656 dt-py-[15px]"
-                  href="https://dantri.com.vn/tet-2025.htm"
-                  >Tết 2025</a
-                >
-              </li>
-              <li
-                class="dt-min-h-[51px] dt-flex dt-items-center dt-border-b dt-border-[#E6E6E6]"
-              >
-                <a
-                  class="dt-font-Inter dt-text-15px dt-font-medium dt-leading-22px dt-text-c565656 dt-py-[15px]"
-                  href="https://dantri.com.vn/doi-song/cong-dong.htm"
-                  >Cộng đồng</a
-                >
-              </li>
-              <li
-                class="dt-min-h-[51px] dt-flex dt-items-center dt-border-b dt-border-[#E6E6E6]"
-              >
-                <a
-                  class="dt-font-Inter dt-text-15px dt-font-medium dt-leading-22px dt-text-c565656 dt-py-[15px]"
-                  href="https://dantri.com.vn/doi-song/thuong-luu.htm"
-                  >Thượng lưu</a
-                >
-              </li>
-              <li
-                class="dt-min-h-[51px] dt-flex dt-items-center dt-border-b dt-border-[#E6E6E6]"
-              >
-                <a
-                  class="dt-font-Inter dt-text-15px dt-font-medium dt-leading-22px dt-text-c565656 dt-py-[15px]"
-                  href="https://dantri.com.vn/doi-song/nha-dep.htm"
-                  >Nhà đẹp</a
-                >
-              </li>
-              <li
-                class="dt-min-h-[51px] dt-flex dt-items-center dt-border-b dt-border-[#E6E6E6]"
-              >
-                <a
-                  class="dt-font-Inter dt-text-15px dt-font-medium dt-leading-22px dt-text-c565656 dt-py-[15px]"
-                  href="https://dantri.com.vn/doi-song/gioi-tre.htm"
-                  >Giới trẻ</a
-                >
-              </li>
-              <li
-                class="dt-min-h-[51px] dt-flex dt-items-center dt-border-b dt-border-[#E6E6E6]"
-              >
-                <a
-                  class="dt-font-Inter dt-text-15px dt-font-medium dt-leading-22px dt-text-c565656 dt-py-[15px]"
-                  href="https://dantri.com.vn/doi-song/cho-online.htm"
-                  >Chợ online</a
-                >
-              </li>
-              <li
-                class="dt-min-h-[51px] dt-flex dt-items-center dt-border-b dt-border-[#E6E6E6]"
-              >
-                <a
-                  class="dt-font-Inter dt-text-15px dt-font-medium dt-leading-22px dt-text-c565656 dt-py-[15px]"
-                  href="https://dantri.com.vn/xo-so.htm"
-                  >Xổ số</a
-                >
-              </li>
-              <li
-                class="dt-min-h-[51px] dt-flex dt-items-center dt-border-b dt-border-[#E6E6E6]"
-              >
-                <a
-                  class="dt-font-Inter dt-text-15px dt-font-medium dt-leading-22px dt-text-c565656 dt-py-[15px]"
-                  href="https://dantri.com.vn/doi-song/cuoc-thi-anh-evnspc.htm"
-                  >Cuộc thi ảnh EVNSPC</a
-                >
-              </li>
-            </ol>
-          </li>
-          <li class="dt-border-b dt-border-ceee cate-container_hasSubCate">
-            <div class="dt-w-full dt-flex dt-justify-between">
-              <a
-                class="dt-inline-block dt-pt-3.5 dt-pb-2.5 dt-text-MineShaft label"
-                data-utm="|Main_Menu|17"
-                href="https://dantri.com.vn/tinh-yeu-gioi-tinh.htm"
-                >Tình yêu - Giới tính</a
-              >
-              <button
-                class="btnControlSubCate dt-w-[30%] dt-flex dt-justify-end dt-items-center"
-              >
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="10"
-                  height="12"
-                  viewBox="0 0 10 12"
-                  fill="none"
-                  class="close"
-                >
-                  <path
-                    d="M8.12377 4.05025L5.00002 7.60275L1.87627 4.05025C1.82046 3.98665 1.74553 3.95105 1.66752 3.95105C1.5895 3.95105 1.51458 3.98665 1.45877 4.05025C1.43174 4.08114 1.41027 4.11801 1.39562 4.15871C1.38096 4.1994 1.37341 4.24309 1.37341 4.28723C1.37341 4.33137 1.38096 4.37506 1.39562 4.41576C1.41027 4.45645 1.43174 4.49332 1.45877 4.52421L4.78189 8.30421C4.84025 8.37057 4.91852 8.40772 5.00002 8.40772C5.08151 8.40772 5.15978 8.37057 5.21814 8.30421L8.54127 4.52494C8.56848 4.49403 8.59011 4.45706 8.60488 4.41624C8.61965 4.37541 8.62726 4.33155 8.62726 4.28723C8.62726 4.24292 8.61965 4.19905 8.60488 4.15822C8.59011 4.1174 8.56848 4.08044 8.54127 4.04952C8.48546 3.98592 8.41053 3.95032 8.33252 3.95032C8.2545 3.95032 8.17958 3.98592 8.12377 4.04952V4.05025Z"
-                    fill="black"
-                  />
-                </svg>
-                <svg
-                  width="10"
-                  height="10"
-                  viewBox="0 0 10 10"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg"
-                  class="open dt-hidden"
-                >
-                  <path
-                    d="M1.87623 6.67124L4.99998 3.62624L8.12373 6.67124C8.17954 6.72575 8.25447 6.75627 8.33248 6.75627C8.4105 6.75627 8.48542 6.72575 8.54123 6.67124C8.56826 6.64476 8.58973 6.61316 8.60438 6.57828C8.61904 6.5434 8.62659 6.50595 8.62659 6.46811C8.62659 6.43028 8.61904 6.39283 8.60438 6.35795C8.58973 6.32307 8.56826 6.29147 8.54123 6.26499L5.21811 3.02499C5.15975 2.96811 5.08148 2.93627 4.99998 2.93627C4.91849 2.93627 4.84022 2.96811 4.78186 3.02499L1.45873 6.26436C1.43152 6.29086 1.40989 6.32254 1.39512 6.35754C1.38035 6.39253 1.37274 6.43013 1.37274 6.46811C1.37274 6.5061 1.38035 6.5437 1.39512 6.57869C1.40989 6.61369 1.43152 6.64537 1.45873 6.67186C1.51454 6.72638 1.58947 6.7569 1.66748 6.7569C1.7455 6.7569 1.82042 6.72638 1.87623 6.67186V6.67124Z"
-                    fill="black"
-                  />
-                </svg>
-              </button>
-            </div>
-            <ol class="dt-flex dt-flex-col dt-ml-2 dt-hidden">
-              <li
-                class="dt-min-h-[51px] dt-flex dt-items-center dt-border-b dt-border-[#E6E6E6]"
-              >
-                <a
-                  class="dt-font-Inter dt-text-15px dt-font-medium dt-leading-22px dt-text-c565656 dt-py-[15px]"
-                  href="https://dantri.com.vn/tinh-yeu-gioi-tinh/chuyen-cua-toi.htm"
-                  >Chuyện của tôi</a
-                >
-              </li>
-              <li
-                class="dt-min-h-[51px] dt-flex dt-items-center dt-border-b dt-border-[#E6E6E6]"
-              >
-                <a
-                  class="dt-font-Inter dt-text-15px dt-font-medium dt-leading-22px dt-text-c565656 dt-py-[15px]"
-                  href="https://dantri.com.vn/tinh-yeu-gioi-tinh/gia-dinh.htm"
-                  >Gia đình</a
-                >
-              </li>
-              <li
-                class="dt-min-h-[51px] dt-flex dt-items-center dt-border-b dt-border-[#E6E6E6]"
-              >
-                <a
-                  class="dt-font-Inter dt-text-15px dt-font-medium dt-leading-22px dt-text-c565656 dt-py-[15px]"
-                  href="https://dantri.com.vn/tinh-yeu-gioi-tinh/tinh-yeu.htm"
-                  >Tình yêu</a
-                >
-              </li>
-            </ol>
-          </li>
-          <li class="dt-border-b dt-border-ceee cate-container_hasSubCate">
-            <div class="dt-w-full dt-flex dt-justify-between">
-              <a
-                class="dt-inline-block dt-pt-3.5 dt-pb-2.5 dt-text-MineShaft label"
-                data-utm="|Main_Menu|18"
-                href="https://dantri.com.vn/khoa-hoc.htm"
-                >Khoa học</a
-              >
-              <button
-                class="btnControlSubCate dt-w-[30%] dt-flex dt-justify-end dt-items-center"
-              >
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="10"
-                  height="12"
-                  viewBox="0 0 10 12"
-                  fill="none"
-                  class="close"
-                >
-                  <path
-                    d="M8.12377 4.05025L5.00002 7.60275L1.87627 4.05025C1.82046 3.98665 1.74553 3.95105 1.66752 3.95105C1.5895 3.95105 1.51458 3.98665 1.45877 4.05025C1.43174 4.08114 1.41027 4.11801 1.39562 4.15871C1.38096 4.1994 1.37341 4.24309 1.37341 4.28723C1.37341 4.33137 1.38096 4.37506 1.39562 4.41576C1.41027 4.45645 1.43174 4.49332 1.45877 4.52421L4.78189 8.30421C4.84025 8.37057 4.91852 8.40772 5.00002 8.40772C5.08151 8.40772 5.15978 8.37057 5.21814 8.30421L8.54127 4.52494C8.56848 4.49403 8.59011 4.45706 8.60488 4.41624C8.61965 4.37541 8.62726 4.33155 8.62726 4.28723C8.62726 4.24292 8.61965 4.19905 8.60488 4.15822C8.59011 4.1174 8.56848 4.08044 8.54127 4.04952C8.48546 3.98592 8.41053 3.95032 8.33252 3.95032C8.2545 3.95032 8.17958 3.98592 8.12377 4.04952V4.05025Z"
-                    fill="black"
-                  />
-                </svg>
-                <svg
-                  width="10"
-                  height="10"
-                  viewBox="0 0 10 10"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg"
-                  class="open dt-hidden"
-                >
-                  <path
-                    d="M1.87623 6.67124L4.99998 3.62624L8.12373 6.67124C8.17954 6.72575 8.25447 6.75627 8.33248 6.75627C8.4105 6.75627 8.48542 6.72575 8.54123 6.67124C8.56826 6.64476 8.58973 6.61316 8.60438 6.57828C8.61904 6.5434 8.62659 6.50595 8.62659 6.46811C8.62659 6.43028 8.61904 6.39283 8.60438 6.35795C8.58973 6.32307 8.56826 6.29147 8.54123 6.26499L5.21811 3.02499C5.15975 2.96811 5.08148 2.93627 4.99998 2.93627C4.91849 2.93627 4.84022 2.96811 4.78186 3.02499L1.45873 6.26436C1.43152 6.29086 1.40989 6.32254 1.39512 6.35754C1.38035 6.39253 1.37274 6.43013 1.37274 6.46811C1.37274 6.5061 1.38035 6.5437 1.39512 6.57869C1.40989 6.61369 1.43152 6.64537 1.45873 6.67186C1.51454 6.72638 1.58947 6.7569 1.66748 6.7569C1.7455 6.7569 1.82042 6.72638 1.87623 6.67186V6.67124Z"
-                    fill="black"
-                  />
-                </svg>
-              </button>
-            </div>
-            <ol class="dt-flex dt-flex-col dt-ml-2 dt-hidden">
-              <li
-                class="dt-min-h-[51px] dt-flex dt-items-center dt-border-b dt-border-[#E6E6E6]"
-              >
-                <a
-                  class="dt-font-Inter dt-text-15px dt-font-medium dt-leading-22px dt-text-c565656 dt-py-[15px]"
-                  href="https://dantri.com.vn/khoa-hoc/the-gioi-tu-nhien.htm"
-                  >Thế giới tự nhiên</a
-                >
-              </li>
-              <li
-                class="dt-min-h-[51px] dt-flex dt-items-center dt-border-b dt-border-[#E6E6E6]"
-              >
-                <a
-                  class="dt-font-Inter dt-text-15px dt-font-medium dt-leading-22px dt-text-c565656 dt-py-[15px]"
-                  href="https://dantri.com.vn/khoa-hoc/vu-tru.htm"
-                  >Vũ trụ</a
-                >
-              </li>
-              <li
-                class="dt-min-h-[51px] dt-flex dt-items-center dt-border-b dt-border-[#E6E6E6]"
-              >
-                <a
-                  class="dt-font-Inter dt-text-15px dt-font-medium dt-leading-22px dt-text-c565656 dt-py-[15px]"
-                  href="https://dantri.com.vn/khoa-hoc/kham-pha.htm"
-                  >Khám phá</a
-                >
-              </li>
-              <li
-                class="dt-min-h-[51px] dt-flex dt-items-center dt-border-b dt-border-[#E6E6E6]"
-              >
-                <a
-                  class="dt-font-Inter dt-text-15px dt-font-medium dt-leading-22px dt-text-c565656 dt-py-[15px]"
-                  href="https://dantri.com.vn/khoa-hoc/khoa-hoc-doi-song.htm"
-                  >Khoa học &amp;đời sống</a
-                >
-              </li>
-            </ol>
-          </li>
-          <li class="dt-border-b dt-border-ceee cate-container_hasSubCate">
-            <div class="dt-w-full dt-flex dt-justify-between">
-              <a
-                class="dt-inline-block dt-pt-3.5 dt-pb-2.5 dt-text-MineShaft label"
-                data-utm="|Main_Menu|19"
-                href="https://dantri.com.vn/tam-diem.htm"
-                >Tâm điểm</a
-              >
-              <button
-                class="btnControlSubCate dt-w-[30%] dt-flex dt-justify-end dt-items-center"
-              >
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="10"
-                  height="12"
-                  viewBox="0 0 10 12"
-                  fill="none"
-                  class="close"
-                >
-                  <path
-                    d="M8.12377 4.05025L5.00002 7.60275L1.87627 4.05025C1.82046 3.98665 1.74553 3.95105 1.66752 3.95105C1.5895 3.95105 1.51458 3.98665 1.45877 4.05025C1.43174 4.08114 1.41027 4.11801 1.39562 4.15871C1.38096 4.1994 1.37341 4.24309 1.37341 4.28723C1.37341 4.33137 1.38096 4.37506 1.39562 4.41576C1.41027 4.45645 1.43174 4.49332 1.45877 4.52421L4.78189 8.30421C4.84025 8.37057 4.91852 8.40772 5.00002 8.40772C5.08151 8.40772 5.15978 8.37057 5.21814 8.30421L8.54127 4.52494C8.56848 4.49403 8.59011 4.45706 8.60488 4.41624C8.61965 4.37541 8.62726 4.33155 8.62726 4.28723C8.62726 4.24292 8.61965 4.19905 8.60488 4.15822C8.59011 4.1174 8.56848 4.08044 8.54127 4.04952C8.48546 3.98592 8.41053 3.95032 8.33252 3.95032C8.2545 3.95032 8.17958 3.98592 8.12377 4.04952V4.05025Z"
-                    fill="black"
-                  />
-                </svg>
-                <svg
-                  width="10"
-                  height="10"
-                  viewBox="0 0 10 10"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg"
-                  class="open dt-hidden"
-                >
-                  <path
-                    d="M1.87623 6.67124L4.99998 3.62624L8.12373 6.67124C8.17954 6.72575 8.25447 6.75627 8.33248 6.75627C8.4105 6.75627 8.48542 6.72575 8.54123 6.67124C8.56826 6.64476 8.58973 6.61316 8.60438 6.57828C8.61904 6.5434 8.62659 6.50595 8.62659 6.46811C8.62659 6.43028 8.61904 6.39283 8.60438 6.35795C8.58973 6.32307 8.56826 6.29147 8.54123 6.26499L5.21811 3.02499C5.15975 2.96811 5.08148 2.93627 4.99998 2.93627C4.91849 2.93627 4.84022 2.96811 4.78186 3.02499L1.45873 6.26436C1.43152 6.29086 1.40989 6.32254 1.39512 6.35754C1.38035 6.39253 1.37274 6.43013 1.37274 6.46811C1.37274 6.5061 1.38035 6.5437 1.39512 6.57869C1.40989 6.61369 1.43152 6.64537 1.45873 6.67186C1.51454 6.72638 1.58947 6.7569 1.66748 6.7569C1.7455 6.7569 1.82042 6.72638 1.87623 6.67186V6.67124Z"
-                    fill="black"
-                  />
-                </svg>
-              </button>
-            </div>
-            <ol class="dt-flex dt-flex-col dt-ml-2 dt-hidden">
-              <li
-                class="dt-min-h-[51px] dt-flex dt-items-center dt-border-b dt-border-[#E6E6E6]"
-              >
-                <a
-                  class="dt-font-Inter dt-text-15px dt-font-medium dt-leading-22px dt-text-c565656 dt-py-[15px]"
-                  href="https://dantri.com.vn/tam-diem/tac-gia.htm"
-                  >Tác giả</a
-                >
-              </li>
-            </ol>
-          </li>
-          <li class="dt-border-b dt-border-ceee cate-container_hasSubCate">
-            <div class="dt-w-full dt-flex dt-justify-between">
-              <a
-                class="dt-inline-block dt-pt-3.5 dt-pb-2.5 dt-text-MineShaft label"
-                data-utm="|Main_Menu|20"
-                href="https://dantri.com.vn/ban-doc.htm"
-                >Bạn đọc</a
-              >
-              <button
-                class="btnControlSubCate dt-w-[30%] dt-flex dt-justify-end dt-items-center"
-              >
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="10"
-                  height="12"
-                  viewBox="0 0 10 12"
-                  fill="none"
-                  class="close"
-                >
-                  <path
-                    d="M8.12377 4.05025L5.00002 7.60275L1.87627 4.05025C1.82046 3.98665 1.74553 3.95105 1.66752 3.95105C1.5895 3.95105 1.51458 3.98665 1.45877 4.05025C1.43174 4.08114 1.41027 4.11801 1.39562 4.15871C1.38096 4.1994 1.37341 4.24309 1.37341 4.28723C1.37341 4.33137 1.38096 4.37506 1.39562 4.41576C1.41027 4.45645 1.43174 4.49332 1.45877 4.52421L4.78189 8.30421C4.84025 8.37057 4.91852 8.40772 5.00002 8.40772C5.08151 8.40772 5.15978 8.37057 5.21814 8.30421L8.54127 4.52494C8.56848 4.49403 8.59011 4.45706 8.60488 4.41624C8.61965 4.37541 8.62726 4.33155 8.62726 4.28723C8.62726 4.24292 8.61965 4.19905 8.60488 4.15822C8.59011 4.1174 8.56848 4.08044 8.54127 4.04952C8.48546 3.98592 8.41053 3.95032 8.33252 3.95032C8.2545 3.95032 8.17958 3.98592 8.12377 4.04952V4.05025Z"
-                    fill="black"
-                  />
-                </svg>
-                <svg
-                  width="10"
-                  height="10"
-                  viewBox="0 0 10 10"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg"
-                  class="open dt-hidden"
-                >
-                  <path
-                    d="M1.87623 6.67124L4.99998 3.62624L8.12373 6.67124C8.17954 6.72575 8.25447 6.75627 8.33248 6.75627C8.4105 6.75627 8.48542 6.72575 8.54123 6.67124C8.56826 6.64476 8.58973 6.61316 8.60438 6.57828C8.61904 6.5434 8.62659 6.50595 8.62659 6.46811C8.62659 6.43028 8.61904 6.39283 8.60438 6.35795C8.58973 6.32307 8.56826 6.29147 8.54123 6.26499L5.21811 3.02499C5.15975 2.96811 5.08148 2.93627 4.99998 2.93627C4.91849 2.93627 4.84022 2.96811 4.78186 3.02499L1.45873 6.26436C1.43152 6.29086 1.40989 6.32254 1.39512 6.35754C1.38035 6.39253 1.37274 6.43013 1.37274 6.46811C1.37274 6.5061 1.38035 6.5437 1.39512 6.57869C1.40989 6.61369 1.43152 6.64537 1.45873 6.67186C1.51454 6.72638 1.58947 6.7569 1.66748 6.7569C1.7455 6.7569 1.82042 6.72638 1.87623 6.67186V6.67124Z"
-                    fill="black"
-                  />
-                </svg>
-              </button>
-            </div>
-            <ol class="dt-flex dt-flex-col dt-ml-2 dt-hidden">
-              <li
-                class="dt-min-h-[51px] dt-flex dt-items-center dt-border-b dt-border-[#E6E6E6]"
-              >
-                <a
-                  class="dt-font-Inter dt-text-15px dt-font-medium dt-leading-22px dt-text-c565656 dt-py-[15px]"
-                  href="https://dantri.com.vn/ban-doc/ban-doc-noi.htm"
-                  >Bạn đọc nói</a
-                >
-              </li>
-              <li
-                class="dt-min-h-[51px] dt-flex dt-items-center dt-border-b dt-border-[#E6E6E6]"
-              >
-                <a
-                  class="dt-font-Inter dt-text-15px dt-font-medium dt-leading-22px dt-text-c565656 dt-py-[15px]"
-                  href="https://dantri.com.vn/ban-doc/tu-van-phap-luat.htm"
-                  >Tư vấn pháp luật</a
-                >
-              </li>
-              <li
-                class="dt-min-h-[51px] dt-flex dt-items-center dt-border-b dt-border-[#E6E6E6]"
-              >
-                <a
-                  class="dt-font-Inter dt-text-15px dt-font-medium dt-leading-22px dt-text-c565656 dt-py-[15px]"
-                  href="https://dantri.com.vn/ban-doc/hoi-am.htm"
-                  >Hồi âm</a
-                >
-              </li>
-            </ol>
-          </li>
-        </ol>
-      </div>
-      <div class="dt-mt-1 dt-grid dt-grid-cols-2 dt-gap-x-8 dt-gap-y-4">
-        <label class="dt-col-span-full">
-          Đọc báo <b>Dân trí</b>
-          trên mobile:
-        </label>
-        <a
-          rel="nofollow noopener"
-          target="_blank"
-          href="https://apps.apple.com/vn/app/b%C3%A1o-d%C3%A2n-tr%C3%AD-dantri-com-vn/id1455334618?l=vi"
-        >
-          <img
-            alt="IOS"
-            class="dt-w-full dt-rounded-lg"
-            height="48"
-            src="https://cdnmobile.dantri.com.vn/dist/static-ios.1-0-1.ee6bf097e303486d2a1c.png"
-            width="156"
-          />
-        </a>
-        <a
-          rel="nofollow noopener"
-          target="_blank"
-          href="https://play.google.com/store/apps/details?id=vn.com.dantrinews.android"
-        >
-          <img
-            alt="Android"
-            class="dt-w-full dt-rounded-lg"
-            height="48"
-            src="https://cdnmobile.dantri.com.vn/dist/static-android.1-0-1.25695d60eaeb16411962.png"
-            width="156"
-          />
-        </a>
-      </div>
-      <div class="dt-flex dt-items-center dt-gap-4">
-        <label>Theo dõi Dân trí trên:</label>
-        <a
-          rel="nofollow noopener"
-          target="_blank"
-          href="https://www.facebook.com/baodantridientu"
-        >
-          <svg
-            aria-hidden="true"
-            width="30"
-            height="30"
-            viewBox="0 0 30 30"
-            fill="none"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path
-              d="M26.125 2.5H3.875C3.51033 2.5 3.16059 2.64487 2.90273 2.90273C2.64487 3.16059 2.5 3.51033 2.5 3.875V26.125C2.5 26.3056 2.53557 26.4844 2.60467 26.6512C2.67377 26.818 2.77505 26.9696 2.90273 27.0973C3.03041 27.225 3.18199 27.3262 3.34881 27.3953C3.51563 27.4644 3.69443 27.5 3.875 27.5H15.85V17.8125H12.6V14.0625H15.85V11.25C15.7827 10.5897 15.8606 9.92266 16.0784 9.29567C16.2962 8.66868 16.6485 8.09693 17.1106 7.62051C17.5727 7.1441 18.1335 6.77455 18.7535 6.5378C19.3736 6.30104 20.038 6.20281 20.7 6.25C21.6729 6.24401 22.6454 6.2941 23.6125 6.4V9.775H21.625C20.05 9.775 19.75 10.525 19.75 11.6125V14.025H23.5L23.0125 17.775H19.75V27.5H26.125C26.3056 27.5 26.4844 27.4644 26.6512 27.3953C26.818 27.3262 26.9696 27.225 27.0973 27.0973C27.225 26.9696 27.3262 26.818 27.3953 26.6512C27.4644 26.4844 27.5 26.3056 27.5 26.125V3.875C27.5 3.69443 27.4644 3.51563 27.3953 3.34881C27.3262 3.18199 27.225 3.03041 27.0973 2.90273C26.9696 2.77505 26.818 2.67377 26.6512 2.60467C26.4844 2.53557 26.3056 2.5 26.125 2.5Z"
-              fill="#4267B2"
-            />
-          </svg>
-        </a>
-        <a
-          rel="nofollow noopener"
-          target="_blank"
-          href="https://www.youtube.com/channel/UC4t5NcR9V40MB7rQru8AUew"
-        >
-          <svg
-            aria-hidden="true"
-            width="30"
-            height="30"
-            viewBox="0 0 30 30"
-            fill="none"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path
-              d="M28.75 12.1375C28.8118 10.3483 28.4205 8.5725 27.6125 6.97498C27.0642 6.31948 26.3034 5.87712 25.4625 5.72498C21.9844 5.40939 18.4919 5.28004 15 5.33748C11.5208 5.27743 8.04086 5.40261 4.57497 5.71248C3.88975 5.83713 3.25562 6.15853 2.74997 6.63748C1.62497 7.67498 1.49997 9.44998 1.37497 10.95C1.19361 13.6469 1.19361 16.353 1.37497 19.05C1.41114 19.8942 1.53684 20.7323 1.74997 21.55C1.90069 22.1813 2.20563 22.7654 2.63747 23.25C3.14656 23.7543 3.79545 24.094 4.49997 24.225C7.19487 24.5576 9.91024 24.6955 12.625 24.6375C17 24.7 20.8375 24.6375 25.375 24.2875C26.0968 24.1645 26.764 23.8244 27.2875 23.3125C27.6374 22.9624 27.8988 22.5339 28.05 22.0625C28.497 20.6908 28.7166 19.2551 28.7 17.8125C28.75 17.1125 28.75 12.8875 28.75 12.1375ZM12.175 18.5625V10.825L19.575 14.7125C17.5 15.8625 14.7625 17.1625 12.175 18.5625Z"
-              fill="#FF0000"
-            />
-          </svg>
-        </a>
-        <a
-          rel="nofollow noopener"
-          target="_blank"
-          href="https://www.tiktok.com/@dantri.com.vn"
-        >
-          <img
-            alt="Tiktok"
-            height="31"
-            src="https://cdnmobile.dantri.com.vn/dist/static-tiktok.1-0-1.e84c1388df2f58641617.svg"
-            width="22"
-          />
-        </a>
-      </div>
-      <div class="dt-flex dt-flex-wrap dt-justify-between">
-        <p class="dt-w-full">Đường dây nóng:</p>
-        <p class="dt-flex dt-flex-col">
-          Văn phòng Hà Nội
-          <a class="dt-font-bold" href="tel:0973567567">0973-567-567</a>
-        </p>
-        <p class="dt-flex dt-flex-col">
-          Văn phòng TPHCM
-          <a class="dt-font-bold" href="tel:0974567567">0974-567-567</a>
-        </p>
-      </div>
-      <p>
-        Liên hệ quảng cáo:
-        <a class="dt-font-medium" href="tel:0945540303">0945.54.03.03</a>
-      </p>
-      <p class="-dt-mt-4">
-        Email:
-        <a class="dt-font-medium" href="mailto:quangcao@dantri.com.vn"
-          >quangcao@dantri.com.vn</a
-        >
-      </p>
-    </nav>
+
     <script src="/assets/js/script.js"></script>
     <script src="https://vjs.zencdn.net/8.22.0/video.min.js"></script>
-    <!-- <script src="/assets/js/script2.js"></script> -->
   </body>
 </html>
