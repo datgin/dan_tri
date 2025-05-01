@@ -16629,7 +16629,7 @@ div[data-module="user-onboarding"] {
   transform: translateY(15px);
   z-index: 9;
 }
-.social{
+.socials{
   display: none;
 }
 .menu-second.child li.has-child .submenu > li {
@@ -19515,9 +19515,8 @@ div[data-module="user-onboarding"] {
   .grid.highlight .article.grid{
     display: block;
   }
-  .social{
+  .socials{
     display: flex;
-    
   }
   .article-item{
     border-top: 1px solid #c8c8c8;
@@ -19594,5 +19593,12 @@ div[data-module="user-onboarding"] {
   }
   .read-more{
     display: flex;
+  }
+  .footer-wrap{
+    display: block;
+  }
+  .social{
+    display: flex;
+    justify-content: left;
   }
 }
