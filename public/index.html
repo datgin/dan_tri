@@ -93,52 +93,36 @@
                 width="118"
             /></a>
           </h1>
-          <div
-            data-module="weather-header"
-            data-date_time_today=""
-            class="weather-placeholder"
-          >
-            <div class="weather-box">
-              <div>
-                <span class="weather-text-weather-location"></span
-                ><span class="weather-text-weather-date"></span>
-              </div>
-              <div class="weather-divider"></div>
-              <div class="weather-icon"></div>
-              <span class="weather-text weather-temperature"></span>
-            </div>
-          </div>
         </div>
-        <div class="dt-flex">
-          <a
-            class="international flex-jcc"
-            target="_blank"
-            rel="nofollow noopener"
-            href="https://fica.dantri.com.vn"
-            ><img
-              alt="Fica"
-              height="26"
-              src="https://cdnweb.dantri.com.vn/dist/static-fica-logo.1-0-1.2435f041ebf869641575.jpg"
-              width="26"
-            />
-            Fica</a
-          >
-
-          <a
-            class="international flex-jcc"
-            target="_blank"
-            rel="nofollow noopener"
-            href="https://dtinews.dantri.com.vn"
-            ><img
-              alt="DTiNews"
-              height="26"
-              src="https://cdnweb.dantri.com.vn/dist/static-avatar-default.1-0-1.b474c6ca2d1abee5b89b.png"
-              width="26"
-            />
-            DTiNews</a
-          >
+        <div class="search-bar">
+          <input type="text" id="searchInput" placeholder="Tìm kiếm..." />
+          <button onclick="handleSearch()">
+            <svg
+              aria-hidden="true"
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M11 19C15.4183 19 19 15.4183 19 11C19 6.58172 15.4183 3 11 3C6.58172 3 3 6.58172 3 11C3 15.4183 6.58172 19 11 19Z"
+                stroke="#4D4D4D"
+                stroke-width="1.5"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              ></path>
+              <path
+                d="M21 20.9999L16.65 16.6499"
+                stroke="#4D4D4D"
+                stroke-width="1.5"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              ></path>
+            </svg>
+          </button>
         </div>
-        <div class="header-area flex-jcb dt-min-w-32 dt-mr-9">
+        <div class="header-area flex-jcb">
           <div class="auth-placeholder" data-module="authen-header">
             <button
               type="button"
@@ -148,114 +132,6 @@
             >
               <i class="fa-solid fa-user"></i>Đăng nhập
             </button>
-          </div>
-        </div>
-        <div class="dt-flex dt-absolute dt-right-0">
-          <div class="dt-flex dt-items-center dt-relative box-search-header">
-            <input
-              class="input-search-header"
-              type="text"
-              placeholder="Nhập nội dung cần tìm..."
-            />
-            <button
-              class="btn-search-header dt-absolute dt-right-1.5"
-              type="button"
-            >
-              <svg
-                aria-hidden="true"
-                width="24"
-                height="24"
-                viewBox="0 0 24 24"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  d="M11 19C15.4183 19 19 15.4183 19 11C19 6.58172 15.4183 3 11 3C6.58172 3 3 6.58172 3 11C3 15.4183 6.58172 19 11 19Z"
-                  stroke="#4D4D4D"
-                  stroke-width="1.5"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                ></path>
-                <path
-                  d="M21 20.9999L16.65 16.6499"
-                  stroke="#4D4D4D"
-                  stroke-width="1.5"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                ></path>
-              </svg>
-            </button>
-          </div>
-          <div
-            class="dt-absolute dt-top-12 dt-right-0 dt-bg-white dt-p-3 box-trend-header"
-            style="box-shadow: 0 4px 14px 0 #0000001a"
-          >
-            <div
-              class="dt-flex dt-items-center dt-gap-x-2 dt-font-roboto dt-font-medium dt-text-sm dt-leading-18px dt-text-c565656 dt-whitespace-nowrap dt-pb-3 dt-mb-4 dt-border-b dt-border-b-ce3e5e8 dt-border-solid"
-            >
-              <svg
-                width="24"
-                height="25"
-                viewBox="0 0 24 25"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <rect
-                  y="0.757812"
-                  width="24"
-                  height="24"
-                  rx="12"
-                  fill="#EDEDED"
-                ></rect>
-                <path
-                  d="M5.86708 17.001C5.72761 17.001 5.59361 16.9676 5.47054 16.9038C5.13964 16.7399 4.95094 16.3843 5.01111 16.0399C5.05213 15.8093 5.15331 15.5926 5.28184 15.4565C6.64648 14.0482 8.01659 12.6621 9.05579 11.6149C9.24175 11.4288 9.46327 11.3288 9.69299 11.3288C9.93364 11.3288 10.1661 11.4343 10.3657 11.6371L12.7176 14.026L15.9173 10.7732L15.5946 10.7704C15.1843 10.7676 14.621 10.7649 14.2983 10.7621C13.7896 10.7565 13.4341 10.3982 13.4314 9.88709C13.4314 9.63709 13.5162 9.41209 13.6748 9.25098C13.8334 9.08987 14.0494 9.00375 14.2901 9.00375C14.941 9.00098 15.5891 9.00098 16.2153 9.00098C16.869 9.00098 17.5198 9.00375 18.1488 9.00375C18.6356 9.00653 18.9911 9.35931 18.9938 9.84542C19.0021 11.201 19.0021 12.5371 18.9938 13.8176C18.9911 14.3038 18.6274 14.6565 18.1297 14.6565H18.1187C17.6237 14.651 17.2737 14.2982 17.2655 13.7954C17.26 13.401 17.26 13.001 17.2628 12.6149C17.2628 12.4454 17.2628 12.276 17.2628 12.1065V12.0065C17.2491 12.0176 17.2381 12.0288 17.2272 12.0399C16.1442 13.1426 15.064 14.2482 13.9811 15.3538L13.5298 15.8121C13.2618 16.0899 13.0075 16.2232 12.7586 16.2232C12.5098 16.2232 12.2636 16.0926 12.0011 15.8232L9.69299 13.4732L9.49882 13.6676C9.29645 13.8704 9.10775 14.0621 8.92179 14.251L8.05214 15.1399C7.55168 15.651 7.03482 16.1815 6.52342 16.701C6.33472 16.8982 6.10774 17.001 5.86708 17.001Z"
-                  fill="#565656"
-                ></path>
-              </svg>
-              Xu hướng
-            </div>
-            <ul class="dt-max-h-52 dt-overflow-y-auto">
-              <li>
-                <a class="dt-text-c565656 hover:dt-text-c01549D" href="#"
-                  ># 50 năm thống nhất đất nước</a
-                >
-              </li>
-              <li class="dt-mt-4">
-                <a class="dt-text-c565656 hover:dt-text-c01549D" href="#"
-                  ># Sữa giả tung hoành thị trường</a
-                >
-              </li>
-              <li class="dt-mt-4">
-                <a class="dt-text-c565656 hover:dt-text-c01549D" href="#"
-                  ># Mỹ áp thuế cả thế giới</a
-                >
-              </li>
-              <li class="dt-mt-4">
-                <a class="dt-text-c565656 hover:dt-text-c01549D" href="#"
-                  ># Vòng chung kết U17 châu Á 2025</a
-                >
-              </li>
-              <li class="dt-mt-4">
-                <a class="dt-text-c565656 hover:dt-text-c01549D" href="#"
-                  ># Động đất mạnh tại Myanmar</a
-                >
-              </li>
-              <li class="dt-mt-4">
-                <a class="dt-text-c565656 hover:dt-text-c01549D" href="#"
-                  ># Dân trí AI - hỏi đáp lỗi giao thông</a
-                >
-              </li>
-              <li class="dt-mt-4">
-                <a class="dt-text-c565656 hover:dt-text-c01549D" href="#"
-                  ># Phá tòa nhà "Hàm cá mập"</a
-                >
-              </li>
-              <li class="dt-mt-4">
-                <a class="dt-text-c565656 hover:dt-text-c01549D" href="#"
-                  ># Kỷ nguyên mới</a
-                >
-              </li>
-            </ul>
           </div>
         </div>
       </div>
@@ -1388,67 +1264,6 @@
                     data-loaded="loaded"
                   ></span>
                 </div>
-                <div
-                  class="socials dt-mt-2 dt-flex dt-justify-between dt-items-center"
-                >
-                  <div class="socials-share dt-flex dt-gap-3">
-                    <button
-                      type="button"
-                      class="dt-relative dt-rounded-full dt-size-6 dt-flex dt-justify-center dt-items-center dt-bg-cF4F6FA"
-                    >
-                      <svg
-                        width="14"
-                        height="13"
-                        fill="none"
-                        xmlns="http://www.w3.org/2000/svg"
-                      >
-                        <path
-                          d="m5.984 9.207-1.4 1.4a1.485 1.485 0 1 1-2.102-2.1l2.801-2.802c.58-.58 1.521-.58 2.101 0a.495.495 0 1 0 .7-.7 2.476 2.476 0 0 0-3.5 0L1.78 7.806a2.476 2.476 0 1 0 3.503 3.502l1.4-1.4a.495.495 0 0 0-.7-.701Z"
-                          fill="#565656"
-                          stroke="#565656"
-                          stroke-width="0.225"
-                        ></path>
-                        <path
-                          d="M12.219.87a2.476 2.476 0 0 0-3.502 0l-1.68 1.68a.495.495 0 0 0 .7.7l1.68-1.68a1.486 1.486 0 0 1 2.101 2.101L8.437 6.753c-.58.58-1.52.58-2.101 0a.495.495 0 0 0-.7.7 2.476 2.476 0 0 0 3.501 0L12.22 4.37a2.476 2.476 0 0 0 0-3.501Z"
-                          fill="#565656"
-                          stroke="#565656"
-                          stroke-width="0.225"
-                        ></path>
-                      </svg></button
-                    ><button
-                      type="button"
-                      class="dt-rounded-full dt-size-6 dt-flex dt-justify-center dt-items-center dt-bg-cF4F6FA"
-                    >
-                      <svg
-                        width="16"
-                        height="17"
-                        fill="none"
-                        xmlns="http://www.w3.org/2000/svg"
-                      >
-                        <path
-                          d="M8.842 4.57v2.17h2.19c.168 0 .252.15.252.3l-.337 1.422c0 .075-.168.15-.252.15H8.842v5.464H6.316v-5.39H4.884c-.168 0-.252-.074-.252-.224V7.04c0-.15.084-.225.252-.225h1.432v-2.47c0-1.272 1.095-2.245 2.526-2.245h2.274c.168 0 .252.074.252.224v1.797c0 .15-.084.224-.252.224H9.095c-.169 0-.253.075-.253.225Z"
-                          fill="#565656"
-                        ></path>
-                      </svg></button
-                    ><button
-                      type="button"
-                      class="dt-rounded-full dt-size-6 dt-flex dt-justify-center dt-items-center dt-bg-cF4F6FA"
-                    >
-                      <svg
-                        width="12"
-                        height="12"
-                        fill="none"
-                        xmlns="http://www.w3.org/2000/svg"
-                      >
-                        <path
-                          d="M2.948 11.588H.663V4.255h2.285v7.333Zm.228-9.67c0-.734-.599-1.33-1.337-1.33C1.098.588.5 1.184.5 1.918c0 .735.598 1.33 1.339 1.33.738 0 1.337-.595 1.337-1.33ZM11.5 7.553c0-1.968-.418-3.428-2.732-3.428-1.111 0-1.857.552-2.162 1.127h-.002v-.997h-2.22v7.333h2.22V7.947c0-.954.244-1.877 1.433-1.877 1.173 0 1.21 1.09 1.21 1.937v3.58H11.5V7.554Z"
-                          fill="#565656"
-                        ></path>
-                      </svg>
-                    </button>
-                  </div>
-                  <div class="dt-flex dt-gap-3"></div>
-                </div>
               </div>
             </article>
             <article
@@ -1489,67 +1304,6 @@
                     data-redirect="/du-lich/tu-y-chat-cay-500-nam-tuoi-khong-xin-phep-nha-hang-doi-mat-khoan-phat-nang-20250420064457019.htm#comment"
                     data-loaded="loaded"
                   ></span>
-                </div>
-                <div
-                  class="socials dt-mt-2 dt-flex dt-justify-between dt-items-center"
-                >
-                  <div class="socials-share dt-flex dt-gap-3">
-                    <button
-                      type="button"
-                      class="dt-relative dt-rounded-full dt-size-6 dt-flex dt-justify-center dt-items-center dt-bg-cF4F6FA"
-                    >
-                      <svg
-                        width="14"
-                        height="13"
-                        fill="none"
-                        xmlns="http://www.w3.org/2000/svg"
-                      >
-                        <path
-                          d="m5.984 9.207-1.4 1.4a1.485 1.485 0 1 1-2.102-2.1l2.801-2.802c.58-.58 1.521-.58 2.101 0a.495.495 0 1 0 .7-.7 2.476 2.476 0 0 0-3.5 0L1.78 7.806a2.476 2.476 0 1 0 3.503 3.502l1.4-1.4a.495.495 0 0 0-.7-.701Z"
-                          fill="#565656"
-                          stroke="#565656"
-                          stroke-width="0.225"
-                        ></path>
-                        <path
-                          d="M12.219.87a2.476 2.476 0 0 0-3.502 0l-1.68 1.68a.495.495 0 0 0 .7.7l1.68-1.68a1.486 1.486 0 0 1 2.101 2.101L8.437 6.753c-.58.58-1.52.58-2.101 0a.495.495 0 0 0-.7.7 2.476 2.476 0 0 0 3.501 0L12.22 4.37a2.476 2.476 0 0 0 0-3.501Z"
-                          fill="#565656"
-                          stroke="#565656"
-                          stroke-width="0.225"
-                        ></path>
-                      </svg></button
-                    ><button
-                      type="button"
-                      class="dt-rounded-full dt-size-6 dt-flex dt-justify-center dt-items-center dt-bg-cF4F6FA"
-                    >
-                      <svg
-                        width="16"
-                        height="17"
-                        fill="none"
-                        xmlns="http://www.w3.org/2000/svg"
-                      >
-                        <path
-                          d="M8.842 4.57v2.17h2.19c.168 0 .252.15.252.3l-.337 1.422c0 .075-.168.15-.252.15H8.842v5.464H6.316v-5.39H4.884c-.168 0-.252-.074-.252-.224V7.04c0-.15.084-.225.252-.225h1.432v-2.47c0-1.272 1.095-2.245 2.526-2.245h2.274c.168 0 .252.074.252.224v1.797c0 .15-.084.224-.252.224H9.095c-.169 0-.253.075-.253.225Z"
-                          fill="#565656"
-                        ></path>
-                      </svg></button
-                    ><button
-                      type="button"
-                      class="dt-rounded-full dt-size-6 dt-flex dt-justify-center dt-items-center dt-bg-cF4F6FA"
-                    >
-                      <svg
-                        width="12"
-                        height="12"
-                        fill="none"
-                        xmlns="http://www.w3.org/2000/svg"
-                      >
-                        <path
-                          d="M2.948 11.588H.663V4.255h2.285v7.333Zm.228-9.67c0-.734-.599-1.33-1.337-1.33C1.098.588.5 1.184.5 1.918c0 .735.598 1.33 1.339 1.33.738 0 1.337-.595 1.337-1.33ZM11.5 7.553c0-1.968-.418-3.428-2.732-3.428-1.111 0-1.857.552-2.162 1.127h-.002v-.997h-2.22v7.333h2.22V7.947c0-.954.244-1.877 1.433-1.877 1.173 0 1.21 1.09 1.21 1.937v3.58H11.5V7.554Z"
-                          fill="#565656"
-                        ></path>
-                      </svg>
-                    </button>
-                  </div>
-                  <div class="dt-flex dt-gap-3"></div>
                 </div>
               </div>
             </article>
@@ -1592,67 +1346,6 @@
                     data-loaded="loaded"
                   ></span>
                 </div>
-                <div
-                  class="socials dt-mt-2 dt-flex dt-justify-between dt-items-center"
-                >
-                  <div class="socials-share dt-flex dt-gap-3">
-                    <button
-                      type="button"
-                      class="dt-relative dt-rounded-full dt-size-6 dt-flex dt-justify-center dt-items-center dt-bg-cF4F6FA"
-                    >
-                      <svg
-                        width="14"
-                        height="13"
-                        fill="none"
-                        xmlns="http://www.w3.org/2000/svg"
-                      >
-                        <path
-                          d="m5.984 9.207-1.4 1.4a1.485 1.485 0 1 1-2.102-2.1l2.801-2.802c.58-.58 1.521-.58 2.101 0a.495.495 0 1 0 .7-.7 2.476 2.476 0 0 0-3.5 0L1.78 7.806a2.476 2.476 0 1 0 3.503 3.502l1.4-1.4a.495.495 0 0 0-.7-.701Z"
-                          fill="#565656"
-                          stroke="#565656"
-                          stroke-width="0.225"
-                        ></path>
-                        <path
-                          d="M12.219.87a2.476 2.476 0 0 0-3.502 0l-1.68 1.68a.495.495 0 0 0 .7.7l1.68-1.68a1.486 1.486 0 0 1 2.101 2.101L8.437 6.753c-.58.58-1.52.58-2.101 0a.495.495 0 0 0-.7.7 2.476 2.476 0 0 0 3.501 0L12.22 4.37a2.476 2.476 0 0 0 0-3.501Z"
-                          fill="#565656"
-                          stroke="#565656"
-                          stroke-width="0.225"
-                        ></path>
-                      </svg></button
-                    ><button
-                      type="button"
-                      class="dt-rounded-full dt-size-6 dt-flex dt-justify-center dt-items-center dt-bg-cF4F6FA"
-                    >
-                      <svg
-                        width="16"
-                        height="17"
-                        fill="none"
-                        xmlns="http://www.w3.org/2000/svg"
-                      >
-                        <path
-                          d="M8.842 4.57v2.17h2.19c.168 0 .252.15.252.3l-.337 1.422c0 .075-.168.15-.252.15H8.842v5.464H6.316v-5.39H4.884c-.168 0-.252-.074-.252-.224V7.04c0-.15.084-.225.252-.225h1.432v-2.47c0-1.272 1.095-2.245 2.526-2.245h2.274c.168 0 .252.074.252.224v1.797c0 .15-.084.224-.252.224H9.095c-.169 0-.253.075-.253.225Z"
-                          fill="#565656"
-                        ></path>
-                      </svg></button
-                    ><button
-                      type="button"
-                      class="dt-rounded-full dt-size-6 dt-flex dt-justify-center dt-items-center dt-bg-cF4F6FA"
-                    >
-                      <svg
-                        width="12"
-                        height="12"
-                        fill="none"
-                        xmlns="http://www.w3.org/2000/svg"
-                      >
-                        <path
-                          d="M2.948 11.588H.663V4.255h2.285v7.333Zm.228-9.67c0-.734-.599-1.33-1.337-1.33C1.098.588.5 1.184.5 1.918c0 .735.598 1.33 1.339 1.33.738 0 1.337-.595 1.337-1.33ZM11.5 7.553c0-1.968-.418-3.428-2.732-3.428-1.111 0-1.857.552-2.162 1.127h-.002v-.997h-2.22v7.333h2.22V7.947c0-.954.244-1.877 1.433-1.877 1.173 0 1.21 1.09 1.21 1.937v3.58H11.5V7.554Z"
-                          fill="#565656"
-                        ></path>
-                      </svg>
-                    </button>
-                  </div>
-                  <div class="dt-flex dt-gap-3"></div>
-                </div>
               </div>
             </article>
           </article>
@@ -1690,9 +1383,9 @@
               </h3>
               <div class="article-excerpt-none">
                 <a href="#"
-                  >Lo ngại fkask các cành cây có thể gây nguy hiểm cho khách
-                  và nhân viên, chủ nhà hàng ở London (Anh) đã thuê người chặt
-                  cây sồi 500 năm tuổi.</a
+                  >Lo ngại fkask các cành cây có thể gây nguy hiểm cho khách và
+                  nhân viên, chủ nhà hàng ở London (Anh) đã thuê người chặt cây
+                  sồi 500 năm tuổi.</a
                 >
                 <span
                   class="article-total-comment dt-text-xs dt-leading-[140%] dt-items-center dt-gap-1 dt-align-middle dt-font-normal dt-hidden hover:dt-text-c0f6c32 dt-ml-1"
@@ -1704,66 +1397,6 @@
                   data-loaded="loaded"
                 ></span>
               </div>
-              <div
-                class="social dt-mt-2 dt-flex dt-justify-between dt-items-center"
-              >
-                <div class="socials-share dt-flex dt-gap-3">
-                  <button
-                    type="button"
-                    class="dt-relative dt-rounded-full dt-size-6 dt-flex dt-justify-center dt-items-center dt-bg-cF4F6FA"
-                  >
-                    <svg
-                      width="14"
-                      height="13"
-                      fill="none"
-                      xmlns="http://www.w3.org/2000/svg"
-                    >
-                      <path
-                        d="m5.984 9.207-1.4 1.4a1.485 1.485 0 1 1-2.102-2.1l2.801-2.802c.58-.58 1.521-.58 2.101 0a.495.495 0 1 0 .7-.7 2.476 2.476 0 0 0-3.5 0L1.78 7.806a2.476 2.476 0 1 0 3.503 3.502l1.4-1.4a.495.495 0 0 0-.7-.701Z"
-                        fill="#565656"
-                        stroke="#565656"
-                        stroke-width="0.225"
-                      ></path>
-                      <path
-                        d="M12.219.87a2.476 2.476 0 0 0-3.502 0l-1.68 1.68a.495.495 0 0 0 .7.7l1.68-1.68a1.486 1.486 0 0 1 2.101 2.101L8.437 6.753c-.58.58-1.52.58-2.101 0a.495.495 0 0 0-.7.7 2.476 2.476 0 0 0 3.501 0L12.22 4.37a2.476 2.476 0 0 0 0-3.501Z"
-                        fill="#565656"
-                        stroke="#565656"
-                        stroke-width="0.225"
-                      ></path>
-                    </svg></button
-                  ><button
-                    type="button"
-                    class="dt-rounded-full dt-size-6 dt-flex dt-justify-center dt-items-center dt-bg-cF4F6FA"
-                  >
-                    <svg
-                      width="16"
-                      height="17"
-                      fill="none"
-                      xmlns="http://www.w3.org/2000/svg"
-                    >
-                      <path
-                        d="M8.842 4.57v2.17h2.19c.168 0 .252.15.252.3l-.337 1.422c0 .075-.168.15-.252.15H8.842v5.464H6.316v-5.39H4.884c-.168 0-.252-.074-.252-.224V7.04c0-.15.084-.225.252-.225h1.432v-2.47c0-1.272 1.095-2.245 2.526-2.245h2.274c.168 0 .252.074.252.224v1.797c0 .15-.084.224-.252.224H9.095c-.169 0-.253.075-.253.225Z"
-                        fill="#565656"
-                      ></path>
-                    </svg></button
-                  ><button
-                    type="button"
-                    class="dt-rounded-full dt-size-6 dt-flex dt-justify-center dt-items-center dt-bg-cF4F6FA"
-                  >
-                    <svg
-                      width="12"
-                      height="12"
-                      fill="none"
-                      xmlns="http://www.w3.org/2000/svg"
-                    >
-                      <path
-                        d="M2.948 11.588H.663V4.255h2.285v7.333Zm.228-9.67c0-.734-.599-1.33-1.337-1.33C1.098.588.5 1.184.5 1.918c0 .735.598 1.33 1.339 1.33.738 0 1.337-.595 1.337-1.33ZM11.5 7.553c0-1.968-.418-3.428-2.732-3.428-1.111 0-1.857.552-2.162 1.127h-.002v-.997h-2.22v7.333h2.22V7.947c0-.954.244-1.877 1.433-1.877 1.173 0 1.21 1.09 1.21 1.937v3.58H11.5V7.554Z"
-                        fill="#565656"
-                      ></path>
-                    </svg>
-                  </button>
-                </div>
-                <div class="dt-flex dt-gap-3"></div>
             </article>
             <article
               class="article-item"
@@ -1798,9 +1431,9 @@
               </h3>
               <div class="article-excerpt-none">
                 <a href="#"
-                  >Lo ngại fkask các cành cây có thể gây nguy hiểm cho khách
-                  và nhân viên, chủ nhà hàng ở London (Anh) đã thuê người chặt
-                  cây sồi 500 năm tuổi.</a
+                  >Lo ngại fkask các cành cây có thể gây nguy hiểm cho khách và
+                  nhân viên, chủ nhà hàng ở London (Anh) đã thuê người chặt cây
+                  sồi 500 năm tuổi.</a
                 >
                 <span
                   class="article-total-comment dt-text-xs dt-leading-[140%] dt-items-center dt-gap-1 dt-align-middle dt-font-normal dt-hidden hover:dt-text-c0f6c32 dt-ml-1"
@@ -1812,66 +1445,6 @@
                   data-loaded="loaded"
                 ></span>
               </div>
-              <div
-                class="social dt-mt-2 dt-flex dt-justify-between dt-items-center"
-              >
-                <div class="socials-share dt-flex dt-gap-3">
-                  <button
-                    type="button"
-                    class="dt-relative dt-rounded-full dt-size-6 dt-flex dt-justify-center dt-items-center dt-bg-cF4F6FA"
-                  >
-                    <svg
-                      width="14"
-                      height="13"
-                      fill="none"
-                      xmlns="http://www.w3.org/2000/svg"
-                    >
-                      <path
-                        d="m5.984 9.207-1.4 1.4a1.485 1.485 0 1 1-2.102-2.1l2.801-2.802c.58-.58 1.521-.58 2.101 0a.495.495 0 1 0 .7-.7 2.476 2.476 0 0 0-3.5 0L1.78 7.806a2.476 2.476 0 1 0 3.503 3.502l1.4-1.4a.495.495 0 0 0-.7-.701Z"
-                        fill="#565656"
-                        stroke="#565656"
-                        stroke-width="0.225"
-                      ></path>
-                      <path
-                        d="M12.219.87a2.476 2.476 0 0 0-3.502 0l-1.68 1.68a.495.495 0 0 0 .7.7l1.68-1.68a1.486 1.486 0 0 1 2.101 2.101L8.437 6.753c-.58.58-1.52.58-2.101 0a.495.495 0 0 0-.7.7 2.476 2.476 0 0 0 3.501 0L12.22 4.37a2.476 2.476 0 0 0 0-3.501Z"
-                        fill="#565656"
-                        stroke="#565656"
-                        stroke-width="0.225"
-                      ></path>
-                    </svg></button
-                  ><button
-                    type="button"
-                    class="dt-rounded-full dt-size-6 dt-flex dt-justify-center dt-items-center dt-bg-cF4F6FA"
-                  >
-                    <svg
-                      width="16"
-                      height="17"
-                      fill="none"
-                      xmlns="http://www.w3.org/2000/svg"
-                    >
-                      <path
-                        d="M8.842 4.57v2.17h2.19c.168 0 .252.15.252.3l-.337 1.422c0 .075-.168.15-.252.15H8.842v5.464H6.316v-5.39H4.884c-.168 0-.252-.074-.252-.224V7.04c0-.15.084-.225.252-.225h1.432v-2.47c0-1.272 1.095-2.245 2.526-2.245h2.274c.168 0 .252.074.252.224v1.797c0 .15-.084.224-.252.224H9.095c-.169 0-.253.075-.253.225Z"
-                        fill="#565656"
-                      ></path>
-                    </svg></button
-                  ><button
-                    type="button"
-                    class="dt-rounded-full dt-size-6 dt-flex dt-justify-center dt-items-center dt-bg-cF4F6FA"
-                  >
-                    <svg
-                      width="12"
-                      height="12"
-                      fill="none"
-                      xmlns="http://www.w3.org/2000/svg"
-                    >
-                      <path
-                        d="M2.948 11.588H.663V4.255h2.285v7.333Zm.228-9.67c0-.734-.599-1.33-1.337-1.33C1.098.588.5 1.184.5 1.918c0 .735.598 1.33 1.339 1.33.738 0 1.337-.595 1.337-1.33ZM11.5 7.553c0-1.968-.418-3.428-2.732-3.428-1.111 0-1.857.552-2.162 1.127h-.002v-.997h-2.22v7.333h2.22V7.947c0-.954.244-1.877 1.433-1.877 1.173 0 1.21 1.09 1.21 1.937v3.58H11.5V7.554Z"
-                        fill="#565656"
-                      ></path>
-                    </svg>
-                  </button>
-                </div>
-                <div class="dt-flex dt-gap-3"></div>
             </article>
             <article
               class="article-item"
@@ -1906,9 +1479,9 @@
               </h3>
               <div class="article-excerpt-none">
                 <a href="#"
-                  >Lo ngại fkask các cành cây có thể gây nguy hiểm cho khách
-                  và nhân viên, chủ nhà hàng ở London (Anh) đã thuê người chặt
-                  cây sồi 500 năm tuổi.</a
+                  >Lo ngại fkask các cành cây có thể gây nguy hiểm cho khách và
+                  nhân viên, chủ nhà hàng ở London (Anh) đã thuê người chặt cây
+                  sồi 500 năm tuổi.</a
                 >
                 <span
                   class="article-total-comment dt-text-xs dt-leading-[140%] dt-items-center dt-gap-1 dt-align-middle dt-font-normal dt-hidden hover:dt-text-c0f6c32 dt-ml-1"
@@ -1920,66 +1493,6 @@
                   data-loaded="loaded"
                 ></span>
               </div>
-              <div
-                class="social dt-mt-2 dt-flex dt-justify-between dt-items-center"
-              >
-                <div class="socials-share dt-flex dt-gap-3">
-                  <button
-                    type="button"
-                    class="dt-relative dt-rounded-full dt-size-6 dt-flex dt-justify-center dt-items-center dt-bg-cF4F6FA"
-                  >
-                    <svg
-                      width="14"
-                      height="13"
-                      fill="none"
-                      xmlns="http://www.w3.org/2000/svg"
-                    >
-                      <path
-                        d="m5.984 9.207-1.4 1.4a1.485 1.485 0 1 1-2.102-2.1l2.801-2.802c.58-.58 1.521-.58 2.101 0a.495.495 0 1 0 .7-.7 2.476 2.476 0 0 0-3.5 0L1.78 7.806a2.476 2.476 0 1 0 3.503 3.502l1.4-1.4a.495.495 0 0 0-.7-.701Z"
-                        fill="#565656"
-                        stroke="#565656"
-                        stroke-width="0.225"
-                      ></path>
-                      <path
-                        d="M12.219.87a2.476 2.476 0 0 0-3.502 0l-1.68 1.68a.495.495 0 0 0 .7.7l1.68-1.68a1.486 1.486 0 0 1 2.101 2.101L8.437 6.753c-.58.58-1.52.58-2.101 0a.495.495 0 0 0-.7.7 2.476 2.476 0 0 0 3.501 0L12.22 4.37a2.476 2.476 0 0 0 0-3.501Z"
-                        fill="#565656"
-                        stroke="#565656"
-                        stroke-width="0.225"
-                      ></path>
-                    </svg></button
-                  ><button
-                    type="button"
-                    class="dt-rounded-full dt-size-6 dt-flex dt-justify-center dt-items-center dt-bg-cF4F6FA"
-                  >
-                    <svg
-                      width="16"
-                      height="17"
-                      fill="none"
-                      xmlns="http://www.w3.org/2000/svg"
-                    >
-                      <path
-                        d="M8.842 4.57v2.17h2.19c.168 0 .252.15.252.3l-.337 1.422c0 .075-.168.15-.252.15H8.842v5.464H6.316v-5.39H4.884c-.168 0-.252-.074-.252-.224V7.04c0-.15.084-.225.252-.225h1.432v-2.47c0-1.272 1.095-2.245 2.526-2.245h2.274c.168 0 .252.074.252.224v1.797c0 .15-.084.224-.252.224H9.095c-.169 0-.253.075-.253.225Z"
-                        fill="#565656"
-                      ></path>
-                    </svg></button
-                  ><button
-                    type="button"
-                    class="dt-rounded-full dt-size-6 dt-flex dt-justify-center dt-items-center dt-bg-cF4F6FA"
-                  >
-                    <svg
-                      width="12"
-                      height="12"
-                      fill="none"
-                      xmlns="http://www.w3.org/2000/svg"
-                    >
-                      <path
-                        d="M2.948 11.588H.663V4.255h2.285v7.333Zm.228-9.67c0-.734-.599-1.33-1.337-1.33C1.098.588.5 1.184.5 1.918c0 .735.598 1.33 1.339 1.33.738 0 1.337-.595 1.337-1.33ZM11.5 7.553c0-1.968-.418-3.428-2.732-3.428-1.111 0-1.857.552-2.162 1.127h-.002v-.997h-2.22v7.333h2.22V7.947c0-.954.244-1.877 1.433-1.877 1.173 0 1.21 1.09 1.21 1.937v3.58H11.5V7.554Z"
-                        fill="#565656"
-                      ></path>
-                    </svg>
-                  </button>
-                </div>
-                <div class="dt-flex dt-gap-3"></div>
             </article>
             <article
               class="article-item"
@@ -2043,9 +1556,9 @@
               </h3>
               <div class="article-excerpt-none">
                 <a href="#"
-                  >Lo ngại fkask các cành cây có thể gây nguy hiểm cho khách
-                  và nhân viên, chủ nhà hàng ở London (Anh) đã thuê người chặt
-                  cây sồi 500 năm tuổi.</a
+                  >Lo ngại fkask các cành cây có thể gây nguy hiểm cho khách và
+                  nhân viên, chủ nhà hàng ở London (Anh) đã thuê người chặt cây
+                  sồi 500 năm tuổi.</a
                 >
                 <span
                   class="article-total-comment dt-text-xs dt-leading-[140%] dt-items-center dt-gap-1 dt-align-middle dt-font-normal dt-hidden hover:dt-text-c0f6c32 dt-ml-1"
@@ -2057,66 +1570,6 @@
                   data-loaded="loaded"
                 ></span>
               </div>
-              <div
-                class="social dt-mt-2 dt-flex dt-justify-between dt-items-center"
-              >
-                <div class="socials-share dt-flex dt-gap-3">
-                  <button
-                    type="button"
-                    class="dt-relative dt-rounded-full dt-size-6 dt-flex dt-justify-center dt-items-center dt-bg-cF4F6FA"
-                  >
-                    <svg
-                      width="14"
-                      height="13"
-                      fill="none"
-                      xmlns="http://www.w3.org/2000/svg"
-                    >
-                      <path
-                        d="m5.984 9.207-1.4 1.4a1.485 1.485 0 1 1-2.102-2.1l2.801-2.802c.58-.58 1.521-.58 2.101 0a.495.495 0 1 0 .7-.7 2.476 2.476 0 0 0-3.5 0L1.78 7.806a2.476 2.476 0 1 0 3.503 3.502l1.4-1.4a.495.495 0 0 0-.7-.701Z"
-                        fill="#565656"
-                        stroke="#565656"
-                        stroke-width="0.225"
-                      ></path>
-                      <path
-                        d="M12.219.87a2.476 2.476 0 0 0-3.502 0l-1.68 1.68a.495.495 0 0 0 .7.7l1.68-1.68a1.486 1.486 0 0 1 2.101 2.101L8.437 6.753c-.58.58-1.52.58-2.101 0a.495.495 0 0 0-.7.7 2.476 2.476 0 0 0 3.501 0L12.22 4.37a2.476 2.476 0 0 0 0-3.501Z"
-                        fill="#565656"
-                        stroke="#565656"
-                        stroke-width="0.225"
-                      ></path>
-                    </svg></button
-                  ><button
-                    type="button"
-                    class="dt-rounded-full dt-size-6 dt-flex dt-justify-center dt-items-center dt-bg-cF4F6FA"
-                  >
-                    <svg
-                      width="16"
-                      height="17"
-                      fill="none"
-                      xmlns="http://www.w3.org/2000/svg"
-                    >
-                      <path
-                        d="M8.842 4.57v2.17h2.19c.168 0 .252.15.252.3l-.337 1.422c0 .075-.168.15-.252.15H8.842v5.464H6.316v-5.39H4.884c-.168 0-.252-.074-.252-.224V7.04c0-.15.084-.225.252-.225h1.432v-2.47c0-1.272 1.095-2.245 2.526-2.245h2.274c.168 0 .252.074.252.224v1.797c0 .15-.084.224-.252.224H9.095c-.169 0-.253.075-.253.225Z"
-                        fill="#565656"
-                      ></path>
-                    </svg></button
-                  ><button
-                    type="button"
-                    class="dt-rounded-full dt-size-6 dt-flex dt-justify-center dt-items-center dt-bg-cF4F6FA"
-                  >
-                    <svg
-                      width="12"
-                      height="12"
-                      fill="none"
-                      xmlns="http://www.w3.org/2000/svg"
-                    >
-                      <path
-                        d="M2.948 11.588H.663V4.255h2.285v7.333Zm.228-9.67c0-.734-.599-1.33-1.337-1.33C1.098.588.5 1.184.5 1.918c0 .735.598 1.33 1.339 1.33.738 0 1.337-.595 1.337-1.33ZM11.5 7.553c0-1.968-.418-3.428-2.732-3.428-1.111 0-1.857.552-2.162 1.127h-.002v-.997h-2.22v7.333h2.22V7.947c0-.954.244-1.877 1.433-1.877 1.173 0 1.21 1.09 1.21 1.937v3.58H11.5V7.554Z"
-                        fill="#565656"
-                      ></path>
-                    </svg>
-                  </button>
-                </div>
-                <div class="dt-flex dt-gap-3"></div>
             </article>
           </article>
         </div>
@@ -2165,66 +1618,6 @@
                   ></span>
                 </div>
               </div>
-              <div
-                class="social dt-mt-2 dt-flex dt-justify-between dt-items-center"
-              >
-                <div class="socials-share dt-flex dt-gap-3">
-                  <button
-                    type="button"
-                    class="dt-relative dt-rounded-full dt-size-6 dt-flex dt-justify-center dt-items-center dt-bg-cF4F6FA"
-                  >
-                    <svg
-                      width="14"
-                      height="13"
-                      fill="none"
-                      xmlns="http://www.w3.org/2000/svg"
-                    >
-                      <path
-                        d="m5.984 9.207-1.4 1.4a1.485 1.485 0 1 1-2.102-2.1l2.801-2.802c.58-.58 1.521-.58 2.101 0a.495.495 0 1 0 .7-.7 2.476 2.476 0 0 0-3.5 0L1.78 7.806a2.476 2.476 0 1 0 3.503 3.502l1.4-1.4a.495.495 0 0 0-.7-.701Z"
-                        fill="#565656"
-                        stroke="#565656"
-                        stroke-width="0.225"
-                      ></path>
-                      <path
-                        d="M12.219.87a2.476 2.476 0 0 0-3.502 0l-1.68 1.68a.495.495 0 0 0 .7.7l1.68-1.68a1.486 1.486 0 0 1 2.101 2.101L8.437 6.753c-.58.58-1.52.58-2.101 0a.495.495 0 0 0-.7.7 2.476 2.476 0 0 0 3.501 0L12.22 4.37a2.476 2.476 0 0 0 0-3.501Z"
-                        fill="#565656"
-                        stroke="#565656"
-                        stroke-width="0.225"
-                      ></path>
-                    </svg></button
-                  ><button
-                    type="button"
-                    class="dt-rounded-full dt-size-6 dt-flex dt-justify-center dt-items-center dt-bg-cF4F6FA"
-                  >
-                    <svg
-                      width="16"
-                      height="17"
-                      fill="none"
-                      xmlns="http://www.w3.org/2000/svg"
-                    >
-                      <path
-                        d="M8.842 4.57v2.17h2.19c.168 0 .252.15.252.3l-.337 1.422c0 .075-.168.15-.252.15H8.842v5.464H6.316v-5.39H4.884c-.168 0-.252-.074-.252-.224V7.04c0-.15.084-.225.252-.225h1.432v-2.47c0-1.272 1.095-2.245 2.526-2.245h2.274c.168 0 .252.074.252.224v1.797c0 .15-.084.224-.252.224H9.095c-.169 0-.253.075-.253.225Z"
-                        fill="#565656"
-                      ></path>
-                    </svg></button
-                  ><button
-                    type="button"
-                    class="dt-rounded-full dt-size-6 dt-flex dt-justify-center dt-items-center dt-bg-cF4F6FA"
-                  >
-                    <svg
-                      width="12"
-                      height="12"
-                      fill="none"
-                      xmlns="http://www.w3.org/2000/svg"
-                    >
-                      <path
-                        d="M2.948 11.588H.663V4.255h2.285v7.333Zm.228-9.67c0-.734-.599-1.33-1.337-1.33C1.098.588.5 1.184.5 1.918c0 .735.598 1.33 1.339 1.33.738 0 1.337-.595 1.337-1.33ZM11.5 7.553c0-1.968-.418-3.428-2.732-3.428-1.111 0-1.857.552-2.162 1.127h-.002v-.997h-2.22v7.333h2.22V7.947c0-.954.244-1.877 1.433-1.877 1.173 0 1.21 1.09 1.21 1.937v3.58H11.5V7.554Z"
-                        fill="#565656"
-                      ></path>
-                    </svg>
-                  </button>
-                </div>
-                <div class="dt-flex dt-gap-3"></div>
             </article>
             <article
               class="article-item"
@@ -2266,23 +1659,6 @@
                     data-redirect="/du-lich/tphcm-lam-phim-quang-ba-du-lich-mang-phong-cach-xuyen-khong-20250421180229243.htm#comment"
                     data-loaded="loaded"
                   ></span>
-                </div>
-                <div class="socials dt-mt-2 dt-flex dt-justify-between dt-items-center">
-                  <div class="socials-share dt-flex dt-gap-3">
-                    <button type="button" class="dt-relative dt-rounded-full dt-size-6 dt-flex dt-justify-center dt-items-center dt-bg-cF4F6FA">
-                      <svg width="14" height="13" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path d="m5.984 9.207-1.4 1.4a1.485 1.485 0 1 1-2.102-2.1l2.801-2.802c.58-.58 1.521-.58 2.101 0a.495.495 0 1 0 .7-.7 2.476 2.476 0 0 0-3.5 0L1.78 7.806a2.476 2.476 0 1 0 3.503 3.502l1.4-1.4a.495.495 0 0 0-.7-.701Z" fill="#565656" stroke="#565656" stroke-width="0.225"></path>
-                        <path d="M12.219.87a2.476 2.476 0 0 0-3.502 0l-1.68 1.68a.495.495 0 0 0 .7.7l1.68-1.68a1.486 1.486 0 0 1 2.101 2.101L8.437 6.753c-.58.58-1.52.58-2.101 0a.495.495 0 0 0-.7.7 2.476 2.476 0 0 0 3.501 0L12.22 4.37a2.476 2.476 0 0 0 0-3.501Z" fill="#565656" stroke="#565656" stroke-width="0.225"></path>
-                      </svg></button><button type="button" class="dt-rounded-full dt-size-6 dt-flex dt-justify-center dt-items-center dt-bg-cF4F6FA">
-                      <svg width="16" height="17" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M8.842 4.57v2.17h2.19c.168 0 .252.15.252.3l-.337 1.422c0 .075-.168.15-.252.15H8.842v5.464H6.316v-5.39H4.884c-.168 0-.252-.074-.252-.224V7.04c0-.15.084-.225.252-.225h1.432v-2.47c0-1.272 1.095-2.245 2.526-2.245h2.274c.168 0 .252.074.252.224v1.797c0 .15-.084.224-.252.224H9.095c-.169 0-.253.075-.253.225Z" fill="#565656"></path>
-                      </svg></button><button type="button" class="dt-rounded-full dt-size-6 dt-flex dt-justify-center dt-items-center dt-bg-cF4F6FA">
-                      <svg width="12" height="12" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M2.948 11.588H.663V4.255h2.285v7.333Zm.228-9.67c0-.734-.599-1.33-1.337-1.33C1.098.588.5 1.184.5 1.918c0 .735.598 1.33 1.339 1.33.738 0 1.337-.595 1.337-1.33ZM11.5 7.553c0-1.968-.418-3.428-2.732-3.428-1.111 0-1.857.552-2.162 1.127h-.002v-.997h-2.22v7.333h2.22V7.947c0-.954.244-1.877 1.433-1.877 1.173 0 1.21 1.09 1.21 1.937v3.58H11.5V7.554Z" fill="#565656"></path>
-                      </svg>
-                    </button>
-                  </div>
-                  <div class="dt-flex dt-gap-3"></div>
                 </div>
               </div>
             </article>
@@ -2337,23 +1713,6 @@
                     data-loaded="loaded"
                   ></span>
                 </div>
-                <div class="socials dt-mt-2 dt-flex dt-justify-between dt-items-center">
-                  <div class="socials-share dt-flex dt-gap-3">
-                    <button type="button" class="dt-relative dt-rounded-full dt-size-6 dt-flex dt-justify-center dt-items-center dt-bg-cF4F6FA">
-                      <svg width="14" height="13" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path d="m5.984 9.207-1.4 1.4a1.485 1.485 0 1 1-2.102-2.1l2.801-2.802c.58-.58 1.521-.58 2.101 0a.495.495 0 1 0 .7-.7 2.476 2.476 0 0 0-3.5 0L1.78 7.806a2.476 2.476 0 1 0 3.503 3.502l1.4-1.4a.495.495 0 0 0-.7-.701Z" fill="#565656" stroke="#565656" stroke-width="0.225"></path>
-                        <path d="M12.219.87a2.476 2.476 0 0 0-3.502 0l-1.68 1.68a.495.495 0 0 0 .7.7l1.68-1.68a1.486 1.486 0 0 1 2.101 2.101L8.437 6.753c-.58.58-1.52.58-2.101 0a.495.495 0 0 0-.7.7 2.476 2.476 0 0 0 3.501 0L12.22 4.37a2.476 2.476 0 0 0 0-3.501Z" fill="#565656" stroke="#565656" stroke-width="0.225"></path>
-                      </svg></button><button type="button" class="dt-rounded-full dt-size-6 dt-flex dt-justify-center dt-items-center dt-bg-cF4F6FA">
-                      <svg width="16" height="17" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M8.842 4.57v2.17h2.19c.168 0 .252.15.252.3l-.337 1.422c0 .075-.168.15-.252.15H8.842v5.464H6.316v-5.39H4.884c-.168 0-.252-.074-.252-.224V7.04c0-.15.084-.225.252-.225h1.432v-2.47c0-1.272 1.095-2.245 2.526-2.245h2.274c.168 0 .252.074.252.224v1.797c0 .15-.084.224-.252.224H9.095c-.169 0-.253.075-.253.225Z" fill="#565656"></path>
-                      </svg></button><button type="button" class="dt-rounded-full dt-size-6 dt-flex dt-justify-center dt-items-center dt-bg-cF4F6FA">
-                      <svg width="12" height="12" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M2.948 11.588H.663V4.255h2.285v7.333Zm.228-9.67c0-.734-.599-1.33-1.337-1.33C1.098.588.5 1.184.5 1.918c0 .735.598 1.33 1.339 1.33.738 0 1.337-.595 1.337-1.33ZM11.5 7.553c0-1.968-.418-3.428-2.732-3.428-1.111 0-1.857.552-2.162 1.127h-.002v-.997h-2.22v7.333h2.22V7.947c0-.954.244-1.877 1.433-1.877 1.173 0 1.21 1.09 1.21 1.937v3.58H11.5V7.554Z" fill="#565656"></path>
-                      </svg>
-                    </button>
-                  </div>
-                  <div class="dt-flex dt-gap-3"></div>
-                </div>
               </div>
             </article>
             <article
@@ -2396,23 +1755,6 @@
                     data-loaded="loaded"
                   ></span>
                 </div>
-                <div class="socials dt-mt-2 dt-flex dt-justify-between dt-items-center">
-                  <div class="socials-share dt-flex dt-gap-3">
-                    <button type="button" class="dt-relative dt-rounded-full dt-size-6 dt-flex dt-justify-center dt-items-center dt-bg-cF4F6FA">
-                      <svg width="14" height="13" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path d="m5.984 9.207-1.4 1.4a1.485 1.485 0 1 1-2.102-2.1l2.801-2.802c.58-.58 1.521-.58 2.101 0a.495.495 0 1 0 .7-.7 2.476 2.476 0 0 0-3.5 0L1.78 7.806a2.476 2.476 0 1 0 3.503 3.502l1.4-1.4a.495.495 0 0 0-.7-.701Z" fill="#565656" stroke="#565656" stroke-width="0.225"></path>
-                        <path d="M12.219.87a2.476 2.476 0 0 0-3.502 0l-1.68 1.68a.495.495 0 0 0 .7.7l1.68-1.68a1.486 1.486 0 0 1 2.101 2.101L8.437 6.753c-.58.58-1.52.58-2.101 0a.495.495 0 0 0-.7.7 2.476 2.476 0 0 0 3.501 0L12.22 4.37a2.476 2.476 0 0 0 0-3.501Z" fill="#565656" stroke="#565656" stroke-width="0.225"></path>
-                      </svg></button><button type="button" class="dt-rounded-full dt-size-6 dt-flex dt-justify-center dt-items-center dt-bg-cF4F6FA">
-                      <svg width="16" height="17" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M8.842 4.57v2.17h2.19c.168 0 .252.15.252.3l-.337 1.422c0 .075-.168.15-.252.15H8.842v5.464H6.316v-5.39H4.884c-.168 0-.252-.074-.252-.224V7.04c0-.15.084-.225.252-.225h1.432v-2.47c0-1.272 1.095-2.245 2.526-2.245h2.274c.168 0 .252.074.252.224v1.797c0 .15-.084.224-.252.224H9.095c-.169 0-.253.075-.253.225Z" fill="#565656"></path>
-                      </svg></button><button type="button" class="dt-rounded-full dt-size-6 dt-flex dt-justify-center dt-items-center dt-bg-cF4F6FA">
-                      <svg width="12" height="12" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M2.948 11.588H.663V4.255h2.285v7.333Zm.228-9.67c0-.734-.599-1.33-1.337-1.33C1.098.588.5 1.184.5 1.918c0 .735.598 1.33 1.339 1.33.738 0 1.337-.595 1.337-1.33ZM11.5 7.553c0-1.968-.418-3.428-2.732-3.428-1.111 0-1.857.552-2.162 1.127h-.002v-.997h-2.22v7.333h2.22V7.947c0-.954.244-1.877 1.433-1.877 1.173 0 1.21 1.09 1.21 1.937v3.58H11.5V7.554Z" fill="#565656"></path>
-                      </svg>
-                    </button>
-                  </div>
-                  <div class="dt-flex dt-gap-3"></div>
-                </div>
               </div>
             </article>
             <article
@@ -2454,23 +1796,6 @@
                     data-loaded="loaded"
                   ></span>
                 </div>
-                <div class="socials dt-mt-2 dt-flex dt-justify-between dt-items-center">
-                  <div class="socials-share dt-flex dt-gap-3">
-                    <button type="button" class="dt-relative dt-rounded-full dt-size-6 dt-flex dt-justify-center dt-items-center dt-bg-cF4F6FA">
-                      <svg width="14" height="13" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path d="m5.984 9.207-1.4 1.4a1.485 1.485 0 1 1-2.102-2.1l2.801-2.802c.58-.58 1.521-.58 2.101 0a.495.495 0 1 0 .7-.7 2.476 2.476 0 0 0-3.5 0L1.78 7.806a2.476 2.476 0 1 0 3.503 3.502l1.4-1.4a.495.495 0 0 0-.7-.701Z" fill="#565656" stroke="#565656" stroke-width="0.225"></path>
-                        <path d="M12.219.87a2.476 2.476 0 0 0-3.502 0l-1.68 1.68a.495.495 0 0 0 .7.7l1.68-1.68a1.486 1.486 0 0 1 2.101 2.101L8.437 6.753c-.58.58-1.52.58-2.101 0a.495.495 0 0 0-.7.7 2.476 2.476 0 0 0 3.501 0L12.22 4.37a2.476 2.476 0 0 0 0-3.501Z" fill="#565656" stroke="#565656" stroke-width="0.225"></path>
-                      </svg></button><button type="button" class="dt-rounded-full dt-size-6 dt-flex dt-justify-center dt-items-center dt-bg-cF4F6FA">
-                      <svg width="16" height="17" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M8.842 4.57v2.17h2.19c.168 0 .252.15.252.3l-.337 1.422c0 .075-.168.15-.252.15H8.842v5.464H6.316v-5.39H4.884c-.168 0-.252-.074-.252-.224V7.04c0-.15.084-.225.252-.225h1.432v-2.47c0-1.272 1.095-2.245 2.526-2.245h2.274c.168 0 .252.074.252.224v1.797c0 .15-.084.224-.252.224H9.095c-.169 0-.253.075-.253.225Z" fill="#565656"></path>
-                      </svg></button><button type="button" class="dt-rounded-full dt-size-6 dt-flex dt-justify-center dt-items-center dt-bg-cF4F6FA">
-                      <svg width="12" height="12" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M2.948 11.588H.663V4.255h2.285v7.333Zm.228-9.67c0-.734-.599-1.33-1.337-1.33C1.098.588.5 1.184.5 1.918c0 .735.598 1.33 1.339 1.33.738 0 1.337-.595 1.337-1.33ZM11.5 7.553c0-1.968-.418-3.428-2.732-3.428-1.111 0-1.857.552-2.162 1.127h-.002v-.997h-2.22v7.333h2.22V7.947c0-.954.244-1.877 1.433-1.877 1.173 0 1.21 1.09 1.21 1.937v3.58H11.5V7.554Z" fill="#565656"></path>
-                      </svg>
-                    </button>
-                  </div>
-                  <div class="dt-flex dt-gap-3"></div>
-                </div>
               </div>
             </article>
             <article
@@ -2511,23 +1836,6 @@
                     data-redirect="/du-lich/vu-roi-cap-treo-4-nguoi-tu-vong-tach-ca-phe-bat-ngo-cuu-mang-nguoi-dan-ong-20250420182552968.htm#comment"
                     data-loaded="loaded"
                   ></span>
-                </div>
-                <div class="socials dt-mt-2 dt-flex dt-justify-between dt-items-center">
-                  <div class="socials-share dt-flex dt-gap-3">
-                    <button type="button" class="dt-relative dt-rounded-full dt-size-6 dt-flex dt-justify-center dt-items-center dt-bg-cF4F6FA">
-                      <svg width="14" height="13" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path d="m5.984 9.207-1.4 1.4a1.485 1.485 0 1 1-2.102-2.1l2.801-2.802c.58-.58 1.521-.58 2.101 0a.495.495 0 1 0 .7-.7 2.476 2.476 0 0 0-3.5 0L1.78 7.806a2.476 2.476 0 1 0 3.503 3.502l1.4-1.4a.495.495 0 0 0-.7-.701Z" fill="#565656" stroke="#565656" stroke-width="0.225"></path>
-                        <path d="M12.219.87a2.476 2.476 0 0 0-3.502 0l-1.68 1.68a.495.495 0 0 0 .7.7l1.68-1.68a1.486 1.486 0 0 1 2.101 2.101L8.437 6.753c-.58.58-1.52.58-2.101 0a.495.495 0 0 0-.7.7 2.476 2.476 0 0 0 3.501 0L12.22 4.37a2.476 2.476 0 0 0 0-3.501Z" fill="#565656" stroke="#565656" stroke-width="0.225"></path>
-                      </svg></button><button type="button" class="dt-rounded-full dt-size-6 dt-flex dt-justify-center dt-items-center dt-bg-cF4F6FA">
-                      <svg width="16" height="17" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M8.842 4.57v2.17h2.19c.168 0 .252.15.252.3l-.337 1.422c0 .075-.168.15-.252.15H8.842v5.464H6.316v-5.39H4.884c-.168 0-.252-.074-.252-.224V7.04c0-.15.084-.225.252-.225h1.432v-2.47c0-1.272 1.095-2.245 2.526-2.245h2.274c.168 0 .252.074.252.224v1.797c0 .15-.084.224-.252.224H9.095c-.169 0-.253.075-.253.225Z" fill="#565656"></path>
-                      </svg></button><button type="button" class="dt-rounded-full dt-size-6 dt-flex dt-justify-center dt-items-center dt-bg-cF4F6FA">
-                      <svg width="12" height="12" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M2.948 11.588H.663V4.255h2.285v7.333Zm.228-9.67c0-.734-.599-1.33-1.337-1.33C1.098.588.5 1.184.5 1.918c0 .735.598 1.33 1.339 1.33.738 0 1.337-.595 1.337-1.33ZM11.5 7.553c0-1.968-.418-3.428-2.732-3.428-1.111 0-1.857.552-2.162 1.127h-.002v-.997h-2.22v7.333h2.22V7.947c0-.954.244-1.877 1.433-1.877 1.173 0 1.21 1.09 1.21 1.937v3.58H11.5V7.554Z" fill="#565656"></path>
-                      </svg>
-                    </button>
-                  </div>
-                  <div class="dt-flex dt-gap-3"></div>
                 </div>
               </div>
             </article>
@@ -2571,23 +1879,6 @@
                     data-loaded="loaded"
                   ></span>
                 </div>
-                <div class="socials dt-mt-2 dt-flex dt-justify-between dt-items-center">
-                  <div class="socials-share dt-flex dt-gap-3">
-                    <button type="button" class="dt-relative dt-rounded-full dt-size-6 dt-flex dt-justify-center dt-items-center dt-bg-cF4F6FA">
-                      <svg width="14" height="13" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path d="m5.984 9.207-1.4 1.4a1.485 1.485 0 1 1-2.102-2.1l2.801-2.802c.58-.58 1.521-.58 2.101 0a.495.495 0 1 0 .7-.7 2.476 2.476 0 0 0-3.5 0L1.78 7.806a2.476 2.476 0 1 0 3.503 3.502l1.4-1.4a.495.495 0 0 0-.7-.701Z" fill="#565656" stroke="#565656" stroke-width="0.225"></path>
-                        <path d="M12.219.87a2.476 2.476 0 0 0-3.502 0l-1.68 1.68a.495.495 0 0 0 .7.7l1.68-1.68a1.486 1.486 0 0 1 2.101 2.101L8.437 6.753c-.58.58-1.52.58-2.101 0a.495.495 0 0 0-.7.7 2.476 2.476 0 0 0 3.501 0L12.22 4.37a2.476 2.476 0 0 0 0-3.501Z" fill="#565656" stroke="#565656" stroke-width="0.225"></path>
-                      </svg></button><button type="button" class="dt-rounded-full dt-size-6 dt-flex dt-justify-center dt-items-center dt-bg-cF4F6FA">
-                      <svg width="16" height="17" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M8.842 4.57v2.17h2.19c.168 0 .252.15.252.3l-.337 1.422c0 .075-.168.15-.252.15H8.842v5.464H6.316v-5.39H4.884c-.168 0-.252-.074-.252-.224V7.04c0-.15.084-.225.252-.225h1.432v-2.47c0-1.272 1.095-2.245 2.526-2.245h2.274c.168 0 .252.074.252.224v1.797c0 .15-.084.224-.252.224H9.095c-.169 0-.253.075-.253.225Z" fill="#565656"></path>
-                      </svg></button><button type="button" class="dt-rounded-full dt-size-6 dt-flex dt-justify-center dt-items-center dt-bg-cF4F6FA">
-                      <svg width="12" height="12" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M2.948 11.588H.663V4.255h2.285v7.333Zm.228-9.67c0-.734-.599-1.33-1.337-1.33C1.098.588.5 1.184.5 1.918c0 .735.598 1.33 1.339 1.33.738 0 1.337-.595 1.337-1.33ZM11.5 7.553c0-1.968-.418-3.428-2.732-3.428-1.111 0-1.857.552-2.162 1.127h-.002v-.997h-2.22v7.333h2.22V7.947c0-.954.244-1.877 1.433-1.877 1.173 0 1.21 1.09 1.21 1.937v3.58H11.5V7.554Z" fill="#565656"></path>
-                      </svg>
-                    </button>
-                  </div>
-                  <div class="dt-flex dt-gap-3"></div>
-                </div>
               </div>
             </article>
             <article
@@ -2630,23 +1921,6 @@
                     data-loaded="loaded"
                   ></span>
                 </div>
-                <div class="socials dt-mt-2 dt-flex dt-justify-between dt-items-center">
-                  <div class="socials-share dt-flex dt-gap-3">
-                    <button type="button" class="dt-relative dt-rounded-full dt-size-6 dt-flex dt-justify-center dt-items-center dt-bg-cF4F6FA">
-                      <svg width="14" height="13" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path d="m5.984 9.207-1.4 1.4a1.485 1.485 0 1 1-2.102-2.1l2.801-2.802c.58-.58 1.521-.58 2.101 0a.495.495 0 1 0 .7-.7 2.476 2.476 0 0 0-3.5 0L1.78 7.806a2.476 2.476 0 1 0 3.503 3.502l1.4-1.4a.495.495 0 0 0-.7-.701Z" fill="#565656" stroke="#565656" stroke-width="0.225"></path>
-                        <path d="M12.219.87a2.476 2.476 0 0 0-3.502 0l-1.68 1.68a.495.495 0 0 0 .7.7l1.68-1.68a1.486 1.486 0 0 1 2.101 2.101L8.437 6.753c-.58.58-1.52.58-2.101 0a.495.495 0 0 0-.7.7 2.476 2.476 0 0 0 3.501 0L12.22 4.37a2.476 2.476 0 0 0 0-3.501Z" fill="#565656" stroke="#565656" stroke-width="0.225"></path>
-                      </svg></button><button type="button" class="dt-rounded-full dt-size-6 dt-flex dt-justify-center dt-items-center dt-bg-cF4F6FA">
-                      <svg width="16" height="17" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M8.842 4.57v2.17h2.19c.168 0 .252.15.252.3l-.337 1.422c0 .075-.168.15-.252.15H8.842v5.464H6.316v-5.39H4.884c-.168 0-.252-.074-.252-.224V7.04c0-.15.084-.225.252-.225h1.432v-2.47c0-1.272 1.095-2.245 2.526-2.245h2.274c.168 0 .252.074.252.224v1.797c0 .15-.084.224-.252.224H9.095c-.169 0-.253.075-.253.225Z" fill="#565656"></path>
-                      </svg></button><button type="button" class="dt-rounded-full dt-size-6 dt-flex dt-justify-center dt-items-center dt-bg-cF4F6FA">
-                      <svg width="12" height="12" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M2.948 11.588H.663V4.255h2.285v7.333Zm.228-9.67c0-.734-.599-1.33-1.337-1.33C1.098.588.5 1.184.5 1.918c0 .735.598 1.33 1.339 1.33.738 0 1.337-.595 1.337-1.33ZM11.5 7.553c0-1.968-.418-3.428-2.732-3.428-1.111 0-1.857.552-2.162 1.127h-.002v-.997h-2.22v7.333h2.22V7.947c0-.954.244-1.877 1.433-1.877 1.173 0 1.21 1.09 1.21 1.937v3.58H11.5V7.554Z" fill="#565656"></path>
-                      </svg>
-                    </button>
-                  </div>
-                  <div class="dt-flex dt-gap-3"></div>
-                </div>
               </div>
             </article>
             <article
@@ -2687,23 +1961,6 @@
                     data-redirect="/du-lich/may-bay-vua-ha-canh-khach-hu-via-phat-hien-lop-bi-rung-20250420091500575.htm#comment"
                     data-loaded="loaded"
                   ></span>
-                </div>
-                <div class="socials dt-mt-2 dt-flex dt-justify-between dt-items-center">
-                  <div class="socials-share dt-flex dt-gap-3">
-                    <button type="button" class="dt-relative dt-rounded-full dt-size-6 dt-flex dt-justify-center dt-items-center dt-bg-cF4F6FA">
-                      <svg width="14" height="13" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path d="m5.984 9.207-1.4 1.4a1.485 1.485 0 1 1-2.102-2.1l2.801-2.802c.58-.58 1.521-.58 2.101 0a.495.495 0 1 0 .7-.7 2.476 2.476 0 0 0-3.5 0L1.78 7.806a2.476 2.476 0 1 0 3.503 3.502l1.4-1.4a.495.495 0 0 0-.7-.701Z" fill="#565656" stroke="#565656" stroke-width="0.225"></path>
-                        <path d="M12.219.87a2.476 2.476 0 0 0-3.502 0l-1.68 1.68a.495.495 0 0 0 .7.7l1.68-1.68a1.486 1.486 0 0 1 2.101 2.101L8.437 6.753c-.58.58-1.52.58-2.101 0a.495.495 0 0 0-.7.7 2.476 2.476 0 0 0 3.501 0L12.22 4.37a2.476 2.476 0 0 0 0-3.501Z" fill="#565656" stroke="#565656" stroke-width="0.225"></path>
-                      </svg></button><button type="button" class="dt-rounded-full dt-size-6 dt-flex dt-justify-center dt-items-center dt-bg-cF4F6FA">
-                      <svg width="16" height="17" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M8.842 4.57v2.17h2.19c.168 0 .252.15.252.3l-.337 1.422c0 .075-.168.15-.252.15H8.842v5.464H6.316v-5.39H4.884c-.168 0-.252-.074-.252-.224V7.04c0-.15.084-.225.252-.225h1.432v-2.47c0-1.272 1.095-2.245 2.526-2.245h2.274c.168 0 .252.074.252.224v1.797c0 .15-.084.224-.252.224H9.095c-.169 0-.253.075-.253.225Z" fill="#565656"></path>
-                      </svg></button><button type="button" class="dt-rounded-full dt-size-6 dt-flex dt-justify-center dt-items-center dt-bg-cF4F6FA">
-                      <svg width="12" height="12" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M2.948 11.588H.663V4.255h2.285v7.333Zm.228-9.67c0-.734-.599-1.33-1.337-1.33C1.098.588.5 1.184.5 1.918c0 .735.598 1.33 1.339 1.33.738 0 1.337-.595 1.337-1.33ZM11.5 7.553c0-1.968-.418-3.428-2.732-3.428-1.111 0-1.857.552-2.162 1.127h-.002v-.997h-2.22v7.333h2.22V7.947c0-.954.244-1.877 1.433-1.877 1.173 0 1.21 1.09 1.21 1.937v3.58H11.5V7.554Z" fill="#565656"></path>
-                      </svg>
-                    </button>
-                  </div>
-                  <div class="dt-flex dt-gap-3"></div>
                 </div>
               </div>
             </article>
@@ -2747,27 +2004,34 @@
                     data-loaded="loaded"
                   ></span>
                 </div>
-                <div class="socials dt-mt-2 dt-flex dt-justify-between dt-items-center">
-                  <div class="socials-share dt-flex dt-gap-3">
-                    <button type="button" class="dt-relative dt-rounded-full dt-size-6 dt-flex dt-justify-center dt-items-center dt-bg-cF4F6FA">
-                      <svg width="14" height="13" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path d="m5.984 9.207-1.4 1.4a1.485 1.485 0 1 1-2.102-2.1l2.801-2.802c.58-.58 1.521-.58 2.101 0a.495.495 0 1 0 .7-.7 2.476 2.476 0 0 0-3.5 0L1.78 7.806a2.476 2.476 0 1 0 3.503 3.502l1.4-1.4a.495.495 0 0 0-.7-.701Z" fill="#565656" stroke="#565656" stroke-width="0.225"></path>
-                        <path d="M12.219.87a2.476 2.476 0 0 0-3.502 0l-1.68 1.68a.495.495 0 0 0 .7.7l1.68-1.68a1.486 1.486 0 0 1 2.101 2.101L8.437 6.753c-.58.58-1.52.58-2.101 0a.495.495 0 0 0-.7.7 2.476 2.476 0 0 0 3.501 0L12.22 4.37a2.476 2.476 0 0 0 0-3.501Z" fill="#565656" stroke="#565656" stroke-width="0.225"></path>
-                      </svg></button><button type="button" class="dt-rounded-full dt-size-6 dt-flex dt-justify-center dt-items-center dt-bg-cF4F6FA">
-                      <svg width="16" height="17" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M8.842 4.57v2.17h2.19c.168 0 .252.15.252.3l-.337 1.422c0 .075-.168.15-.252.15H8.842v5.464H6.316v-5.39H4.884c-.168 0-.252-.074-.252-.224V7.04c0-.15.084-.225.252-.225h1.432v-2.47c0-1.272 1.095-2.245 2.526-2.245h2.274c.168 0 .252.074.252.224v1.797c0 .15-.084.224-.252.224H9.095c-.169 0-.253.075-.253.225Z" fill="#565656"></path>
-                      </svg></button><button type="button" class="dt-rounded-full dt-size-6 dt-flex dt-justify-center dt-items-center dt-bg-cF4F6FA">
-                      <svg width="12" height="12" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M2.948 11.588H.663V4.255h2.285v7.333Zm.228-9.67c0-.734-.599-1.33-1.337-1.33C1.098.588.5 1.184.5 1.918c0 .735.598 1.33 1.339 1.33.738 0 1.337-.595 1.337-1.33ZM11.5 7.553c0-1.968-.418-3.428-2.732-3.428-1.111 0-1.857.552-2.162 1.127h-.002v-.997h-2.22v7.333h2.22V7.947c0-.954.244-1.877 1.433-1.877 1.173 0 1.21 1.09 1.21 1.937v3.58H11.5V7.554Z" fill="#565656"></path>
-                      </svg>
-                    </button>
-                  </div>
-                  <div class="dt-flex dt-gap-3"></div>
-                </div>
               </div>
             </article>
           </div>
-          <div class="lazyload-wrapper"><div class="lazyload dt-mt-6 dt-flex dt-flex-col dt-gap-6"><div class="dt-w-full dt-h-10 dt-flex dt-items-center dt-justify-center dt-gap-1 dt-text-sm dt-text-green-jewel dt-font-inter dt-font-semibold dt-bg-[#EAF9F1] dt-rounded-full">Đọc thêm<svg class="dt-relative dt-top-px" aria-hidden="true" width="22" height="22" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M10 13L16 19L22 13" stroke="#1A7900" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"></path></svg></div></div></div>
+          <div class="lazyload-wrapper">
+            <div class="lazyload dt-mt-6 dt-flex dt-flex-col dt-gap-6">
+              <div
+                class="dt-w-full dt-h-10 dt-flex dt-items-center dt-justify-center dt-gap-1 dt-text-sm dt-text-green-jewel dt-font-inter dt-font-semibold dt-bg-[#EAF9F1] dt-rounded-full"
+              >
+                Đọc thêm<svg
+                  class="dt-relative dt-top-px"
+                  aria-hidden="true"
+                  width="22"
+                  height="22"
+                  viewBox="0 0 32 32"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M10 13L16 19L22 13"
+                    stroke="#1A7900"
+                    stroke-width="2.5"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  ></path>
+                </svg>
+              </div>
+            </div>
+          </div>
           <div class="pagination-date">
             <div class="pagination">
               <a
@@ -2816,12 +2080,28 @@
             </div>
           </div>
         </div>
-        
       </div>
       <div class="grid row">
         <div class="article-col" data-cate-id="837">
           <h2 class="title">
-            <a href="#">Khám phá<svg class="next" width="24" height="25" viewBox="0 0 24 25" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M8.93 6.17188L15 12.2419L8.93 18.3119" stroke="#565656" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"></path></svg></a>
+            <a href="#"
+              >Khám phá<svg
+                class="next"
+                width="24"
+                height="25"
+                viewBox="0 0 24 25"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M8.93 6.17188L15 12.2419L8.93 18.3119"
+                  stroke="#565656"
+                  stroke-width="1.5"
+                  stroke-miterlimit="10"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                ></path></svg
+            ></a>
           </h2>
           <article class="article-wrap">
             <article
@@ -2855,6 +2135,23 @@
                   data-loaded="loaded"
                 ></span>
               </h3>
+              <div class="article-excerpt-mobile">
+                <a href="#"
+                  >Những ngày tháng 4 lịch sử, trên khắp các ngõ phố Hà Nội rợp
+                  bóng cờ đỏ sao vàng hướng tới dịp lễ kỷ niệm 50 năm Ngày Giải
+                  phóng miền Nam, thu hút đông đảo các bạn trẻ chụp ảnh, khoe
+                  niềm tự hào.</a
+                >
+                <span
+                  class="article-total-comment dt-text-xs dt-leading-[140%] dt-items-center dt-gap-1 dt-align-middle dt-font-normal dt-hidden hover:dt-text-c0f6c32 dt-ml-1"
+                  data-id="20250419151315716"
+                  data-type="1"
+                  data-limit-show="10"
+                  data-color=""
+                  data-redirect="/du-lich/ban-tre-day-tu-4h-vuot-hang-chuc-kilomet-chup-hinh-o-quang-truong-ba-dinh-20250419151315716.htm#comment"
+                  data-loaded="loaded"
+                ></span>
+              </div>
             </article>
             <article
               class="article-item"
@@ -2952,14 +2249,48 @@
                 ></span>
               </h3>
             </article>
-            <a class="read-more dt-mt-6 dt-h-[44px] dt-flex dt-items-center dt-justify-center dt-gap-1 dt-text-sm dt-text-green-jewel dt-font-inter dt-font-semibold dt-bg-[#EAF9F1] dt-rounded-full" rel="nofollow" href="https://dantri.com.vn/du-lich/kham-pha.htm">Đọc tất cả bài viết Khám phá <svg width="20" height="21" viewBox="0 0 20 21" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M8.125 14.5234L11.875 10.7734L8.125 7.02344" stroke="#A0A4A8" stroke-width="1.5625" stroke-linecap="round" stroke-linejoin="round"></path></svg></a>
-
+            <a
+              class="read-more dt-mt-6 dt-h-[44px] dt-flex dt-items-center dt-justify-center dt-gap-1 dt-text-sm dt-text-green-jewel dt-font-inter dt-font-semibold dt-bg-[#EAF9F1] dt-rounded-full"
+              rel="nofollow"
+              href="https://dantri.com.vn/du-lich/kham-pha.htm"
+              >Đọc tất cả bài viết Khám phá
+              <svg
+                width="20"
+                height="21"
+                viewBox="0 0 20 21"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M8.125 14.5234L11.875 10.7734L8.125 7.02344"
+                  stroke="#A0A4A8"
+                  stroke-width="1.5625"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                ></path></svg
+            ></a>
           </article>
-        
         </div>
         <div class="article-col" data-cate-id="839">
           <h2 class="title">
-            <a href="#">Món ngon - Điểm đẹp<svg class="next" width="24" height="25" viewBox="0 0 24 25" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M8.93 6.17188L15 12.2419L8.93 18.3119" stroke="#565656" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"></path></svg></a>
+            <a href="#"
+              >Món ngon - Điểm đẹp<svg
+                class="next"
+                width="24"
+                height="25"
+                viewBox="0 0 24 25"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M8.93 6.17188L15 12.2419L8.93 18.3119"
+                  stroke="#565656"
+                  stroke-width="1.5"
+                  stroke-miterlimit="10"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                ></path></svg
+            ></a>
           </h2>
           <article class="article-wrap">
             <article
@@ -2993,6 +2324,23 @@
                   data-loaded="loaded"
                 ></span>
               </h3>
+              <div class="article-excerpt-mobile">
+                <a href="#"
+                  >Những ngày tháng 4 lịch sử, trên khắp các ngõ phố Hà Nội rợp
+                  bóng cờ đỏ sao vàng hướng tới dịp lễ kỷ niệm 50 năm Ngày Giải
+                  phóng miền Nam, thu hút đông đảo các bạn trẻ chụp ảnh, khoe
+                  niềm tự hào.</a
+                >
+                <span
+                  class="article-total-comment dt-text-xs dt-leading-[140%] dt-items-center dt-gap-1 dt-align-middle dt-font-normal dt-hidden hover:dt-text-c0f6c32 dt-ml-1"
+                  data-id="20250419151315716"
+                  data-type="1"
+                  data-limit-show="10"
+                  data-color=""
+                  data-redirect="/du-lich/ban-tre-day-tu-4h-vuot-hang-chuc-kilomet-chup-hinh-o-quang-truong-ba-dinh-20250419151315716.htm#comment"
+                  data-loaded="loaded"
+                ></span>
+              </div>
             </article>
             <article
               class="article-item"
@@ -3119,12 +2467,48 @@
                 ></span>
               </h3>
             </article>
-            <a class="read-more dt-mt-6 dt-h-[44px] dt-flex dt-items-center dt-justify-center dt-gap-1 dt-text-sm dt-text-green-jewel dt-font-inter dt-font-semibold dt-bg-[#EAF9F1] dt-rounded-full" rel="nofollow" href="https://dantri.com.vn/du-lich/kham-pha.htm">Đọc tất cả bài viết Món ngon - Điểm đẹp <svg width="20" height="21" viewBox="0 0 20 21" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M8.125 14.5234L11.875 10.7734L8.125 7.02344" stroke="#A0A4A8" stroke-width="1.5625" stroke-linecap="round" stroke-linejoin="round"></path></svg></a>
+            <a
+              class="read-more dt-mt-6 dt-h-[44px] dt-flex dt-items-center dt-justify-center dt-gap-1 dt-text-sm dt-text-green-jewel dt-font-inter dt-font-semibold dt-bg-[#EAF9F1] dt-rounded-full"
+              rel="nofollow"
+              href="https://dantri.com.vn/du-lich/kham-pha.htm"
+              >Đọc tất cả bài viết Món ngon - Điểm đẹp
+              <svg
+                width="20"
+                height="21"
+                viewBox="0 0 20 21"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M8.125 14.5234L11.875 10.7734L8.125 7.02344"
+                  stroke="#A0A4A8"
+                  stroke-width="1.5625"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                ></path></svg
+            ></a>
           </article>
         </div>
         <div class="article-col" data-cate-id="841">
           <h2 class="title">
-            <a href="#">Tour hay - Khuyến mại<svg class="next" width="24" height="25" viewBox="0 0 24 25" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M8.93 6.17188L15 12.2419L8.93 18.3119" stroke="#565656" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"></path></svg></a>
+            <a href="#"
+              >Tour hay - Khuyến mại<svg
+                class="next"
+                width="24"
+                height="25"
+                viewBox="0 0 24 25"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M8.93 6.17188L15 12.2419L8.93 18.3119"
+                  stroke="#565656"
+                  stroke-width="1.5"
+                  stroke-miterlimit="10"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                ></path></svg
+            ></a>
           </h2>
           <article class="article-wrap">
             <article
@@ -3158,6 +2542,23 @@
                   data-loaded="loaded"
                 ></span>
               </h3>
+              <div class="article-excerpt-mobile">
+                <a href="#"
+                  >Những ngày tháng 4 lịch sử, trên khắp các ngõ phố Hà Nội rợp
+                  bóng cờ đỏ sao vàng hướng tới dịp lễ kỷ niệm 50 năm Ngày Giải
+                  phóng miền Nam, thu hút đông đảo các bạn trẻ chụp ảnh, khoe
+                  niềm tự hào.</a
+                >
+                <span
+                  class="article-total-comment dt-text-xs dt-leading-[140%] dt-items-center dt-gap-1 dt-align-middle dt-font-normal dt-hidden hover:dt-text-c0f6c32 dt-ml-1"
+                  data-id="20250419151315716"
+                  data-type="1"
+                  data-limit-show="10"
+                  data-color=""
+                  data-redirect="/du-lich/ban-tre-day-tu-4h-vuot-hang-chuc-kilomet-chup-hinh-o-quang-truong-ba-dinh-20250419151315716.htm#comment"
+                  data-loaded="loaded"
+                ></span>
+              </div>
             </article>
             <article
               class="article-item"
@@ -3255,12 +2656,48 @@
                 ></span>
               </h3>
             </article>
-            <a class="read-more dt-mt-6 dt-h-[44px] dt-flex dt-items-center dt-justify-center dt-gap-1 dt-text-sm dt-text-green-jewel dt-font-inter dt-font-semibold dt-bg-[#EAF9F1] dt-rounded-full" rel="nofollow" href="https://dantri.com.vn/du-lich/kham-pha.htm">Đọc tất cả bài viết Tour hay - Khuyến mãi <svg width="20" height="21" viewBox="0 0 20 21" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M8.125 14.5234L11.875 10.7734L8.125 7.02344" stroke="#A0A4A8" stroke-width="1.5625" stroke-linecap="round" stroke-linejoin="round"></path></svg></a>
+            <a
+              class="read-more dt-mt-6 dt-h-[44px] dt-flex dt-items-center dt-justify-center dt-gap-1 dt-text-sm dt-text-green-jewel dt-font-inter dt-font-semibold dt-bg-[#EAF9F1] dt-rounded-full"
+              rel="nofollow"
+              href="https://dantri.com.vn/du-lich/kham-pha.htm"
+              >Đọc tất cả bài viết Tour hay - Khuyến mãi
+              <svg
+                width="20"
+                height="21"
+                viewBox="0 0 20 21"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M8.125 14.5234L11.875 10.7734L8.125 7.02344"
+                  stroke="#A0A4A8"
+                  stroke-width="1.5625"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                ></path></svg
+            ></a>
           </article>
         </div>
         <div class="article-col" data-cate-id="842">
           <h2 class="title">
-            <a href="#">Video - Ảnh<svg class="next" width="24" height="25" viewBox="0 0 24 25" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M8.93 6.17188L15 12.2419L8.93 18.3119" stroke="#565656" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"></path></svg></a>
+            <a href="#"
+              >Video - Ảnh<svg
+                class="next"
+                width="24"
+                height="25"
+                viewBox="0 0 24 25"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M8.93 6.17188L15 12.2419L8.93 18.3119"
+                  stroke="#565656"
+                  stroke-width="1.5"
+                  stroke-miterlimit="10"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                ></path></svg
+            ></a>
           </h2>
           <article class="article-wrap">
             <article
@@ -3283,7 +2720,7 @@
                 <a class="dt-text-black-mine" href="#"
                   >Ở lại Thủ đô, giới trẻ chọn cắm trại hòa cùng thiên nhiên dịp
                   Quốc khánh</a
-                ><span  
+                ><span
                   class="article-total-comment dt-text-xs dt-leading-[140%] dt-items-center dt-gap-1 dt-align-middle dt-font-normal dt-hidden hover:dt-text-c0f6c32 dt-ml-1"
                   data-id="20240902183057008"
                   data-type="1"
@@ -3293,6 +2730,23 @@
                   data-loaded="loaded"
                 ></span>
               </h3>
+              <div class="article-excerpt-mobile">
+                <a href="#"
+                  >Những ngày tháng 4 lịch sử, trên khắp các ngõ phố Hà Nội rợp
+                  bóng cờ đỏ sao vàng hướng tới dịp lễ kỷ niệm 50 năm Ngày Giải
+                  phóng miền Nam, thu hút đông đảo các bạn trẻ chụp ảnh, khoe
+                  niềm tự hào.</a
+                >
+                <span
+                  class="article-total-comment dt-text-xs dt-leading-[140%] dt-items-center dt-gap-1 dt-align-middle dt-font-normal dt-hidden hover:dt-text-c0f6c32 dt-ml-1"
+                  data-id="20250419151315716"
+                  data-type="1"
+                  data-limit-show="10"
+                  data-color=""
+                  data-redirect="/du-lich/ban-tre-day-tu-4h-vuot-hang-chuc-kilomet-chup-hinh-o-quang-truong-ba-dinh-20250419151315716.htm#comment"
+                  data-loaded="loaded"
+                ></span>
+              </div>
             </article>
             <article
               class="article-item"
@@ -3387,7 +2841,26 @@
                 ></span>
               </h3>
             </article>
-            <a class="read-more dt-mt-6 dt-h-[44px] dt-flex dt-items-center dt-justify-center dt-gap-1 dt-text-sm dt-text-green-jewel dt-font-inter dt-font-semibold dt-bg-[#EAF9F1] dt-rounded-full" rel="nofollow" href="https://dantri.com.vn/du-lich/kham-pha.htm">Đọc tất cả bài viết Video - Ảnh <svg width="20" height="21" viewBox="0 0 20 21" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M8.125 14.5234L11.875 10.7734L8.125 7.02344" stroke="#A0A4A8" stroke-width="1.5625" stroke-linecap="round" stroke-linejoin="round"></path></svg></a>
+            <a
+              class="read-more dt-mt-6 dt-h-[44px] dt-flex dt-items-center dt-justify-center dt-gap-1 dt-text-sm dt-text-green-jewel dt-font-inter dt-font-semibold dt-bg-[#EAF9F1] dt-rounded-full"
+              rel="nofollow"
+              href="https://dantri.com.vn/du-lich/kham-pha.htm"
+              >Đọc tất cả bài viết Video - Ảnh
+              <svg
+                width="20"
+                height="21"
+                viewBox="0 0 20 21"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M8.125 14.5234L11.875 10.7734L8.125 7.02344"
+                  stroke="#A0A4A8"
+                  stroke-width="1.5625"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                ></path></svg
+            ></a>
           </article>
         </div>
       </div>
@@ -3490,7 +2963,10 @@
         mọi hình thức nếu không có sự chấp thuận bằng văn bản.
       </div>
     </footer>
-
+    <nav id="menuWrap" class="menu-wrap">
+      <div class="menu-close"></div>
+      <div class="menu-content"></div>
+    </nav>
     <script src="/assets/js/script.js"></script>
     <script src="https://vjs.zencdn.net/8.22.0/video.min.js"></script>
   </body>
