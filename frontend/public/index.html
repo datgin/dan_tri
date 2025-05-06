@@ -17,124 +17,126 @@
     <link href="https://vjs.zencdn.net/8.22.0/video-js.css" rel="stylesheet" />
   </head>
   <body>
-    <header
-      class="header-mobile dt-relative dt-container dt-h-20 dt-flex dt-items-center dt-justify-between background before:dt-bg-white before:dt-border-b before:dt-border-ce6e6e6"
-    >
-      <div class="dt-flex dt-items-center">
-        <div data-button="menu" class="dt-flex dt-relative">
-          <button
-            id="menuShow"
-            class="dt-relative -dt-left-1 dt-w-8 dt-h-8 dt-flex dt-items-center dt-justify-center"
-            type="button"
-            aria-label="Menu"
-          >
-            <svg
-              aria-hidden="true"
-              width="30"
-              height="30"
-              viewBox="0 0 32 32"
-              fill="none"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path
-                d="M6 23H26"
-                stroke="#4D4D4D"
-                stroke-width="1.5"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-              ></path>
-              <path
-                d="M6 16H26"
-                stroke="#4D4D4D"
-                stroke-width="1.5"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-              ></path>
-              <path
-                d="M6 9H26"
-                stroke="#4D4D4D"
-                stroke-width="1.5"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-              ></path>
-            </svg>
-          </button>
-        </div>
-      </div>
-      <div
-        class="dt-flex dt-items-center dt-absolute dt-top-[calc(50%)] dt-left-1/2 -dt-translate-x-1/2 dt-gap-4 dt-min-w-max"
+    <header>
+      <nav
+        class="header-mobile dt-relative dt-container dt-h-20 dt-flex dt-items-center dt-justify-between background before:dt-bg-white before:dt-border-b before:dt-border-ce6e6e6"
       >
-        <a href="#"
-          ><img
-            alt="Báo điện tử Dân trí - Tin tức cập nhật liên tục 24/7"
-            class="dt-w-auto dt-h-9.5"
-            src="https://cdnmobile.dantri.com.vn/dist/static-logo.1-0-1.b9d5a600244b413d9d4a.svg"
-        /></a>
-      </div>
-      <div class="dt-flex dt-items-center">
-        <div data-module="authen-header">
-          <i class="fa-solid fa-user"></i>
-        </div>
-        <div data-module="account-notification"></div>
-      </div>
-    </header>
-    <header class="header-pc container bg-wrap">
-      <div class="header-top flex-jcb have-users-onboarding dt-relative">
-        <div class="dt-flex dt-gap-7 dt-items-center">
-          <h1 class="header-logo flex-jcc">
-            <a
-              aria-label="Báo điện tử Dân trí - Tin tức cập nhật liên tục 24/7"
-              href="#"
-              ><img
-                alt="Báo điện tử Dân trí - Tin tức cập nhật liên tục 24/7"
-                class="dt-h-11.5"
-                height="46"
-                src="https://cdnweb.dantri.com.vn/dist/static-logo-v2.1-0-1.9bf6dbdd64e0736085bc.png"
-                width="118"
-            /></a>
-          </h1>
-        </div>
-        <div class="search-bar">
-          <input type="text" id="searchInput" placeholder="Tìm kiếm..." />
-          <button onclick="handleSearch()">
-            <svg
-              aria-hidden="true"
-              width="24"
-              height="24"
-              viewBox="0 0 24 24"
-              fill="none"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path
-                d="M11 19C15.4183 19 19 15.4183 19 11C19 6.58172 15.4183 3 11 3C6.58172 3 3 6.58172 3 11C3 15.4183 6.58172 19 11 19Z"
-                stroke="#4D4D4D"
-                stroke-width="1.5"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-              ></path>
-              <path
-                d="M21 20.9999L16.65 16.6499"
-                stroke="#4D4D4D"
-                stroke-width="1.5"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-              ></path>
-            </svg>
-          </button>
-        </div>
-        <div class="header-area flex-jcb">
-          <div class="auth-placeholder" data-module="authen-header">
+        <div class="dt-flex dt-items-center">
+          <div data-button="menu" class="dt-flex dt-relative">
             <button
+              id="menuShow"
+              class="dt-relative -dt-left-1 dt-w-8 dt-h-8 dt-flex dt-items-center dt-justify-center"
               type="button"
-              class="header-account flex-jcc"
-              aria-label="Đăng nhập"
-              name="login"
+              aria-label="Menu"
             >
-              <i class="fa-solid fa-user"></i>Đăng nhập
+              <svg
+                aria-hidden="true"
+                width="30"
+                height="30"
+                viewBox="0 0 32 32"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M6 23H26"
+                  stroke="#4D4D4D"
+                  stroke-width="1.5"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                ></path>
+                <path
+                  d="M6 16H26"
+                  stroke="#4D4D4D"
+                  stroke-width="1.5"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                ></path>
+                <path
+                  d="M6 9H26"
+                  stroke="#4D4D4D"
+                  stroke-width="1.5"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                ></path>
+              </svg>
             </button>
           </div>
         </div>
-      </div>
+        <div
+          class="dt-flex dt-items-center dt-absolute dt-top-[calc(50%)] dt-left-1/2 -dt-translate-x-1/2 dt-gap-4 dt-min-w-max"
+        >
+          <a href="#"
+            ><img
+              alt="Báo điện tử Dân trí - Tin tức cập nhật liên tục 24/7"
+              class="dt-w-auto dt-h-9.5"
+              src="https://cdnmobile.dantri.com.vn/dist/static-logo.1-0-1.b9d5a600244b413d9d4a.svg"
+          /></a>
+        </div>
+        <div class="dt-flex dt-items-center">
+          <div data-module="authen-header">
+            <i class="fa-solid fa-user"></i>
+          </div>
+          <div data-module="account-notification"></div>
+        </div>
+      </nav>
+      <nav class="header-pc container bg-wrap">
+        <div class="header-top flex-jcb have-users-onboarding dt-relative">
+          <div class="dt-flex dt-gap-7 dt-items-center">
+            <h1 class="header-logo flex-jcc">
+              <a
+                aria-label="Báo điện tử Dân trí - Tin tức cập nhật liên tục 24/7"
+                href="#"
+                ><img
+                  alt="Báo điện tử Dân trí - Tin tức cập nhật liên tục 24/7"
+                  class="dt-h-11.5"
+                  height="46"
+                  src="https://cdnweb.dantri.com.vn/dist/static-logo-v2.1-0-1.9bf6dbdd64e0736085bc.png"
+                  width="118"
+              /></a>
+            </h1>
+          </div>
+          <div class="search-bar">
+            <input type="text" id="searchInput" placeholder="Tìm kiếm..." />
+            <button onclick="handleSearch()">
+              <svg
+                aria-hidden="true"
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M11 19C15.4183 19 19 15.4183 19 11C19 6.58172 15.4183 3 11 3C6.58172 3 3 6.58172 3 11C3 15.4183 6.58172 19 11 19Z"
+                  stroke="#4D4D4D"
+                  stroke-width="1.5"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                ></path>
+                <path
+                  d="M21 20.9999L16.65 16.6499"
+                  stroke="#4D4D4D"
+                  stroke-width="1.5"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                ></path>
+              </svg>
+            </button>
+          </div>
+          <div class="header-area flex-jcb">
+            <div class="auth-placeholder" data-module="authen-header">
+              <button
+                type="button"
+                class="header-account flex-jcc"
+                aria-label="Đăng nhập"
+                name="login"
+              >
+                <i class="fa-solid fa-user"></i>Đăng nhập
+              </button>
+            </div>
+          </div>
+        </div>
+      </nav>
     </header>
     <nav role="navigation" aria-label="menu" class="nav-pc container bg-wrap">
       <ol class="menu-wrap bg-wrap">
@@ -3013,14 +3015,143 @@
               </svg>
             </button>
           </form>
-          <div data-link="contact" class="dt-mt-4 dt-flex dt-mb-2"><a class="dt-flex dt-items-center dt-gap-1 dt-w-full dt-h-6 dt-font-inter dt-text-sm dt-text-c565656" href="https://dantri.com.vn/lien-he.htm"><svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M17.418 3.5H2.58203C1.70794 3.5 1 4.23168 1 5.125V14.875C1 15.7736 1.71314 16.5 2.58203 16.5H17.418C18.2847 16.5 19 15.7767 19 14.875V5.125C19 4.23327 18.2949 3.5 17.418 3.5ZM17.1964 4.58333C16.8732 4.91357 11.3107 10.597 11.1187 10.7933C10.8198 11.1002 10.4226 11.2692 10 11.2692C9.57742 11.2692 9.18016 11.1002 8.88034 10.7922C8.75118 10.6603 3.25011 5.03956 2.80359 4.58333H17.1964ZM2.05469 14.6545V5.34618L6.61227 10.0029L2.05469 14.6545ZM2.80425 15.4167L7.36005 10.7669L8.13556 11.5593C8.63358 12.0708 9.29571 12.3525 10 12.3525C10.7043 12.3525 11.3664 12.0708 11.8635 11.5603L12.64 10.7669L17.1957 15.4167H2.80425ZM17.9453 14.6545L13.3877 10.0029L17.9453 5.34618V14.6545Z" fill="#565656" stroke="#565656" stroke-width="0.3"></path></svg> <span class="dt-uppercase dt-font-semibold">Liên hệ toà soạn</span> <svg class="dt-ml-auto" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M10 8L13.6745 11.2929C14.1085 11.6818 14.1085 12.3182 13.6745 12.7071L10 16" stroke="#565656" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"></path></svg></a></div>
-          <div class="dt-grid dt-grid-cols-2 dt-gap-x-4 dt-font-inter dt-font-semibold"><ol class="dt-space-y-0"><li class="dt-border-b dt-border-ceee"><a class="dt-inline-block dt-pt-3.5 dt-pb-2.5 dt-text-MineShaft" href="https://dantri.com.vn/su-kien.htm">Sự kiện nổi bật</a></li><li class="dt-border-b dt-border-ceee"><a class="dt-inline-block dt-pt-3.5 dt-pb-2.5 dt-text-MineShaft" rel="nofollow noopener" href="https://dantri.com.vn/video-page.htm">Video</a></li><li class="dt-border-b dt-border-ceee"><a class="dt-inline-block dt-pt-3.5 dt-pb-2.5 dt-text-MineShaft" rel="nofollow noopener" href="https://fica.dantri.com.vn/">Fica</a></li><li class="dt-border-b dt-border-ceee"><a class="dt-inline-block dt-pt-3.5 dt-pb-2.5 dt-text-MineShaft" rel="nofollow noopener" href="https://dtinews.dantri.com.vn/">DTiNews</a></li><li class="dt-border-b dt-border-ceee"><a class="dt-inline-block dt-pt-3.5 dt-pb-2.5 dt-text-MineShaft" href="https://dantri.com.vn/dmagazine.htm">Dmagazine</a></li><li class="dt-border-b dt-border-ceee"><a class="dt-inline-block dt-pt-3.5 dt-pb-2.5 dt-text-MineShaft" href="https://dantri.com.vn/dnews.htm">DNews</a></li></ol><ol class="dt-space-y-0"><li class="dt-border-b dt-border-ceee"><a class="dt-inline-block dt-pt-3.5 dt-pb-2.5 dt-text-MineShaft" href="https://dantri.com.vn/d-buzz.htm">D-Buzz</a></li><li class="dt-border-b dt-border-ceee"><a class="dt-inline-block dt-pt-3.5 dt-pb-2.5 dt-text-MineShaft" href="https://dantri.com.vn/photo-news.htm">Photo News</a></li><li class="dt-border-b dt-border-ceee"><a class="dt-inline-block dt-pt-3.5 dt-pb-2.5 dt-text-MineShaft" href="https://dantri.com.vn/photo-story.htm">Photo Story</a></li><li class="dt-border-b dt-border-ceee"><a class="dt-inline-block dt-pt-3.5 dt-pb-2.5 dt-text-MineShaft" href="https://dantri.com.vn/infographic.htm">Infographic</a></li><li class="dt-border-b dt-border-ceee"><a class="dt-inline-block dt-pt-3.5 dt-pb-2.5 dt-text-MineShaft" href="https://dantri.com.vn/interactive.htm">Interactive</a></li><li class="dt-border-b dt-border-ceee"><a class="dt-inline-block dt-pt-3.5 dt-pb-2.5 dt-text-MineShaft" href="https://dantri.com.vn/toa-dam-truc-tuyen.htm">Tọa đàm trực tuyến</a></li></ol></div>
-
-          
+          <div data-link="contact" class="dt-mt-4 dt-flex dt-mb-2">
+            <a
+              class="dt-flex dt-items-center dt-gap-1 dt-w-full dt-h-6 dt-font-inter dt-text-sm dt-text-c565656"
+              href="https://dantri.com.vn/lien-he.htm"
+              ><svg
+                width="20"
+                height="20"
+                viewBox="0 0 20 20"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M17.418 3.5H2.58203C1.70794 3.5 1 4.23168 1 5.125V14.875C1 15.7736 1.71314 16.5 2.58203 16.5H17.418C18.2847 16.5 19 15.7767 19 14.875V5.125C19 4.23327 18.2949 3.5 17.418 3.5ZM17.1964 4.58333C16.8732 4.91357 11.3107 10.597 11.1187 10.7933C10.8198 11.1002 10.4226 11.2692 10 11.2692C9.57742 11.2692 9.18016 11.1002 8.88034 10.7922C8.75118 10.6603 3.25011 5.03956 2.80359 4.58333H17.1964ZM2.05469 14.6545V5.34618L6.61227 10.0029L2.05469 14.6545ZM2.80425 15.4167L7.36005 10.7669L8.13556 11.5593C8.63358 12.0708 9.29571 12.3525 10 12.3525C10.7043 12.3525 11.3664 12.0708 11.8635 11.5603L12.64 10.7669L17.1957 15.4167H2.80425ZM17.9453 14.6545L13.3877 10.0029L17.9453 5.34618V14.6545Z"
+                  fill="#565656"
+                  stroke="#565656"
+                  stroke-width="0.3"
+                ></path>
+              </svg>
+              <span class="dt-uppercase dt-font-semibold"
+                >Liên hệ toà soạn</span
+              >
+              <svg
+                class="dt-ml-auto"
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M10 8L13.6745 11.2929C14.1085 11.6818 14.1085 12.3182 13.6745 12.7071L10 16"
+                  stroke="#565656"
+                  stroke-width="1.5"
+                  stroke-miterlimit="10"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                ></path></svg
+            ></a>
+          </div>
+          <div
+            class="dt-grid dt-grid-cols-2 dt-gap-x-4 dt-font-inter dt-font-semibold"
+          >
+            <ol class="dt-space-y-0">
+              <li class="dt-border-b dt-border-ceee">
+                <a
+                  class="dt-inline-block dt-pt-3.5 dt-pb-2.5 dt-text-MineShaft"
+                  href="https://dantri.com.vn/su-kien.htm"
+                  >Sự kiện nổi bật</a
+                >
+              </li>
+              <li class="dt-border-b dt-border-ceee">
+                <a
+                  class="dt-inline-block dt-pt-3.5 dt-pb-2.5 dt-text-MineShaft"
+                  rel="nofollow noopener"
+                  href="https://dantri.com.vn/video-page.htm"
+                  >Video</a
+                >
+              </li>
+              <li class="dt-border-b dt-border-ceee">
+                <a
+                  class="dt-inline-block dt-pt-3.5 dt-pb-2.5 dt-text-MineShaft"
+                  rel="nofollow noopener"
+                  href="https://fica.dantri.com.vn/"
+                  >Fica</a
+                >
+              </li>
+              <li class="dt-border-b dt-border-ceee">
+                <a
+                  class="dt-inline-block dt-pt-3.5 dt-pb-2.5 dt-text-MineShaft"
+                  rel="nofollow noopener"
+                  href="https://dtinews.dantri.com.vn/"
+                  >DTiNews</a
+                >
+              </li>
+              <li class="dt-border-b dt-border-ceee">
+                <a
+                  class="dt-inline-block dt-pt-3.5 dt-pb-2.5 dt-text-MineShaft"
+                  href="https://dantri.com.vn/dmagazine.htm"
+                  >Dmagazine</a
+                >
+              </li>
+              <li class="dt-border-b dt-border-ceee">
+                <a
+                  class="dt-inline-block dt-pt-3.5 dt-pb-2.5 dt-text-MineShaft"
+                  href="https://dantri.com.vn/dnews.htm"
+                  >DNews</a
+                >
+              </li>
+            </ol>
+            <ol class="dt-space-y-0">
+              <li class="dt-border-b dt-border-ceee">
+                <a
+                  class="dt-inline-block dt-pt-3.5 dt-pb-2.5 dt-text-MineShaft"
+                  href="https://dantri.com.vn/d-buzz.htm"
+                  >D-Buzz</a
+                >
+              </li>
+              <li class="dt-border-b dt-border-ceee">
+                <a
+                  class="dt-inline-block dt-pt-3.5 dt-pb-2.5 dt-text-MineShaft"
+                  href="https://dantri.com.vn/photo-news.htm"
+                  >Photo News</a
+                >
+              </li>
+              <li class="dt-border-b dt-border-ceee">
+                <a
+                  class="dt-inline-block dt-pt-3.5 dt-pb-2.5 dt-text-MineShaft"
+                  href="https://dantri.com.vn/photo-story.htm"
+                  >Photo Story</a
+                >
+              </li>
+              <li class="dt-border-b dt-border-ceee">
+                <a
+                  class="dt-inline-block dt-pt-3.5 dt-pb-2.5 dt-text-MineShaft"
+                  href="https://dantri.com.vn/infographic.htm"
+                  >Infographic</a
+                >
+              </li>
+              <li class="dt-border-b dt-border-ceee">
+                <a
+                  class="dt-inline-block dt-pt-3.5 dt-pb-2.5 dt-text-MineShaft"
+                  href="https://dantri.com.vn/interactive.htm"
+                  >Interactive</a
+                >
+              </li>
+              <li class="dt-border-b dt-border-ceee">
+                <a
+                  class="dt-inline-block dt-pt-3.5 dt-pb-2.5 dt-text-MineShaft"
+                  href="https://dantri.com.vn/toa-dam-truc-tuyen.htm"
+                  >Tọa đàm trực tuyến</a
+                >
+              </li>
+            </ol>
+          </div>
         </ul>
       </div>
     </nav>
-    
 
     <script src="/frontend//assets/js/script.js"></script>
     <script src="https://vjs.zencdn.net/8.22.0/video.min.js"></script>
