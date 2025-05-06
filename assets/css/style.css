@@ -19849,4 +19849,10 @@ a {
   .menu-content-mobile{
     padding: 20px;
   }
+  .grid-container{
+    display: block;
+  }
+  .body-container{
+    display: block;
+  }
 }

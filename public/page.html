@@ -15,8 +15,6 @@
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
     />
     <link href="https://vjs.zencdn.net/8.22.0/video-js.css" rel="stylesheet" />
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif&display=swap" rel="stylesheet">
-
   </head>
   <body>
     <header
@@ -95,52 +93,36 @@
                 width="118"
             /></a>
           </h1>
-          <div
-            data-module="weather-header"
-            data-date_time_today=""
-            class="weather-placeholder"
-          >
-            <div class="weather-box">
-              <div>
-                <span class="weather-text-weather-location"></span
-                ><span class="weather-text-weather-date"></span>
-              </div>
-              <div class="weather-divider"></div>
-              <div class="weather-icon"></div>
-              <span class="weather-text weather-temperature"></span>
-            </div>
-          </div>
         </div>
-        <div class="dt-flex">
-          <a
-            class="international flex-jcc"
-            target="_blank"
-            rel="nofollow noopener"
-            href="https://fica.dantri.com.vn"
-            ><img
-              alt="Fica"
-              height="26"
-              src="https://cdnweb.dantri.com.vn/dist/static-fica-logo.1-0-1.2435f041ebf869641575.jpg"
-              width="26"
-            />
-            Fica</a
-          >
-
-          <a
-            class="international flex-jcc"
-            target="_blank"
-            rel="nofollow noopener"
-            href="https://dtinews.dantri.com.vn"
-            ><img
-              alt="DTiNews"
-              height="26"
-              src="https://cdnweb.dantri.com.vn/dist/static-avatar-default.1-0-1.b474c6ca2d1abee5b89b.png"
-              width="26"
-            />
-            DTiNews</a
-          >
+        <div class="search-bar">
+          <input type="text" id="searchInput" placeholder="Tìm kiếm..." />
+          <button onclick="handleSearch()">
+            <svg
+              aria-hidden="true"
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M11 19C15.4183 19 19 15.4183 19 11C19 6.58172 15.4183 3 11 3C6.58172 3 3 6.58172 3 11C3 15.4183 6.58172 19 11 19Z"
+                stroke="#4D4D4D"
+                stroke-width="1.5"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              ></path>
+              <path
+                d="M21 20.9999L16.65 16.6499"
+                stroke="#4D4D4D"
+                stroke-width="1.5"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              ></path>
+            </svg>
+          </button>
         </div>
-        <div class="header-area flex-jcb dt-min-w-32 dt-mr-9">
+        <div class="header-area flex-jcb">
           <div class="auth-placeholder" data-module="authen-header">
             <button
               type="button"
@@ -150,114 +132,6 @@
             >
               <i class="fa-solid fa-user"></i>Đăng nhập
             </button>
-          </div>
-        </div>
-        <div class="dt-flex dt-absolute dt-right-0">
-          <div class="dt-flex dt-items-center dt-relative box-search-header">
-            <input
-              class="input-search-header"
-              type="text"
-              placeholder="Nhập nội dung cần tìm..."
-            />
-            <button
-              class="btn-search-header dt-absolute dt-right-1.5"
-              type="button"
-            >
-              <svg
-                aria-hidden="true"
-                width="24"
-                height="24"
-                viewBox="0 0 24 24"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  d="M11 19C15.4183 19 19 15.4183 19 11C19 6.58172 15.4183 3 11 3C6.58172 3 3 6.58172 3 11C3 15.4183 6.58172 19 11 19Z"
-                  stroke="#4D4D4D"
-                  stroke-width="1.5"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                ></path>
-                <path
-                  d="M21 20.9999L16.65 16.6499"
-                  stroke="#4D4D4D"
-                  stroke-width="1.5"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                ></path>
-              </svg>
-            </button>
-          </div>
-          <div
-            class="dt-absolute dt-top-12 dt-right-0 dt-bg-white dt-p-3 box-trend-header"
-            style="box-shadow: 0 4px 14px 0 #0000001a"
-          >
-            <div
-              class="dt-flex dt-items-center dt-gap-x-2 dt-font-roboto dt-font-medium dt-text-sm dt-leading-18px dt-text-c565656 dt-whitespace-nowrap dt-pb-3 dt-mb-4 dt-border-b dt-border-b-ce3e5e8 dt-border-solid"
-            >
-              <svg
-                width="24"
-                height="25"
-                viewBox="0 0 24 25"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <rect
-                  y="0.757812"
-                  width="24"
-                  height="24"
-                  rx="12"
-                  fill="#EDEDED"
-                ></rect>
-                <path
-                  d="M5.86708 17.001C5.72761 17.001 5.59361 16.9676 5.47054 16.9038C5.13964 16.7399 4.95094 16.3843 5.01111 16.0399C5.05213 15.8093 5.15331 15.5926 5.28184 15.4565C6.64648 14.0482 8.01659 12.6621 9.05579 11.6149C9.24175 11.4288 9.46327 11.3288 9.69299 11.3288C9.93364 11.3288 10.1661 11.4343 10.3657 11.6371L12.7176 14.026L15.9173 10.7732L15.5946 10.7704C15.1843 10.7676 14.621 10.7649 14.2983 10.7621C13.7896 10.7565 13.4341 10.3982 13.4314 9.88709C13.4314 9.63709 13.5162 9.41209 13.6748 9.25098C13.8334 9.08987 14.0494 9.00375 14.2901 9.00375C14.941 9.00098 15.5891 9.00098 16.2153 9.00098C16.869 9.00098 17.5198 9.00375 18.1488 9.00375C18.6356 9.00653 18.9911 9.35931 18.9938 9.84542C19.0021 11.201 19.0021 12.5371 18.9938 13.8176C18.9911 14.3038 18.6274 14.6565 18.1297 14.6565H18.1187C17.6237 14.651 17.2737 14.2982 17.2655 13.7954C17.26 13.401 17.26 13.001 17.2628 12.6149C17.2628 12.4454 17.2628 12.276 17.2628 12.1065V12.0065C17.2491 12.0176 17.2381 12.0288 17.2272 12.0399C16.1442 13.1426 15.064 14.2482 13.9811 15.3538L13.5298 15.8121C13.2618 16.0899 13.0075 16.2232 12.7586 16.2232C12.5098 16.2232 12.2636 16.0926 12.0011 15.8232L9.69299 13.4732L9.49882 13.6676C9.29645 13.8704 9.10775 14.0621 8.92179 14.251L8.05214 15.1399C7.55168 15.651 7.03482 16.1815 6.52342 16.701C6.33472 16.8982 6.10774 17.001 5.86708 17.001Z"
-                  fill="#565656"
-                ></path>
-              </svg>
-              Xu hướng
-            </div>
-            <ul class="dt-max-h-52 dt-overflow-y-auto">
-              <li>
-                <a class="dt-text-c565656 hover:dt-text-c01549D" href="#"
-                  ># 50 năm thống nhất đất nước</a
-                >
-              </li>
-              <li class="dt-mt-4">
-                <a class="dt-text-c565656 hover:dt-text-c01549D" href="#"
-                  ># Sữa giả tung hoành thị trường</a
-                >
-              </li>
-              <li class="dt-mt-4">
-                <a class="dt-text-c565656 hover:dt-text-c01549D" href="#"
-                  ># Mỹ áp thuế cả thế giới</a
-                >
-              </li>
-              <li class="dt-mt-4">
-                <a class="dt-text-c565656 hover:dt-text-c01549D" href="#"
-                  ># Vòng chung kết U17 châu Á 2025</a
-                >
-              </li>
-              <li class="dt-mt-4">
-                <a class="dt-text-c565656 hover:dt-text-c01549D" href="#"
-                  ># Động đất mạnh tại Myanmar</a
-                >
-              </li>
-              <li class="dt-mt-4">
-                <a class="dt-text-c565656 hover:dt-text-c01549D" href="#"
-                  ># Dân trí AI - hỏi đáp lỗi giao thông</a
-                >
-              </li>
-              <li class="dt-mt-4">
-                <a class="dt-text-c565656 hover:dt-text-c01549D" href="#"
-                  ># Phá tòa nhà "Hàm cá mập"</a
-                >
-              </li>
-              <li class="dt-mt-4">
-                <a class="dt-text-c565656 hover:dt-text-c01549D" href="#"
-                  ># Kỷ nguyên mới</a
-                >
-              </li>
-            </ul>
           </div>
         </div>
       </div>
@@ -3589,109 +3463,165 @@
       </div>
       
       
-    <div id="desktop-bottom-sticky-right" class="mdbl"></div>
-    <footer class="footer container bg-wrap">
-      <div class="footer-logo flex-jcc">
-        <a href="https://dantri.com.vn/"
-          ><img
-            alt="Báo điện tử Dân trí - Tin tức cập nhật liên tục 24/7"
-            data-src="https://cdnweb.dantri.com.vn/dist/static-logo.1-0-1.7982c496e23978b68141.svg"
-            height="25"
-            src="https://cdnweb.dantri.com.vn/dist/static-logo.1-0-1.7982c496e23978b68141.svg"
-            width="102"
-            data-ll-status="loaded"
-            class="entered loaded"
-        /></a>
-      </div>
-      <div class="footer-wrap">
-        <div class="footer-col footer-one">
-          <ul class="footer-list">
-            <li>Cơ quan của <b>Bộ Nội vụ</b></li>
-            <li>Tổng biên tập: <b>Phạm Tuấn Anh</b></li>
-            <li>
-              Giấy phép hoạt động báo điện tử Dân trí số 15/GP-BVHTTDL Hà Nội,
-              ngày 14-4-2025
-            </li>
-            <li>
-              Địa chỉ tòa soạn:
-              <b>Nhà 48, ngõ 2 Giảng Võ, Cát Linh, Đống Đa, Hà Nội</b>
-            </li>
-            <li>
-              Điện thoại: <a href="tel:02437366491">024-3736-6491</a>. Hotline
-              HN: <a href="tel:0973567567">0973-567-567</a>
-            </li>
-            <li>
-              Văn phòng đại diện miền Nam:
-              <b>51 Võ Văn Tần, Phường Võ Thị Sáu, Quận 3, TPHCM</b>
-            </li>
-            <li>Hotline TPHCM: <a href="tel:0974567567">0974-567-567</a></li>
-            <li>
-              Email: <a href="mailto:info@dantri.com.vn">info@dantri.com.vn</a>
-            </li>
-          </ul>
+      <div id="desktop-bottom-sticky-right" class="mdbl"></div>
+      <footer class="footer container bg-wrap">
+        <div class="footer-logo flex-jcc">
+          <a href="https://dantri.com.vn/"
+            ><img
+              alt="Báo điện tử Dân trí - Tin tức cập nhật liên tục 24/7"
+              data-src="https://cdnweb.dantri.com.vn/dist/static-logo.1-0-1.7982c496e23978b68141.svg"
+              height="25"
+              src="https://cdnweb.dantri.com.vn/dist/static-logo.1-0-1.7982c496e23978b68141.svg"
+              width="102"
+              data-ll-status="loaded"
+              class="entered loaded"
+          /></a>
         </div>
-        <div class="footer-col footer-two">
-          <ul class="footer-list m-0">
-            <li><a href="https://dantri.com.vn/rss.htm">RSS</a></li>
-            <li>
-              <a href="https://dantri.com.vn/lien-he.htm">Liên hệ toà soạn</a>
-            </li>
-          </ul>
-          <ul class="footer-list m-0">
-            <li>
-              Liên hệ quảng cáo: <a href="tel:0945540303">0945.54.03.03</a>
-            </li>
-            <li>
-              Email:
-              <a href="mailto:quangcao@dantri.com.vn">quangcao@dantri.com.vn</a>
-            </li>
-            <li>
-              <a
-                href="https://dantri.com.vn/suc-manh-so/privacy-policy-20190514153010649.htm"
-                >Chính sách bảo mật dữ liệu cá nhân</a
-              >
-            </li>
-          </ul>
-        </div>
-        <div class="footer-col footer-three">
-          <div class="social flex-jcc">
-            <label class="social-label">Theo dõi Dân trí trên:</label>
-            <div class="social-list flex-jcc">
-              <a
-                class="facebook"
-                target="_blank"
-                rel="nofollow"
-                href="https://www.facebook.com/the.teo.18"
-                >Facebook</a
-              >
-              <a
-                class="youtube"
-                target="_blank"
-                rel="nofollow"
-                href="https://www.youtube.com/@VinhHoaDJ"
-                >Youtube</a
-              >
-              <a
-                class="tiktok"
-                target="_blank"
-                rel="nofollow"
-                href="https://www.tiktok.com/@dantri.com.vn"
-                >Tiktok</a
-              >
+        <div class="footer-wrap">
+          <div class="footer-col footer-one">
+            <ul class="footer-list">
+              <li>Cơ quan của <b>Bộ Nội vụ</b></li>
+              <li>Tổng biên tập: <b>Phạm Tuấn Anh</b></li>
+              <li>
+                Giấy phép hoạt động báo điện tử Dân trí số 15/GP-BVHTTDL Hà Nội,
+                ngày 14-4-2025
+              </li>
+              <li>
+                Địa chỉ tòa soạn:
+                <b>Nhà 48, ngõ 2 Giảng Võ, Cát Linh, Đống Đa, Hà Nội</b>
+              </li>
+              <li>
+                Điện thoại: <a href="tel:02437366491">024-3736-6491</a>. Hotline
+                HN: <a href="tel:0973567567">0973-567-567</a>
+              </li>
+              <li>
+                Văn phòng đại diện miền Nam:
+                <b>51 Võ Văn Tần, Phường Võ Thị Sáu, Quận 3, TPHCM</b>
+              </li>
+              <li>Hotline TPHCM: <a href="tel:0974567567">0974-567-567</a></li>
+              <li>
+                Email: <a href="mailto:info@dantri.com.vn">info@dantri.com.vn</a>
+              </li>
+            </ul>
+          </div>
+          <div class="footer-col footer-two">
+            <ul class="footer-list m-0">
+              <li><a href="https://dantri.com.vn/rss.htm">RSS</a></li>
+              <li>
+                <a href="https://dantri.com.vn/lien-he.htm">Liên hệ toà soạn</a>
+              </li>
+            </ul>
+            <ul class="footer-list m-0">
+              <li>
+                Liên hệ quảng cáo: <a href="tel:0945540303">0945.54.03.03</a>
+              </li>
+              <li>
+                Email:
+                <a href="mailto:quangcao@dantri.com.vn">quangcao@dantri.com.vn</a>
+              </li>
+              <li>
+                <a
+                  href="https://dantri.com.vn/suc-manh-so/privacy-policy-20190514153010649.htm"
+                  >Chính sách bảo mật dữ liệu cá nhân</a
+                >
+              </li>
+            </ul>
+          </div>
+          <div class="footer-col footer-three">
+            <div class="social flex-jcc">
+              <label class="social-label">Theo dõi Dân trí trên:</label>
+              <div class="social-list flex-jcc">
+                <a
+                  class="facebook"
+                  target="_blank"
+                  rel="nofollow"
+                  href="https://www.facebook.com/the.teo.18"
+                  >Facebook</a
+                >
+                <a
+                  class="youtube"
+                  target="_blank"
+                  rel="nofollow"
+                  href="https://www.youtube.com/@VinhHoaDJ"
+                  >Youtube</a
+                >
+                <a
+                  class="tiktok"
+                  target="_blank"
+                  rel="nofollow"
+                  href="https://www.tiktok.com/@dantri.com.vn"
+                  >Tiktok</a
+                >
+              </div>
             </div>
           </div>
         </div>
-      </div>
-      <div class="copyright dt-mt-2">
-        © 2005-2025 Bản quyền thuộc về Báo điện tử Dân trí. Cấm sao chép dưới
-        mọi hình thức nếu không có sự chấp thuận bằng văn bản.
-      </div>
-    </footer>
-    <nav id="menuWrap" class="menu-wrap">
-      <div class="menu-close"></div>
-      <div class="menu-content"></div>
-    </nav>
-    <script src="/assets/js/script.js"></script>
-    <script src="https://vjs.zencdn.net/8.22.0/video.min.js"></script>
-  </body>
-</html>
+        <div class="copyright dt-mt-2">
+          © 2005-2025 Bản quyền thuộc về Báo điện tử Dân trí. Cấm sao chép dưới
+          mọi hình thức nếu không có sự chấp thuận bằng văn bản.
+        </div>
+      </footer>
+      <nav id="menuWrapMobile" class="menu-wrap-mobile">
+        <div class="menu-close-mobile" id="menuCloseMobile">×</div>
+        <div class="menu-content-mobile">
+          <ul>
+            <form
+              class="dt-relative"
+              method="GET"
+              target="_top"
+              action="/tim-kiem.htm"
+            >
+              <input
+                class="dt-w-full dt-h-10 dt-pl-4 dt-pr-11 dt-outline dt-rounded-full dt-bg-cf1f5f9"
+                type="text"
+                id="s"
+                name="s"
+                value=""
+                placeholder="Tìm kiếm tin tức"
+                required=""
+              />
+              <button
+                class="dt-absolute dt-top-1/2 dt-right-4 -dt-translate-y-1/2"
+                type="button"
+                aria-label="Tìm kiếm"
+                name="search"
+              >
+                <svg
+                  aria-hidden="true"
+                  width="22"
+                  height="22"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M11 19C15.4183 19 19 15.4183 19 11C19 6.58172 15.4183 3 11 3C6.58172 3 3 6.58172 3 11C3 15.4183 6.58172 19 11 19Z"
+                    stroke="#4D4D4D"
+                    stroke-width="1.5"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  ></path>
+                  <path
+                    d="M21 20.9999L16.65 16.6499"
+                    stroke="#4D4D4D"
+                    stroke-width="1.5"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  ></path>
+                </svg>
+              </button>
+            </form>
+            <div data-link="contact" class="dt-mt-4 dt-flex dt-mb-2"><a class="dt-flex dt-items-center dt-gap-1 dt-w-full dt-h-6 dt-font-inter dt-text-sm dt-text-c565656" href="https://dantri.com.vn/lien-he.htm"><svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M17.418 3.5H2.58203C1.70794 3.5 1 4.23168 1 5.125V14.875C1 15.7736 1.71314 16.5 2.58203 16.5H17.418C18.2847 16.5 19 15.7767 19 14.875V5.125C19 4.23327 18.2949 3.5 17.418 3.5ZM17.1964 4.58333C16.8732 4.91357 11.3107 10.597 11.1187 10.7933C10.8198 11.1002 10.4226 11.2692 10 11.2692C9.57742 11.2692 9.18016 11.1002 8.88034 10.7922C8.75118 10.6603 3.25011 5.03956 2.80359 4.58333H17.1964ZM2.05469 14.6545V5.34618L6.61227 10.0029L2.05469 14.6545ZM2.80425 15.4167L7.36005 10.7669L8.13556 11.5593C8.63358 12.0708 9.29571 12.3525 10 12.3525C10.7043 12.3525 11.3664 12.0708 11.8635 11.5603L12.64 10.7669L17.1957 15.4167H2.80425ZM17.9453 14.6545L13.3877 10.0029L17.9453 5.34618V14.6545Z" fill="#565656" stroke="#565656" stroke-width="0.3"></path></svg> <span class="dt-uppercase dt-font-semibold">Liên hệ toà soạn</span> <svg class="dt-ml-auto" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M10 8L13.6745 11.2929C14.1085 11.6818 14.1085 12.3182 13.6745 12.7071L10 16" stroke="#565656" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"></path></svg></a></div>
+            <div class="dt-grid dt-grid-cols-2 dt-gap-x-4 dt-font-inter dt-font-semibold"><ol class="dt-space-y-0"><li class="dt-border-b dt-border-ceee"><a class="dt-inline-block dt-pt-3.5 dt-pb-2.5 dt-text-MineShaft" href="https://dantri.com.vn/su-kien.htm">Sự kiện nổi bật</a></li><li class="dt-border-b dt-border-ceee"><a class="dt-inline-block dt-pt-3.5 dt-pb-2.5 dt-text-MineShaft" rel="nofollow noopener" href="https://dantri.com.vn/video-page.htm">Video</a></li><li class="dt-border-b dt-border-ceee"><a class="dt-inline-block dt-pt-3.5 dt-pb-2.5 dt-text-MineShaft" rel="nofollow noopener" href="https://fica.dantri.com.vn/">Fica</a></li><li class="dt-border-b dt-border-ceee"><a class="dt-inline-block dt-pt-3.5 dt-pb-2.5 dt-text-MineShaft" rel="nofollow noopener" href="https://dtinews.dantri.com.vn/">DTiNews</a></li><li class="dt-border-b dt-border-ceee"><a class="dt-inline-block dt-pt-3.5 dt-pb-2.5 dt-text-MineShaft" href="https://dantri.com.vn/dmagazine.htm">Dmagazine</a></li><li class="dt-border-b dt-border-ceee"><a class="dt-inline-block dt-pt-3.5 dt-pb-2.5 dt-text-MineShaft" href="https://dantri.com.vn/dnews.htm">DNews</a></li></ol><ol class="dt-space-y-0"><li class="dt-border-b dt-border-ceee"><a class="dt-inline-block dt-pt-3.5 dt-pb-2.5 dt-text-MineShaft" href="https://dantri.com.vn/d-buzz.htm">D-Buzz</a></li><li class="dt-border-b dt-border-ceee"><a class="dt-inline-block dt-pt-3.5 dt-pb-2.5 dt-text-MineShaft" href="https://dantri.com.vn/photo-news.htm">Photo News</a></li><li class="dt-border-b dt-border-ceee"><a class="dt-inline-block dt-pt-3.5 dt-pb-2.5 dt-text-MineShaft" href="https://dantri.com.vn/photo-story.htm">Photo Story</a></li><li class="dt-border-b dt-border-ceee"><a class="dt-inline-block dt-pt-3.5 dt-pb-2.5 dt-text-MineShaft" href="https://dantri.com.vn/infographic.htm">Infographic</a></li><li class="dt-border-b dt-border-ceee"><a class="dt-inline-block dt-pt-3.5 dt-pb-2.5 dt-text-MineShaft" href="https://dantri.com.vn/interactive.htm">Interactive</a></li><li class="dt-border-b dt-border-ceee"><a class="dt-inline-block dt-pt-3.5 dt-pb-2.5 dt-text-MineShaft" href="https://dantri.com.vn/toa-dam-truc-tuyen.htm">Tọa đàm trực tuyến</a></li></ol></div>
+  
+            
+          </ul>
+        </div>
+      </nav>
+      
+  
+      <script src="/assets/js/script.js"></script>
+      <script src="https://vjs.zencdn.net/8.22.0/video.min.js"></script>
+    </body>
+  </html>
+  
