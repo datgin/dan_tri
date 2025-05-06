@@ -22,7 +22,6 @@ return new class extends Migration
 
             // Các trường bổ sung
             $table->string('phone')->nullable();
-            $table->string('company_name')->nullable();
             $table->string('address')->nullable();
             $table->string('google_id')->nullable();
             $table->string('token')->nullable();

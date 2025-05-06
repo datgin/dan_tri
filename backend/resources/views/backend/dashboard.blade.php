@@ -1,7 +1,7 @@
 @extends('backend.layouts.master')
 
 @section('content')
-    <form method="GET" action="{{ route('admin.dashboard') }}">
+    {{-- <form method="GET" action="{{ route('admin.dashboard') }}">
         <div class="form-group">
     <div class="w-25 mb-3">
         <label for="year">Chọn năm:</label>
@@ -62,12 +62,12 @@
         <div class="col-md-4">
             {!! $topProductsChart->container() !!}
         </div>
-    </div>
+    </div> --}}
 @endsection
 
 @push('scripts')
-    {!! $topProductsChart->script() !!}
-    {!! $chart->script() !!}
+    {{-- {!! $topProductsChart->script() !!}
+    {!! $chart->script() !!} --}}
 @endpush
 
 @push('styles')

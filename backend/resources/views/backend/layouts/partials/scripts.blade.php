@@ -149,37 +149,6 @@
             row.child.hide();
         });
 
-        $(document).on('submit', '#editProductForm', function(e) {
-            e.preventDefault();
-
-            let formDataArray = new FormData(this)
-
-            let tr = $(this).closest('tr');
-            let row = table.row(tr);
-            let productData = row.data();
-
-            formDataArray.append('id', productData.id);
-
-            $.ajax({
-                url: '{{ route('admin.product.modify-product') }}',
-                type: 'POST',
-                data: formDataArray,
-                processData: false, // Không xử lý dữ liệu (quan trọng khi gửi file)
-                contentType: false, // Không đặt Content-Type mặc định
-                success: function(response) {
-                    if (response.success) {
-                        table.draw();
-                    } else {
-                        alert(response.message)
-                    }
-                },
-                error: function(xhr) {
-                    console.log(xhr);
-                }
-            });
-
-        });
-
 
         table.on('requestChild.dt', function(e, row) {
             row.child(format(row.data())).show();
@@ -310,78 +279,6 @@
                     allowClear: true,
                     minimumInputLength: 0 // Không cần nhập ký tự để hiển thị dữ liệu
                 });
-
-                // Gọi API một lần để lấy tất cả danh mục và thêm vào Select2
-                $.ajax({
-                    url: "{{ route('admin.product.categories.index') }}", // API lấy danh mục
-                    dataType: 'json',
-                    success: function(data) {
-
-                        let $select = $('#catalogueFilter');
-                        $select.empty(); // Xóa dữ liệu cũ
-
-                        $select.append(
-                            '<option value="">Chọn danh mục</option>'); // Thêm option mặc định
-
-                        data.forEach(item => {
-                            let prefix = '-'.repeat(item.level);
-                            let option =
-                                `<option ${item.id == params ? 'selected' : ''} value="${item.id}">${prefix} ${item.name}</option>`;
-                            $select.append(option); // Thêm từng option vào select
-                        });
-
-                    }
-                });
-
-
-                $.ajax({
-                    url: "{{ route('admin.product.attributes.index') }}",
-                    dataType: 'json',
-                    success: function(data) {
-                        let $select = $('#attributeFilter');
-                        $select.empty().append('<option value="">Chọn thuộc tính</option>');
-                        data.forEach(attr => {
-                            $select.append(`<option value="${attr.id}">${attr.name}</option>`);
-                        });
-                    }
-                });
-
-                $('#attributeFilter').on('change', function() {
-                    let attributeId = $(this).val();
-                    let $valueSelect = $('#attributeValueFilter');
-
-                    if (!attributeId) {
-                        $valueSelect.addClass('d-none').empty();
-                        return;
-                    }
-
-                    $.ajax({
-                        url: `{{ url('/admin/product/attributes') }}/${attributeId}/values`,
-                        dataType: 'json',
-                        success: function(data) {
-                            $valueSelect.removeClass('d-none').empty().append(
-                                '<option value="">Chọn giá trị</option>');
-                            data.forEach(value => {
-                                $valueSelect.append(
-                                    `<option value="${value.id}">${value.value}</option>`
-                                );
-                            });
-                        }
-                    });
-                });
-
-                // function removeQueryParam(param) {
-                //     let url = new URL(window.location.href);
-                //     url.searchParams.delete(param);
-
-                //     // Cập nhật URL mà không load lại trang
-                //     window.history.replaceState({}, document.title, url.pathname + url.search);
-
-                //     // Cập nhật lại giá trị params
-                //     let urlParams = new URLSearchParams(window.location.search);
-                //     params = urlParams.get('params') || null;
-
-                // }
 
 
                 $('#catalogueFilter').on('change', function() {
