@@ -15,6 +15,10 @@
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
     />
     <link href="https://vjs.zencdn.net/8.22.0/video-js.css" rel="stylesheet" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Noto+Serif&display=swap"
+      rel="stylesheet"
+    />
   </head>
   <body>
     <header>
@@ -73,7 +77,7 @@
           /></a>
         </div>
         <div class="dt-flex dt-items-center">
-          <div data-module="authen-header">
+          <div data-module="authen-header" class="auth-placeholder-mobile">
             <i class="fa-solid fa-user"></i>
           </div>
           <div data-module="account-notification"></div>
@@ -3735,6 +3739,314 @@
         </ul>
       </div>
     </nav>
+    <div id="loginOverlay" class="overlay">
+      <div
+        class="login-box dt-fixed dt-top-0 dt-px-6 dt-py-5 dt-w-screen dt-h-screen dt-text-c222 dt-overflow-y-auto dt-z-[1002] dt-transition-all dt-flex dt-items-center dt-justify-center dt-visible dt-left-0"
+      >
+        <div class="auth-overlay"></div>
+        <div
+          class="dt-relative dt-w-full dt-flex dt-flex-col dt-bg-white dt-gap-6 dt-max-w-[469px] dt-p-6"
+        >
+          <button
+            id="closeLogin"
+            type="button"
+            class="close-btn dt-absolute dt-w-6 dt-h-6 dt-flex dt-items-center dt-justify-center dt-top-6 dt-right-4"
+          >
+            <svg
+              width="24"
+              height="24"
+              viewBox="0 0 25 24"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M21.5508 4.77621L19.7277 2.95312L12.5 10.1808L5.2723 2.95312L3.44922 4.77621L10.6769 12.0039L3.44922 19.2316L5.2723 21.0547L12.5 13.827L19.7277 21.0547L21.5508 19.2316L14.3231 12.0039L21.5508 4.77621Z"
+                fill="#565656"
+              ></path>
+            </svg>
+          </button>
+          <div
+            class="-dt-mx-6 dt-grid dt-grid-cols-2 dt-px-6 dt-mt-12 dt-relative after:dt-absolute after:dt-block after:dt-bg-[#E3E5E8] after:dt-bottom-[1px] after:dt-h-[2px] after:dt-w-[calc(100%_-_48px)] after:dt-left-6"
+          >
+            <button
+              id="tab-login"
+              class="dt-h-12 dt-flex dt-items-center dt-justify-center dt-text-xl dt-leading-6 dt-font-semibold dt-font-inter dt-relative dt-z-[2] dt-text-[#0F6C32] dt-border-b-[4px] dt-border-[#158E42]"
+              type="button"
+            >
+              Đăng nhập</button
+            ><button
+              id="tab-register"
+              class="dt-h-12 dt-flex dt-items-center dt-justify-center dt-text-xl dt-leading-6 dt-font-semibold dt-font-inter dt-relative dt-z-[2]"
+              type="button"
+            >
+              Đăng ký
+            </button>
+          </div>
+          <div id="form-login" class="auth-form -dt-mt-1">
+            <div class="dt-flex dt-flex-col dt-gap-5">
+              <span
+                class="dt-text-left dt-font-Inter dt-font-medium dt-text-sm dt-text-MineShaft dt-mb-[-8px]"
+                >Đăng nhập với Email</span
+              >
+              <form class="dt-flex dt-flex-col dt-gap-4">
+                <div class="dt-flex dt-flex-col dt-gap-1">
+                  <label
+                    class="dt-font-Inter dt-font-medium dt-text-xs dt-leading-[15px] dt-text-[#222] dt-uppercase dt-flex"
+                    >Email
+                    <b
+                      class="dt-text-[#CD3038] dt-ml-1 dt-flex dt-items-center dt-leading-5 dt-my-auto"
+                      >*</b
+                    ></label
+                  >
+                  <div class="dt-relative">
+                    <input
+                      class="dt-h-14 dt-px-4 dt-w-full dt-outline dt-outline-none dt-border dt-rounded focus:dt-border-[#222222] dt-text-sm dt-leading-[17px] dt-font-Inter dt-border-ceee dt-text-[#565656]"
+                      type="email"
+                      name="email"
+                      placeholder="Nhập Email"
+                      value=""
+                    />
+                  </div>
+                </div>
+                <div class="dt-flex dt-flex-col dt-gap-1">
+                  <label
+                    class="dt-font-Inter dt-font-medium dt-text-xs dt-leading-[15px] dt-text-[#222] dt-uppercase dt-flex"
+                    >Mật khẩu
+                    <b
+                      class="dt-text-[#CD3038] dt-ml-1 dt-flex dt-items-center dt-leading-5 dt-my-auto"
+                      >*</b
+                    ></label
+                  >
+                  <div class="dt-relative">
+                    <input
+                      class="dt-h-14 dt-pl-4 dt-pr-11 dt-w-full dt-outline dt-outline-none dt-border dt-rounded focus:dt-border-[#222222] dt-text-sm dt-leading-[17px] dt-font-Inter dt-border-ceee dt-text-[#565656]"
+                      type="password"
+                      name="password"
+                      placeholder="Nhập mật khẩu"
+                      value=""
+                    /><button
+                      type="button"
+                      class="dt-absolute dt-top-1/2 dt-right-3 -dt-translate-y-1/2"
+                    >
+                      <svg
+                        aria-hidden="true"
+                        width="24"
+                        height="24"
+                        viewBox="0 0 32 32"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          d="M6 15.9977C6 15.9977 9.63636 8.72501 16 8.72501C22.3636 8.72501 26 15.9977 26 15.9977C26 15.9977 22.3636 23.2705 16 23.2705C9.63636 23.2705 6 15.9977 6 15.9977Z"
+                          stroke="#808080"
+                          stroke-width="1.5"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                        ></path>
+                        <path
+                          d="M16 18.725C17.5062 18.725 18.7273 17.504 18.7273 15.9977C18.7273 14.4915 17.5062 13.2704 16 13.2704C14.4937 13.2704 13.2727 14.4915 13.2727 15.9977C13.2727 17.504 14.4937 18.725 16 18.725Z"
+                          stroke="#808080"
+                          stroke-width="1.5"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                        ></path>
+                      </svg>
+                    </button>
+                  </div>
+                </div>
+                <button
+                  type="submit"
+                  class="dt-h-11 dt-flex dt-items-center dt-justify-center dt-font-medium dt-font-Inter dt-rounded dt-text-sm dt-bg-[#E3E5E8] dt-text-c565656 dt-pointer-events-none"
+                  name="btnLogin"
+                >
+                  Đăng nhập
+                </button>
+                <div class="login-social-network">
+                  <a class="link-network" href="#">
+                    <span class="icon">
+                      <svg
+                        width="24"
+                        height="24"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          d="M20.0003 12.1956C20.0003 11.6445 19.947 11.0756 19.8581 10.5422H12.1602V13.6889H16.5692C16.3914 14.7023 15.8047 15.5912 14.9336 16.1601L17.5647 18.2046C19.1114 16.7646 20.0003 14.6667 20.0003 12.1956Z"
+                          fill="#4280EF"
+                        ></path>
+                        <path
+                          d="M12.1602 20.1602C14.3647 20.1602 16.2136 19.4313 17.5647 18.1868L14.9336 16.1601C14.2047 16.6579 13.2624 16.9424 12.1602 16.9424C10.0268 16.9424 8.23117 15.5023 7.57338 13.5823L4.87109 15.6623C6.25779 18.4179 9.06675 20.1602 12.1602 20.1602Z"
+                          fill="#34A353"
+                        ></path>
+                        <path
+                          d="M7.57288 13.5645C7.2351 12.5511 7.2351 11.4489 7.57288 10.4355L4.87059 8.33771C3.71501 10.6489 3.71501 13.3689 4.87059 15.6623L7.57288 13.5645Z"
+                          fill="#F6B704"
+                        ></path>
+                        <path
+                          d="M12.1602 7.07545C13.3157 7.05767 14.4535 7.50213 15.2891 8.30215L17.6181 5.95543C16.1425 4.56872 14.1869 3.82204 12.1602 3.83982C9.06675 3.83982 6.25779 5.58208 4.87109 8.33771L7.57338 10.4355C8.23117 8.49771 10.0268 7.07545 12.1602 7.07545Z"
+                          fill="#E54335"
+                        ></path>
+                      </svg>
+                    </span>
+                    Đăng nhập bằng Google
+                  </a>
+                </div>
+                <div class="dt-flex dt-justify-center">
+                  <button
+                    type="button"
+                    class="dt-font-Inter dt-text-sm dt-leading-5 dt-text-center dt-text-[#565656]"
+                  >
+                    Quên mật khẩu
+                  </button>
+                </div>
+              </form>
+            </div>
+          </div>
+          <div id="form-register" class="auth-form hidden -dt-mt-1">
+            <div class="dt-flex dt-flex-col dt-gap-5">
+              <span
+                class="dt-text-left dt-font-Inter dt-font-medium dt-text-sm dt-text-MineShaft dt-mb-[-8px]"
+                >Đăng ký với Email</span
+              >
+              <form class="dt-flex dt-flex-col dt-gap-2">
+                <div class="dt-flex dt-flex-col dt-gap-1">
+                  <label
+                    class="dt-font-Inter dt-font-medium dt-text-xs dt-leading-[15px] dt-text-[#222] dt-uppercase dt-flex"
+                    >Họ và tên
+                    <b
+                      class="dt-text-[#CD3038] dt-ml-1 dt-flex dt-items-center dt-leading-5 dt-my-auto"
+                      >*</b
+                    ></label
+                  >
+                  <div class="dt-relative">
+                    <input
+                      class="dt-h-14 dt-px-4 dt-pr-14 dt-w-full dt-outline dt-outline-none dt-border dt-rounded focus:dt-border-[#222222] dt-text-sm dt-leading-[17px] dt-font-Inter dt-text-[#222222] dt-border-ceee dt-text-[#565656]"
+                      type="text"
+                      name="name"
+                      placeholder="Nhập họ và tên"
+                      value=""
+                    /><span
+                      class="dt-font-medium dt-text-xs dt-leading-[15px] dt-absolute dt-top-4 dt-right-4 dt-h-6 dt-flex dt-items-center dt-font-Inter"
+                      >0/50</span
+                    >
+                  </div>
+                </div>
+                <div class="dt-flex dt-flex-col dt-gap-1">
+                  <label
+                    class="dt-font-Inter dt-font-medium dt-text-xs dt-leading-[15px] dt-text-[#222] dt-uppercase dt-flex"
+                    >Email
+                    <b
+                      class="dt-text-[#CD3038] dt-ml-1 dt-flex dt-items-center dt-leading-5 dt-my-auto"
+                      >*</b
+                    ></label
+                  >
+                  <div class="dt-relative">
+                    <input
+                      class="dt-h-14 dt-px-4 dt-w-full dt-outline dt-outline-none dt-border dt-rounded focus:dt-border-[#222222] dt-text-sm dt-leading-[17px] dt-font-Inter dt-border-ceee dt-text-[#565656]"
+                      type="email"
+                      name="email"
+                      placeholder="Nhập Email"
+                      value=""
+                    />
+                  </div>
+                </div>
+                <div class="dt-flex dt-flex-col dt-gap-1">
+                  <label
+                    class="dt-font-Inter dt-font-medium dt-text-xs dt-leading-[15px] dt-text-[#222] dt-uppercase dt-flex"
+                    >Mật khẩu
+                    <b
+                      class="dt-text-[#CD3038] dt-ml-1 dt-flex dt-items-center dt-leading-5 dt-my-auto"
+                      >*</b
+                    ></label
+                  >
+                  <div class="dt-relative">
+                    <input
+                      class="dt-h-14 dt-px-4 dt-w-full dt-outline dt-outline-none dt-border dt-rounded focus:dt-border-[#222222] dt-text-sm dt-leading-[17px] dt-font-Inter dt-border-ceee dt-text-[#565656]"
+                      type="password"
+                      name="password"
+                      placeholder="Nhập mật khẩu"
+                      value=""
+                    /><button
+                      type="button"
+                      class="dt-absolute dt-top-1/2 dt-right-3 -dt-translate-y-1/2"
+                    >
+                      <svg
+                        aria-hidden="true"
+                        width="24"
+                        height="24"
+                        viewBox="0 0 32 32"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          d="M6 15.9977C6 15.9977 9.63636 8.72501 16 8.72501C22.3636 8.72501 26 15.9977 26 15.9977C26 15.9977 22.3636 23.2705 16 23.2705C9.63636 23.2705 6 15.9977 6 15.9977Z"
+                          stroke="#808080"
+                          stroke-width="1.5"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                        ></path>
+                        <path
+                          d="M16 18.725C17.5062 18.725 18.7273 17.504 18.7273 15.9977C18.7273 14.4915 17.5062 13.2704 16 13.2704C14.4937 13.2704 13.2727 14.4915 13.2727 15.9977C13.2727 17.504 14.4937 18.725 16 18.725Z"
+                          stroke="#808080"
+                          stroke-width="1.5"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                        ></path>
+                      </svg>
+                    </button>
+                  </div>
+                </div>
+                <button
+                  type="submit"
+                  class="dt-h-11 dt-flex dt-items-center dt-justify-center dt-font-medium dt-font-Inter dt-rounded dt-mt-1 dt-text-sm dt-bg-[#E3E5E8] dt-text-[#565656] dt-pointer-events-none"
+                  name="btnRegister"
+                >
+                  Đăng ký
+                </button>
+                <div class="register-social-network">
+                  <a class="link-network" href="#">
+                    <span class="icon">
+                      <svg
+                        width="24"
+                        height="24"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          d="M20.0003 12.1956C20.0003 11.6445 19.947 11.0756 19.8581 10.5422H12.1602V13.6889H16.5692C16.3914 14.7023 15.8047 15.5912 14.9336 16.1601L17.5647 18.2046C19.1114 16.7646 20.0003 14.6667 20.0003 12.1956Z"
+                          fill="#4280EF"
+                        ></path>
+                        <path
+                          d="M12.1602 20.1602C14.3647 20.1602 16.2136 19.4313 17.5647 18.1868L14.9336 16.1601C14.2047 16.6579 13.2624 16.9424 12.1602 16.9424C10.0268 16.9424 8.23117 15.5023 7.57338 13.5823L4.87109 15.6623C6.25779 18.4179 9.06675 20.1602 12.1602 20.1602Z"
+                          fill="#34A353"
+                        ></path>
+                        <path
+                          d="M7.57288 13.5645C7.2351 12.5511 7.2351 11.4489 7.57288 10.4355L4.87059 8.33771C3.71501 10.6489 3.71501 13.3689 4.87059 15.6623L7.57288 13.5645Z"
+                          fill="#F6B704"
+                        ></path>
+                        <path
+                          d="M12.1602 7.07545C13.3157 7.05767 14.4535 7.50213 15.2891 8.30215L17.6181 5.95543C16.1425 4.56872 14.1869 3.82204 12.1602 3.83982C9.06675 3.83982 6.25779 5.58208 4.87109 8.33771L7.57338 10.4355C8.23117 8.49771 10.0268 7.07545 12.1602 7.07545Z"
+                          fill="#E54335"
+                        ></path>
+                      </svg>
+                    </span>
+                    Đăng ký bằng Google
+                  </a>
+                </div>
+                <div class="dt-font-Inter dt-text-[#565656] dt-text-sm dt-mt-1">
+                  Bằng cách đăng ký tài khoản, bạn cũng đồng thời chấp nhận mọi
+                  <a href="#" class="dt-font-semibold"
+                    >điều kiện về quy định và chính sách của Dân trí</a
+                  >
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
 
     <script src="/frontend/assets/js/script.js"></script>
     <script src="https://vjs.zencdn.net/8.22.0/video.min.js"></script>
