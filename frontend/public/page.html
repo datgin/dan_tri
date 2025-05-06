@@ -1,0 +1,3625 @@
+<!DOCTYPE html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="/assets/css/style.css" />
+    <link rel="stylesheet" href="/assets/css/main.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+    />
+    <link href="https://vjs.zencdn.net/8.22.0/video-js.css" rel="stylesheet" />
+  </head>
+  <body>
+    <header
+      class="header-mobile dt-relative dt-container dt-h-20 dt-flex dt-items-center dt-justify-between background before:dt-bg-white before:dt-border-b before:dt-border-ce6e6e6"
+    >
+      <div class="dt-flex dt-items-center">
+        <div data-button="menu" class="dt-flex dt-relative">
+          <button
+            id="menuShow"
+            class="dt-relative -dt-left-1 dt-w-8 dt-h-8 dt-flex dt-items-center dt-justify-center"
+            type="button"
+            aria-label="Menu"
+          >
+            <svg
+              aria-hidden="true"
+              width="30"
+              height="30"
+              viewBox="0 0 32 32"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M6 23H26"
+                stroke="#4D4D4D"
+                stroke-width="1.5"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              ></path>
+              <path
+                d="M6 16H26"
+                stroke="#4D4D4D"
+                stroke-width="1.5"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              ></path>
+              <path
+                d="M6 9H26"
+                stroke="#4D4D4D"
+                stroke-width="1.5"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              ></path>
+            </svg>
+          </button>
+        </div>
+      </div>
+      <div
+        class="dt-flex dt-items-center dt-absolute dt-top-[calc(50%)] dt-left-1/2 -dt-translate-x-1/2 dt-gap-4 dt-min-w-max"
+      >
+        <a href="#"
+          ><img
+            alt="Báo điện tử Dân trí - Tin tức cập nhật liên tục 24/7"
+            class="dt-w-auto dt-h-9.5"
+            src="https://cdnmobile.dantri.com.vn/dist/static-logo.1-0-1.b9d5a600244b413d9d4a.svg"
+        /></a>
+      </div>
+      <div class="dt-flex dt-items-center">
+        <div data-module="authen-header">
+          <i class="fa-solid fa-user"></i>
+        </div>
+        <div data-module="account-notification"></div>
+      </div>
+    </header>
+    <header class="header-pc container bg-wrap">
+      <div class="header-top flex-jcb have-users-onboarding dt-relative">
+        <div class="dt-flex dt-gap-7 dt-items-center">
+          <h1 class="header-logo flex-jcc">
+            <a
+              aria-label="Báo điện tử Dân trí - Tin tức cập nhật liên tục 24/7"
+              href="#"
+              ><img
+                alt="Báo điện tử Dân trí - Tin tức cập nhật liên tục 24/7"
+                class="dt-h-11.5"
+                height="46"
+                src="https://cdnweb.dantri.com.vn/dist/static-logo-v2.1-0-1.9bf6dbdd64e0736085bc.png"
+                width="118"
+            /></a>
+          </h1>
+        </div>
+        <div class="search-bar">
+          <input type="text" id="searchInput" placeholder="Tìm kiếm..." />
+          <button onclick="handleSearch()">
+            <svg
+              aria-hidden="true"
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M11 19C15.4183 19 19 15.4183 19 11C19 6.58172 15.4183 3 11 3C6.58172 3 3 6.58172 3 11C3 15.4183 6.58172 19 11 19Z"
+                stroke="#4D4D4D"
+                stroke-width="1.5"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              ></path>
+              <path
+                d="M21 20.9999L16.65 16.6499"
+                stroke="#4D4D4D"
+                stroke-width="1.5"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              ></path>
+            </svg>
+          </button>
+        </div>
+        <div class="header-area flex-jcb">
+          <div class="auth-placeholder" data-module="authen-header">
+            <button
+              type="button"
+              class="header-account flex-jcc"
+              aria-label="Đăng nhập"
+              name="login"
+            >
+              <i class="fa-solid fa-user"></i>Đăng nhập
+            </button>
+          </div>
+        </div>
+      </div>
+    </header>
+    <nav role="navigation" aria-label="menu" class="nav-pc container bg-wrap">
+      <ol class="menu-wrap bg-wrap">
+        <li class="home">
+          <a
+            aria-label="Báo điện tử Dân trí - Tin tức cập nhật liên tục 24/7"
+            href="#"
+            ><svg
+              aria-labelledby="svg-home"
+              aria-hidden="true"
+              width="28"
+              height="28"
+              viewBox="0 0 32 32"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <title id="svg-home">Trang chủ</title>
+              <path
+                d="M16.7334 22.6665H15.2667C14.9353 22.6665 14.6667 22.3979 14.6667 22.0665V19.2665C14.6667 18.9351 14.9353 18.6665 15.2667 18.6665H16.7334C17.0647 18.6665 17.3334 18.9351 17.3334 19.2665V22.0665C17.3334 22.3979 17.0647 22.6665 16.7334 22.6665Z"
+                stroke-width="1.5"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              ></path>
+              <path
+                d="M4 12.6665L16 5.33317L28 12.6665"
+                stroke-width="1.5"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              ></path>
+              <path
+                d="M25.3334 17.3335V26.0668C25.3334 26.3982 25.0647 26.6668 24.7334 26.6668H7.26669C6.93532 26.6668 6.66669 26.3982 6.66669 26.0668V17.3335"
+                stroke-width="1.5"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              ></path></svg
+          ></a>
+        </li>
+        <li>
+          <a href="#">Tin mới nhất</a>
+        </li>
+        <li><a href="#">Video</a></li>
+        <li class="has-child">
+          <a href="#">Kinh doanh</a>
+          <ol class="submenu">
+            <li>
+              <a href="#">Tài chính</a>
+            </li>
+            <li>
+              <a href="#">Chứng khoán</a>
+            </li>
+            <li>
+              <a href="#">Doanh nghiệp</a>
+            </li>
+            <li>
+              <a href="#">Khởi nghiệp</a>
+            </li>
+            <li>
+              <a href="#">Tiêu dùng</a>
+            </li>
+            <li>
+              <a href="#">ESG - Phát triển bền vững</a>
+            </li>
+          </ol>
+        </li>
+        <li class="has-child">
+          <a href="#">Xã hội</a>
+          <ol class="submenu">
+            <li>
+              <a href="#">Chính trị</a>
+            </li>
+            <li>
+              <a href="#">Học tập Bác</a>
+            </li>
+            <li>
+              <a href="#">Kỷ nguyên mới</a>
+            </li>
+            <li>
+              <a href="#">Môi trường</a>
+            </li>
+            <li>
+              <a href="#">Giao thông</a>
+            </li>
+            <li>
+              <a href="#">Nóng trên mạng</a>
+            </li>
+            <li>
+              <a href="#">50 năm thống nhất đất nước</a>
+            </li>
+          </ol>
+        </li>
+        <li class="has-child">
+          <a href="#">Thế giới</a>
+          <ol class="submenu">
+            <li>
+              <a href="#">Quân sự</a>
+            </li>
+            <li>
+              <a href="#">Phân tích - Bình luận</a>
+            </li>
+            <li>
+              <a href="#">Thế giới đó đây</a>
+            </li>
+            <li>
+              <a href="#">Kiều bào</a>
+            </li>
+          </ol>
+        </li>
+        <li class="has-child">
+          <a href="#">Giải trí</a>
+          <ol class="submenu">
+            <li>
+              <a href="#">Hậu trường</a>
+            </li>
+            <li>
+              <a href="#">Sách hay</a>
+            </li>
+            <li>
+              <a href="#">Điện ảnh</a>
+            </li>
+            <li>
+              <a href="#">Âm nhạc</a>
+            </li>
+            <li>
+              <a href="#">Thời trang</a>
+            </li>
+            <li>
+              <a href="#">Mỹ thuật - Sân khấu</a>
+            </li>
+          </ol>
+        </li>
+        <li class="has-child">
+          <a href="#">Bất động sản</a>
+          <ol class="submenu">
+            <li>
+              <a href="#">Dự án</a>
+            </li>
+            <li>
+              <a href="#">Thị trường</a>
+            </li>
+            <li>
+              <a href="#">Nhà đất</a>
+            </li>
+            <li>
+              <a href="#">Nhịp sống đô thị</a>
+            </li>
+            <li>
+              <a href="#">Sống xanh</a>
+            </li>
+            <li>
+              <a href="#">Nội thất</a>
+            </li>
+          </ol>
+        </li>
+        <li class="has-child">
+          <a href="#">Thể thao</a>
+          <ol class="submenu">
+            <li>
+              <a href="#">Bóng đá</a>
+            </li>
+            <li>
+              <a href="#">Pickleball</a>
+            </li>
+            <li>
+              <a href="#">Tennis</a>
+            </li>
+            <li><a href="#">Golf</a></li>
+            <li>
+              <a href="#">Võ thuật - Các môn khác</a>
+            </li>
+            <li>
+              <a href="#">Hậu trường</a>
+            </li>
+            <li>
+              <a href="#">Thể thao sức bền</a>
+            </li>
+            <li>
+              <a href="#">Lịch thi đấu</a>
+            </li>
+          </ol>
+        </li>
+        <li class="has-child">
+          <a href="#">Sức khỏe</a>
+          <ol class="submenu">
+            <li>
+              <a href="#">Ung thư</a>
+            </li>
+            <li>
+              <a href="#">Sống khỏe</a>
+            </li>
+            <li>
+              <a href="#">Ngoại thần kinh - Cột sống</a>
+            </li>
+            <li>
+              <a href="#">Kiến thức giới tính</a>
+            </li>
+            <li>
+              <a href="#">Tư vấn</a>
+            </li>
+            <li>
+              <a href="#">Khỏe đẹp</a>
+            </li>
+          </ol>
+        </li>
+        <li class="has-child">
+          <a href="#">Nội vụ</a>
+          <ol class="submenu">
+            <li>
+              <a href="#">Chính sách</a>
+            </li>
+            <li>
+              <a href="#">Tổ chức bộ máy</a>
+            </li>
+            <li>
+              <a href="#">Tiền lương</a>
+            </li>
+            <li>
+              <a href="#">Công sở</a>
+            </li>
+            <li>
+              <a href="#">Sắp xếp các đơn vị hành chính</a>
+            </li>
+          </ol>
+        </li>
+        <li class="has-child">
+          <a href="#">Nhân ái</a>
+          <ol class="submenu">
+            <li>
+              <a href="#">Hoàn cảnh</a>
+            </li>
+            <li>
+              <a href="#">Dự án cộng đồng</a>
+            </li>
+            <li>
+              <a href="#">Nhịp cầu nhân ái</a>
+            </li>
+            <li>
+              <a href="#">Vượt lên số phận</a>
+            </li>
+          </ol>
+        </li>
+        <li class="has-child">
+          <a href="#">Xe ++</a>
+          <ol class="submenu">
+            <li>
+              <a href="#">Thị trường xe</a>
+            </li>
+            <li>
+              <a href="#">Xe điện</a>
+            </li>
+            <li>
+              <a href="#">Đánh giá</a>
+            </li>
+            <li>
+              <a href="#">Cộng đồng xe</a>
+            </li>
+            <li>
+              <a href="#">Kinh nghiệm - Tư vấn</a>
+            </li>
+            <li>
+              <a href="#">Bảng giá ô tô</a>
+            </li>
+          </ol>
+        </li>
+        <li class="has-child">
+          <a href="#">Công nghệ</a>
+          <ol class="submenu">
+            <li>
+              <a href="#">AI &amp; Internet</a>
+            </li>
+            <li>
+              <a href="#">An ninh mạng</a>
+            </li>
+            <li>
+              <a href="#">Gia dụng thông minh</a>
+            </li>
+            <li>
+              <a href="#">Sản phẩm &amp; Cộng đồng</a>
+            </li>
+          </ol>
+        </li>
+        <li class="has-child">
+          <a href="#">Giáo dục</a>
+          <ol class="submenu">
+            <li>
+              <a href="#">Góc phụ huynh</a>
+            </li>
+            <li>
+              <a href="#">Khuyến học</a>
+            </li>
+            <li>
+              <a href="#">Gương sáng</a>
+            </li>
+            <li>
+              <a href="#">Giáo dục - Nghề nghiệp</a>
+            </li>
+            <li>
+              <a href="#">Du học</a>
+            </li>
+            <li>
+              <a href="#">Tuyển sinh</a>
+            </li>
+          </ol>
+        </li>
+        <li class="has-child">
+          <a href="#">Việc làm</a>
+          <ol class="submenu">
+            <li>
+              <a href="#">Chính sách</a>
+            </li>
+            <li>
+              <a href="#">Làm giàu</a>
+            </li>
+            <li>
+              <a href="#">Chuyện nghề</a>
+            </li>
+            <li>
+              <a href="#">Nhân lực mới</a>
+            </li>
+          </ol>
+        </li>
+        <li class="has-child">
+          <a href="#">Pháp luật</a>
+          <ol class="submenu">
+            <li>
+              <a href="#">Hồ sơ vụ án</a>
+            </li>
+            <li>
+              <a href="#">Pháp đình</a>
+            </li>
+          </ol>
+        </li>
+        <li class="menu-more">
+          <svg
+            aria-hidden="true"
+            class="more"
+            width="24"
+            height="25"
+            viewBox="0 0 24 25"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M19 13.7379C19.5523 13.7379 20 13.2902 20 12.7379C20 12.1857 19.5523 11.7379 19 11.7379C18.4477 11.7379 18 12.1857 18 12.7379C18 13.2902 18.4477 13.7379 19 13.7379Z"
+              stroke="#4D4D4D"
+              stroke-width="1.3125"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            ></path>
+            <path
+              d="M12 13.7379C12.5523 13.7379 12.9999 13.2902 12.9999 12.7379C12.9999 12.1857 12.5523 11.7379 12 11.7379C11.4477 11.7379 11 12.1857 11 12.7379C11 13.2902 11.4477 13.7379 12 13.7379Z"
+              stroke="#4D4D4D"
+              stroke-width="1.3125"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            ></path>
+            <path
+              d="M5 13.7379C5.55228 13.7379 5.99999 13.2902 5.99999 12.7379C5.99999 12.1857 5.55228 11.7379 5 11.7379C4.44771 11.7379 4 12.1857 4 12.7379C4 13.2902 4.44771 13.7379 5 13.7379Z"
+              stroke="#4D4D4D"
+              stroke-width="1.3125"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            ></path>
+          </svg>
+          <svg
+            aria-hidden="true"
+            class="close"
+            width="24"
+            height="25"
+            viewBox="0 0 24 25"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M6.43635 17.804C6.50318 17.8703 6.58245 17.9228 6.6696 17.9584C6.75674 17.994 6.85006 18.012 6.9442 18.0115C7.13309 18.0116 7.31437 17.937 7.44848 17.804L12.0013 13.2512L16.5541 17.804C16.6882 17.937 16.8694 18.0116 17.0583 18.0115C17.1997 18.0116 17.3379 17.9698 17.4555 17.8914C17.5731 17.8131 17.6649 17.7016 17.7192 17.5711C17.7736 17.4407 17.788 17.297 17.7608 17.1583C17.7335 17.0196 17.6658 16.8921 17.5662 16.7919L13.0134 12.2391L17.5662 7.68632C17.7004 7.5521 17.7758 7.37006 17.7758 7.18025C17.7758 6.99044 17.7004 6.8084 17.5662 6.67419C17.432 6.53997 17.2499 6.46457 17.0601 6.46457C16.8703 6.46457 16.6883 6.53997 16.5541 6.67419L12.0013 11.227L7.44848 6.67419C7.31426 6.53997 7.13222 6.46457 6.94241 6.46457C6.7526 6.46457 6.57056 6.53997 6.43635 6.67419C6.30213 6.8084 6.22673 6.99044 6.22673 7.18025C6.22673 7.37006 6.30213 7.5521 6.43635 7.68632L10.9891 12.2391L6.43635 16.7919C6.36984 16.8583 6.31708 16.9372 6.28109 17.0241C6.24509 17.1109 6.22656 17.204 6.22656 17.298C6.22656 17.392 6.24509 17.485 6.28109 17.5719C6.31708 17.6587 6.36984 17.7376 6.43635 17.804Z"
+              fill="black"
+            ></path>
+          </svg>
+        </li>
+      </ol>
+      <nav class="nav-full bg-wrap">
+        <div class="nf-wrap container dt-gap-[40px] dt-justify-between">
+          <ol class="nf-menu">
+            <li>
+              <a class="dt-text-MineShaft" href="#">Xã hội</a>
+              <ol class="nf-submenu">
+                <li class="nf-submenu__item dt-block">
+                  <a href="#">Chính trị</a>
+                </li>
+                <li class="nf-submenu__item dt-block">
+                  <a href="#">Học tập Bác</a>
+                </li>
+                <li class="nf-submenu__item dt-block">
+                  <a href="#">Kỷ nguyên mới</a>
+                </li>
+                <li class="nf-submenu__item dt-block">
+                  <a href="#">Môi trường</a>
+                </li>
+                <li class="nf-submenu__item more dt-hidden">
+                  <a href="#">Giao thông</a>
+                </li>
+                <li class="nf-submenu__item more dt-hidden">
+                  <a href="#">Nóng trên mạng</a>
+                </li>
+                <li class="nf-submenu__item more dt-hidden">
+                  <a href="#">50 năm thống nhất đất nước</a>
+                </li>
+              </ol>
+              <div
+                class="dt-mt-2 dt-pt-1 dt-border-t dt-border-cD7D7D7 dt-font-inter dt-text-cA3A3A3 dt-text-13px dt-leading-4 dt-max-w-[88px]"
+              >
+                <button
+                  data-submenu-more=""
+                  type="button"
+                  aria-label="Xem thêm"
+                  class="dt-italic hover:dt-text-c5283FF"
+                >
+                  Xem thêm
+                </button>
+              </div>
+            </li>
+            <li>
+              <a class="dt-text-MineShaft" href="#">Thế giới</a>
+              <ol class="nf-submenu">
+                <li class="nf-submenu__item dt-block">
+                  <a href="#">Quân sự</a>
+                </li>
+                <li class="nf-submenu__item dt-block">
+                  <a href="#">Phân tích - Bình luận</a>
+                </li>
+                <li class="nf-submenu__item dt-block">
+                  <a href="#">Thế giới đó đây</a>
+                </li>
+                <li class="nf-submenu__item dt-block">
+                  <a href="#">Kiều bào</a>
+                </li>
+              </ol>
+            </li>
+            <li>
+              <a class="dt-text-MineShaft" href="#">Kinh doanh</a>
+              <ol class="nf-submenu">
+                <li class="nf-submenu__item dt-block">
+                  <a href="#">Tài chính</a>
+                </li>
+                <li class="nf-submenu__item dt-block">
+                  <a href="#">Chứng khoán</a>
+                </li>
+                <li class="nf-submenu__item dt-block">
+                  <a href="#">Doanh nghiệp</a>
+                </li>
+                <li class="nf-submenu__item dt-block">
+                  <a href="#">Khởi nghiệp</a>
+                </li>
+                <li class="nf-submenu__item more dt-hidden">
+                  <a href="#">Tiêu dùng</a>
+                </li>
+                <li class="nf-submenu__item more dt-hidden">
+                  <a href="#">ESG - Phát triển bền vững</a>
+                </li>
+              </ol>
+              <div
+                class="dt-mt-2 dt-pt-1 dt-border-t dt-border-cD7D7D7 dt-font-inter dt-text-cA3A3A3 dt-text-13px dt-leading-4 dt-max-w-[88px]"
+              >
+                <button
+                  data-submenu-more=""
+                  type="button"
+                  aria-label="Xem thêm"
+                  class="dt-italic hover:dt-text-c5283FF"
+                >
+                  Xem thêm
+                </button>
+              </div>
+            </li>
+            <li>
+              <a class="dt-text-MineShaft" href="#">Bất động sản</a>
+              <ol class="nf-submenu">
+                <li class="nf-submenu__item dt-block">
+                  <a href="#">Dự án</a>
+                </li>
+                <li class="nf-submenu__item dt-block">
+                  <a href="#">Thị trường</a>
+                </li>
+                <li class="nf-submenu__item dt-block">
+                  <a href="#">Nhà đất</a>
+                </li>
+                <li class="nf-submenu__item dt-block">
+                  <a href="#">Nhịp sống đô thị</a>
+                </li>
+                <li class="nf-submenu__item more dt-hidden">
+                  <a href="#">Sống xanh</a>
+                </li>
+                <li class="nf-submenu__item more dt-hidden">
+                  <a href="#">Nội thất</a>
+                </li>
+              </ol>
+              <div
+                class="dt-mt-2 dt-pt-1 dt-border-t dt-border-cD7D7D7 dt-font-inter dt-text-cA3A3A3 dt-text-13px dt-leading-4 dt-max-w-[88px]"
+              >
+                <button
+                  data-submenu-more=""
+                  type="button"
+                  aria-label="Xem thêm"
+                  class="dt-italic hover:dt-text-c5283FF"
+                >
+                  Xem thêm
+                </button>
+              </div>
+            </li>
+            <li>
+              <a class="dt-text-MineShaft" href="#">Thể thao</a>
+              <ol class="nf-submenu">
+                <li class="nf-submenu__item dt-block">
+                  <a href="#">Bóng đá</a>
+                </li>
+                <li class="nf-submenu__item dt-block">
+                  <a href="#">Pickleball</a>
+                </li>
+                <li class="nf-submenu__item dt-block">
+                  <a href="#">Tennis</a>
+                </li>
+                <li class="nf-submenu__item dt-block">
+                  <a href="#">Golf</a>
+                </li>
+                <li class="nf-submenu__item more dt-hidden">
+                  <a href="#">Võ thuật - Các môn khác</a>
+                </li>
+                <li class="nf-submenu__item more dt-hidden">
+                  <a href="#">Hậu trường</a>
+                </li>
+                <li class="nf-submenu__item more dt-hidden">
+                  <a href="#">Thể thao sức bền</a>
+                </li>
+                <li class="nf-submenu__item more dt-hidden">
+                  <a href="#">Lịch thi đấu</a>
+                </li>
+              </ol>
+              <div
+                class="dt-mt-2 dt-pt-1 dt-border-t dt-border-cD7D7D7 dt-font-inter dt-text-cA3A3A3 dt-text-13px dt-leading-4 dt-max-w-[88px]"
+              >
+                <button
+                  data-submenu-more=""
+                  type="button"
+                  aria-label="Xem thêm"
+                  class="dt-italic hover:dt-text-c5283FF"
+                >
+                  Xem thêm
+                </button>
+              </div>
+            </li>
+            <li>
+              <a class="dt-text-MineShaft" href="#">Nhân ái</a>
+              <ol class="nf-submenu">
+                <li class="nf-submenu__item dt-block">
+                  <a href="#">Hoàn cảnh</a>
+                </li>
+                <li class="nf-submenu__item dt-block">
+                  <a href="#">Dự án cộng đồng</a>
+                </li>
+                <li class="nf-submenu__item dt-block">
+                  <a href="#">Nhịp cầu nhân ái</a>
+                </li>
+                <li class="nf-submenu__item dt-block">
+                  <a href="#">Vượt lên số phận</a>
+                </li>
+              </ol>
+            </li>
+            <li>
+              <a class="dt-text-MineShaft" href="#">Sức khỏe</a>
+              <ol class="nf-submenu">
+                <li class="nf-submenu__item dt-block">
+                  <a href="#">Ung thư</a>
+                </li>
+                <li class="nf-submenu__item dt-block">
+                  <a href="#">Sống khỏe</a>
+                </li>
+                <li class="nf-submenu__item dt-block">
+                  <a href="#">Ngoại thần kinh - Cột sống</a>
+                </li>
+                <li class="nf-submenu__item dt-block">
+                  <a href="#">Kiến thức giới tính</a>
+                </li>
+                <li class="nf-submenu__item more dt-hidden">
+                  <a href="#">Tư vấn</a>
+                </li>
+                <li class="nf-submenu__item more dt-hidden">
+                  <a href="#">Khỏe đẹp</a>
+                </li>
+              </ol>
+              <div
+                class="dt-mt-2 dt-pt-1 dt-border-t dt-border-cD7D7D7 dt-font-inter dt-text-cA3A3A3 dt-text-13px dt-leading-4 dt-max-w-[88px]"
+              >
+                <button
+                  data-submenu-more=""
+                  type="button"
+                  aria-label="Xem thêm"
+                  class="dt-italic hover:dt-text-c5283FF"
+                >
+                  Xem thêm
+                </button>
+              </div>
+            </li>
+            <li>
+              <a class="dt-text-MineShaft" href="#">Nội vụ</a>
+              <ol class="nf-submenu">
+                <li class="nf-submenu__item dt-block">
+                  <a href="#">Chính sách</a>
+                </li>
+                <li class="nf-submenu__item dt-block">
+                  <a href="#">Tổ chức bộ máy</a>
+                </li>
+                <li class="nf-submenu__item dt-block">
+                  <a href="#">Tiền lương</a>
+                </li>
+                <li class="nf-submenu__item dt-block">
+                  <a href="#">Công sở</a>
+                </li>
+                <li class="nf-submenu__item more dt-hidden">
+                  <a href="#">Sắp xếp các đơn vị hành chính</a>
+                </li>
+              </ol>
+              <div
+                class="dt-mt-2 dt-pt-1 dt-border-t dt-border-cD7D7D7 dt-font-inter dt-text-cA3A3A3 dt-text-13px dt-leading-4 dt-max-w-[88px]"
+              >
+                <button
+                  data-submenu-more=""
+                  type="button"
+                  aria-label="Xem thêm"
+                  class="dt-italic hover:dt-text-c5283FF"
+                >
+                  Xem thêm
+                </button>
+              </div>
+            </li>
+            <li>
+              <a class="dt-text-MineShaft" href="#">Giải trí</a>
+              <ol class="nf-submenu">
+                <li class="nf-submenu__item dt-block">
+                  <a href="#">Hậu trường</a>
+                </li>
+                <li class="nf-submenu__item dt-block">
+                  <a href="#">Sách hay</a>
+                </li>
+                <li class="nf-submenu__item dt-block">
+                  <a href="#">Điện ảnh</a>
+                </li>
+                <li class="nf-submenu__item dt-block">
+                  <a href="#">Âm nhạc</a>
+                </li>
+                <li class="nf-submenu__item more dt-hidden">
+                  <a href="#">Thời trang</a>
+                </li>
+                <li class="nf-submenu__item more dt-hidden">
+                  <a href="#">Mỹ thuật - Sân khấu</a>
+                </li>
+              </ol>
+              <div
+                class="dt-mt-2 dt-pt-1 dt-border-t dt-border-cD7D7D7 dt-font-inter dt-text-cA3A3A3 dt-text-13px dt-leading-4 dt-max-w-[88px]"
+              >
+                <button
+                  data-submenu-more=""
+                  type="button"
+                  aria-label="Xem thêm"
+                  class="dt-italic hover:dt-text-c5283FF"
+                >
+                  Xem thêm
+                </button>
+              </div>
+            </li>
+            <li>
+              <a class="dt-text-MineShaft" href="#">Xe ++</a>
+              <ol class="nf-submenu">
+                <li class="nf-submenu__item dt-block">
+                  <a href="#">Thị trường xe</a>
+                </li>
+                <li class="nf-submenu__item dt-block">
+                  <a href="#">Xe điện</a>
+                </li>
+                <li class="nf-submenu__item dt-block">
+                  <a href="#">Đánh giá</a>
+                </li>
+                <li class="nf-submenu__item dt-block">
+                  <a href="#">Cộng đồng xe</a>
+                </li>
+                <li class="nf-submenu__item more dt-hidden">
+                  <a href="#">Kinh nghiệm - Tư vấn</a>
+                </li>
+                <li class="nf-submenu__item more dt-hidden">
+                  <a href="#">Bảng giá ô tô</a>
+                </li>
+              </ol>
+              <div
+                class="dt-mt-2 dt-pt-1 dt-border-t dt-border-cD7D7D7 dt-font-inter dt-text-cA3A3A3 dt-text-13px dt-leading-4 dt-max-w-[88px]"
+              >
+                <button
+                  data-submenu-more=""
+                  type="button"
+                  aria-label="Xem thêm"
+                  class="dt-italic hover:dt-text-c5283FF"
+                >
+                  Xem thêm
+                </button>
+              </div>
+            </li>
+            <li>
+              <a class="dt-text-MineShaft" href="#">Công nghệ</a>
+              <ol class="nf-submenu">
+                <li class="nf-submenu__item dt-block">
+                  <a href="#">AI &amp; Internet</a>
+                </li>
+                <li class="nf-submenu__item dt-block">
+                  <a href="#">An ninh mạng</a>
+                </li>
+                <li class="nf-submenu__item dt-block">
+                  <a href="#">Gia dụng thông minh</a>
+                </li>
+                <li class="nf-submenu__item dt-block">
+                  <a href="#">Sản phẩm &amp; Cộng đồng</a>
+                </li>
+              </ol>
+            </li>
+            <li>
+              <a class="dt-text-MineShaft" href="#">Giáo dục</a>
+              <ol class="nf-submenu">
+                <li class="nf-submenu__item dt-block">
+                  <a href="#">Góc phụ huynh</a>
+                </li>
+                <li class="nf-submenu__item dt-block">
+                  <a href="#">Khuyến học</a>
+                </li>
+                <li class="nf-submenu__item dt-block">
+                  <a href="#">Gương sáng</a>
+                </li>
+                <li class="nf-submenu__item dt-block">
+                  <a href="#">Giáo dục - Nghề nghiệp</a>
+                </li>
+                <li class="nf-submenu__item more dt-hidden">
+                  <a href="#">Du học</a>
+                </li>
+                <li class="nf-submenu__item more dt-hidden">
+                  <a href="#">Tuyển sinh</a>
+                </li>
+              </ol>
+              <div
+                class="dt-mt-2 dt-pt-1 dt-border-t dt-border-cD7D7D7 dt-font-inter dt-text-cA3A3A3 dt-text-13px dt-leading-4 dt-max-w-[88px]"
+              >
+                <button
+                  data-submenu-more=""
+                  type="button"
+                  aria-label="Xem thêm"
+                  class="dt-italic hover:dt-text-c5283FF"
+                >
+                  Xem thêm
+                </button>
+              </div>
+            </li>
+            <li>
+              <a class="dt-text-MineShaft" href="#">Việc làm</a>
+              <ol class="nf-submenu">
+                <li class="nf-submenu__item dt-block">
+                  <a href="#">Nhân lực mới</a>
+                </li>
+                <li class="nf-submenu__item dt-block">
+                  <a href="#">Làm giàu</a>
+                </li>
+                <li class="nf-submenu__item dt-block">
+                  <a href="#">An sinh</a>
+                </li>
+                <li class="nf-submenu__item dt-block">
+                  <a href="#">Chuyện nghề</a>
+                </li>
+              </ol>
+            </li>
+            <li>
+              <a class="dt-text-MineShaft" href="#">Pháp luật</a>
+              <ol class="nf-submenu">
+                <li class="nf-submenu__item dt-block">
+                  <a href="#">Hồ sơ vụ án</a>
+                </li>
+                <li class="nf-submenu__item dt-block">
+                  <a href="#">Pháp đình</a>
+                </li>
+              </ol>
+            </li>
+            <li>
+              <a class="dt-text-MineShaft" href="#">Du lịch</a>
+              <ol class="nf-submenu">
+                <li class="nf-submenu__item dt-block">
+                  <a href="#">Tin tức</a>
+                </li>
+                <li class="nf-submenu__item dt-block">
+                  <a href="#">Khám phá</a>
+                </li>
+                <li class="nf-submenu__item dt-block">
+                  <a href="#">Món ngon - Điểm đẹp</a>
+                </li>
+                <li class="nf-submenu__item dt-block">
+                  <a href="#">Tour hay - Khuyến mại</a>
+                </li>
+                <li class="nf-submenu__item more dt-hidden">
+                  <a href="#">Video - Ảnh</a>
+                </li>
+              </ol>
+              <div
+                class="dt-mt-2 dt-pt-1 dt-border-t dt-border-cD7D7D7 dt-font-inter dt-text-cA3A3A3 dt-text-13px dt-leading-4 dt-max-w-[88px]"
+              >
+                <button
+                  data-submenu-more=""
+                  type="button"
+                  aria-label="Xem thêm"
+                  class="dt-italic hover:dt-text-c5283FF"
+                >
+                  Xem thêm
+                </button>
+              </div>
+            </li>
+            <li>
+              <a class="dt-text-MineShaft" href="#">Đời sống</a>
+              <ol class="nf-submenu">
+                <li class="nf-submenu__item dt-block">
+                  <a href="#">Tết 2025</a>
+                </li>
+                <li class="nf-submenu__item dt-block">
+                  <a href="#">Cộng đồng</a>
+                </li>
+                <li class="nf-submenu__item dt-block">
+                  <a href="#">Thượng lưu</a>
+                </li>
+                <li class="nf-submenu__item dt-block">
+                  <a href="#">Nhà đẹp</a>
+                </li>
+                <li class="nf-submenu__item more dt-hidden">
+                  <a href="#">Giới trẻ</a>
+                </li>
+                <li class="nf-submenu__item more dt-hidden">
+                  <a href="#">Chợ online</a>
+                </li>
+                <li class="nf-submenu__item more dt-hidden">
+                  <a href="#">Xổ số</a>
+                </li>
+                <li class="nf-submenu__item more dt-hidden">
+                  <a href="#">Cuộc thi ảnh EVNSPC</a>
+                </li>
+              </ol>
+              <div
+                class="dt-mt-2 dt-pt-1 dt-border-t dt-border-cD7D7D7 dt-font-inter dt-text-cA3A3A3 dt-text-13px dt-leading-4 dt-max-w-[88px]"
+              >
+                <button
+                  data-submenu-more=""
+                  type="button"
+                  aria-label="Xem thêm"
+                  class="dt-italic hover:dt-text-c5283FF"
+                >
+                  Xem thêm
+                </button>
+              </div>
+            </li>
+            <li>
+              <a class="dt-text-MineShaft" href="#">Tình yêu</a>
+              <ol class="nf-submenu">
+                <li class="nf-submenu__item dt-block">
+                  <a href="#">Chuyện của tôi</a>
+                </li>
+                <li class="nf-submenu__item dt-block">
+                  <a href="#">Gia đình</a>
+                </li>
+                <li class="nf-submenu__item dt-block">
+                  <a href="#">Tình yêu</a>
+                </li>
+              </ol>
+            </li>
+            <li>
+              <a class="dt-text-MineShaft" href="#">Khoa học</a>
+              <ol class="nf-submenu">
+                <li class="nf-submenu__item dt-block">
+                  <a href="#">Thế giới tự nhiên</a>
+                </li>
+                <li class="nf-submenu__item dt-block">
+                  <a href="#">Vũ trụ</a>
+                </li>
+                <li class="nf-submenu__item dt-block">
+                  <a href="#">Khám phá</a>
+                </li>
+                <li class="nf-submenu__item dt-block">
+                  <a href="#">Khoa học &amp; đời sống</a>
+                </li>
+              </ol>
+            </li>
+          </ol>
+          <div class="nf-sidebar dt-pt-5">
+            <div class="item cols-2">
+              <ol class="col col-v2">
+                <li>
+                  <a href="#">Dmagazine</a>
+                </li>
+                <li><a href="#">DNews</a></li>
+                <li><a href="#">D-Buzz</a></li>
+                <li>
+                  <a href="#">Photo News</a>
+                </li>
+                <li>
+                  <a href="#">Photo Story</a>
+                </li>
+              </ol>
+              <ol class="col col-v2">
+                <li>
+                  <a href="#">Infographic</a>
+                </li>
+                <li>
+                  <a href="#">Interactive</a>
+                </li>
+                <li>
+                  <a href="#">Tâm điểm</a>
+                </li>
+                <li><a href="#">Bạn đọc</a></li>
+                <li>
+                  <a href="#">Tọa đàm</a>
+                </li>
+              </ol>
+            </div>
+            <div class="item line"></div>
+            <div class="item cols-2">
+              <ol class="col col-v2">
+                <li>
+                  <a class="uppercase" href="#">SỰ KIỆN NỔI BẬT</a>
+                </li>
+                <li>
+                  <a
+                    target="_blank"
+                    rel="nofollow noopener"
+                    class="uppercase"
+                    href="#"
+                    >Tin mới nhất</a
+                  >
+                </li>
+                <li>
+                  <a
+                    target="_blank"
+                    rel="nofollow noopener"
+                    class="uppercase"
+                    href="#"
+                    >VIDEO</a
+                  >
+                </li>
+              </ol>
+              <ol class="col col-v2">
+                <li>
+                  <a
+                    target="_blank"
+                    rel="nofollow noopener"
+                    class="uppercase"
+                    href="https://tailieu.dantri.com.vn/catalog"
+                    >MỤC LỤC</a
+                  >
+                </li>
+                <li>
+                  <a
+                    target="_blank"
+                    rel="nofollow noopener"
+                    class="uppercase"
+                    href="https://fica.dantri.com.vn/"
+                    >FICA</a
+                  >
+                </li>
+                <li>
+                  <a
+                    target="_blank"
+                    rel="nofollow noopener"
+                    class="uppercase"
+                    href="https://dtinews.dantri.com.vn/"
+                    >DTINEWS</a
+                  >
+                </li>
+              </ol>
+            </div>
+            <div class="item line"></div>
+            <div class="item">
+              <ol class="col col-v2">
+                <li>
+                  <a class="email" href="#"
+                    ><svg
+                      aria-hidden="true"
+                      width="17"
+                      height="17"
+                      viewBox="0 0 1000 1000"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        fill="#666"
+                        d="M492.8 581.6c-117.80000000000001-57.89999999999998-337.3-165.10000000000002-407.6-199.20000000000005-12.299999999999983-5.899999999999977-22.19999999999999 0.30000000000001137-22.19999999999999 13.900000000000034v396.2c0 13.600000000000023 11 24.700000000000045 24.599999999999994 24.700000000000045h824.6c13.599999999999909 0 24.699999999999932-11 24.699999999999932-24.600000000000023v-395.8c0-13.600000000000023-9.899999999999977-19.80000000000001-22.100000000000023-13.800000000000011-69.79999999999995 34.19999999999999-286.79999999999995 141-403.09999999999997 198.70000000000005-7 3.5-12.199999999999989 3.199999999999932-18.899999999999977-0.10000000000002274z m-314.20000000000005-229.40000000000003c105.20000000000005 51.5 210.40000000000003 103.10000000000002 315.70000000000005 154.3 4 2 10.300000000000011 2.6000000000000227 14.199999999999989 0.6999999999999886 140.79999999999995-69.09999999999997 281.4-138.7 422.1-208 5.100000000000023-2.5 6.899999999999977-5.399999999999977 6.899999999999977-11.300000000000011-0.20000000000004547-20.5 0-56.69999999999999 0.10000000000002274-80.89999999999998 0-13.599999999999994-11.100000000000023-24.69999999999999-24.700000000000045-24.69999999999999h-825.6c-13.599999999999952 0-24.799999999999955 11-24.799999999999955 24.69999999999999 0 24.30000000000001 0.20000000000000284 60.60000000000002 0.5 81.89999999999998 0.10000000000000142 3.400000000000034 3.799999999999997 8.300000000000011 7 9.900000000000034 36.099999999999994 18.099999999999966 72.4 35.599999999999966 108.6 53.39999999999998z"
+                      ></path>
+                    </svg>
+                    Liên hệ toà soạn</a
+                  >
+                </li>
+                <li>
+                  <a class="headphone" href="tel:02437366491"
+                    ><svg
+                      aria-hidden="true"
+                      width="17"
+                      height="17"
+                      viewBox="0 0 1000 1000"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        fill="#666"
+                        d="M390.7 353.3c-120.30000000000001 69.5 63.19999999999999 413.59999999999997 194.90000000000003 337.59999999999997l122.10000000000002 211.39999999999998c-55.60000000000002 32.10000000000002-102.5 52.30000000000007-166.9000000000001 15.5-178.79999999999995-102.19999999999993-375.59999999999997-442.9-369.99999999999994-646.0999999999999 1.8999999999999773-70.60000000000005 43.599999999999994-98.30000000000004 97.89999999999998-129.70000000000005 23.30000000000001 40.400000000000006 98.60000000000002 170.8 122 211.3z m50.400000000000034-5.699999999999989c-13 7.5-29.700000000000045 3.099999999999966-37.30000000000001-10l-115-199.3c-7.5-13.000000000000014-3.1000000000000227-29.700000000000017 10-37.30000000000001l60.5-34.900000000000006c13-7.499999999999993 29.69999999999999-3.0999999999999943 37.30000000000001 10l115.09999999999997 199.29999999999998c7.500000000000057 13 3.099999999999966 29.700000000000045-10 37.200000000000045l-60.599999999999966 35z m314.4 544.5c-13 7.5-29.700000000000045 3.1000000000000227-37.299999999999955-10l-115-199.30000000000007c-7.5-13-3.1000000000000227-29.699999999999932 10-37.299999999999955l60.5-34.89999999999998c13-7.5 29.699999999999932-3.1000000000000227 37.299999999999955 10l115.10000000000002 199.29999999999995c7.5 13 3.1000000000000227 29.700000000000045-10 37.30000000000007l-60.60000000000002 34.89999999999998z"
+                      ></path>
+                    </svg>
+                    024-3736-6491</a
+                  >
+                </li>
+              </ol>
+            </div>
+            <div class="item line"></div>
+            <div class="item">
+              <ol class="col col-v2">
+                <li>
+                  <a class="email" href="mailto:quangcao@dantri.com.vn"
+                    ><svg
+                      aria-hidden="true"
+                      width="17"
+                      height="17"
+                      viewBox="0 0 1000 1000"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        fill="#666"
+                        d="M492.8 581.6c-117.80000000000001-57.89999999999998-337.3-165.10000000000002-407.6-199.20000000000005-12.299999999999983-5.899999999999977-22.19999999999999 0.30000000000001137-22.19999999999999 13.900000000000034v396.2c0 13.600000000000023 11 24.700000000000045 24.599999999999994 24.700000000000045h824.6c13.599999999999909 0 24.699999999999932-11 24.699999999999932-24.600000000000023v-395.8c0-13.600000000000023-9.899999999999977-19.80000000000001-22.100000000000023-13.800000000000011-69.79999999999995 34.19999999999999-286.79999999999995 141-403.09999999999997 198.70000000000005-7 3.5-12.199999999999989 3.199999999999932-18.899999999999977-0.10000000000002274z m-314.20000000000005-229.40000000000003c105.20000000000005 51.5 210.40000000000003 103.10000000000002 315.70000000000005 154.3 4 2 10.300000000000011 2.6000000000000227 14.199999999999989 0.6999999999999886 140.79999999999995-69.09999999999997 281.4-138.7 422.1-208 5.100000000000023-2.5 6.899999999999977-5.399999999999977 6.899999999999977-11.300000000000011-0.20000000000004547-20.5 0-56.69999999999999 0.10000000000002274-80.89999999999998 0-13.599999999999994-11.100000000000023-24.69999999999999-24.700000000000045-24.69999999999999h-825.6c-13.599999999999952 0-24.799999999999955 11-24.799999999999955 24.69999999999999 0 24.30000000000001 0.20000000000000284 60.60000000000002 0.5 81.89999999999998 0.10000000000000142 3.400000000000034 3.799999999999997 8.300000000000011 7 9.900000000000034 36.099999999999994 18.099999999999966 72.4 35.599999999999966 108.6 53.39999999999998z"
+                      ></path>
+                    </svg>
+                    Liên hệ quảng cáo</a
+                  >
+                </li>
+                <li>
+                  <a class="headphone" href="tel:0945540303"
+                    ><svg
+                      aria-hidden="true"
+                      width="17"
+                      height="17"
+                      viewBox="0 0 1000 1000"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        fill="#666"
+                        d="M390.7 353.3c-120.30000000000001 69.5 63.19999999999999 413.59999999999997 194.90000000000003 337.59999999999997l122.10000000000002 211.39999999999998c-55.60000000000002 32.10000000000002-102.5 52.30000000000007-166.9000000000001 15.5-178.79999999999995-102.19999999999993-375.59999999999997-442.9-369.99999999999994-646.0999999999999 1.8999999999999773-70.60000000000005 43.599999999999994-98.30000000000004 97.89999999999998-129.70000000000005 23.30000000000001 40.400000000000006 98.60000000000002 170.8 122 211.3z m50.400000000000034-5.699999999999989c-13 7.5-29.700000000000045 3.099999999999966-37.30000000000001-10l-115-199.3c-7.5-13.000000000000014-3.1000000000000227-29.700000000000017 10-37.30000000000001l60.5-34.900000000000006c13-7.499999999999993 29.69999999999999-3.0999999999999943 37.30000000000001 10l115.09999999999997 199.29999999999998c7.500000000000057 13 3.099999999999966 29.700000000000045-10 37.200000000000045l-60.599999999999966 35z m314.4 544.5c-13 7.5-29.700000000000045 3.1000000000000227-37.299999999999955-10l-115-199.30000000000007c-7.5-13-3.1000000000000227-29.699999999999932 10-37.299999999999955l60.5-34.89999999999998c13-7.5 29.699999999999932-3.1000000000000227 37.299999999999955 10l115.10000000000002 199.29999999999995c7.5 13 3.1000000000000227 29.700000000000045-10 37.30000000000007l-60.60000000000002 34.89999999999998z"
+                      ></path>
+                    </svg>
+                    0945.54.03.03</a
+                  >
+                </li>
+              </ol>
+            </div>
+            <div class="social flex-jcc dt-w-max">
+              <label class="social-label">Theo dõi <b>Dân trí</b>:</label>
+              <div class="social-list flex-jcc">
+                <a
+                  class="facebook"
+                  target="_blank"
+                  rel="nofollow"
+                  href="https://www.facebook.com/baodantridientu"
+                  >Facebook</a
+                >
+                <a
+                  class="youtube"
+                  target="_blank"
+                  rel="nofollow"
+                  href="https://www.youtube.com/@baodantri7941"
+                  >Youtube</a
+                >
+                <a
+                  class="tiktok"
+                  target="_blank"
+                  rel="nofollow"
+                  href="https://www.tiktok.com/@dantri.com.vn"
+                  >Tiktok</a
+                >
+              </div>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </nav>
+    <main class="body container">
+      <div
+        class="dt-flex dt-justify-between dt-items-center dt-mb-6"
+      >
+        <ul
+          class="dt-text-c808080 dt-text-base dt-leading-5 dt-p-0 dt-list-none"
+        >
+          <li class="dt-font-Inter dt-float-left">
+            <a
+              class="dt-text-13px dt-leading-[140%] dt-uppercase dt-text-c565656"
+              title="Du lịch"
+              href="#"
+              >Du lịch</a
+            >
+          </li>
+          <li
+            class="dt-font-Inter dt-float-left before:dt-content-['›'] before:dt-text-xl before:dt-leading-none before:dt-text-ca0a4a8 before:dt-block before:dt-relative before:dt-float-left before:dt-mx-[5px] before:dt-my-0"
+          >
+            <a
+              class="dt-text-13px dt-leading-[140%] dt-uppercase dt-text-c565656"
+              title="Tin tức"
+              href="#"
+              >Tin tức</a
+            >
+          </li>
+        </ul>
+      </div>
+      <div class="body-container">
+        <div class="grid-container">
+          <div class="singular-wrap">
+            <article class="singular-container content-travel">
+              <h1 class="title-page detail">
+                Đuối nước khi tắm biển: "Dòng nước tử thần" không phải ai cũng
+                biết
+              </h1>
+              <div class="author-wrap">
+                <div class="author-meta">
+                  <time class="author-time" datetime="2025-05-05 06:00">
+                    Thứ hai, 05/05/2025 - 06:00
+                  </time>
+                </div>
+              </div>
+
+              <h2 class="singular-sapo">
+                (Dân trí) - Những ngày gần đây, tại các bãi biển ở miền Trung
+                ghi nhận nhiều trường hợp đuối nước thương tâm. Theo chuyên gia
+                cứu hộ, "thủ phạm" thường gây đuối nước ở bãi biển là do các
+                dòng chảy xa bờ.
+              </h2>
+              <div class="singular-content">
+                <p><strong>Dấu hiệu nhận biết dòng chảy nguy hiểm</strong></p>
+                <p>
+                  Nhiều địa phương trên cả nước đã vào mùa
+                  du lịch
+                  năm 2025, đặc biệt là học sinh, sinh viên chuẩn bị bước vào kỳ
+                  nghỉ hè, cũng là thời điểm nắng nóng, người dân, du khách
+                  thường tìm đến các bãi biển, sông, suối vui chơi, tắm mát.
+                </p>
+                <p>
+                  Theo thống kê sơ bộ, trong 5 ngày nghỉ lễ, đã xảy ra hàng chục
+                  vụ tai nạn ở môi trường nước tại bãi biển, sông, suối của các
+                  địa phương như Quảng Trị, Quảng Ngãi, Phú Yên, Bình Định, Lâm
+                  Đồng… khiến nhiều người gặp tai nạn, tử vong, mất tích.
+                </p>
+                <figure class="image align-center" contenteditable="false">
+                  <img
+                    title="Đuối nước khi tắm biển: Dòng nước tử thần không phải ai cũng biết - 1"
+                    src="/assets/img/tải xuống (1).jpg"
+                    alt="Đuối nước khi tắm biển: Dòng nước tử thần không phải ai cũng biết - 1"
+                    width="2048"
+                    height="1366"
+                  />
+                  <figcaption>
+                    <p>
+                      Lực lượng cứu hộ ở thành phố Tuy Hòa túc trực, phát hiện,
+                      ứng cứu người không may bị đuối nước khi tắm biển (Ảnh:
+                      Trung Thi).
+                    </p>
+                  </figcaption>
+                </figure>
+                <div
+                  id="dta-100000-container"
+                  class="dta-unit"
+                  style="border-bottom: 0px; width: 0px !important; opacity: 0"
+                  data-partner="adbro"
+                  data-filled="false"
+                ></div>
+                <p>
+                  Ông Phan Văn Khoa, Giám đốc Ban Quản lý Dịch vụ công ích thành
+                  phố Tuy Hòa, tỉnh Phú Yên (đơn vị quản lý bãi biển, tổ chức
+                  cứu hộ), cho biết trong đợt lễ 30/4 và 1/5, tại bãi biển thành
+                  phố đã ghi nhận 11 trường hợp bị sóng cuốn ra xa. May mắn, lực
+                  lượng cứu hộ và người dân đã kịp thời phát hiện, hỗ trợ nên
+                  không gây thiệt hại về người.
+                </p>
+                <p>
+                  Theo lực lượng cứu hộ ở bãi biển thành phố Tuy Hòa, "thủ phạm"
+                  thường gây đuối nước ở các bãi biển là do dòng chảy xa bờ (hay
+                  còn gọi là dòng rip).
+                </p>
+                <p>
+                  Ông Nguyễn Ngọc Sơn, nhân viên cứu hộ tại bãi biển thành phố
+                  Tuy Hòa, cho biết các biển bãi ngang (biển không có vịnh lõm
+                  sâu vào đất liền hoặc đảo che chắn), người tắm cần chú ý vì
+                  tại đây thường có những dòng rip rình rập.
+                </p>
+                <p>
+                  Khi sóng biển đánh vào bờ, nước dồn lên bãi cát rồi thoát trở
+                  lại biển. Thay vì trải đều, nước thường tìm một lối hẹp giữa
+                  các con sóng "bạc đầu" (có nhiều bọt màu trắng) để chảy ngược
+                  trở ra biển với tốc độ rất mạnh - đó chính là dòng rip.
+                </p>
+                <p>
+                  "Nơi có dòng rip, nước thường tối màu, không có hoặc rất ít
+                  sóng. Dòng rip thường nằm ở giữa 2 bên có sóng "bạc đầu" với
+                  chiều dài 10-100m, rộng 10-30m, chảy nhanh ra khơi. Thoạt
+                  nhìn, nơi có dòng rip rất yên bình nhưng ở đây nguy hiểm vô
+                  cùng vì chẳng may bơi vào khu vực này rất dễ bị cuốn ra xa,
+                  mất tích", ông Sơn nói.
+                </p>
+                <figure class="image align-center" contenteditable="false">
+                  <img
+                    title="Đuối nước khi tắm biển: Dòng nước tử thần không phải ai cũng biết - 2"
+                    src="/assets/img/tải xuống (3).jpg"
+                    alt="Đuối nước khi tắm biển: Dòng nước tử thần không phải ai cũng biết - 2"
+                    width="3375"
+                    height="2250"
+                  />
+                  <figcaption>
+                    <p>
+                      Theo lực lượng cứu hộ, nơi có dòng rip thường không có
+                      sóng (chéo đỏ), nước tối màu, chảy nhanh ra khơi (Ảnh:
+                      Trung Thi).
+                    </p>
+                  </figcaption>
+                </figure>
+                <p>
+                  Ông Sơn lưu ý, khi không may gặp dòng rip, người dân, du khách
+                  không nên hoảng loạn, cần thả lỏng người để nước cuốn tự nhiên
+                  và bơi ra xa, không cố hết sức bơi ngược lại vì rất dễ đuối
+                  sức, mất tích. Khi thấy nước ngừng chảy, nếu còn sức, người
+                  gặp nạn hãy bơi vuông góc với dòng rip, tìm nơi có sóng để bơi
+                  vào sẽ thuận lợi hơn.
+                </p>
+                <p>
+                  Còn theo ông Võ Hùng Quang (39 tuổi), người có 20 năm kinh
+                  nghiệm đi biển, khi gặp dòng rip cuốn ra xa, tốt nhất nên thả
+                  lỏng cơ thể, nằm ngửa mặt lên trời để giữ sức, chờ người ứng
+                  cứu.
+                </p>
+                <p>
+                  "Đối với trường hợp không có người cứu, việc nằm thả lỏng cơ
+                  thể trong một khoảng thời gian nhất định sẽ giúp lấy lại sức.
+                  Để sau đó, chúng ta đủ bình tĩnh, chọn dòng nước có sóng, bơi
+                  lại vào bờ", ông Quang chia sẻ.
+                </p>
+                <p>
+                  <strong
+                    >Chọn vùng "an toàn", tránh nơi có biển cảnh báo</strong
+                  >
+                </p>
+                <p>
+                  Tại bãi biển thành phố Nha Trang (tỉnh Khánh Hòa), các lực
+                  lượng chức năng chọn những khu vực không có dòng rip, sau đó
+                  thả dây thừng, phao 2 bên theo chiều dọc để người dân, du
+                  khách tắm biển được an toàn.
+                </p>
+                <p>
+                  Ông Đàm Hải Vân, Trưởng Ban Quản lý Vịnh Nha Trang, cho biết,
+                  ngoài làm các khu vực an toàn, lực lượng của đơn vị cũng
+                  thường đi dọc bãi biển, phát hiện, đánh dấu các vị trí có dòng
+                  rip bằng các biển báo nguy hiểm để người dân biết, không tắm ở
+                  nơi này.
+                </p>
+                <figure class="image align-center" contenteditable="false">
+                  <img
+                    title="Đuối nước khi tắm biển: Dòng nước tử thần không phải ai cũng biết - 3"
+                    src="/assets/img/tải xuống (3).jpg"
+                    alt="Đuối nước khi tắm biển: Dòng nước tử thần không phải ai cũng biết - 3"
+                    width="1787"
+                    height="1191"
+                  />
+                  <figcaption>
+                    <p>
+                      Một khu vực cắm bảng cấm bơi lội ở bãi biển Nha Trang
+                      (Ảnh: Hiếu Giang).
+                    </p>
+                  </figcaption>
+                </figure>
+                <p>
+                  Trưởng Ban Quản lý Vịnh Nha Trang khuyến cáo, người dân nên
+                  chọn các vùng "an toàn" để tắm, tránh nơi có biển cảnh báo
+                  nguy hiểm. Mặt khác, người dân không nên cố tình bơi khỏi khu
+                  vực được đánh dấu an toàn để tắm.
+                </p>
+                <p>
+                  Ông Phan Văn Khoa cho biết, ở thành phố Tuy Hòa, đơn vị cũng
+                  thường cho cắm các biển cảnh báo nguy hiểm tại nơi có dòng
+                  rip.
+                </p>
+                <p>
+                  Đội cứu hộ tại bãi biển thành phố Tuy Hòa, lưu ý nếu sóng to,
+                  tốt nhất người dân không nên tắm biển. Nếu muốn tắm nên trang
+                  bị áo phao, tắm gần bờ và chọn những khu vực có đội cứu hộ túc
+                  trực để kịp thời hỗ trợ trong những tình huống xấu.
+                </p>
+                <p>
+                  Người dân cũng nên chú ý khi tắm biển vào thời điểm thủy triều
+                  rút mạnh. Vì trong khoảng thời gian này, nước biển rút rất
+                  nhanh và mạnh, kết hợp hiện tượng dòng chảy xa bờ khiến người
+                  tắm biển bị kéo ra xa, đuối nước.
+                </p>
+              </div>
+            </article>
+            <div class="dt-flex dt-justify-between">
+              <div data-module="interaction" data-object-id="20250504151515549">
+                <div class="lazyload-wrapper">
+                  <div
+                    class="dt-flex dt-flex-col dt-gap-2 dt-font-inter dt-leading-5 dt-text-sm dt-text-c52575C dt-mt-2"
+                  >
+                    <div class="dt-font-semibold dt-text-MineShaft">
+                      Bài viết hay? Ấn để tương tác
+                    </div>
+                    <div class="dt-flex dt-items-center dt-gap-3">
+                      <button
+                        type="button"
+                        data-track-content="true"
+                        data-content-name="article-donate"
+                        data-content-piece="article-donate-like"
+                        data-content-target="https://dantri.com.vn/du-lich/duoi-nuoc-khi-tam-bien-dong-nuoc-tu-than-khong-phai-ai-cung-biet-20250504151515549.htm"
+                        aria-label="Bổ ích"
+                        class="dt-group dt-px-2 dt-h-8 dt-flex dt-items-center dt-gap-1 dt-rounded-2xl dt-border dt-bg-[#F4F6FA] dt-transition-all dt-border-[#F4F6FA] hover:dt-h-8 hover:dt-rounded-[18px]"
+                      >
+                        <span
+                          class="dt-relative dt-block dt-w-4 dt-aspect-square dt-rounded-full dt-overflow-hidden dt-transition-all group-hover:dt-w-6"
+                          ><img
+                            class="dt-absolute dt-w-full dt-h-full dt-object-cover dt-object-center"
+                            src="https://cdnweb.dantri.com.vn/dist/0b717b5b4ca31fd052d3.png"
+                            alt="Bổ ích" /></span
+                        >0</button
+                      ><button
+                        type="button"
+                        data-track-content="true"
+                        data-content-name="article-donate"
+                        data-content-piece="article-donate-love"
+                        data-content-target="https://dantri.com.vn/du-lich/duoi-nuoc-khi-tam-bien-dong-nuoc-tu-than-khong-phai-ai-cung-biet-20250504151515549.htm"
+                        aria-label="Xúc động"
+                        class="dt-group dt-px-2 dt-h-8 dt-flex dt-items-center dt-gap-1 dt-rounded-2xl dt-border dt-bg-[#F4F6FA] dt-transition-all dt-border-[#F4F6FA] hover:dt-h-8 hover:dt-rounded-[18px]"
+                      >
+                        <span
+                          class="dt-relative dt-block dt-w-4 dt-aspect-square dt-rounded-full dt-overflow-hidden dt-transition-all group-hover:dt-w-6"
+                          ><img
+                            class="dt-absolute dt-w-full dt-h-full dt-object-cover dt-object-center"
+                            src="https://cdnweb.dantri.com.vn/dist/a9f90e37d746f606142a.png"
+                            alt="Xúc động" /></span
+                        >5</button
+                      ><button
+                        type="button"
+                        data-track-content="true"
+                        data-content-name="article-donate"
+                        data-content-piece="article-donate-clap"
+                        data-content-target="https://dantri.com.vn/du-lich/duoi-nuoc-khi-tam-bien-dong-nuoc-tu-than-khong-phai-ai-cung-biet-20250504151515549.htm"
+                        aria-label="Cảm hứng"
+                        class="dt-group dt-px-2 dt-h-8 dt-flex dt-items-center dt-gap-1 dt-rounded-2xl dt-border dt-bg-[#F4F6FA] dt-transition-all dt-border-[#F4F6FA] hover:dt-h-8 hover:dt-rounded-[18px]"
+                      >
+                        <span
+                          class="dt-relative dt-block dt-w-4 dt-aspect-square dt-rounded-full dt-overflow-hidden dt-transition-all group-hover:dt-w-6"
+                          ><img
+                            class="dt-absolute dt-w-full dt-h-full dt-object-cover dt-object-center"
+                            src="https://cdnweb.dantri.com.vn/dist/a0fe9393f2777b40eb71.png"
+                            alt="Cảm hứng" /></span
+                        >0</button
+                      ><button
+                        type="button"
+                        data-track-content="true"
+                        data-content-name="article-donate"
+                        data-content-piece="article-donate-star"
+                        data-content-target="https://dantri.com.vn/du-lich/duoi-nuoc-khi-tam-bien-dong-nuoc-tu-than-khong-phai-ai-cung-biet-20250504151515549.htm"
+                        aria-label="Độc đáo"
+                        class="dt-group dt-px-2 dt-h-8 dt-flex dt-items-center dt-gap-1 dt-rounded-2xl dt-border dt-bg-[#F4F6FA] dt-transition-all dt-border-[#F4F6FA] hover:dt-h-8 hover:dt-rounded-[18px]"
+                      >
+                        <span
+                          class="dt-relative dt-block dt-w-4 dt-aspect-square dt-rounded-full dt-overflow-hidden dt-transition-all group-hover:dt-w-6"
+                          ><img
+                            class="dt-absolute dt-w-full dt-h-full dt-object-cover dt-object-center"
+                            src="https://cdnweb.dantri.com.vn/dist/bd6eec4cef16b3c0da60.png"
+                            alt="Độc đáo" /></span
+                        >0
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <aside class="article-related">
+              <div class="title-head">Tin liên quan</div>
+              <article
+                class="article-item"
+                data-content-name="article-related"
+                data-content-piece="article-related-position_1"
+                data-content-target="/xa-hoi/hang-chuc-nguoi-gap-nan-o-moi-truong-nuoc-trong-ky-nghi-le-304-va-15-20250504095925807.htm"
+                data-track-content=""
+              >
+                <div class="article-thumb">
+                  <a
+                    href="#"
+                    ><img
+                      alt="Hàng chục người gặp nạn ở môi trường nước trong kỳ nghỉ lễ 30/4 và 1/5"
+                      src="/assets/img/tải xuống (4).jpg"
+                      height="90"
+                      width="135"
+                  /></a>
+                </div>
+                <div class="article-content">
+                  <h3 class="article-title">
+                    <a
+                      class="dt-text-black-mine smart-ptt1-p"
+                      href="https://dantri.com.vn/xa-hoi/hang-chuc-nguoi-gap-nan-o-moi-truong-nuoc-trong-ky-nghi-le-304-va-15-20250504095925807.htm"
+                      >Hàng chục người gặp nạn ở môi trường nước trong kỳ nghỉ
+                      lễ 30/4 và 1/5</a
+                    >
+                  </h3>
+                  <div class="article-excerpt">
+                    <a
+                      href="https://dantri.com.vn/xa-hoi/hang-chuc-nguoi-gap-nan-o-moi-truong-nuoc-trong-ky-nghi-le-304-va-15-20250504095925807.htm"
+                      >Dịp nghỉ lễ 30/4-1/5, các cơ quan chức năng của tỉnh
+                      Quảng Ngãi ghi nhận 20 trường hợp bị đuối nước, cứu được
+                      16 người, còn lại 4 trường hợp tử vong và mất tích.</a
+                    >
+                    <span
+                      class="article-total-comment dt-text-xs dt-leading-[140%] dt-items-center dt-gap-1 dt-align-middle dt-font-normal dt-hidden hover:dt-text-c0f6c32 dt-ml-1"
+                      data-id="20250504095925807"
+                      data-type="1"
+                      data-limit-show="10"
+                      data-color=""
+                      data-redirect="/xa-hoi/hang-chuc-nguoi-gap-nan-o-moi-truong-nuoc-trong-ky-nghi-le-304-va-15-20250504095925807.htm#comment"
+                      data-loaded="loaded"
+                    ></span>
+                  </div>
+                </div>
+              </article>
+              <article
+                class="article-item"
+                data-content-name="article-related"
+                data-content-piece="article-related-position_2"
+                data-content-target="/xa-hoi/vi-sao-co-toi-13-nguoi-bi-song-bien-cuon-troi-trong-mot-ngay-o-quang-ngai-20250502091005932.htm"
+                data-track-content=""
+              >
+                <div class="article-thumb">
+                  <a
+                    href="#"
+                    ><img
+                      alt="Vì sao có tới 13 người bị sóng biển cuốn trôi trong một ngày ở Quảng Ngãi?"
+                      src="/assets/img/tải xuống (4).jpg"
+                      
+                      height="90"
+                      
+                      width="135"
+                      
+                      
+                  /></a>
+                </div>
+                <div class="article-content">
+                  <h3 class="article-title">
+                    <a
+                      class="dt-text-black-mine smart-ptt1-h"
+                      href="https://dantri.com.vn/xa-hoi/vi-sao-co-toi-13-nguoi-bi-song-bien-cuon-troi-trong-mot-ngay-o-quang-ngai-20250502091005932.htm"
+                      >Vì sao có tới 13 người bị sóng biển cuốn trôi trong một
+                      ngày ở Quảng Ngãi?</a
+                    >
+                  </h3>
+                  <div class="article-excerpt">
+                    <a
+                      href="https://dantri.com.vn/xa-hoi/vi-sao-co-toi-13-nguoi-bi-song-bien-cuon-troi-trong-mot-ngay-o-quang-ngai-20250502091005932.htm"
+                      >Chỉ trong buổi chiều ngày 1/5 có đến 13 người ở Quảng
+                      Ngãi bị sóng cuốn trôi khi tắm biển. Trong số này có 4
+                      người mất tích.</a
+                    >
+                    <span
+                      class="article-total-comment dt-text-xs dt-leading-[140%] dt-items-center dt-gap-1 dt-align-middle dt-font-normal dt-hidden hover:dt-text-c0f6c32 dt-ml-1"
+                      data-id="20250502091005932"
+                      data-type="1"
+                      data-limit-show="10"
+                      data-color=""
+                      data-redirect="/xa-hoi/vi-sao-co-toi-13-nguoi-bi-song-bien-cuon-troi-trong-mot-ngay-o-quang-ngai-20250502091005932.htm#comment"
+                      data-loaded="loaded"
+                    ></span>
+                  </div>
+                </div>
+              </article>
+              <article
+                class="article-item"
+                data-content-name="article-related"
+                data-content-piece="article-related-position_3"
+                data-content-target="/du-lich/loat-bai-bien-noi-tieng-mien-trung-chat-nhu-nem-dip-le-304-15-20250504130340039.htm"
+                data-track-content=""
+              >
+                <div class="article-thumb">
+                  <a
+                    href="#"
+                    ><img
+                      alt='Loạt bãi biển nổi tiếng miền Trung "chật như nêm" dịp lễ 30/4-1/5'
+                      src="/assets/img/tải xuống (1).jpg"
+                      height="90"
+                      width="135"
+                      
+                  /></a>
+                </div>
+                <div class="article-content">
+                  <h3 class="article-title">
+                    <a
+                      class="dt-text-black-mine"
+                      href="https://dantri.com.vn/du-lich/loat-bai-bien-noi-tieng-mien-trung-chat-nhu-nem-dip-le-304-15-20250504130340039.htm"
+                      >Loạt bãi biển nổi tiếng miền Trung "chật như nêm" dịp lễ
+                      30/4-1/5</a
+                    >
+                  </h3>
+                  <div class="article-excerpt">
+                    <a
+                      href="https://dantri.com.vn/du-lich/loat-bai-bien-noi-tieng-mien-trung-chat-nhu-nem-dip-le-304-15-20250504130340039.htm"
+                      >Dịp lễ 30/4 và 1/5 năm nay, tại các điểm du lịch nổi
+                      tiếng, đặc biệt các bãi biển dọc miền Trung như Sầm Sơn,
+                      Cửa Lò, Đà Nẵng, Nha Trang, Quy Nhơn… đông nghịt du khách
+                      đến tắm biển, nghỉ mát.</a
+                    >
+                    <span
+                      class="article-total-comment dt-text-xs dt-leading-[140%] dt-items-center dt-gap-1 dt-align-middle dt-font-normal dt-hidden hover:dt-text-c0f6c32 dt-ml-1"
+                      data-id="20250504130340039"
+                      data-type="1"
+                      data-limit-show="10"
+                      data-color=""
+                      data-redirect="/du-lich/loat-bai-bien-noi-tieng-mien-trung-chat-nhu-nem-dip-le-304-15-20250504130340039.htm#comment"
+                      data-loaded="loaded"
+                    ></span>
+                  </div>
+                </div>
+              </article>
+            </aside>
+            
+            
+            
+            <div
+              id="comment"
+              data-module="comment"
+              data-objectid="20250504151515549"
+            >
+              <div class="comment-wrap mt-30">
+                <div class="comment-head flex-jcb">
+                  <div class="comment-title flex-jcc">
+                    <svg
+                      viewBox="0 0 53 45"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                      aria-hidden="true"
+                      width="53"
+                      height="45"
+                    >
+                      <path
+                        d="M25 33a2.667 2.667 0 0 0 2.667 2.667h16L49 41V19.667A2.667 2.667 0 0 0 46.333 17H27.667A2.667 2.667 0 0 0 25 19.667V33Z"
+                        fill="#2361FF"
+                        fill-opacity="0.6"
+                      ></path>
+                      <path
+                        d="M35 25a3.333 3.333 0 0 1-3.333 3.333h-20L5 35V8.333A3.333 3.333 0 0 1 8.333 5h23.334A3.333 3.333 0 0 1 35 8.333V25Z"
+                        fill="#1A7900"
+                        opacity="0.5"
+                      ></path></svg
+                    >Bình luận (0)
+                  </div>
+                  <div class="comment-action flex-jcc">
+                    <button type="button" class="login">Đăng nhập</button
+                    ><button type="button" class="register">Đăng kí</button
+                    ><span>để gửi bình luận</span>
+                  </div>
+                </div>
+                <div class="comment-box">
+                  <textarea
+                    readonly=""
+                    class="textarea"
+                    placeholder="Bạn nghĩ gì về tin này?"
+                  ></textarea>
+                  <div class="action">
+                    <div class="note">
+                      Ý kiến của bạn sẽ được xét duyệt trước khi đăng. Xin vui
+                      lòng gõ tiếng Việt có dấu
+                    </div>
+                    <button
+                      type="submit"
+                      class="submit flex-jcc"
+                      aria-label="Gửi bình luận"
+                      name="btnSendComment"
+                      disabled=""
+                    >
+                      Gửi bình luận<svg
+                        aria-hidden="true"
+                        width="18"
+                        height="18"
+                        viewBox="0 0 32 32"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          d="M13 22L19 16L13 10"
+                          stroke="#F8FAFC"
+                          stroke-width="2.5"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                        ></path>
+                      </svg>
+                    </button>
+                  </div>
+                </div>
+                <div class="comment-container">
+                  <ul class="comment-list">
+                    <li>
+                      <div class="comment-empty">
+                        <svg
+                          aria-hidden="true"
+                          width="24"
+                          height="24"
+                          viewBox="0 0 24 24"
+                          fill="none"
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <path
+                            d="M4 22V15"
+                            stroke-width="1.5"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                          ></path>
+                          <path
+                            d="M4 15C4 15 5 14 8 14C11 14 13 16 16 16C19 16 20 15 20 15V3C20 3 19 4 16 4C13 4 11 2 8 2C5 2 4 3 4 3V15Z"
+                            stroke-width="1.5"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                          ></path></svg
+                        ><span
+                          >Hiện chưa có bình luận nào, hãy trở thành người đầu
+                          tiên bình luận cho bài viết!</span
+                        >
+                      </div>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+            
+            <div
+              data-module="listing-article-detail"
+              data-excluded-article="20250504151515549"
+              data-title="Du lịch"
+              data-category-id="835"
+              data-by-user="0"
+              data-url-cate="/du-lich.htm"
+            >
+              <div class="lazyload-wrapper">
+                <div
+                  class="dt-flex dt-flex-col dt-font-Inter dt-gap-6 dt-border-t dt-border-[#222222] dt-pt-4 dt-mt-6"
+                >
+                  <a
+                    href="/du-lich.htm"
+                    class="dt-font-bold dt-uppercase dt-text-base dt-leading-5 dt-text-[#25282B]"
+                    >Du lịch</a
+                  >
+                  <div class="dt-flex dt-flex-col dt-gap-5 dt-gap-5">
+                    <article
+                      data-track-content="true"
+                      data-content-name="article-relative-cate"
+                      data-content-piece="article-relative-cate-position_1"
+                      data-content-target="/du-lich/vu-con-ca-05kg-chem-gan-18-trieu-dong-chu-tich-khanh-hoa-chi-dao-khan-20250504172306717.htm"
+                      class="dt-flex dt-gap-4"
+                    >
+                      <a
+                        href="#"
+                        class="dt-aspect-3/2 dt-w-[252px]"
+                        ><img
+                          alt='Vụ con cá 0,5kg "chém" gần 1,8 triệu đồng: Chủ tịch Khánh Hòa chỉ đạo khẩn'
+                          class="dt-w-full dt-h-full"
+                          src="/assets/img/tải xuống (1).jpg"
+                          
+                          width="252"
+                          height="168"
+                      /></a>
+                      <div class="dt-flex-1 dt-flex dt-flex-col dt-gap-2">
+                        <a
+                          href="#"
+                          class="dt-text-[#222222] dt-font-semibold hover:dt-text-[#222222] dt-text-xl dt-leading-[26px]"
+                          >Vụ con cá 0,5kg "chém" gần 1,8 triệu đồng: Chủ tịch
+                          Khánh Hòa chỉ đạo khẩn</a
+                        ><a
+                          href="#"
+                          class="dt-text-[#565656] dt-font-Roboto hover:dt-text-[#565656] dt-text-sm dt-leading-[22px]"
+                          >(Dân trí) - Chủ tịch UBND tỉnh Khánh Hòa chỉ đạo UBND
+                          thành phố Nha Trang khẩn trương kiểm tra nhiều nội
+                          dung liên quan đến vụ quán ăn bán 0,5kg cá bò hòm giá
+                          1,75 triệu đồng.<span
+                            class="article-total-comment dt-text-xs dt-leading-[140%] dt-items-center dt-gap-1 dt-align-middle dt-font-normal dt-hidden hover:dt-text-c0f6c32 dt-ml-1"
+                            data-id="20250504172306717"
+                            data-limit-show="10"
+                            data-color=""
+                            data-redirect="/du-lich/vu-con-ca-05kg-chem-gan-18-trieu-dong-chu-tich-khanh-hoa-chi-dao-khan-20250504172306717.htm#comment"
+                            data-type="1"
+                            data-loaded="loaded"
+                          ></span
+                        ></a>
+                      </div>
+                    </article>
+                    <article
+                      data-track-content="true"
+                      data-content-name="article-relative-cate"
+                      data-content-piece="article-relative-cate-position_2"
+                      data-content-target="/du-lich/khach-tay-lang-nguoi-truoc-mot-buc-anh-tai-bao-tang-chung-tich-chien-tranh-20250504154912364.htm"
+                      class="dt-flex dt-gap-4"
+                    >
+                      <a
+                        href="#"
+                        class="dt-aspect-3/2 dt-w-[252px]"
+                        ><img
+                          alt="Khách Tây lặng người trước một bức ảnh tại Bảo tàng Chứng tích Chiến tranh"
+                          class="dt-w-full dt-h-full"
+                          src="/assets/img/tải xuống (3).jpg"
+                          width="252"
+                          height="168"
+                      /></a>
+                      <div class="dt-flex-1 dt-flex dt-flex-col dt-gap-2">
+                        <a
+                          href="#"
+                          class="dt-text-[#222222] dt-font-semibold hover:dt-text-[#222222] dt-text-xl dt-leading-[26px]"
+                          >Khách Tây lặng người trước một bức ảnh tại Bảo tàng
+                          Chứng tích Chiến tranh</a
+                        ><a
+                          href="#"
+                          class="dt-text-[#565656] dt-font-Roboto hover:dt-text-[#565656] dt-text-sm dt-leading-[22px]"
+                          >(Dân trí) - Lần đầu tham quan Bảo tàng Chứng tích
+                          Chiến tranh, không ít người cảm thấy nghẹn ngào, xúc
+                          động, thậm chí không nén được nước mắt.<span
+                            class="article-total-comment dt-text-xs dt-leading-[140%] dt-items-center dt-gap-1 dt-align-middle dt-font-normal dt-hidden hover:dt-text-c0f6c32 dt-ml-1"
+                            data-id="20250504154912364"
+                            data-limit-show="10"
+                            data-color=""
+                            data-redirect="/du-lich/khach-tay-lang-nguoi-truoc-mot-buc-anh-tai-bao-tang-chung-tich-chien-tranh-20250504154912364.htm#comment"
+                            data-type="1"
+                            data-loaded="loaded"
+                          ></span
+                        ></a>
+                      </div>
+                    </article>
+                    <article
+                      data-track-content="true"
+                      data-content-name="article-relative-cate"
+                      data-content-piece="article-relative-cate-position_3"
+                      data-content-target="/du-lich/du-lich-dip-304-bung-no-tphcm-thu-ve-gan-16000-ty-dong-20250504181606907.htm"
+                      class="dt-flex dt-gap-4"
+                    >
+                      <a
+                        href="#"
+                        class="dt-aspect-3/2 dt-w-[252px]"
+                        ><img
+                          alt='Du lịch dịp 30/4 "bùng nổ", TPHCM thu về gần 16.000 tỷ đồng'
+                          class="dt-w-full dt-h-full"
+                          src="/assets/img/tải xuống (4).jpg"
+                          width="252"
+                          height="168"
+                      /></a>
+                      <div class="dt-flex-1 dt-flex dt-flex-col dt-gap-2">
+                        <a
+                          href="#"
+                          class="dt-text-[#222222] dt-font-semibold hover:dt-text-[#222222] dt-text-xl dt-leading-[26px]"
+                          >Du lịch dịp 30/4 "bùng nổ", TPHCM thu về gần 16.000
+                          tỷ đồng</a
+                        ><a
+                          href="#"
+                          class="dt-text-[#565656] dt-font-Roboto hover:dt-text-[#565656] dt-text-sm dt-leading-[22px]"
+                          >(Dân trí) - Dịp lễ 30/4 năm nay, TPHCM chào đón du
+                          khách với hàng loạt hoạt động lễ hội, du lịch sôi
+                          động, ghi nhận 2,7 triệu lượt khách và có doanh thu ấn
+                          tượng hơn 15.700 tỷ đồng.<span
+                            class="article-total-comment dt-text-xs dt-leading-[140%] dt-items-center dt-gap-1 dt-align-middle dt-font-normal dt-hidden hover:dt-text-c0f6c32 dt-ml-1"
+                            data-id="20250504181606907"
+                            data-limit-show="10"
+                            data-color=""
+                            data-redirect="/du-lich/du-lich-dip-304-bung-no-tphcm-thu-ve-gan-16000-ty-dong-20250504181606907.htm#comment"
+                            data-type="1"
+                            data-loaded="loaded"
+                          ></span
+                        ></a>
+                      </div>
+                    </article>
+                    <article
+                      data-track-content="true"
+                      data-content-name="article-relative-cate"
+                      data-content-piece="article-relative-cate-position_4"
+                      data-content-target="/du-lich/lap-doan-kiem-tra-vu-con-ca-05kg-chem-gan-18-trieu-dong-o-nha-trang-20250504093900015.htm"
+                      class="dt-flex dt-gap-4"
+                    >
+                      <a
+                        href="#"
+                        class="dt-aspect-3/2 dt-w-[252px]"
+                        ><img
+                          alt='Lập đoàn kiểm tra vụ con cá 0,5kg "chém" gần 1,8 triệu đồng ở Nha Trang'
+                          class="dt-w-full dt-h-full"
+                          src="/assets/img/tải xuống (1).jpg"                          width="252"
+                          height="168"
+                      /></a>
+                      <div class="dt-flex-1 dt-flex dt-flex-col dt-gap-2">
+                        <a
+                          href="#"
+                          class="dt-text-[#222222] dt-font-semibold hover:dt-text-[#222222] dt-text-xl dt-leading-[26px]"
+                          >Lập đoàn kiểm tra vụ con cá 0,5kg "chém" gần 1,8
+                          triệu đồng ở Nha Trang</a
+                        ><a
+                          href="#"
+                          class="dt-text-[#565656] dt-font-Roboto hover:dt-text-[#565656] dt-text-sm dt-leading-[22px]"
+                          >(Dân trí) - UBND thành phố Nha Trang đã thành lập
+                          đoàn kiểm tra, xác minh vụ một quán ăn ở vịnh Nha
+                          Trang bán con cá bò hòm 0,5kg với giá 1,75 triệu
+                          đồng.<button
+                            class="article-total-comment dt-text-xs dt-leading-[140%] dt-items-center dt-gap-1 dt-align-middle dt-font-normal hover:dt-text-c0f6c32 dt-ml-1 dt-inline-flex"
+                            onclick="location.href=`/du-lich/lap-doan-kiem-tra-vu-con-ca-05kg-chem-gan-18-trieu-dong-o-nha-trang-20250504093900015.htm#comment`"
+                            data-loaded="loaded"
+                          >
+                            <svg
+                              width="16"
+                              height="16"
+                              viewBox="0 0 17 17"
+                              fill="none"
+                              xmlns="http://www.w3.org/2000/svg"
+                            >
+                              <path
+                                d="M6.00695 13.7922H6.3674C6.96813 13.7922 7.44872 13.7922 8.16961 14.513C8.64539 15.1474 9.42395 15.1474 9.89973 14.513C10.4188 13.648 11.0532 13.7922 11.774 13.7922C14.6576 13.7922 16.0993 12.3504 16.0993 9.46685V5.86242C16.0993 2.97888 14.6576 1.53711 11.774 1.53711H6.00695C3.12341 1.53711 1.68164 2.97888 1.68164 5.86242V9.46685C1.68164 13.0713 3.12341 13.7922 6.00695 13.7922Z"
+                                fill="#EAF9F1"
+                                stroke="#0F6C32"
+                                stroke-miterlimit="10"
+                                stroke-linecap="round"
+                                stroke-linejoin="round"
+                              ></path>
+                              <path
+                                d="M5.28613 5.86133H12.495"
+                                stroke="#0F6C32"
+                                stroke-linecap="round"
+                                stroke-linejoin="round"
+                              ></path>
+                              <path
+                                d="M5.28613 9.4668H9.61144"
+                                stroke="#0F6C32"
+                                stroke-linecap="round"
+                                stroke-linejoin="round"
+                              ></path>
+                            </svg>
+                            <span
+                              class="comment-count dt-font-roboto dt-text-c0f6c32 dt-text-sm"
+                              >19</span
+                            >
+                          </button></a
+                        >
+                      </div>
+                    </article>
+                    <article
+                      data-track-content="true"
+                      data-content-name="article-relative-cate"
+                      data-content-piece="article-relative-cate-position_Pr_5"
+                      data-content-target="/doi-song/yamaha-neos-mau-xe-dien-toi-gian-nhung-giau-cong-nghe-20250429120210805.htm"
+                      class="dt-flex dt-gap-4"
+                    >
+                      <a
+                        href="/doi-song/yamaha-neos-mau-xe-dien-toi-gian-nhung-giau-cong-nghe-20250429120210805.htm"
+                        class="dt-aspect-3/2 dt-w-[252px]"
+                        ><img
+                          alt="Yamaha NEO's - Mẫu xe điện tối giản nhưng giàu công nghệ"
+                          class="dt-w-full dt-h-full"
+                          src="/assets/img/tải xuống (1).jpg"
+                          
+                          width="252"
+                          height="168"
+                      /></a>
+                      <div class="dt-flex-1 dt-flex dt-flex-col dt-gap-2">
+                        <a
+                          href="/doi-song/yamaha-neos-mau-xe-dien-toi-gian-nhung-giau-cong-nghe-20250429120210805.htm"
+                          class="dt-text-[#222222] dt-font-semibold hover:dt-text-[#222222] dt-text-xl dt-leading-[26px]"
+                          >Yamaha NEO's - Mẫu xe điện tối giản nhưng giàu công
+                          nghệ</a
+                        ><a
+                          href="/doi-song/yamaha-neos-mau-xe-dien-toi-gian-nhung-giau-cong-nghe-20250429120210805.htm"
+                          class="dt-text-[#565656] dt-font-Roboto hover:dt-text-[#565656] dt-text-sm dt-leading-[22px]"
+                          >(Dân trí) - Yamaha giới thiệu mẫu xe máy điện Yamaha
+                          NEO's - lựa chọn phù hợp cho những ai yêu thích phong
+                          cách tối giản nhưng vẫn yêu cầu cao về công nghệ.<span
+                            class="article-total-comment dt-text-xs dt-leading-[140%] dt-items-center dt-gap-1 dt-align-middle dt-font-normal dt-hidden hover:dt-text-c0f6c32 dt-ml-1"
+                            data-id="20250429120210805"
+                            data-limit-show="10"
+                            data-color=""
+                            data-redirect="/doi-song/yamaha-neos-mau-xe-dien-toi-gian-nhung-giau-cong-nghe-20250429120210805.htm#comment"
+                            data-type="1"
+                            data-loaded="loaded"
+                          ></span></a
+                        ><svg
+                          width="16"
+                          height="17"
+                          fill="none"
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <path
+                            d="M1.747 6.09h2.896c.935 0 1.662.236 2.182.707.55.501.824 1.243.824 2.225 0 .829-.227 1.493-.68 1.994-.53.568-1.304.852-2.325.852h-1.33V9.911H1.134v3.893h3.626c1.435 0 2.6-.347 3.496-1.04 1.107-.848 1.662-2.09 1.662-3.728 0-1.512-.424-2.687-1.272-3.525-.905-.895-2.196-1.343-3.872-1.343h-3.64V6.15"
+                            fill="#00B05A"
+                          ></path>
+                          <path
+                            d="m2.128 7.828 2.129 2.4H0l2.128-2.4Z"
+                            fill="#00B05A"
+                          ></path>
+                          <path
+                            d="M6.994 4.168a4.873 4.873 0 0 1 2.337 1.615h1.214v8.046h1.845V5.783H15V4.168H6.994Z"
+                            fill="#FF8500"
+                          ></path>
+                        </svg>
+                      </div>
+                    </article>
+                    <article
+                      data-track-content="true"
+                      data-content-name="article-relative-cate"
+                      data-content-piece="article-relative-cate-position_6"
+                      data-content-target="/du-lich/bai-sau-vung-tau-chinh-trang-xong-khach-du-lich-dong-duc-tro-lai-20250504103349601.htm"
+                      class="dt-flex dt-gap-4"
+                    >
+                      <a
+                        href="#"
+                        class="dt-aspect-3/2 dt-w-[252px]"
+                        ><img
+                          alt="Bãi Sau Vũng Tàu chỉnh trang xong, khách du lịch đông đúc trở lại"
+                          class="dt-w-full dt-h-full"
+                          src="/assets/img/tải xuống (1).jpg"
+                          
+                          width="252"
+                          height="168"
+                      /></a>
+                      <div class="dt-flex-1 dt-flex dt-flex-col dt-gap-2">
+                        <a
+                          href="#"
+                          class="dt-text-[#222222] dt-font-semibold hover:dt-text-[#222222] dt-text-xl dt-leading-[26px]"
+                          >Bãi Sau Vũng Tàu chỉnh trang xong, khách du lịch đông
+                          đúc trở lại</a
+                        ><a
+                          href="#"
+                          class="dt-text-[#565656] dt-font-Roboto hover:dt-text-[#565656] dt-text-sm dt-leading-[22px]"
+                          >(Dân trí) - Hàng chục nghìn du khách đổ về Vũng Tàu
+                          nghỉ lễ 30/4 và 1/5 sau khi địa phương vừa đưa vào
+                          hoạt động vài hạng mục trong dự án chỉnh trang khu vực
+                          Bãi Sau.<span
+                            class="article-total-comment dt-text-xs dt-leading-[140%] dt-items-center dt-gap-1 dt-align-middle dt-font-normal dt-hidden hover:dt-text-c0f6c32 dt-ml-1"
+                            data-id="20250504103349601"
+                            data-limit-show="10"
+                            data-color=""
+                            data-redirect="/du-lich/bai-sau-vung-tau-chinh-trang-xong-khach-du-lich-dong-duc-tro-lai-20250504103349601.htm#comment"
+                            data-type="1"
+                            data-loaded="loaded"
+                          ></span
+                        ></a>
+                      </div>
+                    </article>
+                    <article
+                      data-track-content="true"
+                      data-content-name="article-relative-cate"
+                      data-content-piece="article-relative-cate-position_7"
+                      data-content-target="/du-lich/khan-gia-hoang-hot-bo-chay-tranh-hoa-phao-sung-than-cong-o-ky-dai-hue-20250504114857094.htm"
+                      class="dt-flex dt-gap-4"
+                    >
+                      <a
+                        href="#"
+                        class="dt-aspect-3/2 dt-w-[252px]"
+                        ><img
+                          alt="Khán giả hoảng hốt bỏ chạy, tránh hỏa pháo súng thần công ở Kỳ Đài Huế"
+                          class="dt-w-full dt-h-full"
+                          src="/assets/img/tải xuống (1).jpg"
+                         
+                          width="252"
+                          height="168"
+                      /></a>
+                      <div class="dt-flex-1 dt-flex dt-flex-col dt-gap-2">
+                        <a
+                          href="#"
+                          class="dt-text-[#222222] dt-font-semibold hover:dt-text-[#222222] dt-text-xl dt-leading-[26px]"
+                          >Khán giả hoảng hốt bỏ chạy, tránh hỏa pháo súng thần
+                          công ở Kỳ Đài Huế</a
+                        ><a
+                          href="#"
+                          class="dt-text-[#565656] dt-font-Roboto hover:dt-text-[#565656] dt-text-sm dt-leading-[22px]"
+                          >(Dân trí) - Không chỉ khiến người xem thất vọng vì
+                          kịch bản đơn điệu, kết thúc chóng vánh, nhiều quả pháo
+                          súng thần công ở Kỳ Đài Huế còn rơi trúng nơi khán giả
+                          ngồi xem.<button
+                            class="article-total-comment dt-text-xs dt-leading-[140%] dt-items-center dt-gap-1 dt-align-middle dt-font-normal hover:dt-text-c0f6c32 dt-ml-1 dt-inline-flex"
+                            onclick="location.href=`/du-lich/khan-gia-hoang-hot-bo-chay-tranh-hoa-phao-sung-than-cong-o-ky-dai-hue-20250504114857094.htm#comment`"
+                            data-loaded="loaded"
+                          >
+                            <svg
+                              width="16"
+                              height="16"
+                              viewBox="0 0 17 17"
+                              fill="none"
+                              xmlns="http://www.w3.org/2000/svg"
+                            >
+                              <path
+                                d="M6.00695 13.7922H6.3674C6.96813 13.7922 7.44872 13.7922 8.16961 14.513C8.64539 15.1474 9.42395 15.1474 9.89973 14.513C10.4188 13.648 11.0532 13.7922 11.774 13.7922C14.6576 13.7922 16.0993 12.3504 16.0993 9.46685V5.86242C16.0993 2.97888 14.6576 1.53711 11.774 1.53711H6.00695C3.12341 1.53711 1.68164 2.97888 1.68164 5.86242V9.46685C1.68164 13.0713 3.12341 13.7922 6.00695 13.7922Z"
+                                fill="#EAF9F1"
+                                stroke="#0F6C32"
+                                stroke-miterlimit="10"
+                                stroke-linecap="round"
+                                stroke-linejoin="round"
+                              ></path>
+                              <path
+                                d="M5.28613 5.86133H12.495"
+                                stroke="#0F6C32"
+                                stroke-linecap="round"
+                                stroke-linejoin="round"
+                              ></path>
+                              <path
+                                d="M5.28613 9.4668H9.61144"
+                                stroke="#0F6C32"
+                                stroke-linecap="round"
+                                stroke-linejoin="round"
+                              ></path>
+                            </svg>
+                            <span
+                              class="comment-count dt-font-roboto dt-text-c0f6c32 dt-text-sm"
+                              >12</span
+                            >
+                          </button></a
+                        >
+                      </div>
+                    </article>
+                    <article
+                      data-track-content="true"
+                      data-content-name="article-relative-cate"
+                      data-content-piece="article-relative-cate-position_8"
+                      data-content-target="/du-lich/loat-bai-bien-noi-tieng-mien-trung-chat-nhu-nem-dip-le-304-15-20250504130340039.htm"
+                      class="dt-flex dt-gap-4"
+                    >
+                      <a
+                        href="#"
+                        class="dt-aspect-3/2 dt-w-[252px]"
+                        ><img
+                          alt='Loạt bãi biển nổi tiếng miền Trung "chật như nêm" dịp lễ 30/4-1/5'
+                          class="dt-w-full dt-h-full"
+                          src="/assets/img/tải xuống (1).jpg"
+                          
+                          width="252"
+                          height="168"
+                      /></a>
+                      <div class="dt-flex-1 dt-flex dt-flex-col dt-gap-2">
+                        <a
+                          href="#"
+                          class="dt-text-[#222222] dt-font-semibold hover:dt-text-[#222222] dt-text-xl dt-leading-[26px]"
+                          >Loạt bãi biển nổi tiếng miền Trung "chật như nêm" dịp
+                          lễ 30/4-1/5</a
+                        ><a
+                          href="#"
+                          class="dt-text-[#565656] dt-font-Roboto hover:dt-text-[#565656] dt-text-sm dt-leading-[22px]"
+                          >(Dân trí) - Dịp lễ 30/4 và 1/5 năm nay, tại các điểm
+                          du lịch nổi tiếng, đặc biệt các bãi biển dọc miền
+                          Trung như Sầm Sơn, Cửa Lò, Đà Nẵng, Nha Trang, Quy
+                          Nhơn… đông nghịt du khách đến tắm biển, nghỉ mát.<span
+                            class="article-total-comment dt-text-xs dt-leading-[140%] dt-items-center dt-gap-1 dt-align-middle dt-font-normal dt-hidden hover:dt-text-c0f6c32 dt-ml-1"
+                            data-id="20250504130340039"
+                            data-limit-show="10"
+                            data-color=""
+                            data-redirect="/du-lich/loat-bai-bien-noi-tieng-mien-trung-chat-nhu-nem-dip-le-304-15-20250504130340039.htm#comment"
+                            data-type="1"
+                            data-loaded="loaded"
+                          ></span
+                        ></a>
+                      </div>
+                    </article>
+                    <article
+                      data-track-content="true"
+                      data-content-name="article-relative-cate"
+                      data-content-piece="article-relative-cate-position_9"
+                      data-content-target="/du-lich/xep-hang-2-tieng-o-van-ly-truong-thanh-khach-viet-choang-canh-chen-chuc-20250504130824558.htm"
+                      class="dt-flex dt-gap-4"
+                    >
+                      <a
+                        href="#"
+                        class="dt-aspect-3/2 dt-w-[252px]"
+                        ><img
+                          alt="Xếp hàng 2 tiếng ở Vạn Lý Trường Thành, khách Việt choáng cảnh chen chúc"
+                          class="dt-w-full dt-h-full"
+                          src="/assets/img/tải xuống (1).jpg"
+                          
+                          width="252"
+                          height="168"
+                      /></a>
+                      <div class="dt-flex-1 dt-flex dt-flex-col dt-gap-2">
+                        <a
+                          href="#"
+                          class="dt-text-[#222222] dt-font-semibold hover:dt-text-[#222222] dt-text-xl dt-leading-[26px]"
+                          >Xếp hàng 2 tiếng ở Vạn Lý Trường Thành, khách Việt
+                          choáng cảnh chen chúc</a
+                        ><a
+                          href="#"
+                          class="dt-text-[#565656] dt-font-Roboto hover:dt-text-[#565656] dt-text-sm dt-leading-[22px]"
+                          >(Dân trí) - Ghi nhận của phóng viên Dân trí, nhiều
+                          điểm du lịch nổi tiếng ở Trung Quốc dịp lễ Quốc tế Lao
+                          động luôn trong tình trạng quá tải, nhiều điểm khách
+                          phải xếp hàng 2 tiếng mới vào được.<span
+                            class="article-total-comment dt-text-xs dt-leading-[140%] dt-items-center dt-gap-1 dt-align-middle dt-font-normal dt-hidden hover:dt-text-c0f6c32 dt-ml-1"
+                            data-id="20250504130824558"
+                            data-limit-show="10"
+                            data-color=""
+                            data-redirect="/du-lich/xep-hang-2-tieng-o-van-ly-truong-thanh-khach-viet-choang-canh-chen-chuc-20250504130824558.htm#comment"
+                            data-type="1"
+                            data-loaded="loaded"
+                          ></span
+                        ></a>
+                      </div>
+                    </article>
+                    <article
+                      data-track-content="true"
+                      data-content-name="article-relative-cate"
+                      data-content-piece="article-relative-cate-position_Pr_10"
+                      data-content-target="/giao-duc/ptit-ra-mat-khoa-tri-tue-nhan-tao-don-dau-tuong-lai-20250429151202733.htm"
+                      class="dt-flex dt-gap-4"
+                    >
+                      <a
+                        href="/giao-duc/ptit-ra-mat-khoa-tri-tue-nhan-tao-don-dau-tuong-lai-20250429151202733.htm"
+                        class="dt-aspect-3/2 dt-w-[252px]"
+                        ><img
+                          alt="PTIT ra mắt khoa Trí tuệ Nhân tạo đón đầu tương lai"
+                          class="dt-w-full dt-h-full"
+                          src="/assets/img/tải xuống (1).jpg"
+                          
+                          width="252"
+                          height="168"
+                      /></a>
+                      <div class="dt-flex-1 dt-flex dt-flex-col dt-gap-2">
+                        <a
+                          href="/giao-duc/ptit-ra-mat-khoa-tri-tue-nhan-tao-don-dau-tuong-lai-20250429151202733.htm"
+                          class="dt-text-[#222222] dt-font-semibold hover:dt-text-[#222222] dt-text-xl dt-leading-[26px]"
+                          >PTIT ra mắt khoa Trí tuệ Nhân tạo đón đầu tương
+                          lai</a
+                        ><a
+                          href="/giao-duc/ptit-ra-mat-khoa-tri-tue-nhan-tao-don-dau-tuong-lai-20250429151202733.htm"
+                          class="dt-text-[#565656] dt-font-Roboto hover:dt-text-[#565656] dt-text-sm dt-leading-[22px]"
+                          >(Dân trí) - Học viện Công nghệ Bưu chính Viễn thông
+                          (PTIT) thành lập khoa Trí tuệ Nhân tạo, hướng tới đào
+                          tạo đội ngũ kỹ sư AI chất lượng cao, sẵn sàng tham gia
+                          vào dòng chảy chuyển đổi số mạnh mẽ của đất nước và
+                          thế giới.<span
+                            class="article-total-comment dt-text-xs dt-leading-[140%] dt-items-center dt-gap-1 dt-align-middle dt-font-normal dt-hidden hover:dt-text-c0f6c32 dt-ml-1"
+                            data-id="20250429151202733"
+                            data-limit-show="10"
+                            data-color=""
+                            data-redirect="/giao-duc/ptit-ra-mat-khoa-tri-tue-nhan-tao-don-dau-tuong-lai-20250429151202733.htm#comment"
+                            data-type="1"
+                            data-loaded="loaded"
+                          ></span></a
+                        ><svg
+                          width="16"
+                          height="17"
+                          fill="none"
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <path
+                            d="M1.747 6.09h2.896c.935 0 1.662.236 2.182.707.55.501.824 1.243.824 2.225 0 .829-.227 1.493-.68 1.994-.53.568-1.304.852-2.325.852h-1.33V9.911H1.134v3.893h3.626c1.435 0 2.6-.347 3.496-1.04 1.107-.848 1.662-2.09 1.662-3.728 0-1.512-.424-2.687-1.272-3.525-.905-.895-2.196-1.343-3.872-1.343h-3.64V6.15"
+                            fill="#00B05A"
+                          ></path>
+                          <path
+                            d="m2.128 7.828 2.129 2.4H0l2.128-2.4Z"
+                            fill="#00B05A"
+                          ></path>
+                          <path
+                            d="M6.994 4.168a4.873 4.873 0 0 1 2.337 1.615h1.214v8.046h1.845V5.783H15V4.168H6.994Z"
+                            fill="#FF8500"
+                          ></path>
+                        </svg>
+                      </div>
+                    </article>
+                  </div>
+                </div>
+                <div
+                  class="dt-flex dt-flex-col dt-font-Inter dt-gap-6 dt-border-t dt-border-[#222222] dt-pt-4 dt-mt-6"
+                >
+                  <a
+                    href=""
+                    class="dt-font-bold dt-uppercase dt-text-base dt-leading-5 dt-text-[#25282B]"
+                    >Đang được quan tâm</a
+                  >
+                  <div class="dt-flex dt-flex-col dt-gap-5 dt-gap-5">
+                    <article
+                      data-track-content="true"
+                      data-content-name="article-recommend"
+                      data-content-piece="article-recommend-position_1"
+                      data-content-target="/khoa-hoc/5-nguoi-duoc-cuu-sau-2-ngay-bi-mac-ket-giua-dam-lay-day-ca-sau-va-tran-20250505014023978.htm"
+                      class="dt-flex dt-gap-4"
+                    >
+                      <a
+                        href="/khoa-hoc/5-nguoi-duoc-cuu-sau-2-ngay-bi-mac-ket-giua-dam-lay-day-ca-sau-va-tran-20250505014023978.htm"
+                        class="dt-aspect-3/2 dt-w-[252px]"
+                        ><img
+                          alt="5 người được cứu sau 2 ngày bị mắc kẹt giữa đầm lầy đầy cá sấu và trăn"
+                          class="dt-w-full dt-h-full"
+                          src="/assets/img/tải xuống (1).jpg"
+                          
+                          width="252"
+                          height="168"
+                      /></a>
+                      <div class="dt-flex-1 dt-flex dt-flex-col dt-gap-2">
+                        <a
+                          href="/khoa-hoc/5-nguoi-duoc-cuu-sau-2-ngay-bi-mac-ket-giua-dam-lay-day-ca-sau-va-tran-20250505014023978.htm"
+                          class="dt-text-[#222222] dt-font-semibold hover:dt-text-[#222222] dt-text-xl dt-leading-[26px]"
+                          >5 người được cứu sau 2 ngày bị mắc kẹt giữa đầm lầy
+                          đầy cá sấu và trăn</a
+                        ><a
+                          href="/khoa-hoc/5-nguoi-duoc-cuu-sau-2-ngay-bi-mac-ket-giua-dam-lay-day-ca-sau-va-tran-20250505014023978.htm"
+                          class="dt-text-[#565656] dt-font-Roboto hover:dt-text-[#565656] dt-text-sm dt-leading-[22px]"
+                          >(Dân trí) - 5 người đã được giải cứu khỏi một đầm lầy
+                          đầy cá sấu và trăn, sau khi chiếc máy bay cỡ nhỏ của
+                          họ gặp nạn và rơi xuống vùng rừng rậm Amazon tại
+                          Bolivia.<span
+                            class="article-total-comment dt-text-xs dt-leading-[140%] dt-items-center dt-gap-1 dt-align-middle dt-font-normal dt-hidden hover:dt-text-c0f6c32 dt-ml-1"
+                            data-id="20250505014023978"
+                            data-limit-show="10"
+                            data-color=""
+                            data-redirect="/khoa-hoc/5-nguoi-duoc-cuu-sau-2-ngay-bi-mac-ket-giua-dam-lay-day-ca-sau-va-tran-20250505014023978.htm#comment"
+                            data-type="1"
+                            data-loaded="loaded"
+                          ></span
+                        ></a>
+                      </div>
+                    </article>
+                    <article
+                      data-track-content="true"
+                      data-content-name="article-recommend"
+                      data-content-piece="article-recommend-position_2"
+                      data-content-target="/ban-doc/vu-xe-tai-can-be-gai-14-tuoi-o-vinh-long-can-xu-ly-nghiem-minh-20250504183111085.htm"
+                      class="dt-flex dt-gap-4"
+                    >
+                      <a
+                        href="/ban-doc/vu-xe-tai-can-be-gai-14-tuoi-o-vinh-long-can-xu-ly-nghiem-minh-20250504183111085.htm"
+                        class="dt-aspect-3/2 dt-w-[252px]"
+                        ><img
+                          alt="Vụ xe tải cán bé gái 14 tuổi ở Vĩnh Long: Cần xử lý nghiêm minh"
+                          class="dt-w-full dt-h-full"
+                          src="/assets/img/tải xuống (1).jpg"
+                          
+                          width="252"
+                          height="168"
+                      /></a>
+                      <div class="dt-flex-1 dt-flex dt-flex-col dt-gap-2">
+                        <a
+                          href="/ban-doc/vu-xe-tai-can-be-gai-14-tuoi-o-vinh-long-can-xu-ly-nghiem-minh-20250504183111085.htm"
+                          class="dt-text-[#222222] dt-font-semibold hover:dt-text-[#222222] dt-text-xl dt-leading-[26px]"
+                          >Vụ xe tải cán bé gái 14 tuổi ở Vĩnh Long: Cần xử lý
+                          nghiêm minh</a
+                        ><a
+                          href="/ban-doc/vu-xe-tai-can-be-gai-14-tuoi-o-vinh-long-can-xu-ly-nghiem-minh-20250504183111085.htm"
+                          class="dt-text-[#565656] dt-font-Roboto hover:dt-text-[#565656] dt-text-sm dt-leading-[22px]"
+                          >(Dân trí) - "Mong cơ quan chức năng công tâm, công
+                          bằng, đưa sự việc ra ánh sáng, bởi sức khỏe, tính mạng
+                          con người luôn là điều quan trọng nhất", độc giả bình
+                          luận.<span
+                            class="article-total-comment dt-text-xs dt-leading-[140%] dt-items-center dt-gap-1 dt-align-middle dt-font-normal dt-hidden hover:dt-text-c0f6c32 dt-ml-1"
+                            data-id="20250504183111085"
+                            data-limit-show="10"
+                            data-color=""
+                            data-redirect="/ban-doc/vu-xe-tai-can-be-gai-14-tuoi-o-vinh-long-can-xu-ly-nghiem-minh-20250504183111085.htm#comment"
+                            data-type="1"
+                            data-loaded="loaded"
+                          ></span
+                        ></a>
+                      </div>
+                    </article>
+                    <article
+                      data-track-content="true"
+                      data-content-name="article-recommend"
+                      data-content-piece="article-recommend-position_3"
+                      data-content-target="/giao-duc/hoc-dai-hoc-nao-de-khong-chiu-canh-tham-met-khi-di-chuyen-giua-nhieu-co-so-20250504223244615.htm"
+                      class="dt-flex dt-gap-4"
+                    >
+                      <a
+                        href="/giao-duc/hoc-dai-hoc-nao-de-khong-chiu-canh-tham-met-khi-di-chuyen-giua-nhieu-co-so-20250504223244615.htm"
+                        class="dt-aspect-3/2 dt-w-[252px]"
+                        ><img
+                          alt="Học đại học nào để không chịu cảnh thấm mệt khi di chuyển giữa nhiều cơ sở"
+                          class="dt-w-full dt-h-full"
+                          src="/assets/img/tải xuống (1).jpg"                          width="252"
+                          height="168"
+                      /></a>
+                      <div class="dt-flex-1 dt-flex dt-flex-col dt-gap-2">
+                        <a
+                          href="/giao-duc/hoc-dai-hoc-nao-de-khong-chiu-canh-tham-met-khi-di-chuyen-giua-nhieu-co-so-20250504223244615.htm"
+                          class="dt-text-[#222222] dt-font-semibold hover:dt-text-[#222222] dt-text-xl dt-leading-[26px]"
+                          >Học đại học nào để không chịu cảnh thấm mệt khi di
+                          chuyển giữa nhiều cơ sở</a
+                        ><a
+                          href="/giao-duc/hoc-dai-hoc-nao-de-khong-chiu-canh-tham-met-khi-di-chuyen-giua-nhieu-co-so-20250504223244615.htm"
+                          class="dt-text-[#565656] dt-font-Roboto hover:dt-text-[#565656] dt-text-sm dt-leading-[22px]"
+                          >(Dân trí) - Trong bối cảnh giáo dục đại học Việt Nam
+                          ngày càng phát triển, xu hướng mở rộng quy mô với
+                          nhiều cơ sở học tập đã trở nên phổ biến, đặc biệt tại
+                          các đô thị lớn như TPHCM và Hà Nội.<span
+                            class="article-total-comment dt-text-xs dt-leading-[140%] dt-items-center dt-gap-1 dt-align-middle dt-font-normal dt-hidden hover:dt-text-c0f6c32 dt-ml-1"
+                            data-id="20250504223244615"
+                            data-limit-show="10"
+                            data-color=""
+                            data-redirect="/giao-duc/hoc-dai-hoc-nao-de-khong-chiu-canh-tham-met-khi-di-chuyen-giua-nhieu-co-so-20250504223244615.htm#comment"
+                            data-type="1"
+                            data-loaded="loaded"
+                          ></span
+                        ></a>
+                      </div>
+                    </article>
+                    <article
+                      data-track-content="true"
+                      data-content-name="article-recommend"
+                      data-content-piece="article-recommend-position_4"
+                      data-content-target="/du-lich/khach-tay-lang-nguoi-truoc-mot-buc-anh-tai-bao-tang-chung-tich-chien-tranh-20250504154912364.htm"
+                      class="dt-flex dt-gap-4"
+                    >
+                      <a
+                        href="#"
+                        class="dt-aspect-3/2 dt-w-[252px]"
+                        ><img
+                          alt="Khách Tây lặng người trước một bức ảnh tại Bảo tàng Chứng tích Chiến tranh"
+                          class="dt-w-full dt-h-full"
+                          src="/assets/img/tải xuống (1).jpg"                          width="252"
+                          height="168"
+                      /></a>
+                      <div class="dt-flex-1 dt-flex dt-flex-col dt-gap-2">
+                        <a
+                          href="#"
+                          class="dt-text-[#222222] dt-font-semibold hover:dt-text-[#222222] dt-text-xl dt-leading-[26px]"
+                          >Khách Tây lặng người trước một bức ảnh tại Bảo tàng
+                          Chứng tích Chiến tranh</a
+                        ><a
+                          href="#"
+                          class="dt-text-[#565656] dt-font-Roboto hover:dt-text-[#565656] dt-text-sm dt-leading-[22px]"
+                          >(Dân trí) - Lần đầu tham quan Bảo tàng Chứng tích
+                          Chiến tranh, không ít người cảm thấy nghẹn ngào, xúc
+                          động, thậm chí không nén được nước mắt.<span
+                            class="article-total-comment dt-text-xs dt-leading-[140%] dt-items-center dt-gap-1 dt-align-middle dt-font-normal dt-hidden hover:dt-text-c0f6c32 dt-ml-1"
+                            data-id="20250504154912364"
+                            data-limit-show="10"
+                            data-color=""
+                            data-redirect="/du-lich/khach-tay-lang-nguoi-truoc-mot-buc-anh-tai-bao-tang-chung-tich-chien-tranh-20250504154912364.htm#comment"
+                            data-type="1"
+                            data-loaded="loaded"
+                          ></span
+                        ></a>
+                      </div>
+                    </article>
+                    <article
+                      data-track-content="true"
+                      data-content-name="article-recommend"
+                      data-content-piece="article-recommend-position_Pr_5"
+                      data-content-target="/doi-song/thuong-mai-dien-tu-san-choi-de-hang-viet-tiep-can-nguoi-dung-20250429153856897.htm"
+                      class="dt-flex dt-gap-4"
+                    >
+                      <a
+                        href="/doi-song/thuong-mai-dien-tu-san-choi-de-hang-viet-tiep-can-nguoi-dung-20250429153856897.htm"
+                        class="dt-aspect-3/2 dt-w-[252px]"
+                        ><img
+                          alt="Thương mại điện tử - Sân chơi để hàng Việt tiếp cận người dùng"
+                          class="dt-w-full dt-h-full"
+                          src="/assets/img/tải xuống (1).jpg"                          width="252"
+                          height="168"
+                      /></a>
+                      <div class="dt-flex-1 dt-flex dt-flex-col dt-gap-2">
+                        <a
+                          href="/doi-song/thuong-mai-dien-tu-san-choi-de-hang-viet-tiep-can-nguoi-dung-20250429153856897.htm"
+                          class="dt-text-[#222222] dt-font-semibold hover:dt-text-[#222222] dt-text-xl dt-leading-[26px]"
+                          >Thương mại điện tử - Sân chơi để hàng Việt tiếp cận
+                          người dùng</a
+                        ><a
+                          href="/doi-song/thuong-mai-dien-tu-san-choi-de-hang-viet-tiep-can-nguoi-dung-20250429153856897.htm"
+                          class="dt-text-[#565656] dt-font-Roboto hover:dt-text-[#565656] dt-text-sm dt-leading-[22px]"
+                          >(Dân trí) - Chương trình "Tinh hoa Việt chung sức"
+                          mang đến sân chơi trực tuyến kết nối nhiều thương hiệu
+                          Việt với hàng triệu người tiêu dùng khắp cả nước, góp
+                          phần định hình thói quen người Việt tin dùng hàng
+                          Việt.<span
+                            class="article-total-comment dt-text-xs dt-leading-[140%] dt-items-center dt-gap-1 dt-align-middle dt-font-normal dt-hidden hover:dt-text-c0f6c32 dt-ml-1"
+                            data-id="20250429153856897"
+                            data-limit-show="10"
+                            data-color=""
+                            data-redirect="/doi-song/thuong-mai-dien-tu-san-choi-de-hang-viet-tiep-can-nguoi-dung-20250429153856897.htm#comment"
+                            data-type="1"
+                            data-loaded="loaded"
+                          ></span></a
+                        ><svg
+                          width="16"
+                          height="17"
+                          fill="none"
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <path
+                            d="M1.747 6.09h2.896c.935 0 1.662.236 2.182.707.55.501.824 1.243.824 2.225 0 .829-.227 1.493-.68 1.994-.53.568-1.304.852-2.325.852h-1.33V9.911H1.134v3.893h3.626c1.435 0 2.6-.347 3.496-1.04 1.107-.848 1.662-2.09 1.662-3.728 0-1.512-.424-2.687-1.272-3.525-.905-.895-2.196-1.343-3.872-1.343h-3.64V6.15"
+                            fill="#00B05A"
+                          ></path>
+                          <path
+                            d="m2.128 7.828 2.129 2.4H0l2.128-2.4Z"
+                            fill="#00B05A"
+                          ></path>
+                          <path
+                            d="M6.994 4.168a4.873 4.873 0 0 1 2.337 1.615h1.214v8.046h1.845V5.783H15V4.168H6.994Z"
+                            fill="#FF8500"
+                          ></path>
+                        </svg>
+                      </div>
+                    </article>
+                    <article
+                      data-track-content="true"
+                      data-content-name="article-recommend"
+                      data-content-piece="article-recommend-position_6"
+                      data-content-target="/du-lich/vu-con-ca-05kg-chem-gan-18-trieu-dong-chu-tich-khanh-hoa-chi-dao-khan-20250504172306717.htm"
+                      class="dt-flex dt-gap-4"
+                    >
+                      <a
+                        href="#"
+                        class="dt-aspect-3/2 dt-w-[252px]"
+                        ><img
+                          alt='Vụ con cá 0,5kg "chém" gần 1,8 triệu đồng: Chủ tịch Khánh Hòa chỉ đạo khẩn'
+                          class="dt-w-full dt-h-full"
+                          src="/assets/img/tải xuống (1).jpg"                          width="252"
+                          height="168"
+                      /></a>
+                      <div class="dt-flex-1 dt-flex dt-flex-col dt-gap-2">
+                        <a
+                          href="#"
+                          class="dt-text-[#222222] dt-font-semibold hover:dt-text-[#222222] dt-text-xl dt-leading-[26px]"
+                          >Vụ con cá 0,5kg "chém" gần 1,8 triệu đồng: Chủ tịch
+                          Khánh Hòa chỉ đạo khẩn</a
+                        ><a
+                          href="#"
+                          class="dt-text-[#565656] dt-font-Roboto hover:dt-text-[#565656] dt-text-sm dt-leading-[22px]"
+                          >(Dân trí) - Chủ tịch UBND tỉnh Khánh Hòa chỉ đạo UBND
+                          thành phố Nha Trang khẩn trương kiểm tra nhiều nội
+                          dung liên quan đến vụ quán ăn bán 0,5kg cá bò hòm giá
+                          1,75 triệu đồng.<span
+                            class="article-total-comment dt-text-xs dt-leading-[140%] dt-items-center dt-gap-1 dt-align-middle dt-font-normal dt-hidden hover:dt-text-c0f6c32 dt-ml-1"
+                            data-id="20250504172306717"
+                            data-limit-show="10"
+                            data-color=""
+                            data-redirect="/du-lich/vu-con-ca-05kg-chem-gan-18-trieu-dong-chu-tich-khanh-hoa-chi-dao-khan-20250504172306717.htm#comment"
+                            data-type="1"
+                            data-loaded="loaded"
+                          ></span
+                        ></a>
+                      </div>
+                    </article>
+                    <article
+                      data-track-content="true"
+                      data-content-name="article-recommend"
+                      data-content-piece="article-recommend-position_7"
+                      data-content-target="/xa-hoi/vu-2-o-to-chan-quoc-lo-cho-doan-xe-di-ra-xu-ly-khong-co-vung-cam-20250504162817145.htm"
+                      class="dt-flex dt-gap-4"
+                    >
+                      <a
+                        href="/xa-hoi/vu-2-o-to-chan-quoc-lo-cho-doan-xe-di-ra-xu-ly-khong-co-vung-cam-20250504162817145.htm"
+                        class="dt-aspect-3/2 dt-w-[252px]"
+                        ><img
+                          alt="Vụ 2 ô tô chặn quốc lộ cho đoàn xe đi ra: Xử lý không có vùng cấm"
+                          class="dt-w-full dt-h-full"
+                          src="/assets/img/tải xuống (1).jpg"                          width="252"
+                          height="168"
+                      /></a>
+                      <div class="dt-flex-1 dt-flex dt-flex-col dt-gap-2">
+                        <a
+                          href="/xa-hoi/vu-2-o-to-chan-quoc-lo-cho-doan-xe-di-ra-xu-ly-khong-co-vung-cam-20250504162817145.htm"
+                          class="dt-text-[#222222] dt-font-semibold hover:dt-text-[#222222] dt-text-xl dt-leading-[26px]"
+                          >Vụ 2 ô tô chặn quốc lộ cho đoàn xe đi ra: Xử lý không
+                          có vùng cấm</a
+                        ><a
+                          href="/xa-hoi/vu-2-o-to-chan-quoc-lo-cho-doan-xe-di-ra-xu-ly-khong-co-vung-cam-20250504162817145.htm"
+                          class="dt-text-[#565656] dt-font-Roboto hover:dt-text-[#565656] dt-text-sm dt-leading-[22px]"
+                          >(Dân trí) - Lực lượng Công an tỉnh Lâm Đồng đã cử cán
+                          bộ làm rõ vụ 2 ô tô chặn quốc lộ 20 cho đoàn xe đi ra
+                          từ khu du lịch để có phương án xử lý.<span
+                            class="article-total-comment dt-text-xs dt-leading-[140%] dt-items-center dt-gap-1 dt-align-middle dt-font-normal dt-hidden hover:dt-text-c0f6c32 dt-ml-1"
+                            data-id="20250504162817145"
+                            data-limit-show="10"
+                            data-color=""
+                            data-redirect="/xa-hoi/vu-2-o-to-chan-quoc-lo-cho-doan-xe-di-ra-xu-ly-khong-co-vung-cam-20250504162817145.htm#comment"
+                            data-type="1"
+                            data-loaded="loaded"
+                          ></span
+                        ></a>
+                      </div>
+                    </article>
+                    <article
+                      data-track-content="true"
+                      data-content-name="article-recommend"
+                      data-content-piece="article-recommend-position_8"
+                      data-content-target="/doi-song/khoanh-khac-canh-sat-kip-tom-tay-co-gai-dinh-lam-dieu-dai-dot-o-tang-19-20250504143025398.htm"
+                      class="dt-flex dt-gap-4"
+                    >
+                      <a
+                        href="/doi-song/khoanh-khac-canh-sat-kip-tom-tay-co-gai-dinh-lam-dieu-dai-dot-o-tang-19-20250504143025398.htm"
+                        class="dt-aspect-3/2 dt-w-[252px]"
+                        ><img
+                          alt="Khoảnh khắc cảnh sát kịp tóm tay cô gái định làm điều dại dột ở tầng 19"
+                          class="dt-w-full dt-h-full"
+                          src="/assets/img/tải xuống (1).jpg"                          width="252"
+                          height="168"
+                      /></a>
+                      <div class="dt-flex-1 dt-flex dt-flex-col dt-gap-2">
+                        <a
+                          href="/doi-song/khoanh-khac-canh-sat-kip-tom-tay-co-gai-dinh-lam-dieu-dai-dot-o-tang-19-20250504143025398.htm"
+                          class="dt-text-[#222222] dt-font-semibold hover:dt-text-[#222222] dt-text-xl dt-leading-[26px]"
+                          >Khoảnh khắc cảnh sát kịp tóm tay cô gái định làm điều
+                          dại dột ở tầng 19</a
+                        ><a
+                          href="/doi-song/khoanh-khac-canh-sat-kip-tom-tay-co-gai-dinh-lam-dieu-dai-dot-o-tang-19-20250504143025398.htm"
+                          class="dt-text-[#565656] dt-font-Roboto hover:dt-text-[#565656] dt-text-sm dt-leading-[22px]"
+                          >(Dân trí) - Thấy cô gái lang thang trên nóc tòa nhà
+                          cao 19 tầng thuộc quận Gangnam (Hàn Quốc), người dân
+                          vội gọi điện báo cảnh sát vì nghi ngờ người này có ý
+                          định làm điều dại dột.<span
+                            class="article-total-comment dt-text-xs dt-leading-[140%] dt-items-center dt-gap-1 dt-align-middle dt-font-normal dt-hidden hover:dt-text-c0f6c32 dt-ml-1"
+                            data-id="20250504143025398"
+                            data-limit-show="10"
+                            data-color=""
+                            data-redirect="/doi-song/khoanh-khac-canh-sat-kip-tom-tay-co-gai-dinh-lam-dieu-dai-dot-o-tang-19-20250504143025398.htm#comment"
+                            data-type="1"
+                            data-loaded="loaded"
+                          ></span
+                        ></a>
+                      </div>
+                    </article>
+                    <article
+                      data-track-content="true"
+                      data-content-name="article-recommend"
+                      data-content-piece="article-recommend-position_9"
+                      data-content-target="/du-lich/loat-bai-bien-noi-tieng-mien-trung-chat-nhu-nem-dip-le-304-15-20250504130340039.htm"
+                      class="dt-flex dt-gap-4"
+                    >
+                      <a
+                        href="#"
+                        class="dt-aspect-3/2 dt-w-[252px]"
+                        ><img
+                          alt='Loạt bãi biển nổi tiếng miền Trung "chật như nêm" dịp lễ 30/4-1/5'
+                          class="dt-w-full dt-h-full"
+                          src="/assets/img/tải xuống (1).jpg"                          width="252"
+                          height="168"
+                      /></a>
+                      <div class="dt-flex-1 dt-flex dt-flex-col dt-gap-2">
+                        <a
+                          href="#"
+                          class="dt-text-[#222222] dt-font-semibold hover:dt-text-[#222222] dt-text-xl dt-leading-[26px]"
+                          >Loạt bãi biển nổi tiếng miền Trung "chật như nêm" dịp
+                          lễ 30/4-1/5</a
+                        ><a
+                          href="#"
+                          class="dt-text-[#565656] dt-font-Roboto hover:dt-text-[#565656] dt-text-sm dt-leading-[22px]"
+                          >(Dân trí) - Dịp lễ 30/4 và 1/5 năm nay, tại các điểm
+                          du lịch nổi tiếng, đặc biệt các bãi biển dọc miền
+                          Trung như Sầm Sơn, Cửa Lò, Đà Nẵng, Nha Trang, Quy
+                          Nhơn… đông nghịt du khách đến tắm biển, nghỉ mát.<span
+                            class="article-total-comment dt-text-xs dt-leading-[140%] dt-items-center dt-gap-1 dt-align-middle dt-font-normal dt-hidden hover:dt-text-c0f6c32 dt-ml-1"
+                            data-id="20250504130340039"
+                            data-limit-show="10"
+                            data-color=""
+                            data-redirect="/du-lich/loat-bai-bien-noi-tieng-mien-trung-chat-nhu-nem-dip-le-304-15-20250504130340039.htm#comment"
+                            data-type="1"
+                            data-loaded="loaded"
+                          ></span
+                        ></a>
+                      </div>
+                    </article>
+                    <article
+                      data-track-content="true"
+                      data-content-name="article-recommend"
+                      data-content-piece="article-recommend-position_Pr_10"
+                      data-content-target="/doi-song/16000-nhan-su-vpbank-mac-ao-co-do-sao-vang-hat-quoc-ca-20250429115528196.htm"
+                      class="dt-flex dt-gap-4"
+                    >
+                      <a
+                        href="/doi-song/16000-nhan-su-vpbank-mac-ao-co-do-sao-vang-hat-quoc-ca-20250429115528196.htm"
+                        class="dt-aspect-3/2 dt-w-[252px]"
+                        ><img
+                          alt="16.000 nhân sự VPBank mặc áo cờ đỏ sao vàng, hát Quốc ca"
+                          class="dt-w-full dt-h-full"
+                          src="/assets/img/tải xuống (1).jpg"                          width="252"
+                          height="168"
+                      /></a>
+                      <div class="dt-flex-1 dt-flex dt-flex-col dt-gap-2">
+                        <a
+                          href="/doi-song/16000-nhan-su-vpbank-mac-ao-co-do-sao-vang-hat-quoc-ca-20250429115528196.htm"
+                          class="dt-text-[#222222] dt-font-semibold hover:dt-text-[#222222] dt-text-xl dt-leading-[26px]"
+                          >16.000 nhân sự VPBank mặc áo cờ đỏ sao vàng, hát Quốc
+                          ca</a
+                        ><a
+                          href="/doi-song/16000-nhan-su-vpbank-mac-ao-co-do-sao-vang-hat-quoc-ca-20250429115528196.htm"
+                          class="dt-text-[#565656] dt-font-Roboto hover:dt-text-[#565656] dt-text-sm dt-leading-[22px]"
+                          >(Dân trí) - Đại lễ chào mừng kỷ niệm 50 năm Ngày giải
+                          phòng miền Nam, thống nhất đất nước đang đếm ngược
+                          từng giờ. Hòa cùng nhịp điệu tự hào dân tộc, 16.000
+                          nhân sự VPBank cùng thắp lên tình yêu đất nước qua
+                          chiến dịch nội bộ "Tự hào Việt Nam".<span
+                            class="article-total-comment dt-text-xs dt-leading-[140%] dt-items-center dt-gap-1 dt-align-middle dt-font-normal dt-hidden hover:dt-text-c0f6c32 dt-ml-1"
+                            data-id="20250429115528196"
+                            data-limit-show="10"
+                            data-color=""
+                            data-redirect="/doi-song/16000-nhan-su-vpbank-mac-ao-co-do-sao-vang-hat-quoc-ca-20250429115528196.htm#comment"
+                            data-type="1"
+                            data-loaded="loaded"
+                          ></span></a
+                        ><svg
+                          width="16"
+                          height="17"
+                          fill="none"
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <path
+                            d="M1.747 6.09h2.896c.935 0 1.662.236 2.182.707.55.501.824 1.243.824 2.225 0 .829-.227 1.493-.68 1.994-.53.568-1.304.852-2.325.852h-1.33V9.911H1.134v3.893h3.626c1.435 0 2.6-.347 3.496-1.04 1.107-.848 1.662-2.09 1.662-3.728 0-1.512-.424-2.687-1.272-3.525-.905-.895-2.196-1.343-3.872-1.343h-3.64V6.15"
+                            fill="#00B05A"
+                          ></path>
+                          <path
+                            d="m2.128 7.828 2.129 2.4H0l2.128-2.4Z"
+                            fill="#00B05A"
+                          ></path>
+                          <path
+                            d="M6.994 4.168a4.873 4.873 0 0 1 2.337 1.615h1.214v8.046h1.845V5.783H15V4.168H6.994Z"
+                            fill="#FF8500"
+                          ></path>
+                        </svg>
+                      </div>
+                    </article>
+                  </div>
+                </div>
+                <div
+                  class="dt-flex dt-flex-col dt-font-Inter dt-gap-6 dt-border-t dt-border-[#222222] dt-pt-4 dt-mt-6"
+                >
+                  <a
+                    href="/tin-moi-nhat.htm"
+                    class="dt-font-bold dt-uppercase dt-text-base dt-leading-5 dt-text-[#25282B]"
+                    >Tin mới</a
+                  >
+                  <div class="dt-flex dt-flex-col dt-gap-5 dt-gap-5">
+                    <article
+                      data-track-content="true"
+                      data-content-name="article-newest"
+                      data-content-piece="article-newest-position_1"
+                      data-content-target="/cong-nghe/cong-nghe-chien-luoc-viet-nam-dat-cuoc-vao-dau-de-but-pha-20250503215548589.htm"
+                      class="dt-flex dt-gap-4"
+                    >
+                      <a
+                        href="/cong-nghe/cong-nghe-chien-luoc-viet-nam-dat-cuoc-vao-dau-de-but-pha-20250503215548589.htm"
+                        class="dt-aspect-3/2 dt-w-[252px]"
+                        ><img
+                          alt="Công nghệ chiến lược: Việt Nam đặt cược vào đâu để bứt phá?"
+                          class="dt-w-full dt-h-full"
+                          src="/assets/img/tải xuống (1).jpg"                          width="252"
+                          height="168"
+                      /></a>
+                      <div class="dt-flex-1 dt-flex dt-flex-col dt-gap-2">
+                        <a
+                          href="/cong-nghe/cong-nghe-chien-luoc-viet-nam-dat-cuoc-vao-dau-de-but-pha-20250503215548589.htm"
+                          class="dt-text-[#222222] dt-font-semibold hover:dt-text-[#222222] dt-text-xl dt-leading-[26px]"
+                          >Công nghệ chiến lược: Việt Nam đặt cược vào đâu để
+                          bứt phá?</a
+                        ><a
+                          href="/cong-nghe/cong-nghe-chien-luoc-viet-nam-dat-cuoc-vao-dau-de-but-pha-20250503215548589.htm"
+                          class="dt-text-[#565656] dt-font-Roboto hover:dt-text-[#565656] dt-text-sm dt-leading-[22px]"
+                          >(Dân trí) - Công nghệ lõi giờ đây không chỉ là động
+                          lực kinh tế mà còn là yếu tố then chốt quyết định an
+                          ninh, vị thế quốc gia và Việt Nam đối mặt với cả những
+                          cơ hội lớn và thách thức không nhỏ.<span
+                            class="article-total-comment dt-text-xs dt-leading-[140%] dt-items-center dt-gap-1 dt-align-middle dt-font-normal dt-hidden hover:dt-text-c0f6c32 dt-ml-1"
+                            data-id="20250503215548589"
+                            data-limit-show="10"
+                            data-color=""
+                            data-redirect="/cong-nghe/cong-nghe-chien-luoc-viet-nam-dat-cuoc-vao-dau-de-but-pha-20250503215548589.htm#comment"
+                            data-type="1"
+                            data-loaded="loaded"
+                          ></span
+                        ></a>
+                      </div>
+                    </article>
+                    <article
+                      data-track-content="true"
+                      data-content-name="article-newest"
+                      data-content-piece="article-newest-position_2"
+                      data-content-target="/the-gioi/ong-trump-tung-de-nghi-dieu-quan-doi-my-toi-mexico-20250505083843063.htm"
+                      class="dt-flex dt-gap-4"
+                    >
+                      <a
+                        href="/the-gioi/ong-trump-tung-de-nghi-dieu-quan-doi-my-toi-mexico-20250505083843063.htm"
+                        class="dt-aspect-3/2 dt-w-[252px]"
+                        ><img
+                          alt="Ông Trump từng đề nghị điều quân đội Mỹ tới Mexico"
+                          class="dt-w-full dt-h-full"
+                          src="/assets/img/tải xuống (1).jpg"                          width="252"
+                          height="168"
+                      /></a>
+                      <div class="dt-flex-1 dt-flex dt-flex-col dt-gap-2">
+                        <a
+                          href="/the-gioi/ong-trump-tung-de-nghi-dieu-quan-doi-my-toi-mexico-20250505083843063.htm"
+                          class="dt-text-[#222222] dt-font-semibold hover:dt-text-[#222222] dt-text-xl dt-leading-[26px]"
+                          >Ông Trump từng đề nghị điều quân đội Mỹ tới Mexico</a
+                        ><a
+                          href="/the-gioi/ong-trump-tung-de-nghi-dieu-quan-doi-my-toi-mexico-20250505083843063.htm"
+                          class="dt-text-[#565656] dt-font-Roboto hover:dt-text-[#565656] dt-text-sm dt-leading-[22px]"
+                          >(Dân trí) - Tổng thống Mỹ Donald Trump cho biết từng
+                          đề xuất đưa lính Mỹ vào lãnh thổ Mexico nhưng đã bị
+                          nước láng giềng từ chối.<span
+                            class="article-total-comment dt-text-xs dt-leading-[140%] dt-items-center dt-gap-1 dt-align-middle dt-font-normal dt-hidden hover:dt-text-c0f6c32 dt-ml-1"
+                            data-id="20250505083843063"
+                            data-limit-show="10"
+                            data-color=""
+                            data-redirect="/the-gioi/ong-trump-tung-de-nghi-dieu-quan-doi-my-toi-mexico-20250505083843063.htm#comment"
+                            data-type="1"
+                            data-loaded="loaded"
+                          ></span
+                        ></a>
+                      </div>
+                    </article>
+                    <article
+                      data-track-content="true"
+                      data-content-name="article-newest"
+                      data-content-piece="article-newest-position_3"
+                      data-content-target="/o-to-xe-may/xe-ban-tai-hybrid-trung-quoc-di-duoc-toi-1000-km-moi-lan-day-nang-luong-20250505084054257.htm"
+                      class="dt-flex dt-gap-4"
+                    >
+                      <a
+                        href="/o-to-xe-may/xe-ban-tai-hybrid-trung-quoc-di-duoc-toi-1000-km-moi-lan-day-nang-luong-20250505084054257.htm"
+                        class="dt-aspect-3/2 dt-w-[252px]"
+                        ><img
+                          alt="Xe bán tải hybrid Trung Quốc đi được tới 1.000 km mỗi lần đầy năng lượng"
+                          class="dt-w-full dt-h-full"
+                          src="/assets/img/tải xuống (1).jpg"                          width="252"
+                          height="168"
+                      /></a>
+                      <div class="dt-flex-1 dt-flex dt-flex-col dt-gap-2">
+                        <a
+                          href="/o-to-xe-may/xe-ban-tai-hybrid-trung-quoc-di-duoc-toi-1000-km-moi-lan-day-nang-luong-20250505084054257.htm"
+                          class="dt-text-[#222222] dt-font-semibold hover:dt-text-[#222222] dt-text-xl dt-leading-[26px]"
+                          >Xe bán tải hybrid Trung Quốc đi được tới 1.000 km mỗi
+                          lần đầy năng lượng</a
+                        ><a
+                          href="/o-to-xe-may/xe-ban-tai-hybrid-trung-quoc-di-duoc-toi-1000-km-moi-lan-day-nang-luong-20250505084054257.htm"
+                          class="dt-text-[#565656] dt-font-Roboto hover:dt-text-[#565656] dt-text-sm dt-leading-[22px]"
+                          >(Dân trí) - Thương hiệu con của tập đoàn Geely mới
+                          cho ra mắt mẫu xe bán tải với tùy chọn động cơ hybrid
+                          cắm sạc có tầm hoạt động rộng, tạo khác biệt so với
+                          các đối thủ trong phân khúc.<span
+                            class="article-total-comment dt-text-xs dt-leading-[140%] dt-items-center dt-gap-1 dt-align-middle dt-font-normal dt-hidden hover:dt-text-c0f6c32 dt-ml-1"
+                            data-id="20250505084054257"
+                            data-limit-show="10"
+                            data-color=""
+                            data-redirect="/o-to-xe-may/xe-ban-tai-hybrid-trung-quoc-di-duoc-toi-1000-km-moi-lan-day-nang-luong-20250505084054257.htm#comment"
+                            data-type="1"
+                            data-loaded="loaded"
+                          ></span
+                        ></a>
+                      </div>
+                    </article>
+                    <article
+                      data-track-content="true"
+                      data-content-name="article-newest"
+                      data-content-piece="article-newest-position_4"
+                      data-content-target="/khoa-hoc/dot-pha-pin-lam-tu-nam-khong-can-sac-chi-cancho-an-20250505074136134.htm"
+                      class="dt-flex dt-gap-4"
+                    >
+                      <a
+                        href="/khoa-hoc/dot-pha-pin-lam-tu-nam-khong-can-sac-chi-cancho-an-20250505074136134.htm"
+                        class="dt-aspect-3/2 dt-w-[252px]"
+                        ><img
+                          alt="Đột phá pin làm từ nấm: Không cần sạc, chỉ cần…cho ăn"
+                          class="dt-w-full dt-h-full"
+                          src="/assets/img/tải xuống (1).jpg"                          width="252"
+                          height="168"
+                      /></a>
+                      <div class="dt-flex-1 dt-flex dt-flex-col dt-gap-2">
+                        <a
+                          href="/khoa-hoc/dot-pha-pin-lam-tu-nam-khong-can-sac-chi-cancho-an-20250505074136134.htm"
+                          class="dt-text-[#222222] dt-font-semibold hover:dt-text-[#222222] dt-text-xl dt-leading-[26px]"
+                          >Đột phá pin làm từ nấm: Không cần sạc, chỉ cần…cho
+                          ăn</a
+                        ><a
+                          href="/khoa-hoc/dot-pha-pin-lam-tu-nam-khong-can-sac-chi-cancho-an-20250505074136134.htm"
+                          class="dt-text-[#565656] dt-font-Roboto hover:dt-text-[#565656] dt-text-sm dt-leading-[22px]"
+                          >(Dân trí) - Trong bối cảnh rác thải điện tử đang là
+                          mối lo toàn cầu, các nhà khoa học Thụy Sĩ vừa giới
+                          thiệu một loại pin sinh học đặc biệt: không cần sạc
+                          điện và tạo năng lượng nhờ "ăn" đường.<span
+                            class="article-total-comment dt-text-xs dt-leading-[140%] dt-items-center dt-gap-1 dt-align-middle dt-font-normal dt-hidden hover:dt-text-c0f6c32 dt-ml-1"
+                            data-id="20250505074136134"
+                            data-limit-show="10"
+                            data-color=""
+                            data-redirect="/khoa-hoc/dot-pha-pin-lam-tu-nam-khong-can-sac-chi-cancho-an-20250505074136134.htm#comment"
+                            data-type="1"
+                            data-loaded="loaded"
+                          ></span
+                        ></a>
+                      </div>
+                    </article>
+                    <article
+                      data-track-content="true"
+                      data-content-name="article-newest"
+                      data-content-piece="article-newest-position_Pr_5"
+                      data-content-target="/doi-song/hai-san-loc-hanh-trinh-hon-15-nam-khang-dinh-thuong-hieu-viet-20250429152133849.htm"
+                      class="dt-flex dt-gap-4"
+                    >
+                      <a
+                        href="/doi-song/hai-san-loc-hanh-trinh-hon-15-nam-khang-dinh-thuong-hieu-viet-20250429152133849.htm"
+                        class="dt-aspect-3/2 dt-w-[252px]"
+                        ><img
+                          alt="Hải sản Lộc: Hành trình hơn 15 năm khẳng định thương hiệu Việt"
+                          class="dt-w-full dt-h-full"
+                          src="/assets/img/tải xuống (1).jpg"                          width="252"
+                          height="168"
+                      /></a>
+                      <div class="dt-flex-1 dt-flex dt-flex-col dt-gap-2">
+                        <a
+                          href="/doi-song/hai-san-loc-hanh-trinh-hon-15-nam-khang-dinh-thuong-hieu-viet-20250429152133849.htm"
+                          class="dt-text-[#222222] dt-font-semibold hover:dt-text-[#222222] dt-text-xl dt-leading-[26px]"
+                          >Hải sản Lộc: Hành trình hơn 15 năm khẳng định thương
+                          hiệu Việt</a
+                        ><a
+                          href="/doi-song/hai-san-loc-hanh-trinh-hon-15-nam-khang-dinh-thuong-hieu-viet-20250429152133849.htm"
+                          class="dt-text-[#565656] dt-font-Roboto hover:dt-text-[#565656] dt-text-sm dt-leading-[22px]"
+                          >(Dân trí) - Trải qua gần 15 năm hình thành và phát
+                          triển, Hải sản Lộc đã trở thành điểm đến tin cậy của
+                          thực khách yêu thích hải sản khi đến Cần Thơ.<span
+                            class="article-total-comment dt-text-xs dt-leading-[140%] dt-items-center dt-gap-1 dt-align-middle dt-font-normal dt-hidden hover:dt-text-c0f6c32 dt-ml-1"
+                            data-id="20250429152133849"
+                            data-limit-show="10"
+                            data-color=""
+                            data-redirect="/doi-song/hai-san-loc-hanh-trinh-hon-15-nam-khang-dinh-thuong-hieu-viet-20250429152133849.htm#comment"
+                            data-type="1"
+                            data-loaded="loaded"
+                          ></span></a
+                        ><svg
+                          width="16"
+                          height="17"
+                          fill="none"
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <path
+                            d="M1.747 6.09h2.896c.935 0 1.662.236 2.182.707.55.501.824 1.243.824 2.225 0 .829-.227 1.493-.68 1.994-.53.568-1.304.852-2.325.852h-1.33V9.911H1.134v3.893h3.626c1.435 0 2.6-.347 3.496-1.04 1.107-.848 1.662-2.09 1.662-3.728 0-1.512-.424-2.687-1.272-3.525-.905-.895-2.196-1.343-3.872-1.343h-3.64V6.15"
+                            fill="#00B05A"
+                          ></path>
+                          <path
+                            d="m2.128 7.828 2.129 2.4H0l2.128-2.4Z"
+                            fill="#00B05A"
+                          ></path>
+                          <path
+                            d="M6.994 4.168a4.873 4.873 0 0 1 2.337 1.615h1.214v8.046h1.845V5.783H15V4.168H6.994Z"
+                            fill="#FF8500"
+                          ></path>
+                        </svg>
+                      </div>
+                    </article>
+                    <article
+                      data-track-content="true"
+                      data-content-name="article-newest"
+                      data-content-piece="article-newest-position_6"
+                      data-content-target="/the-thao/antony-ghi-sieu-pham-giup-real-betis-nuoi-mong-du-champions-league-20250505074334061.htm"
+                      class="dt-flex dt-gap-4"
+                    >
+                      <a
+                        href="/the-thao/antony-ghi-sieu-pham-giup-real-betis-nuoi-mong-du-champions-league-20250505074334061.htm"
+                        class="dt-aspect-3/2 dt-w-[252px]"
+                        ><img
+                          alt="Antony ghi siêu phẩm giúp Real Betis nuôi mộng dự Champions League"
+                          class="dt-w-full dt-h-full"
+                          src="/assets/img/tải xuống (1).jpg"                          width="252"
+                          height="168"
+                      /></a>
+                      <div class="dt-flex-1 dt-flex dt-flex-col dt-gap-2">
+                        <a
+                          href="/the-thao/antony-ghi-sieu-pham-giup-real-betis-nuoi-mong-du-champions-league-20250505074334061.htm"
+                          class="dt-text-[#222222] dt-font-semibold hover:dt-text-[#222222] dt-text-xl dt-leading-[26px]"
+                          >Antony ghi siêu phẩm giúp Real Betis nuôi mộng dự
+                          Champions League</a
+                        ><a
+                          href="/the-thao/antony-ghi-sieu-pham-giup-real-betis-nuoi-mong-du-champions-league-20250505074334061.htm"
+                          class="dt-text-[#565656] dt-font-Roboto hover:dt-text-[#565656] dt-text-sm dt-leading-[22px]"
+                          >(Dân trí) - Tiền đạo Antony có màn trình diễn chói
+                          sáng với một pha cứa lòng chân trái đẹp mắt để ấn định
+                          chiến thắng 2-1 cho Real Betis ở vòng 34 La Liga, đồng
+                          thời áp sát nhóm dự Champions League.<span
+                            class="article-total-comment dt-text-xs dt-leading-[140%] dt-items-center dt-gap-1 dt-align-middle dt-font-normal dt-hidden hover:dt-text-c0f6c32 dt-ml-1"
+                            data-id="20250505074334061"
+                            data-limit-show="10"
+                            data-color=""
+                            data-redirect="/the-thao/antony-ghi-sieu-pham-giup-real-betis-nuoi-mong-du-champions-league-20250505074334061.htm#comment"
+                            data-type="1"
+                            data-loaded="loaded"
+                          ></span
+                        ></a>
+                      </div>
+                    </article>
+                    <article
+                      data-track-content="true"
+                      data-content-name="article-newest"
+                      data-content-piece="article-newest-position_7"
+                      data-content-target="/khoa-hoc/khoa-hoc-chi-ra-cach-dung-dieu-hoa-vua-tiet-kiem-vua-tot-cho-suc-khoe-20250505075433107.htm"
+                      class="dt-flex dt-gap-4"
+                    >
+                      <a
+                        href="/khoa-hoc/khoa-hoc-chi-ra-cach-dung-dieu-hoa-vua-tiet-kiem-vua-tot-cho-suc-khoe-20250505075433107.htm"
+                        class="dt-aspect-3/2 dt-w-[252px]"
+                        ><img
+                          alt="Khoa học chỉ ra cách dùng điều hòa vừa tiết kiệm, vừa tốt cho sức khỏe"
+                          class="dt-w-full dt-h-full"
+                          src="/assets/img/tải xuống (1).jpg"                          width="252"
+                          height="168"
+                      /></a>
+                      <div class="dt-flex-1 dt-flex dt-flex-col dt-gap-2">
+                        <a
+                          href="/khoa-hoc/khoa-hoc-chi-ra-cach-dung-dieu-hoa-vua-tiet-kiem-vua-tot-cho-suc-khoe-20250505075433107.htm"
+                          class="dt-text-[#222222] dt-font-semibold hover:dt-text-[#222222] dt-text-xl dt-leading-[26px]"
+                          >Khoa học chỉ ra cách dùng điều hòa vừa tiết kiệm, vừa
+                          tốt cho sức khỏe</a
+                        ><a
+                          href="/khoa-hoc/khoa-hoc-chi-ra-cach-dung-dieu-hoa-vua-tiet-kiem-vua-tot-cho-suc-khoe-20250505075433107.htm"
+                          class="dt-text-[#565656] dt-font-Roboto hover:dt-text-[#565656] dt-text-sm dt-leading-[22px]"
+                          >(Dân trí) - Nghiên cứu mới từ Úc cho thấy: chỉ cần
+                          dùng quạt trước khi bật điều hòa và cài nhiệt độ ở mức
+                          hợp lý, người dùng có thể vừa cảm thấy mát mẻ, vừa
+                          tiết kiệm đáng kể chi phí điện năng.<span
+                            class="article-total-comment dt-text-xs dt-leading-[140%] dt-items-center dt-gap-1 dt-align-middle dt-font-normal dt-hidden hover:dt-text-c0f6c32 dt-ml-1"
+                            data-id="20250505075433107"
+                            data-limit-show="10"
+                            data-color=""
+                            data-redirect="/khoa-hoc/khoa-hoc-chi-ra-cach-dung-dieu-hoa-vua-tiet-kiem-vua-tot-cho-suc-khoe-20250505075433107.htm#comment"
+                            data-type="1"
+                            data-loaded="loaded"
+                          ></span
+                        ></a>
+                      </div>
+                    </article>
+                    <article
+                      data-track-content="true"
+                      data-content-name="article-newest"
+                      data-content-piece="article-newest-position_8"
+                      data-content-target="/suc-khoe/can-benh-gay-chet-nguoi-nhieu-hon-ung-thu-20250504234517642.htm"
+                      class="dt-flex dt-gap-4"
+                    >
+                      <a
+                        href="/suc-khoe/can-benh-gay-chet-nguoi-nhieu-hon-ung-thu-20250504234517642.htm"
+                        class="dt-aspect-3/2 dt-w-[252px]"
+                        ><img
+                          alt="Căn bệnh gây chết người nhiều hơn ung thư"
+                          class="dt-w-full dt-h-full"
+                          src="/assets/img/tải xuống (1).jpg"                          width="252"
+                          height="168"
+                      /></a>
+                      <div class="dt-flex-1 dt-flex dt-flex-col dt-gap-2">
+                        <a
+                          href="/suc-khoe/can-benh-gay-chet-nguoi-nhieu-hon-ung-thu-20250504234517642.htm"
+                          class="dt-text-[#222222] dt-font-semibold hover:dt-text-[#222222] dt-text-xl dt-leading-[26px]"
+                          >Căn bệnh gây chết người nhiều hơn ung thư</a
+                        ><a
+                          href="/suc-khoe/can-benh-gay-chet-nguoi-nhieu-hon-ung-thu-20250504234517642.htm"
+                          class="dt-text-[#565656] dt-font-Roboto hover:dt-text-[#565656] dt-text-sm dt-leading-[22px]"
+                          >(Dân trí) - Mỗi năm, bệnh tim mạch khiến 20,5 triệu
+                          người tử vong trên thế giới. Trong khi đó, con số này
+                          ở bệnh ung thư là 20 triệu ca.<span
+                            class="article-total-comment dt-text-xs dt-leading-[140%] dt-items-center dt-gap-1 dt-align-middle dt-font-normal dt-hidden hover:dt-text-c0f6c32 dt-ml-1"
+                            data-id="20250504234517642"
+                            data-limit-show="10"
+                            data-color=""
+                            data-redirect="/suc-khoe/can-benh-gay-chet-nguoi-nhieu-hon-ung-thu-20250504234517642.htm#comment"
+                            data-type="1"
+                            data-loaded="loaded"
+                          ></span
+                        ></a>
+                      </div>
+                    </article>
+                    <article
+                      data-track-content="true"
+                      data-content-name="article-newest"
+                      data-content-piece="article-newest-position_9"
+                      data-content-target="/cong-nghe/doc-la-quan-ca-phe-o-ha-noi-do-robot-pha-che-phuc-vu-20250504214346529.htm"
+                      class="dt-flex dt-gap-4"
+                    >
+                      <a
+                        href="/cong-nghe/doc-la-quan-ca-phe-o-ha-noi-do-robot-pha-che-phuc-vu-20250504214346529.htm"
+                        class="dt-aspect-3/2 dt-w-[252px]"
+                        ><img
+                          alt="Độc lạ quán cà phê ở Hà Nội do robot pha chế, phục vụ"
+                          class="dt-w-full dt-h-full"
+                          src="/assets/img/tải xuống (1).jpg"                          width="252"
+                          height="168"
+                      /></a>
+                      <div class="dt-flex-1 dt-flex dt-flex-col dt-gap-2">
+                        <a
+                          href="/cong-nghe/doc-la-quan-ca-phe-o-ha-noi-do-robot-pha-che-phuc-vu-20250504214346529.htm"
+                          class="dt-text-[#222222] dt-font-semibold hover:dt-text-[#222222] dt-text-xl dt-leading-[26px]"
+                          >Độc lạ quán cà phê ở Hà Nội do robot pha chế, phục
+                          vụ</a
+                        ><a
+                          href="/cong-nghe/doc-la-quan-ca-phe-o-ha-noi-do-robot-pha-che-phuc-vu-20250504214346529.htm"
+                          class="dt-text-[#565656] dt-font-Roboto hover:dt-text-[#565656] dt-text-sm dt-leading-[22px]"
+                          >(Dân trí) - Một quán cà phê ở Hà Nội vừa đưa vào hoạt
+                          động các robot làm đủ mọi nhiệm vụ từ pha chế đến "ông
+                          đồ". Trải nghiệm công nghệ phục vụ tận bàn đang thu
+                          hút đông đảo tín đồ công nghệ ghé thăm.<span
+                            class="article-total-comment dt-text-xs dt-leading-[140%] dt-items-center dt-gap-1 dt-align-middle dt-font-normal dt-hidden hover:dt-text-c0f6c32 dt-ml-1"
+                            data-id="20250504214346529"
+                            data-limit-show="10"
+                            data-color=""
+                            data-redirect="/cong-nghe/doc-la-quan-ca-phe-o-ha-noi-do-robot-pha-che-phuc-vu-20250504214346529.htm#comment"
+                            data-type="1"
+                            data-loaded="loaded"
+                          ></span
+                        ></a>
+                      </div>
+                    </article>
+                    <article
+                      data-track-content="true"
+                      data-content-name="article-newest"
+                      data-content-piece="article-newest-position_Pr_10"
+                      data-content-target="/doi-song/lotty-friends-khu-vui-choi-moi-danh-cho-tre-em-thu-do-20250429112638005.htm"
+                      class="dt-flex dt-gap-4"
+                    >
+                      <a
+                        href="/doi-song/lotty-friends-khu-vui-choi-moi-danh-cho-tre-em-thu-do-20250429112638005.htm"
+                        class="dt-aspect-3/2 dt-w-[252px]"
+                        ><img
+                          alt="Lotty Friends - Khu vui chơi mới dành cho trẻ em Thủ đô"
+                          class="dt-w-full dt-h-full"
+                          src="/assets/img/tải xuống (1).jpg"                          width="252"
+                          height="168"
+                      /></a>
+                      <div class="dt-flex-1 dt-flex dt-flex-col dt-gap-2">
+                        <a
+                          href="/doi-song/lotty-friends-khu-vui-choi-moi-danh-cho-tre-em-thu-do-20250429112638005.htm"
+                          class="dt-text-[#222222] dt-font-semibold hover:dt-text-[#222222] dt-text-xl dt-leading-[26px]"
+                          >Lotty Friends - Khu vui chơi mới dành cho trẻ em Thủ
+                          đô</a
+                        ><a
+                          href="/doi-song/lotty-friends-khu-vui-choi-moi-danh-cho-tre-em-thu-do-20250429112638005.htm"
+                          class="dt-text-[#565656] dt-font-Roboto hover:dt-text-[#565656] dt-text-sm dt-leading-[22px]"
+                          >(Dân trí) - Ngày 28/4, khu vui chơi trong nhà Lotty
+                          Friends đi vào hoạt động tại trung tâm thương mại
+                          Vincom Times City (Hà Nội).<span
+                            class="article-total-comment dt-text-xs dt-leading-[140%] dt-items-center dt-gap-1 dt-align-middle dt-font-normal dt-hidden hover:dt-text-c0f6c32 dt-ml-1"
+                            data-id="20250429112638005"
+                            data-limit-show="10"
+                            data-color=""
+                            data-redirect="/doi-song/lotty-friends-khu-vui-choi-moi-danh-cho-tre-em-thu-do-20250429112638005.htm#comment"
+                            data-type="1"
+                            data-loaded="loaded"
+                          ></span></a
+                        ><svg
+                          width="16"
+                          height="17"
+                          fill="none"
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <path
+                            d="M1.747 6.09h2.896c.935 0 1.662.236 2.182.707.55.501.824 1.243.824 2.225 0 .829-.227 1.493-.68 1.994-.53.568-1.304.852-2.325.852h-1.33V9.911H1.134v3.893h3.626c1.435 0 2.6-.347 3.496-1.04 1.107-.848 1.662-2.09 1.662-3.728 0-1.512-.424-2.687-1.272-3.525-.905-.895-2.196-1.343-3.872-1.343h-3.64V6.15"
+                            fill="#00B05A"
+                          ></path>
+                          <path
+                            d="m2.128 7.828 2.129 2.4H0l2.128-2.4Z"
+                            fill="#00B05A"
+                          ></path>
+                          <path
+                            d="M6.994 4.168a4.873 4.873 0 0 1 2.337 1.615h1.214v8.046h1.845V5.783H15V4.168H6.994Z"
+                            fill="#FF8500"
+                          ></path>
+                        </svg>
+                      </div>
+                    </article>
+                  </div>
+                </div>
+                <div class="dt-flex dt-items-center dt-justify-center">
+                  <a
+                    href="/tin-moi-nhat.htm"
+                    class="dt-flex dt-gap-1 dt-items-center dt-justify-center dt-mt-9 dt-rounded-full dt-py-3 dt-font-semibold dt-font-inter dt-px-32 dt-bg-cf4f6fa dt-text-c222 hover:dt-text-c222 dt-text-15px dt-leading-[21px]"
+                    >Đọc thêm tin mới nhất<svg
+                      width="20"
+                      height="21"
+                      viewBox="0 0 20 21"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M8.125 14.5508L11.875 10.8008L8.125 7.05078"
+                        stroke="#A0A4A8"
+                        stroke-width="1.5625"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                      ></path></svg
+                  ></a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="sidebar">
+            <!-- Đặt quảng cáo -->
+            <article class="article-lot line">
+              <div class="article-head smart-ptt1-p">
+                Đọc nhiều trong Du lịch
+              </div>
+              <article
+                class="article-item"
+                data-content-name="article-popular"
+                data-content-piece="article-popular-position_1"
+                data-content-target="/du-lich/lap-doan-kiem-tra-vu-con-ca-05kg-chem-gan-18-trieu-dong-o-nha-trang-20250504093900015.htm"
+                data-track-content=""
+              >
+                <div class="article-thumb">
+                  <a
+                    href="#"
+                    ><img
+                      alt='Lập đoàn kiểm tra vụ con cá 0,5kg "chém" gần 1,8 triệu đồng ở Nha Trang'
+                      src="/assets/img/tải xuống (1).jpg"
+                      height="200"
+                      width="300"
+                      class="smart-ptt1-img entered loaded"
+                      
+                  /></a>
+                </div>
+                <h3 class="article-title">
+                  <a
+                    class="dt-text-black-mine smart-ptt1-h"
+                    href="https://dantri.com.vn/du-lich/lap-doan-kiem-tra-vu-con-ca-05kg-chem-gan-18-trieu-dong-o-nha-trang-20250504093900015.htm"
+                    >Lập đoàn kiểm tra vụ con cá 0,5kg "chém" gần 1,8 triệu đồng
+                    ở Nha Trang</a
+                  >
+                  <button
+                    class="article-total-comment dt-text-xs dt-leading-[140%] dt-items-center dt-gap-1 dt-align-middle dt-font-normal hover:dt-text-c0f6c32 dt-ml-1 dt-inline-flex"
+                    onclick="location.href=`/du-lich/lap-doan-kiem-tra-vu-con-ca-05kg-chem-gan-18-trieu-dong-o-nha-trang-20250504093900015.htm#comment`"
+                    data-loaded="loaded"
+                  >
+                    <svg
+                      width="16"
+                      height="16"
+                      viewBox="0 0 17 17"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M6.00695 13.7922H6.3674C6.96813 13.7922 7.44872 13.7922 8.16961 14.513C8.64539 15.1474 9.42395 15.1474 9.89973 14.513C10.4188 13.648 11.0532 13.7922 11.774 13.7922C14.6576 13.7922 16.0993 12.3504 16.0993 9.46685V5.86242C16.0993 2.97888 14.6576 1.53711 11.774 1.53711H6.00695C3.12341 1.53711 1.68164 2.97888 1.68164 5.86242V9.46685C1.68164 13.0713 3.12341 13.7922 6.00695 13.7922Z"
+                        fill="#EAF9F1"
+                        stroke="#0F6C32"
+                        stroke-miterlimit="10"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                      ></path>
+                      <path
+                        d="M5.28613 5.86133H12.495"
+                        stroke="#0F6C32"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                      ></path>
+                      <path
+                        d="M5.28613 9.4668H9.61144"
+                        stroke="#0F6C32"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                      ></path>
+                    </svg>
+                    <span
+                      class="comment-count dt-font-roboto dt-text-c0f6c32 dt-text-sm"
+                      >19</span
+                    >
+                  </button>
+                </h3>
+              </article>
+              <article
+                class="article-item"
+                data-content-name="article-popular"
+                data-content-piece="article-popular-position_2"
+                data-content-target="/du-lich/ton-tuong-phat-lon-nhat-the-gioi-se-xuat-hien-tai-thanh-hoa-20250504072407614.htm"
+                data-track-content=""
+              >
+                <div class="article-thumb">
+                  <a
+                    href="#"
+                    ><img
+                      alt="Tôn tượng Phật lớn nhất thế giới sẽ xuất hiện tại Thanh Hóa"
+                      src="/assets/img/tải xuống (1).jpg"
+                      height="80"
+                      width="120"
+                      
+                  /></a>
+                </div>
+                <h3 class="article-title">
+                  <a
+                    class="dt-text-black-mine"
+                    href="https://dantri.com.vn/du-lich/ton-tuong-phat-lon-nhat-the-gioi-se-xuat-hien-tai-thanh-hoa-20250504072407614.htm"
+                    >Tôn tượng Phật lớn nhất thế giới sẽ xuất hiện tại Thanh
+                    Hóa</a
+                  >
+                  <span
+                    class="article-total-comment dt-text-xs dt-leading-[140%] dt-items-center dt-gap-1 dt-align-middle dt-font-normal dt-hidden hover:dt-text-c0f6c32 dt-ml-1"
+                    data-id="20250504072407614"
+                    data-type="1"
+                    data-limit-show="10"
+                    data-color=""
+                    data-redirect="/du-lich/ton-tuong-phat-lon-nhat-the-gioi-se-xuat-hien-tai-thanh-hoa-20250504072407614.htm#comment"
+                    data-loaded="loaded"
+                  ></span>
+                </h3>
+              </article>
+              <article
+                class="article-item"
+                data-content-name="article-popular"
+                data-content-piece="article-popular-position_3"
+                data-content-target="/du-lich/tphcm-tra-drone-bi-roi-khach-duoc-quan-ca-phe-chieu-dai-do-uong-mien-phi-20250502143752825.htm"
+                data-track-content=""
+              >
+                <div class="article-thumb">
+                  <a
+                    href="#"
+                    ><img
+                      alt="TPHCM: Trả drone bị rơi, khách được quán cà phê chiêu đãi đồ uống miễn phí"
+                      src="/assets/img/tải xuống (1).jpg"
+                      height="80"
+                      width="120"
+                      
+                  /></a>
+                </div>
+                <h3 class="article-title">
+                  <a
+                    class="dt-text-black-mine"
+                    href="https://dantri.com.vn/du-lich/tphcm-tra-drone-bi-roi-khach-duoc-quan-ca-phe-chieu-dai-do-uong-mien-phi-20250502143752825.htm"
+                    >TPHCM: Trả drone bị rơi, khách được quán cà phê chiêu đãi
+                    đồ uống miễn phí</a
+                  >
+                  <span
+                    class="article-total-comment dt-text-xs dt-leading-[140%] dt-items-center dt-gap-1 dt-align-middle dt-font-normal dt-hidden hover:dt-text-c0f6c32 dt-ml-1"
+                    data-id="20250502143752825"
+                    data-type="1"
+                    data-limit-show="10"
+                    data-color=""
+                    data-redirect="/du-lich/tphcm-tra-drone-bi-roi-khach-duoc-quan-ca-phe-chieu-dai-do-uong-mien-phi-20250502143752825.htm#comment"
+                    data-loaded="loaded"
+                  ></span>
+                </h3>
+              </article>
+              <article
+                class="article-item"
+                data-content-name="article-popular"
+                data-content-piece="article-popular-position_4"
+                data-content-target="/du-lich/khan-gia-hoang-hot-bo-chay-tranh-hoa-phao-sung-than-cong-o-ky-dai-hue-20250504114857094.htm"
+                data-track-content=""
+              >
+                <div class="article-thumb">
+                  <a
+                    href="#"
+                    ><img
+                      alt="Khán giả hoảng hốt bỏ chạy, tránh hỏa pháo súng thần công ở Kỳ Đài Huế"
+                      src="/assets/img/tải xuống (1).jpg"
+                      height="80"
+                      width="120"
+                      
+                  /></a>
+                </div>
+                <h3 class="article-title">
+                  <a
+                    class="dt-text-black-mine"
+                    href="https://dantri.com.vn/du-lich/khan-gia-hoang-hot-bo-chay-tranh-hoa-phao-sung-than-cong-o-ky-dai-hue-20250504114857094.htm"
+                    >Khán giả hoảng hốt bỏ chạy, tránh hỏa pháo súng thần công ở
+                    Kỳ Đài Huế</a
+                  >
+                  <button
+                    class="article-total-comment dt-text-xs dt-leading-[140%] dt-items-center dt-gap-1 dt-align-middle dt-font-normal hover:dt-text-c0f6c32 dt-ml-1 dt-inline-flex"
+                    onclick="location.href=`/du-lich/khan-gia-hoang-hot-bo-chay-tranh-hoa-phao-sung-than-cong-o-ky-dai-hue-20250504114857094.htm#comment`"
+                    data-loaded="loaded"
+                  >
+                    <svg
+                      width="16"
+                      height="16"
+                      viewBox="0 0 17 17"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M6.00695 13.7922H6.3674C6.96813 13.7922 7.44872 13.7922 8.16961 14.513C8.64539 15.1474 9.42395 15.1474 9.89973 14.513C10.4188 13.648 11.0532 13.7922 11.774 13.7922C14.6576 13.7922 16.0993 12.3504 16.0993 9.46685V5.86242C16.0993 2.97888 14.6576 1.53711 11.774 1.53711H6.00695C3.12341 1.53711 1.68164 2.97888 1.68164 5.86242V9.46685C1.68164 13.0713 3.12341 13.7922 6.00695 13.7922Z"
+                        fill="#EAF9F1"
+                        stroke="#0F6C32"
+                        stroke-miterlimit="10"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                      ></path>
+                      <path
+                        d="M5.28613 5.86133H12.495"
+                        stroke="#0F6C32"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                      ></path>
+                      <path
+                        d="M5.28613 9.4668H9.61144"
+                        stroke="#0F6C32"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                      ></path>
+                    </svg>
+                    <span
+                      class="comment-count dt-font-roboto dt-text-c0f6c32 dt-text-sm"
+                      >12</span
+                    >
+                  </button>
+                </h3>
+              </article>
+              <article
+                class="article-item"
+                data-content-name="article-popular"
+                data-content-piece="article-popular-position_5"
+                data-content-target="/du-lich/bai-sau-vung-tau-chinh-trang-xong-khach-du-lich-dong-duc-tro-lai-20250504103349601.htm"
+                data-track-content=""
+              >
+                <div class="article-thumb">
+                  <a
+                    href="#"
+                    ><img
+                      alt="Bãi Sau Vũng Tàu chỉnh trang xong, khách du lịch đông đúc trở lại"
+                      src="/assets/img/tải xuống (1).jpg"
+                      height="80"
+                      width="120"
+                      
+                  /></a>
+                </div>
+                <h3 class="article-title">
+                  <a
+                    class="dt-text-black-mine"
+                    href="https://dantri.com.vn/du-lich/bai-sau-vung-tau-chinh-trang-xong-khach-du-lich-dong-duc-tro-lai-20250504103349601.htm"
+                    >Bãi Sau Vũng Tàu chỉnh trang xong, khách du lịch đông đúc
+                    trở lại</a
+                  >
+                  <span
+                    class="article-total-comment dt-text-xs dt-leading-[140%] dt-items-center dt-gap-1 dt-align-middle dt-font-normal dt-hidden hover:dt-text-c0f6c32 dt-ml-1"
+                    data-id="20250504103349601"
+                    data-type="1"
+                    data-limit-show="10"
+                    data-color=""
+                    data-redirect="/du-lich/bai-sau-vung-tau-chinh-trang-xong-khach-du-lich-dong-duc-tro-lai-20250504103349601.htm#comment"
+                    data-loaded="loaded"
+                  ></span>
+                </h3>
+              </article>
+            </article>
+            
+          </div>
+        </div>
+      </div>
+      
+      
+      <div id="desktop-bottom-sticky-right" class="mdbl"></div>
+      <footer class="footer container bg-wrap">
+        <div class="footer-logo flex-jcc">
+          <a href="https://dantri.com.vn/"
+            ><img
+              alt="Báo điện tử Dân trí - Tin tức cập nhật liên tục 24/7"
+              data-src="https://cdnweb.dantri.com.vn/dist/static-logo.1-0-1.7982c496e23978b68141.svg"
+              height="25"
+              src="https://cdnweb.dantri.com.vn/dist/static-logo.1-0-1.7982c496e23978b68141.svg"
+              width="102"
+              data-ll-status="loaded"
+              class="entered loaded"
+          /></a>
+        </div>
+        <div class="footer-wrap">
+          <div class="footer-col footer-one">
+            <ul class="footer-list">
+              <li>Cơ quan của <b>Bộ Nội vụ</b></li>
+              <li>Tổng biên tập: <b>Phạm Tuấn Anh</b></li>
+              <li>
+                Giấy phép hoạt động báo điện tử Dân trí số 15/GP-BVHTTDL Hà Nội,
+                ngày 14-4-2025
+              </li>
+              <li>
+                Địa chỉ tòa soạn:
+                <b>Nhà 48, ngõ 2 Giảng Võ, Cát Linh, Đống Đa, Hà Nội</b>
+              </li>
+              <li>
+                Điện thoại: <a href="tel:02437366491">024-3736-6491</a>. Hotline
+                HN: <a href="tel:0973567567">0973-567-567</a>
+              </li>
+              <li>
+                Văn phòng đại diện miền Nam:
+                <b>51 Võ Văn Tần, Phường Võ Thị Sáu, Quận 3, TPHCM</b>
+              </li>
+              <li>Hotline TPHCM: <a href="tel:0974567567">0974-567-567</a></li>
+              <li>
+                Email: <a href="mailto:info@dantri.com.vn">info@dantri.com.vn</a>
+              </li>
+            </ul>
+          </div>
+          <div class="footer-col footer-two">
+            <ul class="footer-list m-0">
+              <li><a href="https://dantri.com.vn/rss.htm">RSS</a></li>
+              <li>
+                <a href="https://dantri.com.vn/lien-he.htm">Liên hệ toà soạn</a>
+              </li>
+            </ul>
+            <ul class="footer-list m-0">
+              <li>
+                Liên hệ quảng cáo: <a href="tel:0945540303">0945.54.03.03</a>
+              </li>
+              <li>
+                Email:
+                <a href="mailto:quangcao@dantri.com.vn">quangcao@dantri.com.vn</a>
+              </li>
+              <li>
+                <a
+                  href="https://dantri.com.vn/suc-manh-so/privacy-policy-20190514153010649.htm"
+                  >Chính sách bảo mật dữ liệu cá nhân</a
+                >
+              </li>
+            </ul>
+          </div>
+          <div class="footer-col footer-three">
+            <div class="social flex-jcc">
+              <label class="social-label">Theo dõi Dân trí trên:</label>
+              <div class="social-list flex-jcc">
+                <a
+                  class="facebook"
+                  target="_blank"
+                  rel="nofollow"
+                  href="https://www.facebook.com/the.teo.18"
+                  >Facebook</a
+                >
+                <a
+                  class="youtube"
+                  target="_blank"
+                  rel="nofollow"
+                  href="https://www.youtube.com/@VinhHoaDJ"
+                  >Youtube</a
+                >
+                <a
+                  class="tiktok"
+                  target="_blank"
+                  rel="nofollow"
+                  href="https://www.tiktok.com/@dantri.com.vn"
+                  >Tiktok</a
+                >
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="copyright dt-mt-2">
+          © 2005-2025 Bản quyền thuộc về Báo điện tử Dân trí. Cấm sao chép dưới
+          mọi hình thức nếu không có sự chấp thuận bằng văn bản.
+        </div>
+      </footer>
+      <nav id="menuWrapMobile" class="menu-wrap-mobile">
+        <div class="menu-close-mobile" id="menuCloseMobile">×</div>
+        <div class="menu-content-mobile">
+          <ul>
+            <form
+              class="dt-relative"
+              method="GET"
+              target="_top"
+              action="/tim-kiem.htm"
+            >
+              <input
+                class="dt-w-full dt-h-10 dt-pl-4 dt-pr-11 dt-outline dt-rounded-full dt-bg-cf1f5f9"
+                type="text"
+                id="s"
+                name="s"
+                value=""
+                placeholder="Tìm kiếm tin tức"
+                required=""
+              />
+              <button
+                class="dt-absolute dt-top-1/2 dt-right-4 -dt-translate-y-1/2"
+                type="button"
+                aria-label="Tìm kiếm"
+                name="search"
+              >
+                <svg
+                  aria-hidden="true"
+                  width="22"
+                  height="22"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M11 19C15.4183 19 19 15.4183 19 11C19 6.58172 15.4183 3 11 3C6.58172 3 3 6.58172 3 11C3 15.4183 6.58172 19 11 19Z"
+                    stroke="#4D4D4D"
+                    stroke-width="1.5"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  ></path>
+                  <path
+                    d="M21 20.9999L16.65 16.6499"
+                    stroke="#4D4D4D"
+                    stroke-width="1.5"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  ></path>
+                </svg>
+              </button>
+            </form>
+            <div data-link="contact" class="dt-mt-4 dt-flex dt-mb-2"><a class="dt-flex dt-items-center dt-gap-1 dt-w-full dt-h-6 dt-font-inter dt-text-sm dt-text-c565656" href="https://dantri.com.vn/lien-he.htm"><svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M17.418 3.5H2.58203C1.70794 3.5 1 4.23168 1 5.125V14.875C1 15.7736 1.71314 16.5 2.58203 16.5H17.418C18.2847 16.5 19 15.7767 19 14.875V5.125C19 4.23327 18.2949 3.5 17.418 3.5ZM17.1964 4.58333C16.8732 4.91357 11.3107 10.597 11.1187 10.7933C10.8198 11.1002 10.4226 11.2692 10 11.2692C9.57742 11.2692 9.18016 11.1002 8.88034 10.7922C8.75118 10.6603 3.25011 5.03956 2.80359 4.58333H17.1964ZM2.05469 14.6545V5.34618L6.61227 10.0029L2.05469 14.6545ZM2.80425 15.4167L7.36005 10.7669L8.13556 11.5593C8.63358 12.0708 9.29571 12.3525 10 12.3525C10.7043 12.3525 11.3664 12.0708 11.8635 11.5603L12.64 10.7669L17.1957 15.4167H2.80425ZM17.9453 14.6545L13.3877 10.0029L17.9453 5.34618V14.6545Z" fill="#565656" stroke="#565656" stroke-width="0.3"></path></svg> <span class="dt-uppercase dt-font-semibold">Liên hệ toà soạn</span> <svg class="dt-ml-auto" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M10 8L13.6745 11.2929C14.1085 11.6818 14.1085 12.3182 13.6745 12.7071L10 16" stroke="#565656" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"></path></svg></a></div>
+            <div class="dt-grid dt-grid-cols-2 dt-gap-x-4 dt-font-inter dt-font-semibold"><ol class="dt-space-y-0"><li class="dt-border-b dt-border-ceee"><a class="dt-inline-block dt-pt-3.5 dt-pb-2.5 dt-text-MineShaft" href="https://dantri.com.vn/su-kien.htm">Sự kiện nổi bật</a></li><li class="dt-border-b dt-border-ceee"><a class="dt-inline-block dt-pt-3.5 dt-pb-2.5 dt-text-MineShaft" rel="nofollow noopener" href="https://dantri.com.vn/video-page.htm">Video</a></li><li class="dt-border-b dt-border-ceee"><a class="dt-inline-block dt-pt-3.5 dt-pb-2.5 dt-text-MineShaft" rel="nofollow noopener" href="https://fica.dantri.com.vn/">Fica</a></li><li class="dt-border-b dt-border-ceee"><a class="dt-inline-block dt-pt-3.5 dt-pb-2.5 dt-text-MineShaft" rel="nofollow noopener" href="https://dtinews.dantri.com.vn/">DTiNews</a></li><li class="dt-border-b dt-border-ceee"><a class="dt-inline-block dt-pt-3.5 dt-pb-2.5 dt-text-MineShaft" href="https://dantri.com.vn/dmagazine.htm">Dmagazine</a></li><li class="dt-border-b dt-border-ceee"><a class="dt-inline-block dt-pt-3.5 dt-pb-2.5 dt-text-MineShaft" href="https://dantri.com.vn/dnews.htm">DNews</a></li></ol><ol class="dt-space-y-0"><li class="dt-border-b dt-border-ceee"><a class="dt-inline-block dt-pt-3.5 dt-pb-2.5 dt-text-MineShaft" href="https://dantri.com.vn/d-buzz.htm">D-Buzz</a></li><li class="dt-border-b dt-border-ceee"><a class="dt-inline-block dt-pt-3.5 dt-pb-2.5 dt-text-MineShaft" href="https://dantri.com.vn/photo-news.htm">Photo News</a></li><li class="dt-border-b dt-border-ceee"><a class="dt-inline-block dt-pt-3.5 dt-pb-2.5 dt-text-MineShaft" href="https://dantri.com.vn/photo-story.htm">Photo Story</a></li><li class="dt-border-b dt-border-ceee"><a class="dt-inline-block dt-pt-3.5 dt-pb-2.5 dt-text-MineShaft" href="https://dantri.com.vn/infographic.htm">Infographic</a></li><li class="dt-border-b dt-border-ceee"><a class="dt-inline-block dt-pt-3.5 dt-pb-2.5 dt-text-MineShaft" href="https://dantri.com.vn/interactive.htm">Interactive</a></li><li class="dt-border-b dt-border-ceee"><a class="dt-inline-block dt-pt-3.5 dt-pb-2.5 dt-text-MineShaft" href="https://dantri.com.vn/toa-dam-truc-tuyen.htm">Tọa đàm trực tuyến</a></li></ol></div>
+  
+            
+          </ul>
+        </div>
+      </nav>
+      <script src="/assets/js/script.js"></script>
+      <script src="https://vjs.zencdn.net/8.22.0/video.min.js"></script>
+    </body>
+  </html>
+
