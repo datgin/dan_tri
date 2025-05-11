@@ -1,6 +1,6 @@
 @extends('backend.layouts.master')
 
-@section('title', 'Danh sách danh mục')
+@section('title', 'Danh sách tag')
 
 @section('content')
     <div class="row">
@@ -9,8 +9,8 @@
             <div class="card">
                 <div class="card-header d-flex justify-content-between">
                     <h4 class="card-title d-flex align-items-center">
-                        Danh sách danh mục
-                        <a href="{{ route('admin.catalogues.trash') }}" class="ms-3 text-danger" title="Thùng rác">
+                        Danh sách tag
+                        <a href="{{ route('admin.keywords.trash') }}" class="ms-3 text-danger" title="Thùng rác">
                             <i class="fa-solid fa-trash-can"></i>
                         </a>
                     </h4>
@@ -24,26 +24,26 @@
                 </div>
                 <div class="card-body">
                     <div class="table-responsive">
-                        <table id="myTable" class="table table-bordered table-striped">
+                        <table id="myTable" class="display" style="width:100%">
                             <thead>
                                 <tr>
                                     <th><input type="checkbox" id="selectAll" /></th>
                                     <th>STT</th>
-                                    <th>Tên keyword</th>
+                                    <th>Tên tag</th>
                                     <th>Slug</th>
                                     <th>Action</th>
                                 </tr>
                             </thead>
                             <tbody>
-                                @foreach ($catalogues as $item)
+                                @foreach ($tags as $item)
                                     <tr>
-                                        <td><input type="checkbox" class="item-checkbox" /></td>
+                                        <td><input type="checkbox" id="selectAll" /></td>
                                         <td>{{ $loop->iteration }}</td> 
                                         <td>{{ $item->name }}</td>
                                         <td>{{ $item->slug }}</td>
                                         <td>
                                             <i class="fa-solid fa-pen m-4 text-primary" style="cursor: pointer"
-                                                data-bs-toggle="modal" data-bs-target="#editCatalogueModal"
+                                                data-bs-toggle="modal" data-bs-target="#editKeywordModal"
                                                 data-id="{{ $item->id }}" data-name="{{ $item->name }}"
                                                 data-slug="{{ $item->slug }}">
                                             </i>
@@ -65,13 +65,13 @@
         <div class="col-md-4">
             <div class="card">
                 <div class="card-header">
-                    <h4 class="card-title">Thêm danh mục mới</h4>
+                    <h4 class="card-title">Thêm tag mới</h4>
                 </div>
                 <div class="card-body">
-                    <form action="{{ route('admin.catalogues.store') }}" method="POST">
+                    <form action="{{ route('admin.tags.store') }}" method="POST">
                         @csrf
                         <div class="mb-3">
-                            <label for="name" class="form-label">Tên danh mục</label>
+                            <label for="name" class="form-label">Tên tag</label>
                             <input type="text" name="name" id="name" class="form-control">
                             @error('name')
                                 <span class="text-danger small">{{ $message }}</span>
@@ -93,27 +93,18 @@
     @method('DELETE')
 </form>
 
-@include('backend.catalogue.edit');
+@include('backend.keyword.edit');
+
 
 @push('styles')
-    <link rel="stylesheet" href="https://cdn.datatables.net/1.13.7/css/dataTables.bootstrap5.min.css">
+    <link rel="stylesheet" href="https://cdn.datatables.net/2.1.8/css/dataTables.dataTables.css" />
 @endpush
 
 @push('scripts')
-    <script src="https://cdn.datatables.net/1.13.7/js/jquery.dataTables.min.js"></script>
-    <script src="https://cdn.datatables.net/1.13.7/js/dataTables.bootstrap5.min.js"></script>
+    <script src="https://cdn.datatables.net/2.1.8/js/jquery.dataTables.min.js"></script> <!-- Dùng jquery.dataTables.min.js thay vì dataTables.js -->
     <script>
         $(document).ready(function() {
-            $('#myTable').DataTable({
-                "language": {
-                    "url": "//cdn.datatables.net/plug-ins/1.10.24/i18n/Vietnamese.json"
-                },
-                "pageLength": 5,
-                "lengthMenu": [[5, 10, 25, 50, -1], [5, 10, 25, 50, "Tất cả"]],
-                "ordering": true,
-                "searching": true,
-                "responsive": true
-            });
+            $('#myTable').DataTable();
         });
 
         $(document).on('click', '.fa-pen', function() {
@@ -122,17 +113,17 @@
             const slug = $(this).data('slug');
             $('#edit-id').val(id);
             $('#edit-name').val(name);
-            $('#editCatalogueForm').attr('action', `/admin/catalogues/${id}`);
+            $('#editKeywordForm').attr('action', `/admin/keywords/${id}`);
         });
     </script>
 
-    <script src="{{ asset('resources/js/modal_catalogue.js') }}"></script>
+    <script src="{{ asset('resources/js/modal_keyword.js') }}"></script>
 
     <script>
         function confirmDelete(id, name) {
-            if (confirm("Bạn có chắc chắn muốn xóa danh mục: " + name + "?")) {
+            if (confirm("Bạn có chắc chắn muốn xóa keyword: " + name + "?")) {
                 const form = document.getElementById('deleteForm');
-                form.action = '/admin/catalogues/' + id + '/soft-delete';
+                form.action = '/admin/keywords/' + id + '/soft-delete';
                 form.submit();
             }
         }

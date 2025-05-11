@@ -29,7 +29,7 @@ class AuthController extends Controller
 
             $account = auth()->guard('admin')->user();
 
-            if ($account->role_id != 1) {
+            if ($account->role !== 'admin') {
                 auth()->guard('admin')->logout();
                 toastr()->error('Bạn không có quyền truy cập vào trang quản lý!');
                 return back();

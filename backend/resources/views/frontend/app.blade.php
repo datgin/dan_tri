@@ -9,6 +9,8 @@
     <link rel="stylesheet" href="{{ asset('frontends/assets/css/style.css') }}" />
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+    <link rel="icon" type="image/png" href="https://cdn6.aptoide.com/imgs/d/0/9/d0942da58c977cd77bda5e5d228dbd8a_icon.png">
+
 </head>
 
 <body>

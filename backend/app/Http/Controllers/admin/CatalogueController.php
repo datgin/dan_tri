@@ -12,9 +12,7 @@ class CatalogueController extends Controller
 {
     public function index()
     {
-        $catalogues = Catalogue::paginate(10);
-
-        
+        $catalogues = Catalogue::all();
         return view('backend.catalogue.index', compact('catalogues'));
     }
 
@@ -36,9 +34,47 @@ class CatalogueController extends Controller
         return redirect()->route('admin.catalogues.index')->with('success', 'Thêm mới thành công');
     }
 
-    public function edit($slug)
+    public function update(Request $request, $id)
     {
-        $catalogue = Catalogue::where('slug', $slug)->firstOrFail();
-        return view('backend.catalogue.edit', compact('catalogue'));
+        $request->validate([
+            'name' => 'required|max:255|string|unique:catalogues,name,' . $id,
+        ]);
+
+        $catalogue = Catalogue::where('id', $id)->firstOrFail();
+
+        $catalogue->name = $request->input('name');
+        $catalogue->slug = Str::slug($request->input('name'));
+
+        $catalogue->save();
+
+        return back()->with('success', 'Cập nhật thành công');
     }
+
+    public function softDelete($id)
+    {
+        $catalogue = Catalogue::find($id);
+        $catalogue->delete();
+        return back()->with('success', 'Đã được chuyển vào thùng rác');
+    }
+
+    public function delete($id)
+    {
+        $catalogue = Catalogue::onlyTrashed()->find($id);
+        $catalogue->forceDelete();
+        return back()->with('success', 'Xóa thành công');
+    }
+
+    public function trash()
+    {
+        $catalogues = Catalogue::onlyTrashed()->paginate(10);
+        return view('backend.catalogue.trash', compact('catalogues'));
+    }
+
+    public function restore($id)
+    {
+        $catalogue = Catalogue::onlyTrashed()->find($id);
+        $catalogue->restore();
+        return back()->with('success', 'Đã khôi phục thành công');
+    }
+    
 }

@@ -1,7 +1,7 @@
 <div class="header-top flex-jcb have-users-onboarding dt-relative">
     <div class="dt-flex dt-gap-7 dt-items-center">
         <h1 class="header-logo flex-jcc">
-            <a aria-label="Báo điện tử Dân trí - Tin tức cập nhật liên tục 24/7" href="#"><img
+            <a aria-label="Báo điện tử Dân trí - Tin tức cập nhật liên tục 24/7" href="{{route('home')}}"><img
                     alt="Báo điện tử Dân trí - Tin tức cập nhật liên tục 24/7" class="dt-h-11.5" height="46"
                     src="https://cdnweb.dantri.com.vn/dist/static-logo-v2.1-0-1.9bf6dbdd64e0736085bc.png"
                     width="118" /></a>

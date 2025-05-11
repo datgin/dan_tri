@@ -169,7 +169,7 @@
 
         function updateOrderInDatabase(order, model) {
             $.ajax({
-                url: '{{ route('admin.changeOrder') }}',
+                url: '',
                 method: 'POST',
                 data: {
                     order: order,
@@ -339,7 +339,7 @@
 
             if (selectedAction === 'delete') {
                 $.ajax({
-                    url: "{{ route('admin.delete.items') }}",
+                    url: "",
                     method: 'POST',
                     data: {
                         ids: selectedIds,
