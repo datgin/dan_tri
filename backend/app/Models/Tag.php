@@ -6,10 +6,10 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
 
-class Catalogue extends Model
+class Tag extends Model
 {
     use HasFactory, SoftDeletes;
-    protected $table = 'catalogues';
+    protected $table = 'tags';
 
     protected $fillable = [
         'name',
@@ -18,7 +18,7 @@ class Catalogue extends Model
 
     public function blogs()
     {
-        return $this->hasMany(Blog::class);
+        return $this->belongsToMany(Blog::class, 'blog_tag');
     }
 
 }

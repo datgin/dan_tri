@@ -1,5 +1,5 @@
 document.addEventListener("DOMContentLoaded", function () {
-    const form = document.getElementById("editCatalogueForm");
+    const form = document.getElementById("editKeywordForm");
     const idInput = document.getElementById("edit-id");
     const nameInput = document.getElementById("edit-name");
 
@@ -12,7 +12,7 @@ document.addEventListener("DOMContentLoaded", function () {
             idInput.value = id;
             nameInput.value = name;
 
-            form.action = `/admin/catalogues/${id}`;
+            form.action = `/admin/keywords/${id}`;
         });
     });
 });

@@ -8,7 +8,13 @@
         <div class="col-md-8">
             <div class="card">
                 <div class="card-header d-flex justify-content-between">
-                    <h4 class="card-title">Danh sách danh mục bài viết</h4>
+                    <h4 class="card-title d-flex align-items-center">
+                        Danh sách danh mục keyword
+                        <a href="{{ route('admin.keywords.trash') }}" class="ms-3 text-danger" title="Thùng rác">
+                            <i class="fa-solid fa-trash-can"></i>
+                        </a>
+                    </h4>
+
                     <div class="card-tools">
                         <button type="button" class="btn btn-primary btn-sm" data-bs-toggle="modal"
                             data-bs-target="#exampleModal">
@@ -32,16 +38,20 @@
                                 @foreach ($keywords as $item)
                                     <tr>
                                         <td><input type="checkbox" id="selectAll" /></td>
-                                        <td>{{ $loop->iteration }}</td> <!-- Hiển thị STT -->
+                                        <td>{{ $loop->iteration }}</td> 
                                         <td>{{ $item->name }}</td>
                                         <td>{{ $item->slug }}</td>
                                         <td>
                                             <i class="fa-solid fa-pen m-4 text-primary" style="cursor: pointer"
                                                 data-bs-toggle="modal" data-bs-target="#editKeywordModal"
                                                 data-id="{{ $item->id }}" data-name="{{ $item->name }}"
-                                                data-slug="{{ $item->slug }}"></i>
-                                        </td>
+                                                data-slug="{{ $item->slug }}">
+                                            </i>
 
+                                            <i class="fa-solid fa-trash m-4 text-danger" style="cursor: pointer"
+                                                onclick="confirmDelete({{ $item->id }}, '{{ $item->name }}')">
+                                            </i>
+                                        </td>
                                     </tr>
                                 @endforeach
                             </tbody>
@@ -78,6 +88,14 @@
     </div>
 @endsection
 
+<form id="deleteForm" method="POST" style="display: none;">
+    @csrf
+    @method('DELETE')
+</form>
+
+@include('backend.keyword.edit');
+
+
 @push('styles')
     <link rel="stylesheet" href="https://cdn.datatables.net/2.1.8/css/dataTables.dataTables.css" />
 @endpush
@@ -88,5 +106,26 @@
         $(document).ready(function() {
             $('#myTable').DataTable();
         });
+
+        $(document).on('click', '.fa-pen', function() {
+            const id = $(this).data('id');
+            const name = $(this).data('name');
+            const slug = $(this).data('slug');
+            $('#edit-id').val(id);
+            $('#edit-name').val(name);
+            $('#editKeywordForm').attr('action', `/admin/keywords/${id}`);
+        });
+    </script>
+
+    <script src="{{ asset('resources/js/modal_keyword.js') }}"></script>
+
+    <script>
+        function confirmDelete(id, name) {
+            if (confirm("Bạn có chắc chắn muốn xóa keyword: " + name + "?")) {
+                const form = document.getElementById('deleteForm');
+                form.action = '/admin/keywords/' + id + '/soft-delete';
+                form.submit();
+            }
+        }
     </script>
 @endpush

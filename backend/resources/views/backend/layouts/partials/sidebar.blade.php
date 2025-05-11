@@ -46,21 +46,28 @@
                     </a>
                 </li>
 
+                <li class="nav-item {{ activeMenu('admin.tags.index') }}">
+                    <a href="{{ route('admin.tags.index') }}" class="collapsed">
+                        <i class="fa-solid fa-tags"></i>
+                        <p>Danh mục tag</p>
+                    </a>
+                </li>
+
                 <li class="nav-item">
-                    <a data-bs-toggle="collapse" class="has-children" href="#news">
+                    <a data-bs-toggle="collapse" class="has-children" href="#blogs">
                         <i class="fas fa-newspaper"></i>
                         <p>Bài viết</p>
                         <span class="caret"></span>
                     </a>
-                    <div class="collapse" id="news">
+                    <div class="collapse" id="blogs">
                         <ul class="nav nav-collapse">
-                            <li class="nav-item {{ activeMenu('admin.news.index') }}">
-                                <a href="{{ route('admin.news.index') }}">
+                            <li class="nav-item {{ activeMenu('admin.blogs.index') }}">
+                                <a href="{{ route('admin.blogs.index') }}">
                                     <span class="sub-item">Danh sách bài viết</span>
                                 </a>
                             </li>
-                            <li class="nav-item {{ activeMenu('admin.news.create') }}">
-                                <a href="{{ route('admin.news.create') }}">
+                            <li class="nav-item {{ activeMenu('admin.blogs.create') }}">
+                                <a href="{{ route('admin.blogs.create') }}">
                                     <span class="sub-item">Thêm bài viết</span>
                                 </a>
                             </li>
@@ -69,7 +76,7 @@
                 </li>
 
                 <li class="nav-item  {{ activeMenu('admin.config.index') }}">
-                    <a href="{{ route('admin.config.index') }}">
+                    <a href="">
                         <i class="fas fa-cogs"></i>
                         <p>Cấu hình</p>
                     </a>

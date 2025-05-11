@@ -29,4 +29,57 @@ class KeywordController extends Controller
 
         return back()->with('success', 'Thêm mới thành công');
     }
+
+
+    public function update(Request $request, $id)
+    {
+        $request->validate([
+            'name' => 'required|max:255|string|unique:keywords,name,' . $id,
+        ]);
+
+        $keyword = Keyword::where('id', $id)->firstOrFail();
+
+        $keyword->name = $request->input('name');
+        $keyword->slug = Str::slug($request->input('name'));
+
+        $keyword->save();
+
+        return back()->with('success', 'Cập nhật thành công');
+    }
+
+
+
+    public function softDelete($id)
+    {
+        $keyword = Keyword::where('id', $id)->firstOrFail();
+        $keyword->delete();
+
+        return back()->with('success', value: 'Đã được chuyển vào thùng rác');
+    }
+
+    public function delete($id)
+    {
+        $keyword = Keyword::withTrashed()->find($id);
+        $keyword->forceDelete();
+        return back()->with('success', 'Xóa thành công');
+
+    }
+
+    public function trash()
+    {
+        $keywords = Keyword::onlyTrashed()->paginate(10);
+
+        return view('backend.keyword.trash', compact('keywords'));
+
+    }
+
+    public function restore($id)
+    {
+        $keyword = Keyword::withTrashed()->find($id);
+        $keyword->restore();
+        return back()->with('success', 'Khôi phục thành công');
+
+    }
+
+
 }
