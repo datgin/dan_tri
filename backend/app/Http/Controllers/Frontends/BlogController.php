@@ -38,7 +38,7 @@ class BlogController extends Controller
         // Lấy bài viết mới nhất
         $newBlogs = Blog::where('status', 1)
             ->latest()
-            ->take(5)
+            ->take(10)
             ->get();
 
         // Lấy các bài viết đọc nhiều cùng danh mục
