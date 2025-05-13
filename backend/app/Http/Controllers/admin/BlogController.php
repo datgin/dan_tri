@@ -7,6 +7,7 @@ use App\Models\Blog;
 use App\Models\Catalogue;
 use App\Models\Keyword;
 use App\Models\Tag;
+use App\RankmathSEOForLaravel\Services\SeoAnalyzer;
 use Illuminate\Http\Request;
 use Illuminate\Support\Str;
 use Yajra\DataTables\DataTables;
@@ -113,7 +114,7 @@ class BlogController extends Controller
             ]);
 
             // Gán các tags và keywords cho bài viết
-            $blog->tags()->sync($arrayTags);
+            $blog->blogTags()->sync($arrayTags);
             $blog->keywords()->sync($arrayKeywords);
 
 
@@ -180,7 +181,7 @@ class BlogController extends Controller
                 }
 
                 // Cập nhật tags và keywords
-                $blog->tags()->sync($arrayTags);
+                $blog->blogTags()->sync($arrayTags);
                 $blog->keywords()->sync($arrayKeywords);
             }
 
@@ -238,5 +239,65 @@ class BlogController extends Controller
                 'message' => 'Có lỗi xảy ra: ' . $e->getMessage()
             ], 500);
         }
+    }
+
+    public function analyzeSeo(Request $request, $id)
+    {
+        $blog = Blog::findOrFail($id);
+        $analyzer = app(SeoAnalyzer::class);
+        $result = $analyzer->analyzeFromBlog($blog);
+
+        return response()->json([
+            'score' => $result->getPercentage(),
+            'checks' => $result->getChecks(),
+            'groupScores' => $result->getGroupScores(),
+            'suggestions' => $result->getSuggestions()
+        ]);
+    }
+
+    public function updateSeo(Request $request, $id)
+    {
+        $blog = Blog::findOrFail($id);
+        
+        $request->validate([
+            'seo_title' => 'nullable|string|max:255',
+            'seo_description' => 'nullable|string|max:255',
+            'keywords' => 'nullable|array',
+            'keywords.*' => 'string'
+        ]);
+
+        $blog->update([
+            'seo_title' => $request->seo_title,
+            'seo_description' => $request->seo_description
+        ]);
+
+        if ($request->has('keywords')) {
+            $keywords = collect($request->keywords)->map(function($keyword) {
+                return Keyword::updateOrCreate(
+                    ['name' => $keyword],
+                    ['slug' => Str::slug($keyword)]
+                )->id;
+            });
+            
+            $blog->keywords()->sync($keywords);
+        }
+
+        return response()->json([
+            'message' => 'SEO information updated successfully',
+            'blog' => $blog->fresh(['keywords'])
+        ]);
+    }
+
+    public function getSeoAnalysis(Request $request, $id)
+    {
+        $blog = Blog::findOrFail($id);
+        
+        return response()->json([
+            'seo_score' => $blog->seo_score,
+            'seo_suggestions' => $blog->seo_suggestions,
+            'focus_keyword' => $blog->focus_keyword,
+            'secondary_keywords' => $blog->secondary_keywords,
+            'analysis' => $blog->seo_analysis
+        ]);
     }
 }

@@ -10,7 +10,7 @@ class KeywordInTitleRule implements RuleInterface
         $passed = stripos($title, $focusKeyword) !== false;
 
         return [
-            'rule' => 'keyword trong tiêu đề',
+            'rule' => 'focus_keyword_in_title',
             'passed' => $passed,
             'message' => $passed ? 'Từ khóa có trong tiêu đề.' : 'Từ khóa không có trong tiêu đề',
             'score' => $passed ? 10 : 0,

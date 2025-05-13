@@ -1,10 +1,9 @@
 <?php
 namespace App\Http\Controllers;
 
+use App\RankmathSEOForLaravel\Rules\KeywordInTitleRule;
+use App\RankmathSEOForLaravel\Services\SeoAnalyzer;
 use Illuminate\Http\Request;
-use App\Seo\Services\SeoAnalyzer;
-use App\Seo\Rules\KeywordInTitleRule;
-// Thêm các rule khác ở đây
 
 class SeoAnalysisController extends Controller
 {

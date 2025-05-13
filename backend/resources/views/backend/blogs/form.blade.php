@@ -64,7 +64,7 @@
                             </div>
                         </div>
                     </div>
-                    
+
 
                     <!-- Google Snippet Preview -->
                     <div class="card mb-3">
@@ -151,6 +151,52 @@
                                         <li><i class="fa fa-times-circle text-danger"></i> Nội dung quá ngắn, cần tối thiểu
                                             300 từ.</li>
                                     </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Thêm vào phần đầu form, sau phần nội dung chính -->
+                    <div class="card mb-3">
+                        <div class="card-body">
+                            <ul class="nav nav-tabs" id="seoTabs" role="tablist">
+                                <li class="nav-item" role="presentation">
+                                    <button class="nav-link active" id="basic-tab" data-bs-toggle="tab"
+                                        data-bs-target="#basic" type="button" role="tab">
+                                        <i class="fas fa-info-circle"></i> SEO Cơ bản
+                                    </button>
+                                </li>
+                            </ul>
+                            <div class="tab-content mt-3" id="seoTabsContent">
+                                <!-- Tab SEO Cơ bản -->
+                                <div class="tab-pane fade show active" id="basic" role="tabpanel">
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            <!-- SEO Title -->
+                                            <div class="form-group mb-3">
+                                                <label for="seo_title" class="form-label">
+                                                    SEO Title
+                                                    <span class="text-muted" id="seo_title_counter">0/60</span>
+                                                </label>
+                                                <input type="text" class="form-control" id="seo_title"
+                                                    name="seo_title"
+                                                    value="{{ old('seo_title', $blog->seo_title ?? '') }}"
+                                                    placeholder="Nhập tiêu đề SEO">
+                                                <small class="text-muted">Tối ưu: 50-60 ký tự</small>
+                                            </div>
+
+                                            <!-- SEO Description -->
+                                            <div class="form-group mb-3">
+                                                <label for="seo_description" class="form-label">
+                                                    SEO Description
+                                                    <span class="text-muted" id="seo_description_counter">0/160</span>
+                                                </label>
+                                                <textarea class="form-control" id="seo_description" name="seo_description" rows="3"
+                                                    placeholder="Nhập mô tả SEO">{{ old('seo_description', $blog->seo_description ?? '') }}</textarea>
+                                                <small class="text-muted">Tối ưu: 120-160 ký tự</small>
+                                            </div>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -272,7 +318,7 @@
                 </div>
             </div>
         </form>
-        
+
     </div>
 @endsection
 
@@ -404,7 +450,9 @@
             if (oldTags) {
                 // Nếu oldTags là chuỗi, chuyển thành mảng
                 if (typeof oldTags === 'string') {
-                    tags = oldTags.split(',').map(function(item) { return item.trim(); });
+                    tags = oldTags.split(',').map(function(item) {
+                        return item.trim();
+                    });
                 } else if (Array.isArray(oldTags)) {
                     tags = oldTags;
                 }
@@ -511,6 +559,34 @@
             e.preventDefault();
             $('#seo-form-error').slideToggle(200);
             $('#seo-desc-error').slideToggle(200);
+        });
+    </script>
+
+    <!-- Script đếm ký tự và cập nhật preview -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Đếm ký tự SEO Title
+            const seoTitle = document.getElementById('seo_title');
+            const seoTitleCounter = document.getElementById('seo_title_counter');
+            if (seoTitle) {
+                seoTitle.addEventListener('input', function() {
+                    seoTitleCounter.textContent = `${seoTitle.value.length}/60`;
+                    document.getElementById('preview_title').textContent = seoTitle.value || 'Tiêu đề SEO';
+                });
+                seoTitleCounter.textContent = `${seoTitle.value.length}/60`;
+            }
+
+            // Đếm ký tự SEO Description
+            const seoDescription = document.getElementById('seo_description');
+            const seoDescriptionCounter = document.getElementById('seo_description_counter');
+            if (seoDescription) {
+                seoDescription.addEventListener('input', function() {
+                    seoDescriptionCounter.textContent = `${seoDescription.value.length}/160`;
+                    document.getElementById('preview_description').textContent = seoDescription.value ||
+                        'Mô tả SEO';
+                });
+                seoDescriptionCounter.textContent = `${seoDescription.value.length}/160`;
+            }
         });
     </script>
 @endpush
