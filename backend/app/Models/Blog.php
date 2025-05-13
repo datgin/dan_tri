@@ -35,7 +35,7 @@ class Blog extends Model
         return $this->belongsTo(Catalogue::class);
     }
 
-    public function tags()
+    public function blogTags()
     {
         return $this->belongsToMany(Tag::class, 'blog_tag');
     }

@@ -56,11 +56,34 @@
                             </div>
                             <div class="form-group mb-3">
                                 <label for="content">Nội dung</label>
-                                <textarea id="content" name="content" class="form-control ckeditor @error('content') is-invalid @enderror" rows="8"
-                                    placeholder="Enter content">{{ old('content', $blog->content ?? '') }}</textarea>
+                                <textarea id="content" name="content" class="form-control ckeditor @error('content') is-invalid @enderror"
+                                    rows="8" placeholder="Enter content">{{ old('content', $blog->content ?? '') }}</textarea>
                                 @error('content')
                                     <div class="invalid-feedback">{{ $message }}</div>
                                 @enderror
+                            </div>
+                        </div>
+                    </div>
+                    
+
+                    <!-- Google Snippet Preview -->
+                    <div class="card mb-3">
+                        <div class="card-body">
+                            <div class="mb-3">
+                                <label class="form-label fw-semibold">Preview trên Google</label>
+                                <div id="google-snippet-preview"
+                                    style="background:#fff;border:1px solid #e0e0e0;padding:16px 20px;border-radius:8px;max-width:700px;">
+                                    <div id="gsp-title"
+                                        style="color:#1a0dab;font-size:20px;line-height:1.2;font-weight:400;margin-bottom:2px;">
+                                        {{ old('title', $blog->title ?? 'Tiêu đề bài viết') }}</div>
+                                    <div id="gsp-url"
+                                        style="color:#006621;font-size:14px;line-height:1.3;margin-bottom:2px;">
+                                        {{ url('/blog') }}/<span
+                                            id="gsp-slug">{{ old('slug', $blog->slug ?? 'slug-bai-viet') }}</span></div>
+                                    <div id="gsp-desc" style="color:#545454;font-size:13px;line-height:1.4;">
+                                        {{ old('short_description', $blog->short_description ?? 'Mô tả ngắn của bài viết sẽ hiển thị ở đây.') }}
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -79,28 +102,55 @@
                             </div>
                             <div id="seo-form" style="display:none;">
                                 <hr>
-                                <div class="form-group mb-3">
-                                    <label for="seo_title">SEO Title</label>
-                                    <input type="text" id="seo_title" name="seo_title"
-                                        class="form-control @error('seo_title') is-invalid @enderror"
-                                        placeholder="SEO Title" value="{{ old('seo_title', $blog->seo_title ?? '') }}">
-                                    @error('seo_title')
-                                        <div class="invalid-feedback">{{ $message }}</div>
-                                    @enderror
-                                </div>
-                                <div class="form-group mb-3">
-                                    <label for="seo_description">SEO description</label>
-                                    <textarea id="seo_description" name="seo_description"
-                                        class="form-control @error('seo_description') is-invalid @enderror" rows="3" placeholder="SEO description">{{ old('seo_description', $blog->seo_description ?? '') }}</textarea>
-                                    @error('seo_description')
-                                        <div class="invalid-feedback">{{ $message }}</div>
-                                    @enderror
+                                <!-- Phần hiển thị điểm SEO -->
+                                <div class="mb-3">
+                                    <h5 class="mb-0">SEO cơ bản <span class="badge bg-success ms-2">Tất cả điều tốt</span>
+                                    </h5>
+                                    <ul class="list-unstyled mb-0 mt-2">
+                                        <li><i class="fa fa-check-circle text-success"></i> Tuyệt vời! Bạn đang sử dụng từ
+                                            khoá chính trong Tiêu đề SEO.</li>
+                                        <li><i class="fa fa-check-circle text-success"></i> Đã sử dụng từ khoá chính trong
+                                            Mô tả Meta SEO.</li>
+                                        <li><i class="fa fa-check-circle text-success"></i> Từ khoá chính đã được sử dụng
+                                            trong URL.</li>
+                                        <li><i class="fa fa-check-circle text-success"></i> Từ khoá chính xuất hiện trong
+                                            10% nội dung đầu tiên.</li>
+                                        <li><i class="fa fa-check-circle text-success"></i> Đã tìm thấy từ khoá chính trong
+                                            nội dung.</li>
+                                        <li><i class="fa fa-exclamation-circle text-warning"></i> Nội dung dài 1022 từ. Làm
+                                            tốt lắm!</li>
+                                    </ul>
                                 </div>
                                 <div class="alert alert-info mb-3" style="font-size: 0.95rem;">
                                     <i class="fa fa-info-circle"></i> Meta keywords was removed by Google, you don't
                                     need to add
                                     meta keywords to your website. Learn more: <a href="https://yoast.com/meta-keywords"
                                         target="_blank">https://yoast.com/meta-keywords</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    {{-- Hiển thị lỗi --}}
+                    <div class="card mb-3" id="seo-card-error">
+                        <div class="card-body">
+                            <div class="d-flex justify-content-between align-items-center mb-2">
+                                <h5 class="mb-0">Cẩn cải thiện<span class="badge bg-danger ms-2">2 Lỗi</span></h5>
+
+                                <a href="#" id="edit-seo-btn-error">Edit SEO meta</a>
+                            </div>
+                            <div id="seo-desc-error"></div>
+                            <div id="seo-form-error" style="display:none;">
+                                <hr>
+                                <!-- Phần hiển thị lỗi SEO -->
+                                <div class="mb-3">
+                                    <h5 class="mb-0">Bổ sung</h5>
+                                    <ul class="list-unstyled mb-0 mt-2">
+                                        <li><i class="fa fa-times-circle text-danger"></i> Tiêu đề chưa chứa từ khoá chính.
+                                        </li>
+                                        <li><i class="fa fa-times-circle text-danger"></i> Nội dung quá ngắn, cần tối thiểu
+                                            300 từ.</li>
+                                    </ul>
                                 </div>
                             </div>
                         </div>
@@ -116,7 +166,8 @@
                                 <h5 class="mb-0" style="font-weight:600;">Đăng bài</h5>
                             </div>
                             <div class="d-flex flex-column gap-2 align-items-center">
-                                <button type="submit" class="btn btn-primary btn-lg w-100 mb-2" style="font-weight:600;">
+                                <button type="submit" class="btn btn-primary btn-lg w-100 mb-2"
+                                    style="font-weight:600;">
                                     <i class="fa fa-save me-1"></i> Lưu
                                 </button>
                                 <button type="submit" class="btn btn-outline-secondary w-100" style="font-weight:600;">
@@ -198,7 +249,7 @@
                                     class="fa-solid fa-tags tag-label-icon"></i></label>
                             <input type="text" id="tags" name="tags"
                                 class="form-control @error('tags') is-invalid @enderror" placeholder="Enter tags"
-                                value="{{ old('tags', isset($blog->tags) ? $blog->tags->pluck('name')->implode(',') : '') }}">
+                                value="{{ old('tags', isset($blog->blogTags) ? $blog->blogTags->pluck('name')->implode(',') : '') }}">
                             @error('tags')
                                 <div class="invalid-feedback">{{ $message }}</div>
                             @enderror
@@ -221,6 +272,7 @@
                 </div>
             </div>
         </form>
+        
     </div>
 @endsection
 
@@ -338,7 +390,6 @@
 
 
     <script>
-       
         $(document).ready(function() {
 
             $('.select2').select2({
@@ -347,15 +398,22 @@
                 width: '100%'
             });
 
-            // Lấy danh sách tags và keywords từ server
-            var existingTags = {!! json_encode(Tag::all()->pluck('name')) !!};
-            var existingKeywords = {!! json_encode(Keyword::all()->pluck('name')) !!};
-
-            // Xử lý tags
+            // Lấy giá trị old('tags') nếu có, ưu tiên khi validate lỗi
+            var oldTags = @json(old('tags'));
+            var tags = [];
+            if (oldTags) {
+                // Nếu oldTags là chuỗi, chuyển thành mảng
+                if (typeof oldTags === 'string') {
+                    tags = oldTags.split(',').map(function(item) { return item.trim(); });
+                } else if (Array.isArray(oldTags)) {
+                    tags = oldTags;
+                }
+            } else {
+                tags = @json(isset($blog->blogTags) ? $blog->blogTags->pluck('name')->toArray() : []);
+            }
             var tagsInput = document.querySelector('#tags');
-            var tags = {!! json_encode(isset($blog->tags) ? $blog->tags->pluck('name') : []) !!};
             var tagify = new Tagify(tagsInput, {
-                whitelist: existingTags,
+                whitelist: {!! json_encode(Tag::all()->pluck('name')) !!},
                 maxTags: 10,
                 dropdown: {
                     maxItems: 20,
@@ -378,7 +436,7 @@
             var keywordsInput = document.querySelector('#keywords');
             var keywords = {!! json_encode(isset($blog->keywords) ? $blog->keywords->pluck('name') : []) !!};
             var keywordify = new Tagify(keywordsInput, {
-                whitelist: existingKeywords,
+                whitelist: {!! json_encode(Keyword::all()->pluck('name')) !!},
                 maxTags: 10,
                 dropdown: {
                     maxItems: 20,
@@ -414,6 +472,15 @@
                 $('#seo-desc').slideToggle(200);
             });
 
+            // Google Snippet Preview
+            function updateSnippetPreview() {
+                $('#gsp-title').text($('#title').val() || 'Tiêu đề bài viết');
+                $('#gsp-slug').text($('#slug').val() || 'slug-bai-viet');
+                $('#gsp-desc').text($('#short_description').val() || 'Mô tả ngắn của bài viết sẽ hiển thị ở đây.');
+            }
+            $('#title, #slug, #short_description').on('input', updateSnippetPreview);
+            updateSnippetPreview();
+
         });
     </script>
 
@@ -436,6 +503,14 @@
                     alert('Vui lòng chọn một catalogue');
                 }
             });
+        });
+    </script>
+
+    <script>
+        $('#edit-seo-btn-error').on('click', function(e) {
+            e.preventDefault();
+            $('#seo-form-error').slideToggle(200);
+            $('#seo-desc-error').slideToggle(200);
         });
     </script>
 @endpush
