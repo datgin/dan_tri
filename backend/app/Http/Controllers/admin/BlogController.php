@@ -37,7 +37,8 @@ class BlogController extends Controller
 
     public function edit($id)
     {
-        $blog = Blog::findOrFail($id);
+        $blog = Blog::with('blogTags', 'keywords')->findOrFail($id);
+        // dd($blog->blogTags, $blog->keywords);
         $catalogues = Catalogue::all();
         $tags = Tag::all();
         $keywords = Keyword::all();
@@ -219,14 +220,14 @@ class BlogController extends Controller
     {
         try {
             $blog = Blog::findOrFail($id);
-            
+
             // Xóa ảnh nếu tồn tại
             if ($blog->image && file_exists(public_path('storage/' . $blog->image))) {
                 unlink(public_path('storage/' . $blog->image));
             }
-            
+
             $blog->delete();
-            
+
             return response()->json([
                 'success' => true,
                 'message' => 'Xóa bài viết thành công!'
