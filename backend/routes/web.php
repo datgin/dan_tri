@@ -87,6 +87,11 @@ Route::prefix('admin')->name('admin.')->group(function () {
             Route::get('edit/{id}', 'edit')->name('edit');
             Route::put('edit/{id}', 'update')->name('update');
             Route::delete('delete/{id}', 'delete')->name('delete');
+            
+            // SEO 
+            Route::get('{id}/seo-analysis', 'getSeoAnalysis')->name('seo.analysis');
+            Route::post('{id}/analyze-seo', 'analyzeSeo')->name('seo.analyze');
+            Route::put('{id}/update-seo', 'updateSeo')->name('seo.update');
         });
 
     });
